@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Sparkles, ArrowRight, MapPin } from 'lucide-react';
 import { FlowerMark, WashiTape } from '../components/CustomDoodles';
-import { AboutSection } from '../components/home-sections/AboutSection';
 import { SkillsSection } from '../components/home-sections/SkillsSection';
 import { ContactSection } from '../components/home-sections/ContactSection';
 import { portfolioData } from '../data/portfolioData';
@@ -17,10 +16,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
 
   return (
     <div className="bg-[#F5F5ED]">
-      {/* 1. HERO SECTION */}
-      <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden bg-graph-paper border-b border-[#182018]/15">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          {/* Centered Headline & Statement */}
+      {/* 1. HERO / ABOUT SECTION */}
+      <section
+        id="about"
+        className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden bg-graph-paper border-b border-[#182018]/15"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          {/* Centered Hero Headline */}
           <div className="text-center max-w-4xl mx-auto flex flex-col items-center relative z-20">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -38,11 +40,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-serif-display text-5xl sm:text-7xl lg:text-[82px] leading-[1.05] tracking-tight text-[#182018] max-w-4xl mb-6"
             >
-              From raw creative concepts to{' '}
+              Srishti&apos;s{' '}
               <span className="relative inline-block whitespace-nowrap">
                 <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[#F4B6D4] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
                 <span className="relative z-10 italic font-serif-display font-normal">
-                  impactful execution.
+                  Portfolio
                 </span>
               </span>
             </motion.h1>
@@ -51,9 +53,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg text-[#182018]/80 max-w-[660px] leading-relaxed mb-9"
+              className="font-serif-display text-xl sm:text-2xl text-[#182018] italic leading-snug mb-9"
             >
-              Translating brand philosophies into tangible retail environments, market-tested products, and high-impact digital experiences.
+              From raw creative concepts to{' '}
+              <span className="relative inline-block whitespace-nowrap">
+                <span className="absolute inset-0 -inset-x-1.5 bottom-0.5 bg-[#C9FF8C] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
+                <span className="relative z-10">impactful execution.</span>
+              </span>
             </motion.p>
 
             <motion.div
@@ -80,52 +86,106 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
             </motion.div>
           </div>
 
-          {/* 3 Featured Cards Strip */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Link
-              to="/projects/marketing"
-              className="p-6 bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl paper-shadow hover:translate-y-[-2px] transition-all group"
+          {/* About Biography */}
+          <div className="mt-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="lg:col-span-7 space-y-6"
             >
-              <span className="text-xs bg-[#C9FF8C] border border-[#182018] px-2.5 py-0.5 rounded-full font-bold inline-block mb-3">
-                PROJECT 01
-              </span>
-              <h3 className="font-serif-display text-2xl text-[#182018] mb-2 group-hover:underline">
-                UNIQLO Fragrance
-              </h3>
-              <p className="text-sm text-[#182018]/75 leading-relaxed">
-                Japanese names, minimal packaging, nature-inspired scents, and STP marketing frameworks.
-              </p>
-            </Link>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[#182018] rounded-full text-xs font-mono-code uppercase tracking-widest text-[#182018] paper-shadow-sm">
+                <FlowerMark size={14} />
+                <span>STUDENT BIOGRAPHY</span>
+              </div>
 
-            <Link
-              to="/projects/visual-merchandising"
-              className="p-6 bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl paper-shadow hover:translate-y-[-2px] transition-all group"
-            >
-              <span className="text-xs bg-[#F4B6D4] border border-[#182018] px-2.5 py-0.5 rounded-full font-bold inline-block mb-3">
-                PROJECT 02
-              </span>
-              <h3 className="font-serif-display text-2xl text-[#182018] mb-2 group-hover:underline">
-                Cover Story VM
-              </h3>
-              <p className="text-sm text-[#182018]/75 leading-relaxed">
-                Future Florals: Handcrafted floral forms from holographic sheets, wire, and pastel boards.
-              </p>
-            </Link>
+              <div className="font-mono-code text-xs sm:text-sm text-[#182018]/70 flex flex-wrap items-center gap-3">
+                <span className="bg-[#C9FF8C] text-[#182018] px-2.5 py-0.5 rounded border border-[#182018] font-bold">
+                  {student.year}
+                </span>
+                <span>•</span>
+                <span className="flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5" />
+                  {student.location}
+                </span>
+              </div>
 
-            <Link
-              to="/projects/project-3"
-              className="p-6 bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl paper-shadow hover:translate-y-[-2px] transition-all group"
-            >
-              <span className="text-xs bg-[#AFC8FF] border border-[#182018] px-2.5 py-0.5 rounded-full font-bold inline-block mb-3">
-                PROJECT 03
-              </span>
-              <h3 className="font-serif-display text-2xl text-[#182018] mb-2 group-hover:underline">
-                Start Up MVP
-              </h3>
-              <p className="text-sm text-[#182018]/75 leading-relaxed">
-                Structured × Relaxed athleisure: Lycra crop top & Terry cotton joggers built on survey feedback.
+              <p className="font-serif-display text-2xl sm:text-3xl text-[#182018] italic leading-snug">
+                "{student.statement}"
               </p>
-            </Link>
+
+              <div className="space-y-4 font-body text-base text-[#182018]/85 leading-relaxed">
+                <p>{student.secondaryStatement}</p>
+                <p>
+                  My foundation integrates hands-on making with strategic rigor: from conducting consumer interviews and testing fabric breathability, to building 1:1 scale floral window displays and executing daily e-commerce operations.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {student.specializations.map((spec, i) => (
+                  <span key={i} className="font-mono-code text-xs px-3 py-1 bg-[#FFFFFF] border border-[#182018]/30 rounded-lg text-[#182018]">
+                    ✦ {spec}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="lg:col-span-5"
+            >
+              <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 paper-shadow-lg relative">
+                <div className="absolute -top-3 left-10">
+                  <WashiTape color="#F4B6D4" width="w-24" />
+                </div>
+
+                <div className="font-mono-code text-xs font-bold uppercase text-[#182018]/60 mb-6 pb-2 border-b border-[#182018]/15">
+                  PORTFOLIO SCOPE & EXPERIENCE
+                </div>
+
+                <div className="space-y-6">
+                  <div>
+                    <div className="font-mono-code text-xs font-bold text-[#182018]">
+                      01. AADIYA JEWELS (INTERNSHIP)
+                    </div>
+                    <div className="font-body text-xs text-[#182018]/80 mt-1">
+                      Social Media Content Production (videos & reels) + E-Commerce Shopify management.
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="font-mono-code text-xs font-bold text-[#182018]">
+                      02. UNIQLO FRAGRANCE (PROJECT 1)
+                    </div>
+                    <div className="font-body text-xs text-[#182018]/80 mt-1">
+                      Marketing Management, STP, 7Ps, and 5 Core Design Decisions.
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="font-mono-code text-xs font-bold text-[#182018]">
+                      03. COVER STORY (PROJECT 2)
+                    </div>
+                    <div className="font-body text-xs text-[#182018]/80 mt-1">
+                      Spring/Summer VM Concept, Future Florals, Holographic sheets & 6 VM Principles.
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="font-mono-code text-xs font-bold text-[#182018]">
+                      04. FASHION START-UP (PROJECT 3)
+                    </div>
+                    <div className="font-body text-xs text-[#182018]/80 mt-1">
+                      Survey research, Lycra & Terry cotton fabric testing, and physical MVP iteration.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -255,13 +315,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
         </div>
       </section>
 
-      {/* 4. ABOUT ME SECTION */}
-      <AboutSection />
-
-      {/* 5. SKILLS SECTION */}
+      {/* 4. SKILLS SECTION */}
       <SkillsSection />
 
-      {/* 6. CONTACT ME SECTION */}
+      {/* 5. CONTACT ME SECTION */}
       <ContactSection />
     </div>
   );

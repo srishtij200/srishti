@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Sparkles, ArrowRight, Layers, Tag, Eye } from 'lucide-react';
@@ -6,15 +6,6 @@ import { FlowerMark, HandDrawnStar, WashiTape } from '../components/CustomDoodle
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectsOverviewPage: React.FC = () => {
-  const [filter, setFilter] = useState<'all' | 'marketing' | 'vm' | 'startup'>('all');
-
-  const filteredProjects = portfolioData.selectedProjects.filter((p) => {
-    if (filter === 'all') return true;
-    if (filter === 'marketing') return p.slug === 'marketing';
-    if (filter === 'vm') return p.slug === 'visual-merchandising';
-    if (filter === 'startup') return p.slug === 'project-3';
-    return true;
-  });
 
   return (
     <div className="bg-[#F5F5ED] min-h-screen py-16 lg:py-24">
@@ -43,55 +34,11 @@ export const ProjectsOverviewPage: React.FC = () => {
           <p className="font-body text-base text-[#182018]/85 leading-relaxed max-w-3xl mb-8">
             Three comprehensive projects investigating marketing management & brand expansion (UNIQLO), Spring/Summer visual merchandising (Cover Story), and founding an athleisure startup from consumer observation to physical MVP.
           </p>
-
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 font-mono-code text-xs">
-            <button
-              onClick={() => setFilter('all')}
-              className={`px-4 py-2 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-                filter === 'all'
-                  ? 'bg-[#182018] text-[#F5F5ED] border-[#182018] font-bold paper-shadow-sm'
-                  : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/25 hover:border-[#182018]'
-              }`}
-            >
-              All Projects (3)
-            </button>
-            <button
-              onClick={() => setFilter('marketing')}
-              className={`px-4 py-2 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-                filter === 'marketing'
-                  ? 'bg-[#C9FF8C] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                  : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/25 hover:border-[#182018]'
-              }`}
-            >
-              01 Marketing (UNIQLO)
-            </button>
-            <button
-              onClick={() => setFilter('vm')}
-              className={`px-4 py-2 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-                filter === 'vm'
-                  ? 'bg-[#F4B6D4] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                  : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/25 hover:border-[#182018]'
-              }`}
-            >
-              02 Visual Merchandising (Cover Story)
-            </button>
-            <button
-              onClick={() => setFilter('startup')}
-              className={`px-4 py-2 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-                filter === 'startup'
-                  ? 'bg-[#AFC8FF] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                  : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/25 hover:border-[#182018]'
-              }`}
-            >
-              03 Start Up (Athleisure MVP)
-            </button>
-          </div>
         </div>
 
         {/* Projects Display List */}
         <div className="space-y-12 mb-20">
-          {filteredProjects.map((proj) => (
+          {portfolioData.selectedProjects.map((proj) => (
             <div
               key={proj.id}
               className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-12 paper-shadow-lg relative overflow-hidden group hover:paper-shadow-xl transition-all"
@@ -122,6 +69,29 @@ export const ProjectsOverviewPage: React.FC = () => {
                   <p className="font-body text-base text-[#182018]/85 leading-relaxed max-w-2xl">
                     {proj.summary}
                   </p>
+
+                  {proj.brief && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                      {[
+                        { label: "PROJECT BRIEF", text: proj.brief },
+                        { label: "RESEARCH", text: proj.research },
+                        { label: "MY CONTRIBUTION", text: proj.contribution },
+                        { label: "KEY LEARNINGS", text: proj.keyLearnings }
+                      ].map((b) => (
+                        <div
+                          key={b.label}
+                          className="p-4 bg-[#F5F5ED] border border-[#182018]/20 rounded-xl"
+                        >
+                          <span className="font-mono-code text-[10px] font-bold text-[#182018]/60 uppercase tracking-wider block mb-1.5">
+                            {b.label}
+                          </span>
+                          <p className="font-body text-xs text-[#182018]/80 leading-relaxed">
+                            {b.text}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
                   <div className="flex flex-wrap gap-2 pt-2">
                     {proj.tags.map((tag, tIdx) => (

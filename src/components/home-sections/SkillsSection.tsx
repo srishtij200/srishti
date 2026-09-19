@@ -47,8 +47,8 @@ export const SkillsSection: React.FC = () => {
           A versatile skill set developed across real-world jewellery e-commerce at Aadiya Jewels, marketing frameworks for UNIQLO, in-store window fabrication for Cover Story, and user research for an athleisure startup.
         </motion.p>
 
-        {/* 4 Disciplinary Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {/* Discipline 01 */}
+        <div className="grid grid-cols-1 gap-8 mb-12">
           {skills.categories.slice(0, 1).map((cat, idx) => (
             <motion.div
               key={idx}
@@ -56,35 +56,46 @@ export const SkillsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
-              className="bg-[#F5F5ED] border-[1.5px] border-[#182018] rounded-3xl p-6 sm:p-8 paper-shadow-lg relative"
+              className="bg-[#F5F5ED] border-[1.5px] border-[#182018] rounded-3xl p-6 sm:p-10 paper-shadow-lg relative"
             >
               <div className="absolute -top-3 right-8">
                 <WashiTape color={cat.color} width="w-24" />
               </div>
 
-              <div className="flex items-center justify-between font-mono-code text-xs text-[#182018]/50 mb-3 pb-2 border-b border-[#182018]/10">
-                <span className="font-bold text-[#182018]">DISCIPLINE 0{idx + 1}</span>
-                <span className="bg-[#FFFFFF] px-2 py-0.5 rounded border border-[#182018]/20">{cat.tag}</span>
-              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                <div className="lg:col-span-4">
+                  <div className="flex items-center justify-between font-mono-code text-xs text-[#182018]/50 mb-4 pb-2 border-b border-[#182018]/10">
+                    <span className="font-bold text-[#182018]">DISCIPLINE 0{idx + 1}</span>
+                    <span className="bg-[#FFFFFF] px-2 py-0.5 rounded border border-[#182018]/20">{cat.tag}</span>
+                  </div>
 
-              <h3 className="font-serif-display text-2xl text-[#182018] mb-6">
-                {cat.name}
-              </h3>
+                  <h3 className="font-serif-display text-3xl sm:text-4xl text-[#182018] mb-4 leading-tight">
+                    {cat.name}
+                  </h3>
 
-              <div className="space-y-4">
-                {cat.skills.map((s, sIdx) => (
-                  <div key={sIdx} className="p-3.5 bg-[#FFFFFF] rounded-xl border border-[#182018]/15">
-                    <div className="flex justify-between items-baseline mb-1">
-                      <span className="font-mono-code text-xs font-bold text-[#182018]">{s.name}</span>
-                      <span className="font-mono-code text-[10px] text-emerald-800 bg-[#C9FF8C] px-1.5 py-0.5 rounded border border-[#182018]/20 font-bold">
+                  <p className="font-body text-sm text-[#182018]/75 leading-relaxed">
+                    Turning brand thinking into market-ready strategy — from consumer insight and positioning to category expansion.
+                  </p>
+                </div>
+
+                <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-5">
+                  {cat.skills.map((s, sIdx) => (
+                    <div
+                      key={sIdx}
+                      className="p-5 bg-[#FFFFFF] rounded-2xl border border-[#182018]/15 flex flex-col h-full"
+                    >
+                      <span className="font-mono-code text-[10px] text-[#182018] px-2 py-0.5 rounded border border-[#182018]/20 font-bold uppercase tracking-wider self-start mb-4" style={{ backgroundColor: cat.color }}>
                         {s.proficiency}
                       </span>
+                      <h4 className="font-mono-code text-xs sm:text-sm font-bold text-[#182018] mb-3 leading-snug">
+                        {s.name}
+                      </h4>
+                      <p className="font-body text-xs text-[#182018]/70 leading-relaxed mt-auto">
+                        {s.note}
+                      </p>
                     </div>
-                    <div className="font-body text-xs text-[#182018]/70">
-                      {s.note}
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

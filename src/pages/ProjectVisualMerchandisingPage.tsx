@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, Sparkles, Palette, Hammer, Eye, Lightbulb, CheckCircle2, Image as ImageIcon } from 'lucide-react';
+import { ArrowLeft, Sparkles, Palette, Hammer, Eye, Lightbulb, CheckCircle2, Image as ImageIcon } from 'lucide-react';
 import { FlowerMark, WashiTape } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectVisualMerchandisingPage: React.FC = () => {
   const { projectVM: vm } = portfolioData;
-  const [currentPage, setCurrentPage] = useState<1 | 2 | 3 | 4 | 5>(1);
 
   // Exact 5 step images from behind the display photoshoot
   const stepImages = [
@@ -49,63 +48,8 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
           <span>COVER STORY // FUTURE FLORALS</span>
         </div>
 
-        {/* Page Switcher Tabs */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-12 font-mono-code text-xs">
-          <button
-            onClick={() => setCurrentPage(1)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 1
-                ? 'bg-[#182018] text-[#F5F5ED] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 1: Cover Page
-          </button>
-          <button
-            onClick={() => setCurrentPage(2)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 2
-                ? 'bg-[#F4B6D4] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 2: The Brief & Concept
-          </button>
-          <button
-            onClick={() => setCurrentPage(3)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 3
-                ? 'bg-[#F4B6D4] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 3: Mood & Colour Board
-          </button>
-          <button
-            onClick={() => setCurrentPage(4)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 4
-                ? 'bg-[#F4B6D4] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 4: Behind the Display (5 Steps)
-          </button>
-          <button
-            onClick={() => setCurrentPage(5)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 5
-                ? 'bg-[#F4B6D4] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 5: Skills & VM Principles
-          </button>
-        </div>
-
-        {/* PAGE 1: COVER PAGE */}
-        {currentPage === 1 && (
-          <div className="space-y-12">
+        {/* SECTION: COVER PAGE */}
+        <section className="space-y-12 mb-16">
             <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative overflow-hidden">
               <div className="absolute -top-3 right-12">
                 <WashiTape color="#F4B6D4" width="w-32" />
@@ -158,21 +102,10 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex justify-end pt-4 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(2)}
-                className="bg-[#182018] text-[#F5F5ED] px-6 py-3 rounded-xl font-bold hover:bg-[#253325] cursor-pointer flex items-center gap-2"
-              >
-                <span>Proceed to Page 2: The Brief & Concept</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-        )}
+        </section>
 
-        {/* PAGE 2: THE BRIEF & CONCEPT */}
-        {currentPage === 2 && (
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
+        {/* SECTION: THE BRIEF & CONCEPT */}
+        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative mb-16">
             <div className="absolute -top-3 right-12">
               <WashiTape color="#F4B6D4" width="w-28" />
             </div>
@@ -245,26 +178,10 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="flex justify-between pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(1)}
-                className="text-[#182018]/70 hover:text-[#182018] cursor-pointer"
-              >
-                ← Page 1: Cover
-              </button>
-              <button
-                onClick={() => setCurrentPage(3)}
-                className="bg-[#182018] text-[#F5F5ED] px-4 py-2 rounded-xl font-bold hover:bg-[#253325] cursor-pointer"
-              >
-                Proceed to Page 3: Mood & Colour Board →
-              </button>
-            </div>
-          </div>
-        )}
+        </div>
 
-        {/* PAGE 3: MOOD BOARD / COLOUR BOARD */}
-        {currentPage === 3 && (
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
+        {/* SECTION: MOOD BOARD / COLOUR BOARD */}
+        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative mb-16">
             <div className="absolute -top-3 right-12">
               <WashiTape color="#C9FF8C" width="w-28" />
             </div>
@@ -346,26 +263,10 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex justify-between pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(2)}
-                className="text-[#182018]/70 hover:text-[#182018] cursor-pointer"
-              >
-                ← Page 2: Brief & Concept
-              </button>
-              <button
-                onClick={() => setCurrentPage(4)}
-                className="bg-[#182018] text-[#F5F5ED] px-4 py-2 rounded-xl font-bold hover:bg-[#253325] cursor-pointer"
-              >
-                Proceed to Page 4: Behind the Display →
-              </button>
-            </div>
-          </div>
-        )}
+        </div>
 
-        {/* PAGE 4: BEHIND THE DISPLAY (5 STEPS WITH REAL PHOTOS) */}
-        {currentPage === 4 && (
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
+        {/* SECTION: BEHIND THE DISPLAY (5 STEPS WITH REAL PHOTOS) */}
+        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative mb-16">
             <div className="absolute -top-3 right-12">
               <WashiTape color="#F4B6D4" width="w-28" />
             </div>
@@ -418,26 +319,10 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               ))}
             </div>
 
-            <div className="flex justify-between pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(3)}
-                className="text-[#182018]/70 hover:text-[#182018] cursor-pointer"
-              >
-                ← Page 3: Mood Board
-              </button>
-              <button
-                onClick={() => setCurrentPage(5)}
-                className="bg-[#182018] text-[#F5F5ED] px-4 py-2 rounded-xl font-bold hover:bg-[#253325] cursor-pointer"
-              >
-                Proceed to Page 5: Skills & VM Principles →
-              </button>
-            </div>
-          </div>
-        )}
+        </div>
 
-        {/* PAGE 5: SKILLS & VM PRINCIPLES */}
-        {currentPage === 5 && (
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
+        {/* SECTION: SKILLS & VM PRINCIPLES */}
+        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
             <div className="absolute -top-3 right-12">
               <WashiTape color="#C9FF8C" width="w-28" />
             </div>
@@ -512,22 +397,15 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="flex justify-between pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(4)}
-                className="text-[#182018]/70 hover:text-[#182018] cursor-pointer"
-              >
-                ← Page 4: Behind the Display
-              </button>
+            <div className="flex justify-end pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
               <Link
                 to="/projects/project-3"
                 className="bg-[#182018] text-[#F5F5ED] px-5 py-2.5 rounded-xl font-bold hover:bg-[#253325] cursor-pointer flex items-center gap-1.5"
               >
-                <span>Proceed to Project 3: Start Up →</span>
+                <span>Next Project: Start Up →</span>
               </Link>
             </div>
           </div>
-        )}
       </div>
     </div>
   );

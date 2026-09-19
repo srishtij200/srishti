@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, Sparkles, CheckCircle2, MessageSquare, TrendingUp, Scissors, BarChart3, Layers } from 'lucide-react';
+import { ArrowLeft, Sparkles, CheckCircle2, MessageSquare, TrendingUp, Scissors, BarChart3, Layers } from 'lucide-react';
 import { FlowerMark, WashiTape } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectThreePage: React.FC = () => {
   const { projectThree: p3 } = portfolioData;
-  const [currentPage, setCurrentPage] = useState<1 | 2 | 3 | 4>(1);
 
   return (
     <div className="bg-[#F5F5ED] min-h-screen py-16 lg:py-24">
@@ -25,53 +24,8 @@ export const ProjectThreePage: React.FC = () => {
           <span>ATHLEISURE HYBRID // STRUCTURED × RELAXED</span>
         </div>
 
-        {/* 4-Page Navigation Tab Bar */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-12 font-mono-code text-xs">
-          <button
-            onClick={() => setCurrentPage(1)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 1
-                ? 'bg-[#182018] text-[#F5F5ED] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 1: Cover Page
-          </button>
-          <button
-            onClick={() => setCurrentPage(2)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 2
-                ? 'bg-[#AFC8FF] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 2: Survey Insights & The Brief
-          </button>
-          <button
-            onClick={() => setCurrentPage(3)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 3
-                ? 'bg-[#AFC8FF] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 3: Design, Material & Prototype
-          </button>
-          <button
-            onClick={() => setCurrentPage(4)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 4
-                ? 'bg-[#AFC8FF] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 4: Feedback & Iteration Loop
-          </button>
-        </div>
-
-        {/* PAGE 1: COVER PAGE */}
-        {currentPage === 1 && (
-          <div className="space-y-12">
+        {/* SECTION: COVER PAGE */}
+        <section className="space-y-12 mb-16">
             <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative overflow-hidden">
               <div className="absolute -top-3 right-12">
                 <WashiTape color="#AFC8FF" width="w-32" />
@@ -124,21 +78,10 @@ export const ProjectThreePage: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex justify-end pt-4 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(2)}
-                className="bg-[#182018] text-[#F5F5ED] px-6 py-3 rounded-xl font-bold hover:bg-[#253325] cursor-pointer flex items-center gap-2"
-              >
-                <span>Proceed to Page 2: Survey Insights</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-        )}
+        </section>
 
-        {/* PAGE 2: SURVEY INSIGHTS & THE BRIEF */}
-        {currentPage === 2 && (
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
+        {/* SECTION: SURVEY INSIGHTS & THE BRIEF */}
+        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative mb-16">
             <div className="absolute -top-3 right-12">
               <WashiTape color="#AFC8FF" width="w-28" />
             </div>
@@ -230,26 +173,10 @@ export const ProjectThreePage: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex justify-between pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(1)}
-                className="text-[#182018]/70 hover:text-[#182018] cursor-pointer"
-              >
-                ← Page 1: Cover
-              </button>
-              <button
-                onClick={() => setCurrentPage(3)}
-                className="bg-[#182018] text-[#F5F5ED] px-4 py-2 rounded-xl font-bold hover:bg-[#253325] cursor-pointer"
-              >
-                Proceed to Page 3: Design & Material →
-              </button>
-            </div>
-          </div>
-        )}
+        </div>
 
-        {/* PAGE 3: DESIGN, MATERIAL & PROTOTYPE */}
-        {currentPage === 3 && (
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
+        {/* SECTION: DESIGN, MATERIAL & PROTOTYPE */}
+        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative mb-16">
             <div className="absolute -top-3 right-12">
               <WashiTape color="#C9FF8C" width="w-28" />
             </div>
@@ -371,26 +298,10 @@ export const ProjectThreePage: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex justify-between pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(2)}
-                className="text-[#182018]/70 hover:text-[#182018] cursor-pointer"
-              >
-                ← Page 2: Survey Insights
-              </button>
-              <button
-                onClick={() => setCurrentPage(4)}
-                className="bg-[#182018] text-[#F5F5ED] px-4 py-2 rounded-xl font-bold hover:bg-[#253325] cursor-pointer"
-              >
-                Proceed to Page 4: Feedback & Iteration →
-              </button>
-            </div>
-          </div>
-        )}
+        </div>
 
-        {/* PAGE 4: FEEDBACK & ITERATION */}
-        {currentPage === 4 && (
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
+        {/* SECTION: FEEDBACK & ITERATION */}
+        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
             <div className="absolute -top-3 right-12">
               <WashiTape color="#F4B6D4" width="w-28" />
             </div>
@@ -479,13 +390,7 @@ export const ProjectThreePage: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex justify-between pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(3)}
-                className="text-[#182018]/70 hover:text-[#182018] cursor-pointer"
-              >
-                ← Page 3: Design & Material
-              </button>
+            <div className="flex justify-end pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
               <Link
                 to="/skills"
                 className="bg-[#182018] text-[#F5F5ED] px-5 py-2.5 rounded-xl font-bold hover:bg-[#253325] cursor-pointer flex items-center gap-1.5"
@@ -494,7 +399,6 @@ export const ProjectThreePage: React.FC = () => {
               </Link>
             </div>
           </div>
-        )}
       </div>
     </div>
   );

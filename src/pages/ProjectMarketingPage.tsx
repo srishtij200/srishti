@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, Sparkles, CheckCircle2, Target, Lightbulb, Compass, Award, Image as ImageIcon } from 'lucide-react';
+import { ArrowLeft, Sparkles, CheckCircle2, Target, Lightbulb, Compass, Award, Image as ImageIcon } from 'lucide-react';
 import { FlowerMark, WashiTape } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectMarketingPage: React.FC = () => {
   const { projectMarketing: pm } = portfolioData;
-  const [currentPage, setCurrentPage] = useState<1 | 3 | 4 | 5>(1);
 
   return (
     <div className="bg-[#F5F5ED] min-h-screen py-16 lg:py-24">
@@ -25,53 +24,8 @@ export const ProjectMarketingPage: React.FC = () => {
           <span>UNIQLO FRAGRANCE EXTENSION</span>
         </div>
 
-        {/* Page Switcher Tabs */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-12 font-mono-code text-xs">
-          <button
-            onClick={() => setCurrentPage(1)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 1
-                ? 'bg-[#182018] text-[#F5F5ED] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 1 & 2: Overview & Context
-          </button>
-          <button
-            onClick={() => setCurrentPage(3)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 3
-                ? 'bg-[#C9FF8C] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 3: Design Decisions
-          </button>
-          <button
-            onClick={() => setCurrentPage(4)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 4
-                ? 'bg-[#C9FF8C] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 4: Strategy & Frameworks
-          </button>
-          <button
-            onClick={() => setCurrentPage(5)}
-            className={`px-4 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-              currentPage === 5
-                ? 'bg-[#C9FF8C] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/20 hover:border-[#182018]'
-            }`}
-          >
-            Page 5: From Idea to Impact
-          </button>
-        </div>
-
-        {/* PAGE 1 & 2: COVER, CONTEXT & BRIEF */}
-        {currentPage === 1 && (
-          <div className="space-y-12">
+        {/* SECTION: COVER, CONTEXT & BRIEF */}
+        <section className="space-y-12 mb-16">
             <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative overflow-hidden">
               <div className="absolute -top-3 right-12">
                 <WashiTape color="#C9FF8C" width="w-32" />
@@ -161,22 +115,10 @@ export const ProjectMarketingPage: React.FC = () => {
                 </div>
               </div>
             </div>
+        </section>
 
-            <div className="flex justify-end pt-4 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(3)}
-                className="bg-[#182018] text-[#F5F5ED] px-6 py-3 rounded-xl font-bold hover:bg-[#253325] cursor-pointer flex items-center gap-2"
-              >
-                <span>Proceed to Page 3: Design Decisions</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* PAGE 3: DESIGN DECISIONS */}
-        {currentPage === 3 && (
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
+        {/* SECTION: DESIGN DECISIONS */}
+        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative mb-16">
             <div className="absolute -top-3 right-12">
               <WashiTape color="#C9FF8C" width="w-28" />
             </div>
@@ -235,26 +177,10 @@ export const ProjectMarketingPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex justify-between pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(1)}
-                className="text-[#182018]/70 hover:text-[#182018] cursor-pointer"
-              >
-                ← Page 1 & 2: Overview
-              </button>
-              <button
-                onClick={() => setCurrentPage(4)}
-                className="bg-[#182018] text-[#F5F5ED] px-4 py-2 rounded-xl font-bold hover:bg-[#253325] cursor-pointer"
-              >
-                Proceed to Page 4: Strategy →
-              </button>
-            </div>
           </div>
-        )}
 
-        {/* PAGE 4: STRATEGY & FRAMEWORKS */}
-        {currentPage === 4 && (
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
+        {/* SECTION: STRATEGY & FRAMEWORKS */}
+        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative mb-16">
             <div className="absolute -top-3 right-12">
               <WashiTape color="#F4B6D4" width="w-28" />
             </div>
@@ -315,26 +241,10 @@ export const ProjectMarketingPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex justify-between pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(3)}
-                className="text-[#182018]/70 hover:text-[#182018] cursor-pointer"
-              >
-                ← Page 3: Design Decisions
-              </button>
-              <button
-                onClick={() => setCurrentPage(5)}
-                className="bg-[#182018] text-[#F5F5ED] px-4 py-2 rounded-xl font-bold hover:bg-[#253325] cursor-pointer"
-              >
-                Proceed to Page 5: Idea to Impact →
-              </button>
-            </div>
           </div>
-        )}
 
-        {/* PAGE 5: FROM IDEA TO IMPACT */}
-        {currentPage === 5 && (
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
+        {/* SECTION: FROM IDEA TO IMPACT */}
+        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
             <div className="absolute -top-3 right-12">
               <WashiTape color="#AFC8FF" width="w-28" />
             </div>
@@ -388,22 +298,15 @@ export const ProjectMarketingPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex justify-between pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
-              <button
-                onClick={() => setCurrentPage(4)}
-                className="text-[#182018]/70 hover:text-[#182018] cursor-pointer"
-              >
-                ← Page 4: Strategy & Frameworks
-              </button>
+            <div className="flex justify-end pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
               <Link
                 to="/projects/visual-merchandising"
                 className="bg-[#182018] text-[#F5F5ED] px-5 py-2.5 rounded-xl font-bold hover:bg-[#253325] cursor-pointer flex items-center gap-1.5"
               >
-                <span>Proceed to Project 2: Cover Story →</span>
+                <span>Next Project: Cover Story →</span>
               </Link>
             </div>
           </div>
-        )}
       </div>
     </div>
   );

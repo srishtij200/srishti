@@ -23,6 +23,10 @@ export interface ProjectSummary {
   rotation: string;
   tags: string[];
   summary: string;
+  brief?: string;
+  research?: string;
+  contribution?: string;
+  keyLearnings?: string;
 }
 
 export const portfolioData = {
@@ -124,7 +128,7 @@ export const portfolioData = {
       id: "proj-1",
       slug: "marketing",
       number: "01",
-      title: "Marketing Management — UNIQLO Fragrance",
+      title: "A new dimension of life wear : UNIQLO Fragrance",
       category: "Category Extension & Marketing Strategy",
       discipline: "Brand Strategy, STP, 7Ps, BCG, Packaging & Product Design",
       year: "2025",
@@ -132,7 +136,11 @@ export const portfolioData = {
       accentColor: "#C9FF8C",
       rotation: "rotate-1",
       tags: ["UNIQLO", "Brand Strategy", "STP & 7Ps", "Minimal Packaging", "Market Planning"],
-      summary: "Strategic marketing proposal expanding UNIQLO into accessible premium everyday fragrances. Built on Japanese naming, minimalist packaging, and nature-inspired scents."
+      summary: "Strategic marketing proposal expanding UNIQLO into accessible premium everyday fragrances. Built on Japanese naming, minimalist packaging, and nature-inspired scents.",
+      brief: "Extended UNIQLO's LifeWear philosophy into fragrances inspired by Japanese minimalism.",
+      research: "Studied fragrance trends, consumers and competitors to identify the opportunity.",
+      contribution: "Developed the concept, fragrance names, packaging and visual identity for four scents.",
+      keyLearnings: "Learned to connect creativity, research and strategy with strong brand thinking."
     },
     {
       id: "proj-2",
@@ -146,7 +154,11 @@ export const portfolioData = {
       accentColor: "#F4B6D4",
       rotation: "-rotate-1",
       tags: ["Cover Story", "Spring/Summer", "Future Florals", "Holographic", "VM Principles"],
-      summary: "Spring/Summer VM concept for Cover Story. Combining delicate handcrafted floral structures with holographic sheets, pastels, and symmetrical visual balance."
+      summary: "Spring/Summer VM concept for Cover Story. Combining delicate handcrafted floral structures with holographic sheets, pastels, and symmetrical visual balance.",
+      brief: "Creating a Spring/Summer VM concept, “Future Florals,” bringing florals, femininity and iridescence into a retail experience.",
+      research: "Explored brand identity, seasonal trends, colours and visual inspiration to shape the concept and visual direction.",
+      contribution: "Contributed to concept development, mood boarding, materials and display execution, with a focus on spatial planning and styling.",
+      keyLearnings: "Learned to turn a creative concept into a retail experience, strengthening my skills in VM, spatial planning and teamwork."
     },
     {
       id: "proj-3",
@@ -160,7 +172,11 @@ export const portfolioData = {
       accentColor: "#AFC8FF",
       rotation: "rotate-1",
       tags: ["Fashion Start-Up", "Consumer Pain Points", "MVP", "Lycra × Terry Cotton", "Iteration"],
-      summary: "Developing a fashion venture from identifying real consumer pain points to testing and refining a physical prototype: Structured crop top and relaxed joggers."
+      summary: "Developing a fashion venture from identifying real consumer pain points to testing and refining a physical prototype: Structured crop top and relaxed joggers.",
+      brief: "Created Athira, a modest and versatile athleisure brand designed for gym-to-café-to-airport dressing.",
+      research: "Explored consumer needs, market trends, competitors and fabric functionality to identify the opportunity.",
+      contribution: "Contributed to product development, fabric exploration, prototyping and styling of the collection.",
+      keyLearnings: "Learned to turn consumer insights into a product through research, testing and refinement."
     }
   ],
 
@@ -504,13 +520,13 @@ export const portfolioData = {
 
   // 7. CONTACT & INQUIRIES
   contact: {
-    email: "srishti.jain@studio.com",
-    phone: "+91 98765 43210",
-    location: "Mumbai / New Delhi, India",
+    email: "srishtijain2012@gmail.com",
+    phone: "9350894666",
+    location: "New Delhi, India",
     availability: "Available for Visual Merchandising, E-Commerce Styling, and Fashion Marketing Roles",
     socials: [
       { name: "Instagram", handle: "@srishti.jain", url: "https://instagram.com" },
-      { name: "LinkedIn", handle: "Srishti Jain", url: "https://linkedin.com" },
+      { name: "LinkedIn", handle: "Srishti Jain", url: "https://www.linkedin.com/in/srishti-jain-263074228" },
       { name: "Behance", handle: "Srishti Jain Portfolio", url: "https://behance.net" }
     ]
   }

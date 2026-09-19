@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Sparkles, ArrowRight } from 'lucide-react';
 import { FlowerMark, WashiTape } from '../components/CustomDoodles';
+import { AboutSection } from '../components/home-sections/AboutSection';
+import { SkillsSection } from '../components/home-sections/SkillsSection';
+import { ContactSection } from '../components/home-sections/ContactSection';
 import { portfolioData } from '../data/portfolioData';
 
 interface HomePageProps {
@@ -251,6 +254,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
           </div>
         </div>
       </section>
+
+      {/* 4. ABOUT ME SECTION */}
+      <AboutSection />
+
+      {/* 5. SKILLS SECTION */}
+      <SkillsSection />
+
+      {/* 6. CONTACT ME SECTION */}
+      <ContactSection />
     </div>
   );
 };

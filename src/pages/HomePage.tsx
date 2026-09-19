@@ -90,11 +90,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
               transition={{ duration: 0.5 }}
               className="lg:col-span-7 space-y-6"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[#182018] rounded-full text-xs font-mono-code uppercase tracking-widest text-[#182018] paper-shadow-sm">
-                <FlowerMark size={14} />
-                <span>STUDENT BIOGRAPHY</span>
-              </div>
-
               <div className="font-mono-code text-xs sm:text-sm text-[#182018]/70 flex flex-wrap items-center gap-3">
                 <span className="bg-[#C9FF8C] text-[#182018] px-2.5 py-0.5 rounded border border-[#182018] font-bold">
                   {student.year}

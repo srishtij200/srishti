@@ -62,28 +62,23 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
               </span>
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
-            >
-              <Link
-                to="/projects"
-                className="flex items-center gap-2 bg-[#C9FF8C] text-[#182018] border-[1.5px] border-[#182018] px-7 py-3 rounded-full text-sm uppercase tracking-wider font-bold paper-shadow hover:translate-y-[-2px] hover:paper-shadow-lg transition-all cursor-pointer group"
+            {/* SAVED FOR LATER USE — Explore Selected Works CTA (hidden for now) */}
+            {false && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
               >
-                <Sparkles className="w-4 h-4 text-[#182018] group-hover:rotate-12 transition-transform" />
-                <span>Explore Selected Works</span>
-              </Link>
-
-              <Link
-                to="/internship/experience"
-                className="inline-flex items-center gap-2 text-sm text-[#182018] hover:text-[#182018] border-b border-[#182018] pb-0.5 hover:border-[#182018]/40 transition-colors group cursor-pointer"
-              >
-                <span>View Aadiya Jewels Internship</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
+                <Link
+                  to="/projects"
+                  className="flex items-center gap-2 bg-[#C9FF8C] text-[#182018] border-[1.5px] border-[#182018] px-7 py-3 rounded-full text-sm uppercase tracking-wider font-bold paper-shadow hover:translate-y-[-2px] hover:paper-shadow-lg transition-all cursor-pointer group"
+                >
+                  <Sparkles className="w-4 h-4 text-[#182018] group-hover:rotate-12 transition-transform" />
+                  <span>Explore Selected Works</span>
+                </Link>
+              </motion.div>
+            )}
           </div>
 
           {/* About Biography */}
@@ -138,52 +133,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="lg:col-span-5"
             >
-              <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 paper-shadow-lg relative">
-                <div className="absolute -top-3 left-10">
+              <div className="relative">
+                <div className="absolute -top-3 left-10 z-10">
                   <WashiTape color="#F4B6D4" width="w-24" />
                 </div>
 
-                <div className="font-mono-code text-xs font-bold uppercase text-[#182018]/60 mb-6 pb-2 border-b border-[#182018]/15">
-                  PORTFOLIO SCOPE & EXPERIENCE
+                <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-3 paper-shadow-lg">
+                  <img
+                    src="/src/assets/images/curated_moodboard_art_1789788458713.jpg"
+                    alt="Srishti Jain moodboard — curated creative exploration"
+                    className="w-full h-[420px] lg:h-[480px] object-cover rounded-2xl"
+                  />
                 </div>
 
-                <div className="space-y-6">
-                  <div>
-                    <div className="font-mono-code text-xs font-bold text-[#182018]">
-                      01. AADIYA JEWELS (INTERNSHIP)
-                    </div>
-                    <div className="font-body text-xs text-[#182018]/80 mt-1">
-                      Social Media Content Production (videos & reels) + E-Commerce Shopify management.
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="font-mono-code text-xs font-bold text-[#182018]">
-                      02. UNIQLO FRAGRANCE (PROJECT 1)
-                    </div>
-                    <div className="font-body text-xs text-[#182018]/80 mt-1">
-                      Marketing Management, STP, 7Ps, and 5 Core Design Decisions.
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="font-mono-code text-xs font-bold text-[#182018]">
-                      03. COVER STORY (PROJECT 2)
-                    </div>
-                    <div className="font-body text-xs text-[#182018]/80 mt-1">
-                      Spring/Summer VM Concept, Future Florals, Holographic sheets & 6 VM Principles.
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="font-mono-code text-xs font-bold text-[#182018]">
-                      04. FASHION START-UP (PROJECT 3)
-                    </div>
-                    <div className="font-body text-xs text-[#182018]/80 mt-1">
-                      Survey research, Lycra & Terry cotton fabric testing, and physical MVP iteration.
-                    </div>
-                  </div>
-                </div>
+                <span className="absolute -bottom-3 right-8 bg-[#182018] text-[#F5F5ED] font-mono-code text-xs px-3 py-1.5 rounded-full paper-shadow-sm uppercase tracking-wider">
+                  Creative Producer
+                </span>
               </div>
             </motion.div>
           </div>

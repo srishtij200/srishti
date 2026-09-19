@@ -14,6 +14,12 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
   const { student, selectedProjects, internship } = portfolioData;
 
+  const heroSpecializations = [
+    'Visual Merchandising & Window Concepts',
+    'Marketing Strategy (STP, 7Ps)',
+    'E-Commerce & Shopify Management'
+  ];
+
   return (
     <div className="bg-[#F5F5ED]">
       {/* 1. HERO / ABOUT SECTION */}
@@ -87,7 +93,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="mt-6 space-y-6"
+                className="mt-3 space-y-5"
               >
                 <div className="font-mono-code text-xs sm:text-sm text-[#182018]/70 flex flex-wrap items-center gap-3">
                   <span className="bg-[#C9FF8C] text-[#182018] px-2.5 py-0.5 rounded border border-[#182018] font-bold">
@@ -100,19 +106,21 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                   </span>
                 </div>
 
-                <p className="font-serif-display text-2xl sm:text-3xl text-[#182018] italic leading-snug">
-                  "{student.statement}"
-                </p>
-
                 <div className="space-y-4 font-body text-base text-[#182018]/85 leading-relaxed">
-                  <p>{student.secondaryStatement}</p>
                   <p>
-                    My foundation integrates hands-on making with strategic rigor: from conducting consumer interviews and testing fabric breathability, to building 1:1 scale floral window displays and executing daily e-commerce operations.
+                    I&apos;m a Fashion & Lifestyle Business Management student with a background in Business Administration, passionate about the space where creativity meets strategy. My academic journey has helped me build a strong understanding of business, while my interest in fashion has shaped the way I look at brands, trends, and consumer experiences.
+                  </p>
+                  <p>
+                    I enjoy exploring branding, marketing, visual merchandising, trend forecasting, and product development, bringing a fresh and visual perspective to every idea. I&apos;m an observant and emotionally intuitive person who finds inspiration in people, places, and new experiences. I love travelling, discovering new perspectives, and constantly learning along the way.
                   </p>
                 </div>
 
+                <p className="font-serif-display text-2xl sm:text-2xl text-[#182018] italic leading-snug pt-1">
+                  Creative at heart. Business by mindset. Always curious.
+                </p>
+
                 <div className="flex flex-wrap gap-2">
-                  {student.specializations.map((spec, i) => (
+                  {heroSpecializations.map((spec, i) => (
                     <span key={i} className="font-mono-code text-xs px-3 py-1 bg-[#FFFFFF] border border-[#182018]/30 rounded-lg text-[#182018]">
                       ✦ {spec}
                     </span>
@@ -135,8 +143,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
 
                 <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-3 paper-shadow-lg">
                   <img
-                    src="/src/assets/images/curated_moodboard_art_1789788458713.jpg"
-                    alt="Srishti Jain moodboard — curated creative exploration"
+                    src="/portfolio-assets/IMG_2187.jpg"
+                    alt="Srishti Jain — curated creative exploration"
                     className="w-full h-[420px] lg:h-[560px] object-cover rounded-2xl"
                   />
                 </div>

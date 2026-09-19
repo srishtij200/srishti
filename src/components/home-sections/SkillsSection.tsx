@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { FlowerMark, WashiTape } from '../CustomDoodles';
 import { portfolioData } from '../../data/portfolioData';
 
@@ -49,7 +49,7 @@ export const SkillsSection: React.FC = () => {
 
         {/* 4 Disciplinary Categories */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {skills.categories.map((cat, idx) => (
+          {skills.categories.slice(0, 1).map((cat, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 15 }}
@@ -88,49 +88,6 @@ export const SkillsSection: React.FC = () => {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* Tools & Practices */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl p-6 paper-shadow"
-          >
-            <div className="font-mono-code text-xs font-bold uppercase text-[#182018] mb-4 pb-2 border-b border-[#182018]/15">
-              Digital Tools & Software
-            </div>
-            <div className="space-y-2 font-mono-code text-xs text-[#182018]/80">
-              {skills.softwareProficiency.map((sw, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-700 shrink-0" />
-                  <span>{sw}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-            className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl p-6 paper-shadow"
-          >
-            <div className="font-mono-code text-xs font-bold uppercase text-[#182018] mb-4 pb-2 border-b border-[#182018]/15">
-              Studio & Retail Practices
-            </div>
-            <div className="space-y-2 font-mono-code text-xs text-[#182018]/80">
-              {skills.studioPractices.map((prac, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
-                  <span>{prac}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

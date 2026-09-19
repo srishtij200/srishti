@@ -87,7 +87,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="mt-10 pt-10 border-t border-[#182018]/10 space-y-6"
+                className="mt-6 space-y-6"
               >
                 <div className="font-mono-code text-xs sm:text-sm text-[#182018]/70 flex flex-wrap items-center gap-3">
                   <span className="bg-[#C9FF8C] text-[#182018] px-2.5 py-0.5 rounded border border-[#182018] font-bold">

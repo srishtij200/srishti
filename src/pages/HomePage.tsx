@@ -20,6 +20,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
     'E-Commerce & Shopify Management'
   ];
 
+  const homeProjectTitles: Record<string, string> = {
+    'proj-1': 'A new dimension of life wear : UNIQLO Fragrances',
+    'proj-2': 'Future Florals × Cover Story',
+    'proj-3': 'BRAND CONCEPT & DEVELOPMENT — Athera — Athleisure Wear Brand'
+  };
+
   return (
     <div className="bg-[#F5F5ED]">
       {/* 1. HERO / ABOUT SECTION */}
@@ -202,7 +208,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                   </span>
 
                   <h3 className="font-serif-display text-2xl text-[#182018] mb-3 leading-snug group-hover:underline decoration-[#182018] underline-offset-4">
-                    {proj.title}
+                    {homeProjectTitles[proj.id] ?? proj.title}
                   </h3>
 
                   <p className="text-sm text-[#182018]/80 leading-relaxed mb-6">

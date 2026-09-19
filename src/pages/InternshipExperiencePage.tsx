@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Video, ShoppingBag, Sparkles, CheckCircle2, ArrowRight, Layers, Tag, Camera, Play, Image as ImageIcon } from 'lucide-react';
@@ -7,21 +7,10 @@ import { portfolioData } from '../data/portfolioData';
 
 export const InternshipExperiencePage: React.FC = () => {
   const { internship } = portfolioData;
-  const [activeTab, setActiveTab] = useState<'social' | 'ecommerce'>('social');
 
   return (
     <div className="bg-[#F5F5ED] min-h-screen py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Breadcrumb */}
-        <div className="flex items-center justify-between font-mono-code text-xs text-[#182018]/50 pb-4 border-b border-[#182018]/10 mb-12">
-          <div className="flex items-center gap-2">
-            <Link to="/" className="hover:text-[#182018]">HOME</Link>
-            <span>/</span>
-            <span className="text-[#182018] font-semibold">INTERNSHIP</span>
-          </div>
-          <span>AADIYA JEWELS // 2-PAGE OVERVIEW</span>
-        </div>
-
         {/* Company Header */}
         <div className="max-w-4xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[#182018] rounded-full text-xs font-mono-code uppercase tracking-widest text-[#182018] mb-4 paper-shadow-sm">
@@ -41,54 +30,23 @@ export const InternshipExperiencePage: React.FC = () => {
             {internship.overview}
           </p>
 
-          {/* Page 1 vs Page 2 Switcher Tabs */}
-          <div className="flex flex-wrap items-center gap-3 pt-2 font-mono-code text-xs">
-            <button
-              onClick={() => setActiveTab('social')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-                activeTab === 'social'
-                  ? 'bg-[#182018] text-[#F5F5ED] border-[#182018] font-bold paper-shadow-sm'
-                  : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/25 hover:border-[#182018]'
-              }`}
-            >
-              <Video className="w-3.5 h-3.5" />
-              <span>Page 1 – Social Media</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('ecommerce')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-                activeTab === 'ecommerce'
-                  ? 'bg-[#C9FF8C] text-[#182018] border-[#182018] font-bold paper-shadow-sm'
-                  : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/25 hover:border-[#182018]'
-              }`}
-            >
-              <ShoppingBag className="w-3.5 h-3.5" />
-              <span>Page 2 – E-Commerce & My Learning</span>
-            </button>
-
-            <Link
-              to="/internship/learnings"
-              className="ml-auto font-mono-code text-xs text-[#182018] hover:underline underline-offset-4 flex items-center gap-1"
-            >
-              <span>View Learning Outcomes Summary</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
         </div>
 
-        {/* TAB 1: PAGE 1 — SOCIAL MEDIA */}
-        {activeTab === 'social' && (
-          <div className="space-y-12 mb-16">
+        {/* SECTION 1: PAGE 1 — SOCIAL MEDIA */}
+        <section id="social-media" className="scroll-mt-24 mb-20">
+          <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#182018]/15">
+            <Video className="w-5 h-5 text-[#182018]" />
+            <h2 className="font-serif-display text-2xl sm:text-3xl text-[#182018]">
+              Social Media
+            </h2>
+          </div>
+          <div className="space-y-12">
             <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-12 paper-shadow-lg relative">
               <div className="absolute -top-3 right-12">
                 <WashiTape color="#F4B6D4" width="w-28" />
               </div>
 
               <div className="max-w-3xl mb-8">
-                <span className="font-mono-code text-xs font-bold text-[#182018]/60 uppercase tracking-widest block mb-2">
-                  {internship.page1SocialMedia.title}
-                </span>
                 <h2 className="font-serif-display text-3xl sm:text-4xl text-[#182018] mb-4">
                   Concept to Live Content Production
                 </h2>
@@ -222,22 +180,25 @@ export const InternshipExperiencePage: React.FC = () => {
               </div>
             </div>
           </div>
-        )}
+        </section>
 
-        {/* TAB 2: PAGE 2 — E-COMMERCE */}
-        {activeTab === 'ecommerce' && (
-          <div className="space-y-12 mb-16">
+        {/* SECTION 2: PAGE 2 — E-COMMERCE */}
+        <section id="ecommerce" className="scroll-mt-24 mb-20">
+          <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[#182018]/15">
+            <ShoppingBag className="w-5 h-5 text-[#182018]" />
+            <h2 className="font-serif-display text-2xl sm:text-3xl text-[#182018]">
+              E-Commerce &amp; My Learning
+            </h2>
+          </div>
+          <div className="space-y-12">
             <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-12 paper-shadow-lg relative">
               <div className="absolute -top-3 right-12">
                 <WashiTape color="#C9FF8C" width="w-28" />
               </div>
 
               <div className="max-w-3xl mb-8">
-                <span className="font-mono-code text-xs font-bold text-[#182018]/60 uppercase tracking-widest block mb-2">
-                  {internship.page2Ecommerce.title}
-                </span>
                 <h2 className="font-serif-display text-3xl sm:text-4xl text-[#182018] mb-4">
-                  Online Storefront & Website Banners
+                  From Product to Digital Shelf
                 </h2>
                 <div className="p-4 bg-[#F5F5ED] rounded-2xl border border-[#182018]/20 font-body text-sm sm:text-base text-[#182018]/85 leading-relaxed">
                   <strong>Short introduction:</strong> {internship.page2Ecommerce.intro}
@@ -337,10 +298,11 @@ export const InternshipExperiencePage: React.FC = () => {
               </div>
             </div>
           </div>
-        )}
+        </section>
 
-        {/* 3. LEARNING OUTCOMES (Consolidated) */}
-        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-12 paper-shadow-lg mb-16">
+        {/* SECTION 3: LEARNING OUTCOMES (Consolidated) */}
+        <section id="learning-outcomes" className="scroll-mt-24 mb-16">
+          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-12 paper-shadow-lg">
           <div className="max-w-2xl mb-8">
             <span className="font-mono-code text-xs font-bold text-[#182018]/60 uppercase tracking-widest block mb-2">
               SYNTHESIS
@@ -362,7 +324,8 @@ export const InternshipExperiencePage: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
+          </div>
+        </section>
 
         {/* Bottom Navigation */}
         <div className="flex flex-col sm:flex-row items-center justify-between p-8 bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl gap-4">

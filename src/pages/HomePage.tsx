@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Sparkles, ArrowRight, MapPin } from 'lucide-react';
-import { FlowerMark, WashiTape } from '../components/CustomDoodles';
+import { Sparkles, ArrowRight } from 'lucide-react';
+import { WashiTape } from '../components/CustomDoodles';
 import { SkillsSection } from '../components/home-sections/SkillsSection';
 import { ContactSection } from '../components/home-sections/ContactSection';
 import { portfolioData } from '../data/portfolioData';
@@ -12,18 +12,23 @@ interface HomePageProps {
 }
 
 export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
-  const { student, selectedProjects, internship } = portfolioData;
+  const { selectedProjects, internship } = portfolioData;
 
   const heroSpecializations = [
-    'Visual Merchandising & Window Concepts',
-    'Marketing Strategy (STP, 7Ps)',
-    'E-Commerce & Shopify Management'
+    'Branding',
+    'Marketing',
+    'Visual Merchandising',
+    'Trend Forecasting'
   ];
 
   const homeProjectTitles: Record<string, string> = {
     'proj-1': 'A new dimension of life wear : UNIQLO Fragrances',
     'proj-2': 'Future Florals × Cover Story',
     'proj-3': 'BRAND CONCEPT & DEVELOPMENT — Athera — Athleisure Wear Brand'
+  };
+
+  const homeProjectCategories: Record<string, string> = {
+    'proj-3': 'Brand Concept & Development'
   };
 
   return (
@@ -37,16 +42,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
           {/* Combined Hero + About: Side by Side */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-7 text-center lg:text-left flex flex-col relative z-10">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FFFFFF] border border-[#182018] rounded-full text-xs uppercase tracking-wider text-[#182018] mb-6 paper-shadow-sm self-center lg:self-start"
-              >
-                <FlowerMark size={14} />
-                <span>{student.degree}</span>
-              </motion.div>
-
               <motion.h1
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -61,19 +56,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                   </span>
                 </span>
               </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="font-serif-display text-xl sm:text-2xl text-[#182018] italic leading-snug mb-9"
-              >
-                From raw creative concepts to{' '}
-                <span className="relative inline-block whitespace-nowrap">
-                  <span className="absolute inset-0 -inset-x-1.5 bottom-0.5 bg-[#C9FF8C] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
-                  <span className="relative z-10">impactful execution.</span>
-                </span>
-              </motion.p>
 
               {/* SAVED FOR LATER USE — Explore Selected Works CTA (hidden for now) */}
               {false && (
@@ -101,17 +83,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 transition={{ duration: 0.5 }}
                 className="mt-3 space-y-5"
               >
-                <div className="font-mono-code text-xs sm:text-sm text-[#182018]/70 flex flex-wrap items-center gap-3">
-                  <span className="bg-[#C9FF8C] text-[#182018] px-2.5 py-0.5 rounded border border-[#182018] font-bold">
-                    {student.year}
-                  </span>
-                  <span>•</span>
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5" />
-                    {student.location}
-                  </span>
-                </div>
-
                 <div className="space-y-4 font-body text-base text-[#182018]/85 leading-relaxed">
                   <p>
                     I&apos;m a Fashion & Lifestyle Business Management student with a background in Business Administration, passionate about the space where creativity meets strategy. My academic journey has helped me build a strong understanding of business, while my interest in fashion has shaped the way I look at brands, trends, and consumer experiences.
@@ -204,7 +175,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                   </div>
 
                   <span className="text-xs uppercase px-2.5 py-0.5 rounded-full border border-[#182018]/30 inline-block mb-3 bg-[#FFFFFF]">
-                    {proj.category}
+                    {homeProjectCategories[proj.id] ?? proj.category}
                   </span>
 
                   <h3 className="font-serif-display text-2xl text-[#182018] mb-3 leading-snug group-hover:underline decoration-[#182018] underline-offset-4">
@@ -267,21 +238,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 </div>
               </div>
 
-              <div className="lg:col-span-4 flex flex-col justify-center space-y-3">
+              <div className="lg:col-span-4 flex items-center justify-center">
                 <Link
                   to="/internship/experience"
-                  className="w-full flex items-center justify-between py-3 px-5 bg-[#182018] text-[#F5F5ED] rounded-xl text-xs uppercase tracking-wider font-bold hover:bg-[#253325] transition-colors"
+                  aria-label="View internship experience"
+                  className="group flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#C9FF8C] text-[#182018] border-[1.5px] border-[#182018] hover:bg-[#182018] hover:text-[#C9FF8C] transition-colors"
                 >
-                  <span>Page 1: Social Media</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-
-                <Link
-                  to="/internship/experience"
-                  className="w-full flex items-center justify-between py-3 px-5 bg-[#FFFFFF] text-[#182018] border border-[#182018] rounded-xl text-xs uppercase tracking-wider font-bold hover:bg-[#F5F5ED] transition-colors"
-                >
-                  <span>Page 2: E-Commerce & Learnings</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-10 h-10 sm:w-12 sm:h-12 group-hover:translate-x-1.5 transition-transform" />
                 </Link>
               </div>
             </div>

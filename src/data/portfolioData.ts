@@ -75,7 +75,7 @@ export const portfolioData = {
 
     page2Ecommerce: {
       title: "PAGE 2 — E-COMMERCE",
-      intro: "Alongside social media, I worked on the brand’s e-commerce presence, contributing to both website visuals and product listings. This gave me practical exposure to how products are presented, organised and managed in an online shopping environment.",
+      intro: "Alongside social media, worked on the brand’s e-commerce presence by creating website banners, uploading and organising products on Shopify, and developing digital product catalogues with images, descriptions and tags.",
       whatIWorkedOn: [
         { id: "01", title: "Website Banners", desc: "Designing desktop and mobile homepage hero banners and seasonal collection promotional graphics." },
         { id: "02", title: "Product Listing", desc: "Setting up new jewellery pieces with high-res images, pricing, metal specifications, and SKU tags." },

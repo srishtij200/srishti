@@ -22,104 +22,104 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
         className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden bg-graph-paper border-b border-[#182018]/15"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          {/* Centered Hero Headline */}
-          <div className="text-center max-w-4xl mx-auto flex flex-col items-center relative z-20">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FFFFFF] border border-[#182018] rounded-full text-xs uppercase tracking-wider text-[#182018] mb-6 paper-shadow-sm"
-            >
-              <FlowerMark size={14} />
-              <span>{student.degree}</span>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-serif-display text-5xl sm:text-7xl lg:text-[82px] leading-[1.05] tracking-tight text-[#182018] max-w-4xl mb-6"
-            >
-              Srishti&apos;s{' '}
-              <span className="relative inline-block whitespace-nowrap">
-                <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[#F4B6D4] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
-                <span className="relative z-10 italic font-serif-display font-normal">
-                  Portfolio
-                </span>
-              </span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-serif-display text-xl sm:text-2xl text-[#182018] italic leading-snug mb-9"
-            >
-              From raw creative concepts to{' '}
-              <span className="relative inline-block whitespace-nowrap">
-                <span className="absolute inset-0 -inset-x-1.5 bottom-0.5 bg-[#C9FF8C] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
-                <span className="relative z-10">impactful execution.</span>
-              </span>
-            </motion.p>
-
-            {/* SAVED FOR LATER USE — Explore Selected Works CTA (hidden for now) */}
-            {false && (
+          {/* Combined Hero + About: Side by Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-7 text-center lg:text-left flex flex-col relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FFFFFF] border border-[#182018] rounded-full text-xs uppercase tracking-wider text-[#182018] mb-6 paper-shadow-sm self-center lg:self-start"
               >
-                <Link
-                  to="/projects"
-                  className="flex items-center gap-2 bg-[#C9FF8C] text-[#182018] border-[1.5px] border-[#182018] px-7 py-3 rounded-full text-sm uppercase tracking-wider font-bold paper-shadow hover:translate-y-[-2px] hover:paper-shadow-lg transition-all cursor-pointer group"
-                >
-                  <Sparkles className="w-4 h-4 text-[#182018] group-hover:rotate-12 transition-transform" />
-                  <span>Explore Selected Works</span>
-                </Link>
+                <FlowerMark size={14} />
+                <span>{student.degree}</span>
               </motion.div>
-            )}
-          </div>
 
-          {/* About Biography */}
-          <div className="mt-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="lg:col-span-7 space-y-6"
-            >
-              <div className="font-mono-code text-xs sm:text-sm text-[#182018]/70 flex flex-wrap items-center gap-3">
-                <span className="bg-[#C9FF8C] text-[#182018] px-2.5 py-0.5 rounded border border-[#182018] font-bold">
-                  {student.year}
-                </span>
-                <span>•</span>
-                <span className="flex items-center gap-1">
-                  <MapPin className="w-3.5 h-3.5" />
-                  {student.location}
-                </span>
-              </div>
-
-              <p className="font-serif-display text-2xl sm:text-3xl text-[#182018] italic leading-snug">
-                "{student.statement}"
-              </p>
-
-              <div className="space-y-4 font-body text-base text-[#182018]/85 leading-relaxed">
-                <p>{student.secondaryStatement}</p>
-                <p>
-                  My foundation integrates hands-on making with strategic rigor: from conducting consumer interviews and testing fabric breathability, to building 1:1 scale floral window displays and executing daily e-commerce operations.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {student.specializations.map((spec, i) => (
-                  <span key={i} className="font-mono-code text-xs px-3 py-1 bg-[#FFFFFF] border border-[#182018]/30 rounded-lg text-[#182018]">
-                    ✦ {spec}
+              <motion.h1
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="font-serif-display text-5xl sm:text-7xl lg:text-[76px] leading-[1.05] tracking-tight text-[#182018] max-w-4xl mb-6"
+              >
+                Srishti&apos;s{' '}
+                <span className="relative inline-block whitespace-nowrap">
+                  <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[#F4B6D4] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
+                  <span className="relative z-10 italic font-serif-display font-normal">
+                    Portfolio
                   </span>
-                ))}
-              </div>
-            </motion.div>
+                </span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="font-serif-display text-xl sm:text-2xl text-[#182018] italic leading-snug mb-9"
+              >
+                From raw creative concepts to{' '}
+                <span className="relative inline-block whitespace-nowrap">
+                  <span className="absolute inset-0 -inset-x-1.5 bottom-0.5 bg-[#C9FF8C] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
+                  <span className="relative z-10">impactful execution.</span>
+                </span>
+              </motion.p>
+
+              {/* SAVED FOR LATER USE — Explore Selected Works CTA (hidden for now) */}
+              {false && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="flex flex-col sm:flex-row items-center lg:items-start gap-4 sm:gap-6"
+                >
+                  <Link
+                    to="/projects"
+                    className="flex items-center gap-2 bg-[#C9FF8C] text-[#182018] border-[1.5px] border-[#182018] px-7 py-3 rounded-full text-sm uppercase tracking-wider font-bold paper-shadow hover:translate-y-[-2px] hover:paper-shadow-lg transition-all cursor-pointer group"
+                  >
+                    <Sparkles className="w-4 h-4 text-[#182018] group-hover:rotate-12 transition-transform" />
+                    <span>Explore Selected Works</span>
+                  </Link>
+                </motion.div>
+              )}
+
+              {/* About Biography */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="mt-10 pt-10 border-t border-[#182018]/10 space-y-6"
+              >
+                <div className="font-mono-code text-xs sm:text-sm text-[#182018]/70 flex flex-wrap items-center gap-3">
+                  <span className="bg-[#C9FF8C] text-[#182018] px-2.5 py-0.5 rounded border border-[#182018] font-bold">
+                    {student.year}
+                  </span>
+                  <span>•</span>
+                  <span className="flex items-center gap-1">
+                    <MapPin className="w-3.5 h-3.5" />
+                    {student.location}
+                  </span>
+                </div>
+
+                <p className="font-serif-display text-2xl sm:text-3xl text-[#182018] italic leading-snug">
+                  "{student.statement}"
+                </p>
+
+                <div className="space-y-4 font-body text-base text-[#182018]/85 leading-relaxed">
+                  <p>{student.secondaryStatement}</p>
+                  <p>
+                    My foundation integrates hands-on making with strategic rigor: from conducting consumer interviews and testing fabric breathability, to building 1:1 scale floral window displays and executing daily e-commerce operations.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {student.specializations.map((spec, i) => (
+                    <span key={i} className="font-mono-code text-xs px-3 py-1 bg-[#FFFFFF] border border-[#182018]/30 rounded-lg text-[#182018]">
+                      ✦ {spec}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -137,7 +137,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                   <img
                     src="/src/assets/images/curated_moodboard_art_1789788458713.jpg"
                     alt="Srishti Jain moodboard — curated creative exploration"
-                    className="w-full h-[420px] lg:h-[480px] object-cover rounded-2xl"
+                    className="w-full h-[420px] lg:h-[560px] object-cover rounded-2xl"
                   />
                 </div>
 

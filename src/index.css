@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ink: #182018;
+    --paper: #F5F5ED;
+    --soft-green: #C9FF8C;
+    --soft-pink: #F4B6D4;
+    --soft-blue: #AFC8FF;
+    --soft-yellow: #F8DD65;
+    --lavender: #C7B8FF;
+    --muted-red: #E88C7A;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.font-serif-display {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-display {
+  font-family: 'DM Serif Display', Georgia, serif;
+}
+
+.font-mono-code {
+  font-family: 'Space Mono', monospace;
+}
+
+.font-hand {
+  font-family: 'Caveat', cursive;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Graph paper texture */
+.bg-graph-paper {
+  background-size: 26px 26px;
+  background-image: 
+    linear-gradient(to right, rgba(24, 32, 24, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(24, 32, 24, 0.04) 1px, transparent 1px);
+}
+
+.bg-dot-paper {
+  background-size: 20px 20px;
+  background-image: radial-gradient(rgba(24, 32, 24, 0.09) 1px, transparent 1px);
+}
+
+/* Offset paper shadows */
+.paper-shadow-sm {
+  box-shadow: 2px 2px 0px #182018;
+}
+
+.paper-shadow {
+  box-shadow: 3.5px 3.5px 0px #182018;
+}
+
+.paper-shadow-lg {
+  box-shadow: 6px 6px 0px #182018;
+}
+
+.paper-shadow-hover {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paper-shadow-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #182018;
+}
+
+.paper-shadow-hover:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #182018;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F5ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8d8cc;
+  border: 1.5px solid #182018;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c0c0b2;
+}

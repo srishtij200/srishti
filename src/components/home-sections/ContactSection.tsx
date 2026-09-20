@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Mail, MapPin, Phone, ExternalLink, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { FlowerMark, WashiTape } from '../CustomDoodles';
 import { portfolioData } from '../../data/portfolioData';
 
@@ -23,33 +22,20 @@ export const ContactSection: React.FC = () => {
               <FlowerMark className="w-3.5 h-3.5 text-[#182018]" />
               <span>CONTACT ME</span>
             </div>
-            <h2 className="font-serif-display text-3xl sm:text-5xl text-[#182018]">
-              Contact & Inquiries
+            <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[#182018]">
+              Contact &{' '}
+              <span className="relative inline-block whitespace-nowrap">
+                <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[#C9FF8C] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
+                <span className="relative z-10 italic font-serif-display font-normal">
+                  Inquiries
+                </span>
+              </span>
             </h2>
           </motion.div>
-
-          <Link
-            to="/contact"
-            className="mt-4 sm:mt-0 text-sm text-[#182018] hover:underline underline-offset-4 decoration-[#C9FF8C] decoration-2 flex items-center gap-1.5"
-          >
-            <span>Full Contact Page</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
         </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="font-body text-base text-[#182018]/85 leading-relaxed max-w-3xl mb-14"
-        >
-          Currently accepting opportunities in visual merchandising, fashion marketing, e-commerce styling, and creative direction. Feel free to send a note or request complete project catalogs.
-        </motion.p>
-
+        {/* Contact Information Boxes */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-          {/* Contact Information Boxes */}
-          <div className="contents">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +126,6 @@ export const ContactSection: React.FC = () => {
             </motion.div>
           </div>
         </div>
-      </div>
     </section>
   );
 };

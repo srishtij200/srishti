@@ -463,58 +463,35 @@ export const portfolioData = {
   skills: {
     categories: [
       {
-        name: "Marketing & Strategy",
-        tag: "COMMERCIAL",
+        name: "Business Skills",
+        tag: "BUSINESS & STRATEGY",
         color: "#C9FF8C",
         skills: [
-          { name: "Strategic Frameworks", proficiency: "Advanced", note: "STP, 7Ps, BCG Matrix, Brand Expansion" },
-          { name: "Market & Consumer Research", proficiency: "Expert", note: "Ethnography, surveys, competitor benchmarking" },
-          { name: "Creative & Brand Thinking", proficiency: "Advanced", note: "Translating brand DNA into new product categories" }
+          "Market Research",
+          "Consumer Behaviour",
+          "Brand Management",
+          "Fashion Marketing",
+          "Retail & Merchandising",
+          "Trend Analysis",
+          "Product Development",
+          "Visual Merchandising",
+          "Content Strategy",
+          "Data & Market Analysis"
         ]
       },
       {
-        name: "Visual Merchandising",
-        tag: "SPATIAL & IN-STORE",
-        color: "#F4B6D4",
-        skills: [
-          { name: "VM Principles", proficiency: "Expert", note: "Balance, Scale, Focal Point, Rhythm, Lighting" },
-          { name: "Concept Development", proficiency: "Advanced", note: "Translating seasonal briefs into window narratives" },
-          { name: "Hands-on Making & Installation", proficiency: "Advanced", note: "Holographic sheets, wire framing, draping, prop making" }
-        ]
-      },
-      {
-        name: "Social Media & Content",
-        tag: "PRODUCTION",
-        color: "#FFF3B3",
-        skills: [
-          { name: "Content Creation & Planning", proficiency: "Advanced", note: "End-to-end concept, calendars, and campaign delivery" },
-          { name: "Photography & Videography", proficiency: "Advanced", note: "Product styling, framing, shooting jewellery on-set" },
-          { name: "Video Editing & Publishing", proficiency: "Advanced", note: "Pacing, reels, audio synchronization, captions" }
-        ]
-      },
-      {
-        name: "E-Commerce & Digital",
-        tag: "PLATFORMS",
+        name: "Digital Skills",
+        tag: "TOOLS & PLATFORMS",
         color: "#AFC8FF",
         skills: [
-          { name: "Shopify Store Management", proficiency: "Advanced", note: "Product listing, inventory attributes, collections" },
-          { name: "Digital Merchandising", proficiency: "Advanced", note: "Website hero banners, catalogue taxonomy, UI flow" },
-          { name: "Product Presentation", proficiency: "Expert", note: "Visual consistency, high-res detailing, buyer clarity" }
+          "MS Office (Word, Excel, PowerPoint)",
+          "Canva",
+          "Shopify",
+          "ERP",
+          "AI Tools (ChatGPT, Claude)",
+          "Social Media Content Creation"
         ]
       }
-    ],
-    softwareProficiency: [
-      "Shopify E-Commerce",
-      "Adobe Premiere Pro / CapCut",
-      "Adobe Photoshop / Illustrator",
-      "Canva & Digital Layouts",
-      "Content Calendar Tools"
-    ],
-    studioPractices: [
-      "Rapid Physical Prototyping (MVP)",
-      "Window Display Rigging & Assembly",
-      "On-Floor Retail Merchandising",
-      "Consumer Feedback Iteration Loops"
     ]
   },
 

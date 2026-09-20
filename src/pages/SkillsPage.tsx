@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Sparkles, ArrowRight, Layers, ShoppingBag, Eye, Megaphone, Video, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { FlowerMark, WashiTape } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
@@ -37,7 +37,7 @@ export const SkillsPage: React.FC = () => {
           </p>
         </div>
 
-        {/* 4 DISCIPLINARY CATEGORIES */}
+        {/* SKILL GROUPS */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {skills.categories.map((cat, idx) => (
             <div
@@ -57,54 +57,18 @@ export const SkillsPage: React.FC = () => {
                 {cat.name}
               </h2>
 
-              <div className="space-y-4">
-                {cat.skills.map((s, sIdx) => (
-                  <div key={sIdx} className="p-3.5 bg-[#F5F5ED] rounded-xl border border-[#182018]/15">
-                    <div className="flex justify-between items-baseline mb-1">
-                      <span className="font-mono-code text-xs font-bold text-[#182018]">{s.name}</span>
-                      <span className="font-mono-code text-[10px] text-emerald-800 bg-[#C9FF8C] px-1.5 py-0.5 rounded border border-[#182018]/20 font-bold">
-                        {s.proficiency}
-                      </span>
-                    </div>
-                    <div className="font-body text-xs text-[#182018]/70">
-                      {s.note}
-                    </div>
-                  </div>
+              <div className="flex flex-wrap gap-2.5">
+                {cat.skills.map((skill, sIdx) => (
+                  <span
+                    key={sIdx}
+                    className="px-3.5 py-2 bg-[#F5F5ED] rounded-xl border border-[#182018]/15 font-mono-code text-xs font-bold text-[#182018]"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
           ))}
-        </div>
-
-        {/* DIGITAL TOOLS & PRACTICES */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl p-6 paper-shadow">
-            <div className="font-mono-code text-xs font-bold uppercase text-[#182018] mb-4 pb-2 border-b border-[#182018]/15">
-              Digital Tools & Software
-            </div>
-            <div className="space-y-2 font-mono-code text-xs text-[#182018]/80">
-              {skills.softwareProficiency.map((sw, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-700 shrink-0" />
-                  <span>{sw}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl p-6 paper-shadow">
-            <div className="font-mono-code text-xs font-bold uppercase text-[#182018] mb-4 pb-2 border-b border-[#182018]/15">
-              Studio & Retail Practices
-            </div>
-            <div className="space-y-2 font-mono-code text-xs text-[#182018]/80">
-              {skills.studioPractices.map((prac, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
-                  <span>{prac}</span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Bottom Banner */}

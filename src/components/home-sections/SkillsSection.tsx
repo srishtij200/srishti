@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
 import { FlowerMark, WashiTape } from '../CustomDoodles';
 import { portfolioData } from '../../data/portfolioData';
 
@@ -23,33 +21,21 @@ export const SkillsSection: React.FC = () => {
               <FlowerMark className="w-3.5 h-3.5 text-[#182018]" />
               <span>SKILLS</span>
             </div>
-            <h2 className="font-serif-display text-3xl sm:text-5xl text-[#182018]">
-              Skills & Applied Disciplines
+            <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[#182018]">
+              Skills &{' '}
+              <span className="relative inline-block whitespace-nowrap">
+                <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[#AFC8FF] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
+                <span className="relative z-10 italic font-serif-display font-normal">
+                  Applied Disciplines
+                </span>
+              </span>
             </h2>
           </motion.div>
-
-          <Link
-            to="/skills"
-            className="mt-4 sm:mt-0 text-sm text-[#182018] hover:underline underline-offset-4 decoration-[#AFC8FF] decoration-2 flex items-center gap-1.5"
-          >
-            <span>Full Skills Page</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
         </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="font-body text-base text-[#182018]/85 leading-relaxed max-w-3xl mb-12"
-        >
-          A versatile skill set developed across real-world jewellery e-commerce at Aadiya Jewels, marketing frameworks for UNIQLO, in-store window fabrication for Cover Story, and user research for an athleisure startup.
-        </motion.p>
-
-        {/* Discipline 01 */}
-        <div className="grid grid-cols-1 gap-8 mb-12">
-          {skills.categories.slice(0, 1).map((cat, idx) => (
+        {/* SKILL GROUPS */}
+        <div className="grid grid-cols-1 gap-8">
+          {skills.categories.map((cat, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 15 }}
@@ -64,9 +50,8 @@ export const SkillsSection: React.FC = () => {
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                 <div className="lg:col-span-4">
-                  <div className="flex items-center justify-between font-mono-code text-xs text-[#182018]/50 mb-4 pb-2 border-b border-[#182018]/10">
-                    <span className="font-bold text-[#182018]">DISCIPLINE 0{idx + 1}</span>
-                    <span className="bg-[#FFFFFF] px-2 py-0.5 rounded border border-[#182018]/20">{cat.tag}</span>
+                  <div className="mb-4 pb-2 border-b border-[#182018]/10">
+                    <span className="bg-[#FFFFFF] px-2 py-0.5 rounded border border-[#182018]/20 font-mono-code text-xs font-bold text-[#182018]">{cat.tag}</span>
                   </div>
 
                   <h3 className="font-serif-display text-3xl sm:text-4xl text-[#182018] mb-4 leading-tight">
@@ -74,26 +59,20 @@ export const SkillsSection: React.FC = () => {
                   </h3>
 
                   <p className="font-body text-sm text-[#182018]/75 leading-relaxed">
-                    Turning brand thinking into market-ready strategy — from consumer insight and positioning to category expansion.
+                    {idx === 0
+                      ? "Strategy, analysis, and category thinking applied across marketing, retail, and product."
+                      : "The tools and platforms behind turning concepts into published, engaging content."}
                   </p>
                 </div>
 
-                <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-5">
-                  {cat.skills.map((s, sIdx) => (
-                    <div
+                <div className="lg:col-span-8 flex flex-wrap gap-3">
+                  {cat.skills.map((skill, sIdx) => (
+                    <span
                       key={sIdx}
-                      className="p-5 bg-[#FFFFFF] rounded-2xl border border-[#182018]/15 flex flex-col h-full"
+                      className="px-4 py-2.5 bg-[#FFFFFF] rounded-xl border border-[#182018]/15 font-mono-code text-xs sm:text-sm font-bold text-[#182018]"
                     >
-                      <span className="font-mono-code text-[10px] text-[#182018] px-2 py-0.5 rounded border border-[#182018]/20 font-bold uppercase tracking-wider self-start mb-4" style={{ backgroundColor: cat.color }}>
-                        {s.proficiency}
-                      </span>
-                      <h4 className="font-mono-code text-xs sm:text-sm font-bold text-[#182018] mb-3 leading-snug">
-                        {s.name}
-                      </h4>
-                      <p className="font-body text-xs text-[#182018]/70 leading-relaxed mt-auto">
-                        {s.note}
-                      </p>
-                    </div>
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </div>

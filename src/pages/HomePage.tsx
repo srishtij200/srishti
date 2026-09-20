@@ -24,7 +24,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
   const homeProjectTitles: Record<string, string> = {
     'proj-1': 'A new dimension of life wear : UNIQLO Fragrances',
     'proj-2': 'Future Florals × Cover Story',
-    'proj-3': 'BRAND CONCEPT & DEVELOPMENT — Athera — Athleisure Wear Brand'
+    'proj-3': 'Athera — Athleisure Wear Brand'
   };
 
   const homeProjectCategories: Record<string, string> = {
@@ -140,12 +140,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-4 border-b border-[#182018]/10">
             <div>
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[#182018]/60 mb-2">
-                <Sparkles className="w-3.5 h-3.5 text-[#182018]" />
-                <span>CASE STUDIES</span>
-              </div>
-              <h2 className="font-serif-display text-3xl sm:text-5xl text-[#182018]">
-                Selected Projects
+              <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[#182018]">
+                Selected{' '}
+                <span className="relative inline-block whitespace-nowrap">
+                  <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[#F4B6D4] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
+                  <span className="relative z-10 italic font-serif-display font-normal">
+                    Projects
+                  </span>
+                </span>
               </h2>
             </div>
           </div>
@@ -161,9 +163,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 </div>
 
                 <div>
-                  <div className="flex items-center justify-between text-xs text-[#182018]/60 mb-4 pb-2 border-b border-[#182018]/15">
+                  <div className="text-xs text-[#182018]/60 mb-4 pb-2 border-b border-[#182018]/15">
                     <span className="font-bold text-[#182018]">PROJECT {proj.number}</span>
-                    <span>{proj.year}</span>
                   </div>
 
                   <span className="text-xs uppercase px-2.5 py-0.5 rounded-full border border-[#182018]/30 inline-block mb-3 bg-[#FFFFFF]">
@@ -174,20 +175,43 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                     {homeProjectTitles[proj.id] ?? proj.title}
                   </h3>
 
-                  <p className="text-sm text-[#182018]/80 leading-relaxed mb-6">
-                    {proj.tagline}
-                  </p>
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <span className="text-[10px] font-mono-code uppercase tracking-wider text-[#182018]/50 font-bold block mb-1">
+                        Brief
+                      </span>
+                      <p className="text-sm text-[#182018]/80 leading-relaxed">
+                        {proj.brief}
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-mono-code uppercase tracking-wider text-[#182018]/50 font-bold block mb-1">
+                        Research
+                      </span>
+                      <p className="text-sm text-[#182018]/80 leading-relaxed">
+                        {proj.research}
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-mono-code uppercase tracking-wider text-[#182018]/50 font-bold block mb-1">
+                        Contribution
+                      </span>
+                      <p className="text-sm text-[#182018]/80 leading-relaxed">
+                        {proj.contribution}
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-mono-code uppercase tracking-wider text-[#182018]/50 font-bold block mb-1">
+                        Learning
+                      </span>
+                      <p className="text-sm text-[#182018]/80 leading-relaxed">
+                        {proj.keyLearnings}
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 <div>
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {proj.tags.map((t, i) => (
-                      <span key={i} className="text-xs px-2 py-0.5 bg-[#FFFFFF] border border-[#182018]/20 rounded text-[#182018]/70">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
                   <Link
                     to={`/projects/${proj.slug}`}
                     className="w-full flex items-center justify-between py-2.5 px-4 bg-[#FFFFFF] border border-[#182018] rounded-xl text-xs uppercase tracking-wider text-[#182018] font-bold group-hover:bg-[#182018] group-hover:text-[#F5F5ED] transition-colors"
@@ -212,12 +236,21 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-4">
-                <span className="text-xs uppercase font-bold text-[#182018]/60 block tracking-wider">
-                  PRACTICAL INDUSTRY RESIDENCY
+                <span className="text-sm uppercase font-bold text-[#182018]/60 block tracking-wider">
+                  Turning Learning Into Experience
                 </span>
-                <h2 className="font-serif-display text-3xl sm:text-5xl text-[#182018]">
-                  {internship.company} — {internship.role}
+                <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[#182018]">
+                  {internship.company}{' '}
+                  <span className="relative inline-block whitespace-nowrap">
+                    <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[#C9FF8C] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
+                    <span className="relative z-10 italic font-serif-display font-normal">
+                      Internship
+                    </span>
+                  </span>
                 </h2>
+                <p className="font-mono-code text-xs uppercase tracking-widest text-[#182018]/60">
+                  {internship.role}
+                </p>
                 <p className="text-base text-[#182018]/85 leading-relaxed max-w-2xl">
                   {internship.overview}
                 </p>

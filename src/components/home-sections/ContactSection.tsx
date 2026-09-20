@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
-import { FlowerMark, WashiTape } from '../CustomDoodles';
+import { Mail, MapPin, Phone, Linkedin } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
 
 export const ContactSection: React.FC = () => {
@@ -18,10 +17,6 @@ export const ContactSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[#182018]/60 mb-2">
-              <FlowerMark className="w-3.5 h-3.5 text-[#182018]" />
-              <span>CONTACT ME</span>
-            </div>
             <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[#182018]">
               Contact &{' '}
               <span className="relative inline-block whitespace-nowrap">
@@ -34,98 +29,59 @@ export const ContactSection: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Contact Information Boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-            <motion.div
+        {/* Contact Details (Centered, No Labels) */}
+        <div className="flex flex-col items-center text-center space-y-7">
+          <motion.a
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            href={`mailto:${contact.email}`}
+            className="flex items-center justify-center gap-3 font-serif-display text-3xl sm:text-4xl text-[#182018] hover:underline underline-offset-4 decoration-[#C9FF8C] break-all"
+          >
+            <Mail className="w-7 h-7 text-[#182018]/60 shrink-0" />
+            <span>{contact.email}</span>
+          </motion.a>
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="flex items-center justify-center gap-3 font-mono-code text-lg text-[#182018]/80"
+          >
+            <MapPin className="w-6 h-6 text-[#182018]/60 shrink-0" />
+            <span>{contact.location}</span>
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center justify-center gap-3 font-mono-code text-lg text-[#182018]/80"
+          >
+            <Phone className="w-6 h-6 text-[#182018]/60 shrink-0" />
+            <span>{contact.phone}</span>
+          </motion.p>
+
+          {contact.socials[0] && (
+            <motion.a
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 paper-shadow-lg relative"
+              transition={{ duration: 0.5, delay: 0.15 }}
+              href={contact.socials[0].url}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center gap-3 font-mono-code text-lg font-bold text-[#182018] border-b border-[#182018]/30 hover:border-[#182018]"
             >
-              <div className="absolute -top-3 left-10">
-                <WashiTape color="#C9FF8C" width="w-24" />
-              </div>
-
-              <div className="font-mono-code text-xs font-bold uppercase text-[#182018]/60 mb-6 pb-2 border-b border-[#182018]/10">
-                Direct Correspondence
-              </div>
-
-              <div className="space-y-6">
-                <div>
-                  <div className="flex items-center gap-2 font-mono-code text-xs text-[#182018]/60 uppercase mb-1">
-                    <Mail className="w-3.5 h-3.5" />
-                    <span>ELECTRONIC MAIL</span>
-                  </div>
-                  <a
-                    href={`mailto:${contact.email}`}
-                    className="font-serif-display text-xl sm:text-2xl text-[#182018] hover:underline underline-offset-4 decoration-[#C9FF8C] break-all"
-                  >
-                    {contact.email}
-                  </a>
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-2 font-mono-code text-xs text-[#182018]/60 uppercase mb-1">
-                    <MapPin className="w-3.5 h-3.5" />
-                    <span>LOCATION</span>
-                  </div>
-                  <p className="font-body text-sm text-[#182018] leading-relaxed">
-                    {contact.location}
-                  </p>
-                  <span className="font-mono-code text-[11px] text-[#182018]/60 mt-1 block">
-                    Available for on-site & remote projects
-                  </span>
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-2 font-mono-code text-xs text-[#182018]/60 uppercase mb-1">
-                    <Phone className="w-3.5 h-3.5" />
-                    <span>TELEPHONE & SIGNAL</span>
-                  </div>
-                  <p className="font-mono-code text-sm text-[#182018]">
-                    {contact.phone}
-                  </p>
-                </div>
-
-                <div className="p-4 bg-[#F5F5ED] rounded-xl border border-[#182018]/15 font-mono-code text-xs">
-                  <div className="font-bold text-[#182018] uppercase text-[11px] mb-1">CURRENT STATUS:</div>
-                  <p className="text-[#182018]/80">{contact.availability}</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.05 }}
-              className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 paper-shadow"
-            >
-              <div className="font-mono-code text-xs font-bold uppercase text-[#182018]/60 mb-4 pb-2 border-b border-[#182018]/10">
-                Digital Channels & Profiles
-              </div>
-
-              <div className="space-y-3 font-mono-code text-xs">
-                {contact.socials.map((soc, idx) => (
-                  <a
-                    key={idx}
-                    href={soc.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-[#F5F5ED] hover:bg-[#182018] hover:text-[#F5F5ED] border border-[#182018]/20 transition-all group"
-                  >
-                    <div>
-                      <span className="font-bold block">{soc.name}</span>
-                      <span className="text-[10px] opacity-70">{soc.handle}</span>
-                    </div>
-                    <ExternalLink className="w-4 h-4 opacity-50 group-hover:opacity-100" />
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-          </div>
+              <Linkedin className="w-6 h-6 text-[#182018]/60 shrink-0" />
+              <span>LinkedIn — {contact.socials[0].handle}</span>
+            </motion.a>
+          )}
         </div>
+      </div>
     </section>
   );
 };

@@ -8,6 +8,13 @@ import { portfolioData } from '../data/portfolioData';
 export const InternshipExperiencePage: React.FC = () => {
   const { internship } = portfolioData;
 
+  const internshipLearnings = [
+    { title: 'Creative Content Production', desc: 'Created reels, posts, stories and carousels through hands-on content production.' },
+    { title: 'E-commerce Management', desc: 'Managed Shopify, product uploads, catalogues, descriptions and tags.' },
+    { title: 'Organisation & Execution', desc: 'Managed content calendars, Excel sheets, deadlines and multiple tasks.' },
+    { title: 'Brand Communication', desc: 'Maintained consistent brand communication across social media and e-commerce.' }
+  ];
+
   return (
     <div className="bg-[#F5F5ED] min-h-screen py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -300,7 +307,39 @@ export const InternshipExperiencePage: React.FC = () => {
           </div>
         </section>
 
-        {/* SECTION 3: LEARNING OUTCOMES (Consolidated) */}
+        {/* SECTION 3: LEARNINGS OF INTERNSHIP */}
+        <section id="internship-learnings" className="scroll-mt-24 mb-16">
+          <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-12 paper-shadow-lg">
+            <div className="max-w-2xl mb-8">
+              <span className="font-mono-code text-xs font-bold text-[#182018]/60 uppercase tracking-widest block mb-2">
+                WHAT I GAINED
+              </span>
+              <h2 className="font-serif-display text-3xl sm:text-4xl text-[#182018]">
+                Learnings of Internship
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {internshipLearnings.map((l, idx) => (
+                <div key={idx} className="flex items-start gap-4 p-5 bg-[#F5F5ED] border border-[#182018]/25 rounded-2xl">
+                  <span className="font-mono-code text-sm font-bold text-[#182018] bg-[#FFFFFF] border border-[#182018] rounded-full w-8 h-8 flex items-center justify-center shrink-0">
+                    {idx + 1}
+                  </span>
+                  <div>
+                    <div className="font-mono-code text-xs sm:text-sm font-bold text-[#182018] uppercase mb-1">
+                      {l.title}
+                    </div>
+                    <p className="font-body text-sm text-[#182018]/85 leading-relaxed">
+                      {l.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 4: LEARNING OUTCOMES (Consolidated) */}
         <section id="learning-outcomes" className="scroll-mt-24 mb-16">
           <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-12 paper-shadow-lg">
           <div className="max-w-2xl mb-8">

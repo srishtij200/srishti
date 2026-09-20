@@ -85,11 +85,6 @@ export const ContactPage: React.FC = () => {
                     {contact.phone}
                   </p>
                 </div>
-
-                <div className="p-4 bg-[#F5F5ED] rounded-xl border border-[#182018]/15 font-mono-code text-xs">
-                  <div className="font-bold text-[#182018] uppercase text-[11px] mb-1">CURRENT STATUS:</div>
-                  <p className="text-[#182018]/80">{contact.availability}</p>
-                </div>
               </div>
             </div>
 

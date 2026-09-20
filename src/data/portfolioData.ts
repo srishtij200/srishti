@@ -173,7 +173,7 @@ export const portfolioData = {
       rotation: "rotate-1",
       tags: ["Fashion Start-Up", "Consumer Pain Points", "MVP", "Lycra × Terry Cotton", "Iteration"],
       summary: "Developing a fashion venture from identifying real consumer pain points to testing and refining a physical prototype: Structured crop top and relaxed joggers.",
-      brief: "Created Athira, a modest and versatile athleisure brand designed for gym-to-café-to-airport dressing.",
+      brief: "Created Athera, a modest and versatile athleisure brand designed for gym-to-café-to-airport dressing.",
       research: "Explored consumer needs, market trends, competitors and fabric functionality to identify the opportunity.",
       contribution: "Contributed to product development, fabric exploration, prototyping and styling of the collection.",
       keyLearnings: "Learned to turn consumer insights into a product through research, testing and refinement."
@@ -502,9 +502,7 @@ export const portfolioData = {
     location: "New Delhi, India",
     availability: "Available for Visual Merchandising, E-Commerce Styling, and Fashion Marketing Roles",
     socials: [
-      { name: "Instagram", handle: "@srishti.jain", url: "https://instagram.com" },
-      { name: "LinkedIn", handle: "Srishti Jain", url: "https://www.linkedin.com/in/srishti-jain-263074228" },
-      { name: "Behance", handle: "Srishti Jain Portfolio", url: "https://behance.net" }
+      { name: "LinkedIn", handle: "Srishti Jain", url: "https://www.linkedin.com/in/srishti-jain-263074228" }
     ]
   }
 };

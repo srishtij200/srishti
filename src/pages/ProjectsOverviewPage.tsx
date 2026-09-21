@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Sparkles, ArrowRight, Layers, Tag, Eye } from 'lucide-react';
 import { FlowerMark, HandDrawnStar, WashiTape } from '../components/CustomDoodles';
+import { ProjectCardMedia } from '../components/ProjectCardMedia';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectsOverviewPage: React.FC = () => {
@@ -47,6 +48,8 @@ export const ProjectsOverviewPage: React.FC = () => {
                 <WashiTape color={proj.accentColor} width="w-28" />
               </div>
 
+              <ProjectCardMedia image={proj.image} alt={proj.title} />
+
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div className="lg:col-span-8 space-y-4">
                   <div className="flex items-center gap-3">
@@ -85,7 +88,7 @@ export const ProjectsOverviewPage: React.FC = () => {
                           <span className="font-mono-code text-[10px] font-bold text-[#182018]/60 uppercase tracking-wider block mb-1.5">
                             {b.label}
                           </span>
-                          <p className="font-body text-xs text-[#182018]/80 leading-relaxed">
+<p className="font-body text-xs text-[#182018]/80 leading-relaxed whitespace-pre-line">
                             {b.text}
                           </p>
                         </div>

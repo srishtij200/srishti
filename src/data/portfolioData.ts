@@ -135,6 +135,7 @@ export const portfolioData = {
       tagline: "Translating brand philosophy into a new product category & strategic market plan.",
       accentColor: "#C9FF8C",
       rotation: "rotate-1",
+      image: "",
       tags: ["UNIQLO", "Brand Strategy", "STP & 7Ps", "Minimal Packaging", "Market Planning"],
       summary: "Strategic marketing proposal expanding UNIQLO into accessible premium everyday fragrances. Built on Japanese naming, minimalist packaging, and nature-inspired scents.",
       brief: "Extended UNIQLO's LifeWear philosophy into fragrances inspired by Japanese minimalism.",
@@ -153,12 +154,13 @@ export const portfolioData = {
       tagline: "Future Florals: A blooming garden re-imagined through a futuristic, iridescent lens.",
       accentColor: "#F4B6D4",
       rotation: "-rotate-1",
+      image: "",
       tags: ["Cover Story", "Spring/Summer", "Future Florals", "Holographic", "VM Principles"],
       summary: "Spring/Summer VM concept for Cover Story. Combining delicate handcrafted floral structures with holographic sheets, pastels, and symmetrical visual balance.",
-      brief: "Creating a Spring/Summer VM concept, “Future Florals,” bringing florals, femininity and iridescence into a retail experience.",
-      research: "Explored brand identity, seasonal trends, colours and visual inspiration to shape the concept and visual direction.",
-      contribution: "Contributed to concept development, mood boarding, materials and display execution, with a focus on spatial planning and styling.",
-      keyLearnings: "Learned to turn a creative concept into a retail experience, strengthening my skills in VM, spatial planning and teamwork."
+      brief: "Created a “Future Florals” Spring/Summer VM concept.\nBlended florals with femininity & iridescence.",
+      research: "Explored trends, colours & brand identity.\nDefined the visual direction.",
+      contribution: "Developed the concept, mood board & styling.\nWorked on spatial planning & execution.",
+      keyLearnings: "Strengthened VM & styling skills.\nBalanced creativity with functionality."
     },
     {
       id: "proj-3",
@@ -171,12 +173,13 @@ export const portfolioData = {
       tagline: "Structured × Relaxed: Athleisure engineered for transition between gym and everyday life.",
       accentColor: "#AFC8FF",
       rotation: "rotate-1",
+      image: "",
       tags: ["Fashion Start-Up", "Consumer Pain Points", "MVP", "Lycra × Terry Cotton", "Iteration"],
       summary: "Developing a fashion venture from identifying real consumer pain points to testing and refining a physical prototype: Structured crop top and relaxed joggers.",
-      brief: "Created Athera, a modest and versatile athleisure brand designed for gym-to-café-to-airport dressing.",
-      research: "Explored consumer needs, market trends, competitors and fabric functionality to identify the opportunity.",
-      contribution: "Contributed to product development, fabric exploration, prototyping and styling of the collection.",
-      keyLearnings: "Learned to turn consumer insights into a product through research, testing and refinement."
+      brief: "Created Athera, a modest & versatile athleisure brand.\nDesigned for gym-to-café-to-airport dressing.",
+      research: "Explored consumers, trends, competitors & fabrics.\nIdentified the market opportunity.",
+      contribution: "Worked on product development, fabrics & styling.\nContributed to prototyping the collection.",
+      keyLearnings: "Turned consumer insights into product ideas.\nLearned through testing & refinement."
     }
   ],
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Sparkles, ArrowRight } from 'lucide-react';
 import { WashiTape } from '../components/CustomDoodles';
+import { ProjectCardMedia } from '../components/ProjectCardMedia';
 import { SkillsSection } from '../components/home-sections/SkillsSection';
 import { ContactSection } from '../components/home-sections/ContactSection';
 import { portfolioData } from '../data/portfolioData';
@@ -162,6 +163,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                   <WashiTape color={proj.accentColor} width="w-20" />
                 </div>
 
+                <ProjectCardMedia image={proj.image} alt={proj.title} />
+
                 <div>
                   <div className="text-xs text-[#182018]/60 mb-4 pb-2 border-b border-[#182018]/15">
                     <span className="font-bold text-[#182018]">PROJECT {proj.number}</span>
@@ -180,7 +183,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                       <span className="text-[10px] font-mono-code uppercase tracking-wider text-[#182018]/50 font-bold block mb-1">
                         Brief
                       </span>
-                      <p className="text-sm text-[#182018]/80 leading-relaxed">
+                      <p className="text-sm text-[#182018]/80 leading-relaxed whitespace-pre-line">
                         {proj.brief}
                       </p>
                     </div>
@@ -188,7 +191,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                       <span className="text-[10px] font-mono-code uppercase tracking-wider text-[#182018]/50 font-bold block mb-1">
                         Research
                       </span>
-                      <p className="text-sm text-[#182018]/80 leading-relaxed">
+                      <p className="text-sm text-[#182018]/80 leading-relaxed whitespace-pre-line">
                         {proj.research}
                       </p>
                     </div>
@@ -196,7 +199,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                       <span className="text-[10px] font-mono-code uppercase tracking-wider text-[#182018]/50 font-bold block mb-1">
                         Contribution
                       </span>
-                      <p className="text-sm text-[#182018]/80 leading-relaxed">
+                      <p className="text-sm text-[#182018]/80 leading-relaxed whitespace-pre-line">
                         {proj.contribution}
                       </p>
                     </div>
@@ -204,7 +207,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                       <span className="text-[10px] font-mono-code uppercase tracking-wider text-[#182018]/50 font-bold block mb-1">
                         Learning
                       </span>
-                      <p className="text-sm text-[#182018]/80 leading-relaxed">
+                      <p className="text-sm text-[#182018]/80 leading-relaxed whitespace-pre-line">
                         {proj.keyLearnings}
                       </p>
                     </div>

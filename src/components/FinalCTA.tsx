@@ -17,10 +17,10 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenWaitlist }) => {
   };
 
   return (
-    <section className="py-24 lg:py-36 bg-[#F5F5ED] relative overflow-hidden">
+    <section className="py-24 lg:py-36 bg-[var(--c-bg)] relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Soft Green Editorial Billboard Card */}
-        <div className="relative bg-[#C9FF8C] border-[2px] border-[#182018] rounded-3xl p-8 sm:p-14 lg:p-16 paper-shadow-lg text-center overflow-hidden">
+        <div className="relative bg-[var(--c-highlight)] border-[2px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-14 lg:p-16 paper-shadow-lg text-center overflow-hidden">
           {/* Top Washi Tape */}
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
             <WashiTape color="#F4B6D4" width="w-32" />
@@ -34,22 +34,22 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenWaitlist }) => {
             <FlowerMark size={32} />
           </div>
           <div className="absolute top-8 right-12 hidden lg:block">
-            <HandDrawnStar className="w-6 h-6 text-[#182018]" />
+            <HandDrawnStar className="w-6 h-6 text-[var(--c-ink)]" />
           </div>
 
           {/* Metadata Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[#182018] rounded-full text-xs font-mono-code uppercase tracking-widest text-[#182018] mb-6 paper-shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] mb-6 paper-shadow-sm">
             <FlowerMark size={14} />
             <span>ENROLMENT DISPATCH // BATCH 04</span>
           </div>
 
           {/* Headline */}
-          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[#182018] leading-[1.02] tracking-tight max-w-2xl mx-auto mb-4">
+          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[var(--c-ink)] leading-[1.02] tracking-tight max-w-2xl mx-auto mb-4">
             Your next great idea is probably hiding in the mess.
           </h2>
 
           {/* Supporting Copy */}
-          <p className="font-serif-display text-2xl sm:text-3xl text-[#182018]/90 italic mb-8">
+          <p className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)]/90 italic mb-8">
             Give it somewhere to grow.
           </p>
 
@@ -63,12 +63,12 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenWaitlist }) => {
                   placeholder="enter your email address..."
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 bg-[#FFFFFF] border-[1.5px] border-[#182018] px-4 py-3.5 rounded-full font-mono-code text-xs text-[#182018] placeholder-[#182018]/50 focus:outline-hidden focus:ring-2 focus:ring-[#182018]"
+                  className="flex-1 bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] px-4 py-3.5 rounded-full font-mono-code text-xs text-[var(--c-ink)] placeholder-[var(--c-ink)]/50 focus:outline-hidden focus:ring-2 focus:ring-[var(--c-ink)]"
                 />
                 <button
                   type="submit"
                   id="final-waitlist-submit"
-                  className="flex items-center justify-center gap-2 bg-[#182018] text-[#F5F5ED] hover:bg-[#283828] border-[1.5px] border-[#182018] px-6 py-3.5 rounded-full font-mono-code text-xs uppercase tracking-wider font-bold paper-shadow hover:translate-y-[-1px] transition-all cursor-pointer whitespace-nowrap"
+                  className="flex items-center justify-center gap-2 bg-[var(--c-ink)] text-[var(--c-bg)] hover:bg-[#283828] border-[1.5px] border-[var(--c-ink)] px-6 py-3.5 rounded-full font-mono-code text-xs uppercase tracking-wider font-bold paper-shadow hover:translate-y-[-1px] transition-all cursor-pointer whitespace-nowrap"
                 >
                   <span>Join the Waitlist</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -76,24 +76,24 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenWaitlist }) => {
               </form>
             </div>
           ) : (
-            <div className="max-w-md mx-auto mb-6 p-4 bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl paper-shadow">
+            <div className="max-w-md mx-auto mb-6 p-4 bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-2xl paper-shadow">
               <div className="flex items-center justify-center gap-2 text-emerald-800 font-mono-code text-xs font-bold uppercase mb-1">
                 <Check className="w-4 h-4" />
                 <span>Admission Ticket Reserved!</span>
               </div>
-              <p className="font-body text-xs text-[#182018]/80">
+              <p className="font-body text-xs text-[var(--c-ink)]/80">
                 Check your inbox shortly for your accession stamp.
               </p>
             </div>
           )}
 
           {/* Secondary Subtitle */}
-          <p className="font-mono-code text-xs text-[#182018]/70 max-w-sm mx-auto">
+          <p className="font-mono-code text-xs text-[var(--c-ink)]/70 max-w-sm mx-auto">
             No spam. Just occasional dispatch issues and private studio invitations as we build.
           </p>
 
           {/* Bottom Stamp seal */}
-          <div className="mt-8 pt-6 border-t border-[#182018]/20 flex items-center justify-between text-[11px] font-mono-code text-[#182018]/60">
+          <div className="mt-8 pt-6 border-t border-[var(--c-ink)]/20 flex items-center justify-between text-[11px] font-mono-code text-[var(--c-ink)]/60">
             <span>PRINTED IN CURIO STUDIO</span>
             <span>EDITION OF 5,000 PASSES</span>
             <span>STATUS: BETA OPEN</span>

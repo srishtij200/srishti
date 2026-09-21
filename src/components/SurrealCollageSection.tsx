@@ -42,12 +42,12 @@ export const SurrealCollageSection: React.FC = () => {
   ];
 
   return (
-    <section id="chaos-to-creativity" className="py-24 lg:py-32 bg-[#FFFFFF] border-y border-[#182018]/15 relative">
+    <section id="chaos-to-creativity" className="py-24 lg:py-32 bg-[#FFFFFF] border-y border-[var(--c-ink)]/15 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Metadata Header */}
-        <div className="flex items-center justify-between font-mono-code text-xs text-[#182018]/50 pb-4 border-b border-[#182018]/10 mb-12">
+        <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/50 pb-4 border-b border-[var(--c-ink)]/10 mb-12">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#182018]" />
+            <span className="w-2 h-2 rounded-full bg-[var(--c-ink)]" />
             <span>SECTION 02 // CREATIVE ENGINE</span>
           </div>
           <span>PRINCIPLE: ORGANIZED CHAOS</span>
@@ -58,13 +58,13 @@ export const SurrealCollageSection: React.FC = () => {
           {/* Left Column (45-50% width): Heading & Feature Stack */}
           <div className="lg:col-span-6 space-y-8">
             <div>
-              <span className="font-mono-code text-xs uppercase tracking-widest text-[#182018]/60 block mb-2">
+              <span className="font-mono-code text-xs uppercase tracking-widest text-[var(--c-ink)]/60 block mb-2">
                 FROM SCRAPS TO SYMPHONIES
               </span>
-              <h2 className="font-serif-display text-4xl sm:text-6xl text-[#182018] leading-[1.05] tracking-tight">
+              <h2 className="font-serif-display text-4xl sm:text-6xl text-[var(--c-ink)] leading-[1.05] tracking-tight">
                 Transform chaos into creativity.
               </h2>
-              <p className="font-mono-code text-sm text-[#182018]/80 mt-4 leading-relaxed max-w-lg">
+              <p className="font-mono-code text-sm text-[var(--c-ink)]/80 mt-4 leading-relaxed max-w-lg">
                 Great work doesn’t start in neat corporate spreadsheets. It starts in messy notebooks, frantic bookmarks, and late-night recordings.
               </p>
             </div>
@@ -79,35 +79,35 @@ export const SurrealCollageSection: React.FC = () => {
                     onClick={() => setActiveCard(index)}
                     whileHover={{ x: 4 }}
                     transition={{ type: 'spring', damping: 20 }}
-                    className={`relative cursor-pointer rounded-[14px] border-[1.5px] border-[#182018] p-6 sm:p-7 transition-all ${
+                    className={`relative cursor-pointer rounded-[14px] border-[1.5px] border-[var(--c-ink)] p-6 sm:p-7 transition-all ${
                       isActive
-                        ? 'bg-[#F5F5ED] paper-shadow'
-                        : 'bg-[#FFFDF9] hover:bg-[#F5F5ED] hover:paper-shadow-sm'
+                        ? 'bg-[var(--c-bg)] paper-shadow'
+                        : 'bg-[#FFFDF9] hover:bg-[var(--c-bg)] hover:paper-shadow-sm'
                     }`}
                   >
                     {/* Corner pastel color tag */}
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2">
                         <span 
-                          className="px-2.5 py-0.5 rounded text-[11px] font-mono-code uppercase font-bold border border-[#182018]"
+                          className="px-2.5 py-0.5 rounded text-[11px] font-mono-code uppercase font-bold border border-[var(--c-ink)]"
                           style={{ backgroundColor: feat.accent }}
                         >
                           {feat.tag}
                         </span>
-                        <span className="font-mono-code text-xs text-[#182018]/50">
+                        <span className="font-mono-code text-xs text-[var(--c-ink)]/50">
                           0{index + 1}
                         </span>
                       </div>
-                      <span className="text-xs font-mono-code text-[#182018]/50">
+                      <span className="text-xs font-mono-code text-[var(--c-ink)]/50">
                         {isActive ? '✦ ACTIVE VIEW' : 'CLICK TO EXPAND'}
                       </span>
                     </div>
 
-                    <h3 className="font-serif-display text-2xl sm:text-3xl text-[#182018] leading-tight mb-2">
+                    <h3 className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)] leading-tight mb-2">
                       {feat.title}
                     </h3>
 
-                    <p className="font-body text-sm text-[#182018]/80 leading-relaxed">
+                    <p className="font-body text-sm text-[var(--c-ink)]/80 leading-relaxed">
                       {feat.subtitle}
                     </p>
 
@@ -116,10 +116,10 @@ export const SurrealCollageSection: React.FC = () => {
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
-                        className="mt-4 pt-4 border-t border-[#182018]/20 flex items-start gap-2"
+                        className="mt-4 pt-4 border-t border-[var(--c-ink)]/20 flex items-start gap-2"
                       >
-                        <CornerDownRight className="w-4 h-4 text-[#182018] mt-0.5 shrink-0" />
-                        <p className="font-mono-code text-xs text-[#182018]/90 italic">
+                        <CornerDownRight className="w-4 h-4 text-[var(--c-ink)] mt-0.5 shrink-0" />
+                        <p className="font-mono-code text-xs text-[var(--c-ink)]/90 italic">
                           {feat.detail}
                         </p>
                       </motion.div>
@@ -133,27 +133,27 @@ export const SurrealCollageSection: React.FC = () => {
           {/* Right Column (Surreal Collage Visual) */}
           <div className="lg:col-span-6 relative">
             {/* Surreal Collage Art Frame */}
-            <div className="relative bg-[#F5F5ED] border-[1.5px] border-[#182018] rounded-3xl p-6 sm:p-8 paper-shadow-lg overflow-hidden">
+            <div className="relative bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-6 sm:p-8 paper-shadow-lg overflow-hidden">
               {/* Washi Tape at Top */}
               <div className="absolute -top-3 right-1/4 z-20">
                 <WashiTape color="#F4B6D4" width="w-28" />
               </div>
 
               {/* Art Specimen Tag */}
-              <div className="flex items-center justify-between border-b border-[#182018]/20 pb-3 mb-5">
+              <div className="flex items-center justify-between border-b border-[var(--c-ink)]/20 pb-3 mb-5">
                 <div className="flex items-center gap-2">
                   <FlowerMark size={20} />
-                  <span className="font-mono-code text-xs uppercase font-bold text-[#182018]">
+                  <span className="font-mono-code text-xs uppercase font-bold text-[var(--c-ink)]">
                     FIG. 02 // THE COGNITIVE COLLAGE
                   </span>
                 </div>
-                <span className="font-mono-code text-[11px] text-[#182018]/60 bg-[#FFFFFF] px-2 py-0.5 border border-[#182018] rounded">
+                <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60 bg-[#FFFFFF] px-2 py-0.5 border border-[var(--c-ink)] rounded">
                   COLLAGE ARCHIVE #77
                 </span>
               </div>
 
               {/* Main Cutout Collage Artwork */}
-              <div className="relative rounded-2xl border-[1.5px] border-[#182018] overflow-hidden bg-[#E7E5D8]">
+              <div className="relative rounded-2xl border-[1.5px] border-[var(--c-ink)] overflow-hidden bg-[#E7E5D8]">
                 <img
                   src="/src/assets/images/creative_chaos_collage_1789788411014.jpg"
                   alt="Surreal editorial collage of mind blooming with ideas and flowers"
@@ -162,14 +162,14 @@ export const SurrealCollageSection: React.FC = () => {
                 />
 
                 {/* Floating Handwritten Notes on top of artwork */}
-                <div className="absolute top-4 left-4 bg-[#FFFFFF]/95 border border-[#182018] px-3 py-1.5 rounded-lg paper-shadow-sm rotate-[-2deg]">
-                  <span className="font-hand text-lg text-[#182018]">
+                <div className="absolute top-4 left-4 bg-[#FFFFFF]/95 border border-[var(--c-ink)] px-3 py-1.5 rounded-lg paper-shadow-sm rotate-[-2deg]">
+                  <span className="font-hand text-lg text-[var(--c-ink)]">
                     "Botanical mind at 2:00 AM"
                   </span>
                 </div>
 
-                <div className="absolute bottom-4 right-4 bg-[#C9FF8C] border border-[#182018] px-3 py-1 rounded-full paper-shadow-sm rotate-2">
-                  <span className="font-mono-code text-xs text-[#182018] font-bold">
+                <div className="absolute bottom-4 right-4 bg-[var(--c-highlight)] border border-[var(--c-ink)] px-3 py-1 rounded-full paper-shadow-sm rotate-2">
+                  <span className="font-mono-code text-xs text-[var(--c-ink)] font-bold">
                     IDEA DENSITY: 98%
                   </span>
                 </div>
@@ -177,30 +177,30 @@ export const SurrealCollageSection: React.FC = () => {
 
               {/* Scrapbook Details & Annotations Below Visual */}
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-[#FFFFFF] border border-[#182018]/30 p-3.5 rounded-xl">
-                  <div className="flex items-center gap-1.5 mb-1 text-xs font-mono-code font-bold text-[#182018]">
+                <div className="bg-[#FFFFFF] border border-[var(--c-ink)]/30 p-3.5 rounded-xl">
+                  <div className="flex items-center gap-1.5 mb-1 text-xs font-mono-code font-bold text-[var(--c-ink)]">
                     <HandDrawnStar className="w-3.5 h-3.5 text-amber-600" />
                     <span>SYNAPTIC CLUSTERING</span>
                   </div>
-                  <p className="font-mono-code text-[11px] text-[#182018]/70">
+                  <p className="font-mono-code text-[11px] text-[var(--c-ink)]/70">
                     Connects vintage print techniques with current AI models without flattening nuance.
                   </p>
                 </div>
 
-                <div className="bg-[#FFFFFF] border border-[#182018]/30 p-3.5 rounded-xl">
-                  <div className="flex items-center gap-1.5 mb-1 text-xs font-mono-code font-bold text-[#182018]">
+                <div className="bg-[#FFFFFF] border border-[var(--c-ink)]/30 p-3.5 rounded-xl">
+                  <div className="flex items-center gap-1.5 mb-1 text-xs font-mono-code font-bold text-[var(--c-ink)]">
                     <Sparkles className="w-3.5 h-3.5 text-blue-600" />
                     <span>PHYSICALITY IN DIGITAL</span>
                   </div>
-                  <p className="font-mono-code text-[11px] text-[#182018]/70">
+                  <p className="font-mono-code text-[11px] text-[var(--c-ink)]/70">
                     Paper grain, tactile edges, and ink density that make digital ideation feel alive.
                   </p>
                 </div>
               </div>
 
               {/* Hand-drawn scribble arrow indicator */}
-              <div className="mt-4 flex items-center justify-between text-xs font-mono-code text-[#182018]/60 pt-3 border-t border-[#182018]/15">
-                <span className="font-hand text-lg text-[#182018]">
+              <div className="mt-4 flex items-center justify-between text-xs font-mono-code text-[var(--c-ink)]/60 pt-3 border-t border-[var(--c-ink)]/15">
+                <span className="font-hand text-lg text-[var(--c-ink)]">
                   Handmade scrapbook composition • 2026
                 </span>
                 <span className="font-mono-code text-[10px]">PLATE 14B</span>

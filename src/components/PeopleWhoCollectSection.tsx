@@ -87,20 +87,20 @@ export const PeopleWhoCollectSection: React.FC = () => {
   const selected = profiles.find(p => p.id === activeProfile) || profiles[0];
 
   return (
-    <section id="people-who-collect" className="py-24 lg:py-36 bg-[#FFFFFF] border-b border-[#182018]/15 relative">
+    <section id="people-who-collect" className="py-24 lg:py-36 bg-[#FFFFFF] border-b border-[var(--c-ink)]/15 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F5F5ED] border border-[#182018] rounded-full text-xs font-mono-code uppercase tracking-widest text-[#182018] mb-4 paper-shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] mb-4 paper-shadow-sm">
             <Heart className="w-3.5 h-3.5 text-rose-600" />
             <span>KINDRED SPIRITS</span>
           </div>
 
-          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[#182018] leading-[1.04] tracking-tight">
+          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[var(--c-ink)] leading-[1.04] tracking-tight">
             Made for people who collect ideas.
           </h2>
 
-          <p className="font-mono-code text-sm sm:text-base text-[#182018]/80 mt-4 leading-relaxed max-w-xl mx-auto">
+          <p className="font-mono-code text-sm sm:text-base text-[var(--c-ink)]/80 mt-4 leading-relaxed max-w-xl mx-auto">
             Not for corporate taskmasters or quarterly performance reviews. Curio is built for the curious minds whose brains refuse to operate in a straight line.
           </p>
         </div>
@@ -113,8 +113,8 @@ export const PeopleWhoCollectSection: React.FC = () => {
               onClick={() => setActiveProfile(p.id)}
               className={`px-4 py-2 rounded-xl text-xs font-mono-code uppercase tracking-wider border-[1.5px] transition-all cursor-pointer ${
                 activeProfile === p.id
-                  ? 'bg-[#182018] text-[#F5F5ED] border-[#182018] font-bold paper-shadow'
-                  : 'bg-[#F5F5ED] text-[#182018]/80 border-[#182018]/40 hover:border-[#182018]'
+                  ? 'bg-[var(--c-ink)] text-[var(--c-bg)] border-[var(--c-ink)] font-bold paper-shadow'
+                  : 'bg-[var(--c-bg)] text-[var(--c-ink)]/80 border-[var(--c-ink)]/40 hover:border-[var(--c-ink)]'
               }`}
             >
               {p.title}
@@ -123,7 +123,7 @@ export const PeopleWhoCollectSection: React.FC = () => {
         </div>
 
         {/* ACTIVE CHARACTER SPREAD (Magazine Profile Layout) */}
-        <div className="max-w-5xl mx-auto bg-[#F5F5ED] border-[1.5px] border-[#182018] rounded-3xl p-6 sm:p-10 paper-shadow-lg relative overflow-hidden">
+        <div className="max-w-5xl mx-auto bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-6 sm:p-10 paper-shadow-lg relative overflow-hidden">
           {/* Top Washi Tape */}
           <div className="absolute -top-3 left-12">
             <WashiTape color={selected.cardColor} width="w-28" />
@@ -134,47 +134,47 @@ export const PeopleWhoCollectSection: React.FC = () => {
             <div className="lg:col-span-7 space-y-5">
               <div className="flex items-center gap-2">
                 <span 
-                  className="px-2.5 py-0.5 rounded text-[11px] font-mono-code uppercase font-bold border border-[#182018]"
+                  className="px-2.5 py-0.5 rounded text-[11px] font-mono-code uppercase font-bold border border-[var(--c-ink)]"
                   style={{ backgroundColor: selected.cardColor }}
                 >
                   {selected.sticker}
                 </span>
-                <span className="font-mono-code text-xs text-[#182018]/60">
+                <span className="font-mono-code text-xs text-[var(--c-ink)]/60">
                   CHARACTER DOSSIER #0{profiles.findIndex(p => p.id === selected.id) + 1}
                 </span>
               </div>
 
               <div>
-                <h3 className="font-serif-display text-3xl sm:text-5xl text-[#182018] leading-tight">
+                <h3 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] leading-tight">
                   {selected.title}
                 </h3>
-                <p className="font-mono-code text-xs text-[#182018]/70 mt-1 uppercase tracking-wider">
+                <p className="font-mono-code text-xs text-[var(--c-ink)]/70 mt-1 uppercase tracking-wider">
                   {selected.subtitle}
                 </p>
               </div>
 
-              <blockquote className="font-serif-display text-xl sm:text-2xl text-[#182018] italic border-l-2 border-[#182018] pl-4 py-1 leading-snug">
+              <blockquote className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)] italic border-l-2 border-[var(--c-ink)] pl-4 py-1 leading-snug">
                 {selected.quote}
               </blockquote>
 
-              <div className="bg-[#FFFFFF] border border-[#182018]/30 rounded-xl p-3.5">
-                <span className="font-mono-code text-[11px] uppercase font-bold text-[#182018]/70 block mb-1">
+              <div className="bg-[#FFFFFF] border border-[var(--c-ink)]/30 rounded-xl p-3.5">
+                <span className="font-mono-code text-[11px] uppercase font-bold text-[var(--c-ink)]/70 block mb-1">
                   OBSERVED HABIT / QUIRK
                 </span>
-                <p className="font-mono-code text-xs text-[#182018]">
+                <p className="font-mono-code text-xs text-[var(--c-ink)]">
                   {selected.quirk}
                 </p>
               </div>
 
               <div className="pt-2">
-                <span className="font-mono-code text-[11px] uppercase text-[#182018]/60 block mb-2 font-bold">
+                <span className="font-mono-code text-[11px] uppercase text-[var(--c-ink)]/60 block mb-2 font-bold">
                   TYPICAL INTAKE ON CURIO DESK:
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {selected.sampleItems.map((item, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-[#FFFFFF] border border-[#182018]/40 rounded-lg text-xs font-mono-code text-[#182018]"
+                      className="px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)]/40 rounded-lg text-xs font-mono-code text-[var(--c-ink)]"
                     >
                       • {item}
                     </span>
@@ -185,39 +185,39 @@ export const PeopleWhoCollectSection: React.FC = () => {
 
             {/* Right Card / Scrapbook Vignette */}
             <div className="lg:col-span-5 relative">
-              <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl p-6 paper-shadow rotate-1 relative">
-                <div className="flex items-center justify-between border-b border-[#182018]/15 pb-3 mb-4">
-                  <span className="font-mono-code text-xs font-bold text-[#182018]">
+              <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow rotate-1 relative">
+                <div className="flex items-center justify-between border-b border-[var(--c-ink)]/15 pb-3 mb-4">
+                  <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]">
                     FIELD PASS
                   </span>
                   <FlowerMark size={18} />
                 </div>
 
                 {/* Collage asset cutout snippet */}
-                <div className="h-44 rounded-xl border border-[#182018]/30 overflow-hidden bg-[#E8E6DB] mb-4 relative">
+                <div className="h-44 rounded-xl border border-[var(--c-ink)]/30 overflow-hidden bg-[#E8E6DB] mb-4 relative">
                   <img
                     src="/src/assets/images/creative_chaos_collage_1789788411014.jpg"
                     alt="Creative portrait character"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-2 left-2 bg-[#182018] text-[#FFFFFF] font-mono-code text-[10px] px-2 py-0.5 rounded">
+                  <div className="absolute bottom-2 left-2 bg-[var(--c-ink)] text-[#FFFFFF] font-mono-code text-[10px] px-2 py-0.5 rounded">
                     INTELLECTUAL IDENTITY
                   </div>
                 </div>
 
-                <div className="space-y-1.5 text-xs font-mono-code text-[#182018]/80">
-                  <div className="flex justify-between border-b border-[#182018]/10 pb-1">
+                <div className="space-y-1.5 text-xs font-mono-code text-[var(--c-ink)]/80">
+                  <div className="flex justify-between border-b border-[var(--c-ink)]/10 pb-1">
                     <span>RESONANCE:</span>
-                    <span className="font-bold text-[#182018]">100% UNALIGNED WITH CORPORATE SAAS</span>
+                    <span className="font-bold text-[var(--c-ink)]">100% UNALIGNED WITH CORPORATE SAAS</span>
                   </div>
                   <div className="flex justify-between pt-1">
                     <span>CREATIVE CADENCE:</span>
-                    <span className="font-bold text-[#182018]">ORGANIC SPRINT & DRIFT</span>
+                    <span className="font-bold text-[var(--c-ink)]">ORGANIC SPRINT & DRIFT</span>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-dashed border-[#182018]/20 flex justify-between items-center text-[10px] font-mono-code text-[#182018]/50">
+                <div className="mt-4 pt-3 border-t border-dashed border-[var(--c-ink)]/20 flex justify-between items-center text-[10px] font-mono-code text-[var(--c-ink)]/50">
                   <span>CURIO CERTIFIED MEMBER</span>
                   <span>VERIFIED CURIOUS</span>
                 </div>

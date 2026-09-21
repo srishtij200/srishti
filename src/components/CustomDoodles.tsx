@@ -106,7 +106,7 @@ export const WashiTape: React.FC<{
   width?: string;
 }> = ({ color = "#F4B6D4", className = "", width = "w-24" }) => (
   <div 
-    className={`h-6 ${width} border border-[#182018]/20 opacity-85 shadow-xs ${className}`}
+    className={`h-6 ${width} border border-[var(--c-ink)]/20 opacity-85 shadow-xs ${className}`}
     style={{ 
       backgroundColor: color,
       backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(24,32,24,0.03) 4px, rgba(24,32,24,0.03) 8px)',

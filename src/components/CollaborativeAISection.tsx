@@ -146,12 +146,12 @@ export const CollaborativeAISection: React.FC = () => {
   };
 
   return (
-    <section id="collaborative-ai" className="py-24 lg:py-36 bg-[#F0EFE6] border-b border-[#182018]/15 relative">
+    <section id="collaborative-ai" className="py-24 lg:py-36 bg-[#F0EFE6] border-b border-[var(--c-ink)]/15 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Top Tag */}
-        <div className="flex items-center justify-between font-mono-code text-xs text-[#182018]/60 pb-4 border-b border-[#182018]/10 mb-12">
+        <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/60 pb-4 border-b border-[var(--c-ink)]/10 mb-12">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-[#182018]" />
+            <Sparkles className="w-4 h-4 text-[var(--c-ink)]" />
             <span>EDITORIAL AI COLLABORATOR</span>
           </div>
           <span>PHILOSOPHY: AMPLIFICATION, NOT REPLACEMENT</span>
@@ -159,17 +159,17 @@ export const CollaborativeAISection: React.FC = () => {
 
         {/* Section Headline */}
         <div className="max-w-3xl mb-12">
-          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[#182018] leading-[1.04] tracking-tight mb-4">
+          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[var(--c-ink)] leading-[1.04] tracking-tight mb-4">
             Bring the messy thought. We'll help you find the thread.
           </h2>
-          <p className="font-mono-code text-sm sm:text-base text-[#182018]/80 leading-relaxed">
+          <p className="font-mono-code text-sm sm:text-base text-[var(--c-ink)]/80 leading-relaxed">
             Most AI tools try to do the thinking for you. Curio is different: it acts as a sounding board, untangling knots and illuminating pathways while keeping you in full artistic control.
           </p>
         </div>
 
         {/* Preset Selector Tabs */}
         <div className="flex flex-wrap items-center gap-2 mb-8">
-          <span className="font-mono-code text-xs text-[#182018]/60 mr-2 uppercase tracking-wider">
+          <span className="font-mono-code text-xs text-[var(--c-ink)]/60 mr-2 uppercase tracking-wider">
             Explore live thoughts:
           </span>
           {presets.map((preset) => (
@@ -181,8 +181,8 @@ export const CollaborativeAISection: React.FC = () => {
               }}
               className={`px-4 py-2 rounded-xl text-xs font-mono-code uppercase tracking-wider border-[1.5px] transition-all cursor-pointer ${
                 selectedPresetId === preset.id && !customSubmitted
-                  ? 'bg-[#182018] text-[#F5F5ED] border-[#182018] font-bold paper-shadow-sm'
-                  : 'bg-[#FFFFFF] text-[#182018] border-[#182018]/30 hover:border-[#182018]'
+                  ? 'bg-[var(--c-ink)] text-[var(--c-bg)] border-[var(--c-ink)] font-bold paper-shadow-sm'
+                  : 'bg-[#FFFFFF] text-[var(--c-ink)] border-[var(--c-ink)]/30 hover:border-[var(--c-ink)]'
               }`}
             >
               {preset.title}
@@ -194,41 +194,41 @@ export const CollaborativeAISection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Human Unstructured Thought Dump (Paper Notebook style) */}
           <div className="lg:col-span-5 relative">
-            <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl p-6 sm:p-7 paper-shadow relative">
+            <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 sm:p-7 paper-shadow relative">
               {/* Washi Tape Header */}
               <div className="absolute -top-3 left-8">
                 <WashiTape color="#F4B6D4" width="w-24" />
               </div>
 
-              <div className="flex items-center justify-between border-b border-[#182018]/15 pb-3 mb-4 pt-1">
+              <div className="flex items-center justify-between border-b border-[var(--c-ink)]/15 pb-3 mb-4 pt-1">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
-                  <span className="font-mono-code text-xs font-bold uppercase text-[#182018]">
+                  <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)]">
                     YOUR UNFILTERED THOUGHT DUMP
                   </span>
                 </div>
-                <span className="font-mono-code text-[11px] text-[#182018]/50">
+                <span className="font-mono-code text-[11px] text-[var(--c-ink)]/50">
                   {currentPreset.category}
                 </span>
               </div>
 
               {/* Thought Text */}
-              <div className="bg-[#FBFBFA] border border-[#182018]/20 rounded-xl p-4 mb-4">
-                <p className="font-serif-display text-xl sm:text-2xl text-[#182018] italic leading-relaxed">
+              <div className="bg-[#FBFBFA] border border-[var(--c-ink)]/20 rounded-xl p-4 mb-4">
+                <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)] italic leading-relaxed">
                   "{customSubmitted && customInput ? customInput : currentPreset.rawThought}"
                 </p>
               </div>
 
-              <div className="flex items-center justify-between text-xs font-mono-code text-[#182018]/60 pt-2 border-t border-[#182018]/10">
+              <div className="flex items-center justify-between text-xs font-mono-code text-[var(--c-ink)]/60 pt-2 border-t border-[var(--c-ink)]/10">
                 <span>INTAKE METHOD: DICTATED AUDIO</span>
                 <span className="text-emerald-800 font-bold">✓ UNSTRUCTURED RAW</span>
               </div>
             </div>
 
             {/* Quick Interactive Prompt Try-Out Box */}
-            <div className="mt-6 bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-xl p-4 paper-shadow-sm">
+            <div className="mt-6 bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-xl p-4 paper-shadow-sm">
               <form onSubmit={handleCustomSubmit}>
-                <label className="block font-mono-code text-xs font-bold uppercase text-[#182018] mb-1.5">
+                <label className="block font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] mb-1.5">
                   Try unravelling your own chaotic thought:
                 </label>
                 <div className="flex gap-2">
@@ -237,11 +237,11 @@ export const CollaborativeAISection: React.FC = () => {
                     placeholder="e.g., Launching a brutalist coffee roaster in Lisbon..."
                     value={customInput}
                     onChange={(e) => setCustomInput(e.target.value)}
-                    className="flex-1 bg-[#F5F5ED] border border-[#182018] rounded-lg px-3 py-2 text-xs font-mono-code text-[#182018] placeholder-[#182018]/40 focus:outline-hidden focus:ring-1 focus:ring-[#182018]"
+                    className="flex-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-lg px-3 py-2 text-xs font-mono-code text-[var(--c-ink)] placeholder-[var(--c-ink)]/40 focus:outline-hidden focus:ring-1 focus:ring-[var(--c-ink)]"
                   />
                   <button
                     type="submit"
-                    className="bg-[#C9FF8C] text-[#182018] border border-[#182018] px-3 py-2 rounded-lg text-xs font-mono-code font-bold hover:bg-[#b8f575] cursor-pointer"
+                    className="bg-[var(--c-highlight)] text-[var(--c-ink)] border border-[var(--c-ink)] px-3 py-2 rounded-lg text-xs font-mono-code font-bold hover:bg-[#b8f575] cursor-pointer"
                   >
                     Unravel
                   </button>
@@ -252,21 +252,21 @@ export const CollaborativeAISection: React.FC = () => {
 
           {/* Right Column: Curio Synthesized Editorial Breakdown */}
           <div className="lg:col-span-7 relative">
-            <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl p-6 sm:p-8 paper-shadow-lg relative">
+            <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 sm:p-8 paper-shadow-lg relative">
               {/* Paper Clip */}
               <div className="absolute -top-3 right-8">
-                <PaperClip className="w-5 h-8 text-[#182018]" />
+                <PaperClip className="w-5 h-8 text-[var(--c-ink)]" />
               </div>
 
               {/* Header */}
-              <div className="flex items-center justify-between border-b border-[#182018]/15 pb-4 mb-6">
+              <div className="flex items-center justify-between border-b border-[var(--c-ink)]/15 pb-4 mb-6">
                 <div className="flex items-center gap-2">
                   <FlowerMark size={20} />
                   <div>
-                    <h4 className="font-mono-code text-xs font-bold uppercase text-[#182018]">
+                    <h4 className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)]">
                       CURIO INTELLIGENCE DISPATCH
                     </h4>
-                    <span className="font-mono-code text-[11px] text-[#182018]/60">
+                    <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60">
                       SYNTHESIZED IN 0.38 SECONDS
                     </span>
                   </div>
@@ -275,7 +275,7 @@ export const CollaborativeAISection: React.FC = () => {
                   {currentPreset.curioOutput.moodTags.map((tag) => (
                     <span
                       key={tag}
-                      className="hidden sm:inline-block text-[10px] font-mono-code px-2 py-0.5 bg-[#F5F5ED] border border-[#182018]/30 rounded text-[#182018]/70"
+                      className="hidden sm:inline-block text-[10px] font-mono-code px-2 py-0.5 bg-[var(--c-bg)] border border-[var(--c-ink)]/30 rounded text-[var(--c-ink)]/70"
                     >
                       {tag}
                     </span>
@@ -284,39 +284,39 @@ export const CollaborativeAISection: React.FC = () => {
               </div>
 
               {/* Clarified Intent Banner */}
-              <div className="p-4 bg-[#C9FF8C]/30 border border-[#182018]/40 rounded-xl mb-6">
-                <span className="font-mono-code text-[10px] uppercase font-bold text-[#182018] block mb-1">
+              <div className="p-4 bg-[var(--c-highlight)]/30 border border-[var(--c-ink)]/40 rounded-xl mb-6">
+                <span className="font-mono-code text-[10px] uppercase font-bold text-[var(--c-ink)] block mb-1">
                   CORE CREATIVE THREAD
                 </span>
-                <p className="font-serif-display text-xl text-[#182018] leading-snug">
+                <p className="font-serif-display text-xl text-[var(--c-ink)] leading-snug">
                   {currentPreset.curioOutput.clarifiedIntent}
                 </p>
               </div>
 
               {/* Clustered Idea Modules */}
               <div className="space-y-4 mb-6">
-                <span className="font-mono-code text-xs font-bold uppercase text-[#182018] tracking-wider block">
+                <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] tracking-wider block">
                   CONNECTED IDEA CLUSTERS
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {currentPreset.curioOutput.clusters.map((cluster, i) => (
                     <div
                       key={i}
-                      className="border-[1.5px] border-[#182018] rounded-xl p-4 bg-[#F5F5ED] paper-shadow-sm"
+                      className="border-[1.5px] border-[var(--c-ink)] rounded-xl p-4 bg-[var(--c-bg)] paper-shadow-sm"
                     >
-                      <div className="flex items-center gap-2 mb-2 pb-1.5 border-b border-[#182018]/15">
+                      <div className="flex items-center gap-2 mb-2 pb-1.5 border-b border-[var(--c-ink)]/15">
                         <span 
-                          className="w-2.5 h-2.5 rounded-full border border-[#182018]"
+                          className="w-2.5 h-2.5 rounded-full border border-[var(--c-ink)]"
                           style={{ backgroundColor: cluster.color }}
                         />
-                        <h5 className="font-mono-code text-xs font-bold text-[#182018]">
+                        <h5 className="font-mono-code text-xs font-bold text-[var(--c-ink)]">
                           {cluster.title}
                         </h5>
                       </div>
-                      <ul className="space-y-1.5 font-mono-code text-[11px] text-[#182018]/80">
+                      <ul className="space-y-1.5 font-mono-code text-[11px] text-[var(--c-ink)]/80">
                         {cluster.items.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-1.5">
-                            <span className="text-[#182018]/50">•</span>
+                            <span className="text-[var(--c-ink)]/50">•</span>
                             <span>{item}</span>
                           </li>
                         ))}
@@ -327,15 +327,15 @@ export const CollaborativeAISection: React.FC = () => {
               </div>
 
               {/* Suggested Next Steps */}
-              <div className="border-t border-[#182018]/15 pt-5">
-                <span className="font-mono-code text-xs font-bold uppercase text-[#182018] tracking-wider block mb-3">
+              <div className="border-t border-[var(--c-ink)]/15 pt-5">
+                <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] tracking-wider block mb-3">
                   SUGGESTED IMMEDIATE ACTIONS
                 </span>
                 <div className="space-y-2">
                   {currentPreset.curioOutput.actionSteps.map((step, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-2.5 p-2.5 rounded-lg bg-[#FFFDF9] border border-[#182018]/30 text-xs font-mono-code text-[#182018]"
+                      className="flex items-center gap-2.5 p-2.5 rounded-lg bg-[#FFFDF9] border border-[var(--c-ink)]/30 text-xs font-mono-code text-[var(--c-ink)]"
                     >
                       <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
                       <span>{step}</span>

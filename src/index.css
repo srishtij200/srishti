@@ -10,6 +10,13 @@
     --soft-yellow: #F8DD65;
     --lavender: #C7B8FF;
     --muted-red: #E88C7A;
+
+    /* Editable design tokens (driven by Sanity "Site Settings → Brand Colors"). */
+    --c-bg: #F5F5ED;
+    --c-ink: #182018;
+    --c-highlight: #C9FF8C;
+    --c-soft: #AFC8FF;
+    --c-warm: #F4B6D4;
   }
   
   html {

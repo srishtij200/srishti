@@ -7,20 +7,20 @@ export const ContactSection: React.FC = () => {
   const { contact } = portfolioData;
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-[#F5F5ED]">
+    <section id="contact" className="py-20 lg:py-28 bg-[var(--c-bg)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 pb-4 border-b border-[#182018]/10">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 pb-4 border-b border-[var(--c-ink)]/10">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[#182018]">
+            <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[var(--c-ink)]">
               Contact &{' '}
               <span className="relative inline-block whitespace-nowrap">
-                <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[#C9FF8C] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
+                <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-highlight)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
                 <span className="relative z-10 italic font-serif-display font-normal">
                   Inquiries
                 </span>
@@ -37,9 +37,9 @@ export const ContactSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             href={`mailto:${contact.email}`}
-            className="flex items-center justify-center gap-3 font-serif-display text-3xl sm:text-4xl text-[#182018] hover:underline underline-offset-4 decoration-[#C9FF8C] break-all"
+            className="flex items-center justify-center gap-3 font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)] hover:underline underline-offset-4 decoration-[var(--c-highlight)] break-all"
           >
-            <Mail className="w-7 h-7 text-[#182018]/60 shrink-0" />
+            <Mail className="w-7 h-7 text-[var(--c-ink)]/60 shrink-0" />
             <span>{contact.email}</span>
           </motion.a>
 
@@ -48,9 +48,9 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.05 }}
-            className="flex items-center justify-center gap-3 font-mono-code text-lg text-[#182018]/80"
+            className="flex items-center justify-center gap-3 font-mono-code text-lg text-[var(--c-ink)]/80"
           >
-            <MapPin className="w-6 h-6 text-[#182018]/60 shrink-0" />
+            <MapPin className="w-6 h-6 text-[var(--c-ink)]/60 shrink-0" />
             <span>{contact.location}</span>
           </motion.p>
 
@@ -59,9 +59,9 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center justify-center gap-3 font-mono-code text-lg text-[#182018]/80"
+            className="flex items-center justify-center gap-3 font-mono-code text-lg text-[var(--c-ink)]/80"
           >
-            <Phone className="w-6 h-6 text-[#182018]/60 shrink-0" />
+            <Phone className="w-6 h-6 text-[var(--c-ink)]/60 shrink-0" />
             <span>{contact.phone}</span>
           </motion.p>
 
@@ -74,9 +74,9 @@ export const ContactSection: React.FC = () => {
               href={contact.socials[0].url}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-3 font-mono-code text-lg font-bold text-[#182018] border-b border-[#182018]/30 hover:border-[#182018]"
+              className="flex items-center justify-center gap-3 font-mono-code text-lg font-bold text-[var(--c-ink)] border-b border-[var(--c-ink)]/30 hover:border-[var(--c-ink)]"
             >
-              <Linkedin className="w-6 h-6 text-[#182018]/60 shrink-0" />
+              <Linkedin className="w-6 h-6 text-[var(--c-ink)]/60 shrink-0" />
               <span>LinkedIn — {contact.socials[0].handle}</span>
             </motion.a>
           )}

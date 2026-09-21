@@ -91,25 +91,25 @@ export const IdeaShapesCollage: React.FC = () => {
       });
 
   return (
-    <section id="idea-shapes" className="py-24 lg:py-36 bg-[#F5F5ED] border-b border-[#182018]/15 relative overflow-hidden">
+    <section id="idea-shapes" className="py-24 lg:py-36 bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header & Central Statement */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[#182018] rounded-full text-xs font-mono-code uppercase tracking-widest text-[#182018] mb-6 paper-shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] mb-6 paper-shadow-sm">
             <FlowerMark size={14} />
             <span>UNIVERSAL MEDIUMS OF CREATIVITY</span>
           </div>
 
-          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[#182018] leading-[1.04] tracking-tight mb-6">
+          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[var(--c-ink)] leading-[1.04] tracking-tight mb-6">
             However your brain works,{' '}
             <span className="relative inline-block whitespace-nowrap">
-              <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[#C9FF8C] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[#182018]/20" />
+              <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-highlight)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
               <span className="relative z-10 italic">there is room</span>
             </span>{' '}
             for it here.
           </h2>
 
-          <p className="font-mono-code text-sm sm:text-base text-[#182018]/80 max-w-xl mx-auto leading-relaxed">
+          <p className="font-mono-code text-sm sm:text-base text-[var(--c-ink)]/80 max-w-xl mx-auto leading-relaxed">
             Notes, voice thoughts, random screenshots, color chips, and midnight questions. Curio gathers them without making them boring.
           </p>
 
@@ -127,8 +127,8 @@ export const IdeaShapesCollage: React.FC = () => {
                 onClick={() => setFilter(tab.id as any)}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-mono-code tracking-wider uppercase border-[1.5px] transition-all cursor-pointer ${
                   filter === tab.id
-                    ? 'bg-[#182018] text-[#F5F5ED] border-[#182018] paper-shadow-sm font-bold'
-                    : 'bg-[#FFFFFF] text-[#182018]/80 border-[#182018]/40 hover:border-[#182018]'
+                    ? 'bg-[var(--c-ink)] text-[var(--c-bg)] border-[var(--c-ink)] paper-shadow-sm font-bold'
+                    : 'bg-[#FFFFFF] text-[var(--c-ink)]/80 border-[var(--c-ink)]/40 hover:border-[var(--c-ink)]'
                 }`}
               >
                 {tab.label}
@@ -147,7 +147,7 @@ export const IdeaShapesCollage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
-              className={`relative bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-2xl p-6 paper-shadow-hover ${item.rotation} cursor-pointer group`}
+              className={`relative bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow-hover ${item.rotation} cursor-pointer group`}
             >
               {/* Paper Clip or Washi Tape top accent */}
               {index % 2 === 0 ? (
@@ -156,26 +156,26 @@ export const IdeaShapesCollage: React.FC = () => {
                 </div>
               ) : (
                 <div className="absolute -top-3 right-6 z-10">
-                  <PaperClip className="w-5 h-8 text-[#182018]" />
+                  <PaperClip className="w-5 h-8 text-[var(--c-ink)]" />
                 </div>
               )}
 
               {/* Tag and category metadata */}
-              <div className="flex items-center justify-between border-b border-[#182018]/15 pb-3 mb-4 pt-1">
+              <div className="flex items-center justify-between border-b border-[var(--c-ink)]/15 pb-3 mb-4 pt-1">
                 <span 
-                  className="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold uppercase border border-[#182018]"
+                  className="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold uppercase border border-[var(--c-ink)]"
                   style={{ backgroundColor: item.accentColor }}
                 >
                   {item.tag}
                 </span>
-                <span className="font-mono-code text-[11px] text-[#182018]/50">
+                <span className="font-mono-code text-[11px] text-[var(--c-ink)]/50">
                   SCRAP #0{item.id}
                 </span>
               </div>
 
               {/* Visual preview if polaroid or swatch */}
               {item.type === 'polaroid' && (
-                <div className="mb-4 rounded-xl border border-[#182018]/30 overflow-hidden bg-[#E6E4D8]">
+                <div className="mb-4 rounded-xl border border-[var(--c-ink)]/30 overflow-hidden bg-[#E6E4D8]">
                   <img
                     src="/src/assets/images/creative_chaos_collage_1789788411014.jpg"
                     alt="Study artifact"
@@ -186,7 +186,7 @@ export const IdeaShapesCollage: React.FC = () => {
               )}
 
               {item.type === 'swatch' && (
-                <div className="mb-4 rounded-xl border border-[#182018]/30 overflow-hidden bg-[#EFEFE7]">
+                <div className="mb-4 rounded-xl border border-[var(--c-ink)]/30 overflow-hidden bg-[#EFEFE7]">
                   <img
                     src="/src/assets/images/curated_moodboard_art_1789788458713.jpg"
                     alt="Material swatch"
@@ -198,22 +198,22 @@ export const IdeaShapesCollage: React.FC = () => {
 
               {/* Voice Player UI */}
               {item.type === 'voice' && (
-                <div className="mb-4 p-3 bg-[#182018]/5 border border-[#182018]/20 rounded-xl flex items-center justify-between">
+                <div className="mb-4 p-3 bg-[var(--c-ink)]/5 border border-[var(--c-ink)]/20 rounded-xl flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         setPlayingVoice(!playingVoice);
                       }}
-                      className="w-8 h-8 rounded-full bg-[#182018] text-[#FFFFFF] flex items-center justify-center hover:scale-105 transition-transform"
+                      className="w-8 h-8 rounded-full bg-[var(--c-ink)] text-[#FFFFFF] flex items-center justify-center hover:scale-105 transition-transform"
                     >
                       <Volume2 className="w-4 h-4" />
                     </button>
                     <div>
-                      <span className="font-mono-code text-[11px] font-bold text-[#182018] block">
+                      <span className="font-mono-code text-[11px] font-bold text-[var(--c-ink)] block">
                         {playingVoice ? "PLAYING AUDIO..." : "VOICE MEMO 0:48"}
                       </span>
-                      <span className="font-mono-code text-[10px] text-[#182018]/60">
+                      <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60">
                         Recorded on bike ride
                       </span>
                     </div>
@@ -223,7 +223,7 @@ export const IdeaShapesCollage: React.FC = () => {
                     {[12, 24, 18, 28, 14, 22, 10, 26, 16].map((h, i) => (
                       <span
                         key={i}
-                        className={`w-1 bg-[#182018] rounded-full transition-all ${
+                        className={`w-1 bg-[var(--c-ink)] rounded-full transition-all ${
                           playingVoice ? 'animate-pulse' : 'opacity-40'
                         }`}
                         style={{ height: `${h}px` }}
@@ -233,24 +233,24 @@ export const IdeaShapesCollage: React.FC = () => {
                 </div>
               )}
 
-              <h3 className="font-serif-display text-2xl text-[#182018] leading-tight mb-2 group-hover:text-emerald-950 transition-colors">
+              <h3 className="font-serif-display text-2xl text-[var(--c-ink)] leading-tight mb-2 group-hover:text-emerald-950 transition-colors">
                 {item.title}
               </h3>
 
               {item.subtitle && (
-                <p className="font-mono-code text-xs text-[#182018]/60 mb-3">
+                <p className="font-mono-code text-xs text-[var(--c-ink)]/60 mb-3">
                   {item.subtitle}
                 </p>
               )}
 
               {item.snippet && (
-                <p className="font-body text-xs text-[#182018]/80 leading-relaxed whitespace-pre-line border-t border-dashed border-[#182018]/15 pt-3 mt-3">
+                <p className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed whitespace-pre-line border-t border-dashed border-[var(--c-ink)]/15 pt-3 mt-3">
                   {item.snippet}
                 </p>
               )}
 
               {/* Card Footer stamp */}
-              <div className="mt-4 pt-3 border-t border-[#182018]/15 flex items-center justify-between text-[11px] font-mono-code text-[#182018]/60">
+              <div className="mt-4 pt-3 border-t border-[var(--c-ink)]/15 flex items-center justify-between text-[11px] font-mono-code text-[var(--c-ink)]/60">
                 <span>INTENT: PRESERVED</span>
                 <span className="group-hover:translate-x-1 transition-transform">✦ PINNED</span>
               </div>
@@ -260,7 +260,7 @@ export const IdeaShapesCollage: React.FC = () => {
 
         {/* Bottom Editorial Callout */}
         <div className="mt-16 text-center">
-          <p className="font-hand text-2xl sm:text-3xl text-[#182018]/80 -rotate-1">
+          <p className="font-hand text-2xl sm:text-3xl text-[var(--c-ink)]/80 -rotate-1">
             "Your workspace shouldn't force your thoughts into somebody else's boxes."
           </p>
         </div>

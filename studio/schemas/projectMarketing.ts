@@ -1,0 +1,319 @@
+import { defineType, defineField } from 'sanity';
+
+export const projectMarketing = defineType({
+  name: 'projectMarketing',
+  title: 'Project 1 — UNIQLO Marketing',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'cover',
+      title: 'Cover',
+      type: 'object',
+      fields: [
+        { name: 'title', title: 'Title', type: 'string' },
+        { name: 'subtitle', title: 'Subtitle', type: 'string' },
+        { name: 'brand', title: 'Brand', type: 'string' },
+        { name: 'discipline', title: 'Discipline', type: 'string' },
+        { name: 'timeline', title: 'Timeline', type: 'string' },
+        { name: 'accentColor', title: 'Accent Color', type: 'string' },
+      ],
+    }),
+    defineField({
+      name: 'page1And2',
+      title: 'Page 1 & 2',
+      type: 'object',
+      fields: [
+        { name: 'context', title: 'Context', type: 'text', rows: 3 },
+        { name: 'brief', title: 'Brief', type: 'text', rows: 3 },
+      ],
+    }),
+
+    // PAGE 2: FROM BRIEF TO CONCEPT
+    defineField({
+      name: 'page2BriefToConcept',
+      title: 'Page 2 — From Brief to Concept',
+      type: 'object',
+      fields: [
+        { name: 'pageLabel', title: 'Page Label', type: 'string' },
+        { name: 'headerTag', title: 'Header Tag', type: 'string' },
+        { name: 'title', title: 'Title', type: 'string' },
+        { name: 'subtitle', title: 'Subtitle', type: 'string' },
+        {
+          name: 'quadrant01',
+          title: 'Quadrant 01 — Project Brief',
+          type: 'object',
+          fields: [
+            { name: 'number', title: 'Number', type: 'string' },
+            { name: 'title', title: 'Title', type: 'string' },
+            { name: 'text', title: 'Text', type: 'text', rows: 3 },
+            { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+            { name: 'scriptCallout', title: 'Script Callout', type: 'string' },
+          ],
+        },
+        {
+          name: 'quadrant02',
+          title: 'Quadrant 02 — Research & Investigation',
+          type: 'object',
+          fields: [
+            { name: 'number', title: 'Number', type: 'string' },
+            { name: 'title', title: 'Title', type: 'string' },
+            { name: 'lead', title: 'Lead', type: 'text', rows: 3 },
+            {
+              name: 'pillars',
+              title: 'Pillars',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    { name: 'name', title: 'Name', type: 'string' },
+                    { name: 'points', title: 'Points', type: 'array', of: [{ type: 'string' }] },
+                  ],
+                },
+              ],
+            },
+            { name: 'frameworkSentence', title: 'Framework Sentence', type: 'text', rows: 3 },
+            { name: 'frameworkBadges', title: 'Framework Badges', type: 'array', of: [{ type: 'string' }] },
+            { name: 'notepadImage', title: 'Notepad Image', type: 'image', options: { hotspot: true } },
+          ],
+        },
+        {
+          name: 'quadrant03',
+          title: 'Quadrant 03 — How I Came Up With the Concept',
+          type: 'object',
+          fields: [
+            { name: 'number', title: 'Number', type: 'string' },
+            { name: 'title', title: 'Title', type: 'string' },
+            {
+              name: 'flow',
+              title: 'Flow',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    { name: 'step', title: 'Step', type: 'string' },
+                    { name: 'desc', title: 'Description', type: 'text', rows: 2 },
+                    { name: 'isLogo', title: 'Is Logo', type: 'boolean' },
+                    { name: 'isQuestion', title: 'Is Question', type: 'boolean' },
+                    { name: 'isHighlight', title: 'Is Highlight', type: 'boolean' },
+                  ],
+                },
+              ],
+            },
+            { name: 'takeaway', title: 'Takeaway', type: 'text', rows: 3 },
+            { name: 'natureTitle', title: 'Nature Title', type: 'string' },
+            { name: 'naturePillars', title: 'Nature Pillars', type: 'array', of: [{ type: 'string' }] },
+            { name: 'natureImage', title: 'Nature Image', type: 'image', options: { hotspot: true } },
+            {
+              name: 'variants',
+              title: 'Fragrance Variants',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    { name: 'name', title: 'Name', type: 'string' },
+                    { name: 'label', title: 'Label', type: 'string' },
+                    { name: 'color', title: 'Color', type: 'string' },
+                    { name: 'dotColor', title: 'Dot Color', type: 'string' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'quadrant04',
+          title: 'Quadrant 04 — Skills I Applied',
+          type: 'object',
+          fields: [
+            { name: 'number', title: 'Number', type: 'string' },
+            { name: 'title', title: 'Title', type: 'string' },
+            { name: 'lead', title: 'Lead', type: 'text', rows: 3 },
+            {
+              name: 'skills',
+              title: 'Skills',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    { name: 'title', title: 'Title', type: 'string' },
+                    { name: 'subtitle', title: 'Subtitle', type: 'string' },
+                    { name: 'icon', title: 'Icon', type: 'string' },
+                  ],
+                },
+              ],
+            },
+            { name: 'quote', title: 'Quote', type: 'string' },
+            { name: 'tag', title: 'Tag', type: 'string' },
+            { name: 'bottlesImage', title: 'Bottles Image', type: 'image', options: { hotspot: true } },
+          ],
+        },
+      ],
+    }),
+
+    defineField({
+      name: 'page3DesignDecisions',
+      title: 'Page 3 — Design Decisions',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'number', title: 'Number', type: 'string' },
+            { name: 'title', title: 'Title', type: 'string' },
+            { name: 'desc', title: 'Description', type: 'text', rows: 3 },
+          ],
+        },
+      ],
+    }),
+
+    defineField({
+      name: 'page4Strategy',
+      title: 'Page 4 — Strategy (STP / 7Ps / BCG)',
+      type: 'object',
+      fields: [
+        { name: 'stp', title: 'STP', type: 'text', rows: 4 },
+        { name: 'sevenPs', title: '7Ps', type: 'text', rows: 4 },
+        { name: 'bcg', title: 'BCG', type: 'text', rows: 4 },
+      ],
+    }),
+
+    defineField({
+      name: 'page4ConceptToConsumer',
+      title: 'Page 4 — From Concept to Consumer',
+      type: 'object',
+      fields: [
+        { name: 'pageLabel', title: 'Page Label', type: 'string' },
+        { name: 'headerTag', title: 'Header Tag', type: 'string' },
+        { name: 'title', title: 'Title', type: 'string' },
+        { name: 'subtitle', title: 'Subtitle', type: 'string' },
+        {
+          name: 'testPhotos',
+          title: 'Test Photos',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'src', title: 'Photo', type: 'image', options: { hotspot: true } },
+                { name: 'caption', title: 'Caption', type: 'string' },
+                { name: 'desc', title: 'Description', type: 'text', rows: 2 },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'processSteps',
+          title: 'Process Steps',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'label', title: 'Label', type: 'string' },
+                { name: 'icon', title: 'Icon', type: 'string' },
+              ],
+            },
+          ],
+        },
+        { name: 'processDescription', title: 'Process Description', type: 'text', rows: 3 },
+        {
+          name: 'keyInsights',
+          title: 'Key Insights',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'title', title: 'Title', type: 'string' },
+                { name: 'desc', title: 'Description', type: 'text', rows: 2 },
+                { name: 'bg', title: 'Background Color', type: 'string' },
+                { name: 'border', title: 'Border Color', type: 'string' },
+              ],
+            },
+          ],
+        },
+        { name: 'bottomStatement', title: 'Bottom Statement', type: 'string' },
+        { name: 'pagePagination', title: 'Page Pagination', type: 'string' },
+      ],
+    }),
+
+    defineField({
+      name: 'page5IdeaToImpact',
+      title: 'Page 5 — From Idea to Impact',
+      type: 'object',
+      fields: [
+        { name: 'pageLabel', title: 'Page Label', type: 'string' },
+        { name: 'headerTag', title: 'Header Tag', type: 'string' },
+        { name: 'title', title: 'Title', type: 'string' },
+        { name: 'subheadline', title: 'Subheadline', type: 'string' },
+        {
+          name: 'learnings',
+          title: 'Learnings',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'num', title: 'Number', type: 'string' },
+                { name: 'name', title: 'Name', type: 'string' },
+                { name: 'detail', title: 'Detail', type: 'text', rows: 3 },
+                { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+                { name: 'icon', title: 'Icon', type: 'string' },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'quoteBanner',
+          title: 'Quote Banner',
+          type: 'object',
+          fields: [
+            { name: 'quote', title: 'Quote', type: 'text', rows: 3 },
+            { name: 'callouts', title: 'Callouts', type: 'array', of: [{ type: 'string' }] },
+            { name: 'bottleImage', title: 'Bottle Image', type: 'image', options: { hotspot: true } },
+          ],
+        },
+        {
+          name: 'journeyInAction',
+          title: 'Journey in Action',
+          type: 'object',
+          fields: [
+            { name: 'title', title: 'Title', type: 'string' },
+            {
+              name: 'steps',
+              title: 'Steps',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    { name: 'title', title: 'Title', type: 'string' },
+                    { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'skillsDeveloped',
+          title: 'Skills Developed',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'name', title: 'Name', type: 'string' },
+                { name: 'icon', title: 'Icon', type: 'string' },
+              ],
+            },
+          ],
+        },
+      ],
+    }),
+  ],
+});

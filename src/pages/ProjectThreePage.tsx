@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, Sparkles, CheckCircle2, MessageSquare, TrendingUp, Scissors, BarChart3, Layers } from 'lucide-react';
+import { ArrowLeft, Sparkles, MessageSquare, TrendingUp, Scissors, Users, BarChart2, Lightbulb, Target, type LucideIcon } from 'lucide-react';
 import { FlowerMark, WashiTape } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectThreePage: React.FC = () => {
   const { projectThree: p3 } = portfolioData;
+
+  const skillIcons: Record<string, LucideIcon> = {
+    TrendingUp, Users, BarChart2, Lightbulb, Target
+  };
 
   return (
     <div className="bg-[#F5F5ED] min-h-screen py-16 lg:py-24">
@@ -25,7 +29,7 @@ export const ProjectThreePage: React.FC = () => {
         </div>
 
         {/* SECTION: COVER PAGE */}
-        <section className="space-y-12 mb-16">
+        <section className="space-y-8 mb-16">
             <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative overflow-hidden">
               <div className="absolute -top-3 right-12">
                 <WashiTape color="#AFC8FF" width="w-32" />
@@ -35,7 +39,7 @@ export const ProjectThreePage: React.FC = () => {
                 <div className="lg:col-span-7 space-y-6">
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F5F5ED] border border-[#182018] rounded-full text-xs font-mono-code uppercase tracking-widest text-[#182018] paper-shadow-sm">
                     <FlowerMark size={14} />
-                    <span>PROJECT 3 (START UP) // PAGE 1</span>
+                    <span>{p3.cover.pageLabel}</span>
                   </div>
 
                   <h1 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[#182018] leading-[1.02] tracking-tight">
@@ -43,8 +47,16 @@ export const ProjectThreePage: React.FC = () => {
                   </h1>
 
                   <p className="font-serif-display text-2xl sm:text-3xl text-[#182018]/80 italic leading-snug">
-                    {p3.cover.conceptSubtitle}
+                    {p3.cover.subtitle}
                   </p>
+
+                  <div className="flex flex-wrap gap-2 font-mono-code text-xs font-bold text-[#182018]">
+                    {p3.cover.tagline.split(" • ").map((tag, tIdx) => (
+                      <span key={tIdx} className="px-3 py-1 bg-[#AFC8FF]/25 border border-[#182018]/25 rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-[#182018]/15 font-mono-code text-xs">
                     <div>
@@ -52,8 +64,8 @@ export const ProjectThreePage: React.FC = () => {
                       <span className="font-bold text-[#182018]">Fashion Start-Up & Athleisure</span>
                     </div>
                     <div>
-                      <span className="text-[#182018]/50 block text-[10px] uppercase">DELIVERABLE:</span>
-                      <span className="font-bold text-[#182018]">Physical MVP Prototype</span>
+                      <span className="text-[#182018]/50 block text-[10px] uppercase">CONCEPT:</span>
+                      <span className="font-bold text-[#182018]">{p3.cover.conceptSubtitle}</span>
                     </div>
                     <div>
                       <span className="text-[#182018]/50 block text-[10px] uppercase">SCOPE:</span>
@@ -62,117 +74,236 @@ export const ProjectThreePage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Cover Graphic Image */}
+                {/* Cover Hero Image */}
                 <div className="lg:col-span-5">
                   <div className="bg-[#F5F5ED] border-[1.5px] border-[#182018] rounded-2xl p-4 paper-shadow">
                     <img
-                      src="/portfolio-assets/Screenshot 2026-09-18 at 7.51.59 PM.png"
-                      alt="Athleisure Start-up Cover"
+                      src={p3.cover.heroImage}
+                      alt="Athera Athleisure Cover"
                       className="w-full h-auto object-cover rounded-xl border border-[#182018]/15"
                     />
                     <div className="font-mono-code text-[11px] text-[#182018]/70 text-center mt-2">
-                      Athleisure Venture Cover Dossier
+                      {p3.cover.heroCaption}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-        </section>
-
-        {/* SECTION: SURVEY INSIGHTS & THE BRIEF */}
-        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative mb-16">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#AFC8FF" width="w-28" />
-            </div>
-
-            <div className="max-w-4xl mb-10">
-              <span className="font-mono-code text-xs font-bold text-[#182018]/60 uppercase tracking-widest block mb-2">
-                PAGE 2 — SURVEY INSIGHTS
-              </span>
-              <h2 className="font-serif-display text-3xl sm:text-5xl text-[#182018] mb-4">
-                THE BRIEF
-              </h2>
-              <p className="font-body text-base text-[#182018]/85 leading-relaxed p-4 bg-[#F5F5ED] rounded-2xl border border-[#182018]/20 mb-6">
-                {p3.page2SurveyInsights.brief}
-              </p>
-
-              <div className="p-4 bg-[#AFC8FF]/20 rounded-2xl border border-[#182018]/20 font-mono-code text-xs font-bold text-[#182018]">
-                THE JOURNEY: {p3.page2SurveyInsights.journey}
+            {/* GALLERY — FOUR LIFESTYLE MOMENTS */}
+            <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-6 sm:p-10 paper-shadow-lg">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-6 pb-4 border-b border-[#182018]/15">
+                <span className="font-mono-code text-xs font-bold uppercase tracking-wider text-[#182018]">
+                  MADE FOR MULTIPLE MOMENTS
+                </span>
+                <span className="font-serif-display italic text-sm text-[#182018]/70">
+                  "{p3.cover.bottomStatement}"
+                </span>
               </div>
-            </div>
 
-            {/* Real Survey Insights Diagram */}
-            <div className="mb-10 bg-[#F5F5ED] border-[1.5px] border-[#182018] rounded-2xl p-6 paper-shadow">
-              <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[#182018] mb-3 flex items-center gap-2">
-                <BarChart3 className="w-4 h-4" />
-                <span>Survey Insights & Consumer Data Analysis</span>
-              </div>
-              <div className="rounded-xl overflow-hidden border border-[#182018]/20 bg-white max-h-[420px] flex items-center justify-center p-2">
-                <img
-                  src="/portfolio-assets/Screenshot 2026-09-18 at 7.12.03 PM.png"
-                  alt="Survey Insights Breakdown"
-                  className="max-h-[380px] w-auto object-contain"
-                />
-              </div>
-              <span className="font-mono-code text-[11px] text-[#182018]/60 block mt-2 text-center">
-                Direct consumer feedback matrix measuring versatility, tightness, and comfort ratings
-              </span>
-            </div>
-
-            {/* THE OBSERVATION */}
-            <div className="mb-10">
-              <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[#182018] mb-4 pb-2 border-b border-[#182018]/15">
-                THE OBSERVATION
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                {p3.page2SurveyInsights.theObservation.map((obs) => (
-                  <div key={obs.num} className="p-6 bg-[#F5F5ED] border border-[#182018]/20 rounded-2xl">
-                    <span className="font-mono-code text-xs text-[#182018]/50 font-bold block mb-1">
-                      {obs.num}.
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {p3.cover.gallery.map((g, gIdx) => (
+                  <div key={gIdx} className="space-y-2">
+                    <div className="rounded-xl overflow-hidden border border-[#182018]/20 bg-[#F5F5ED] aspect-[3/4]">
+                      <img src={g.image} alt={g.label} className="w-full h-full object-cover" />
+                    </div>
+                    <span className="font-mono-code text-xs font-bold text-[#182018] block text-center tracking-wider">
+                      {g.label}
                     </span>
-                    <h3 className="font-serif-display text-xl text-[#182018] mb-2">
-                      {obs.title}
-                    </h3>
-                    <p className="font-body text-xs text-[#182018]/75">
-                      {obs.detail}
-                    </p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* WHAT I INVESTIGATED & MY APPROACH */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
-              <div className="lg:col-span-5 p-6 bg-[#F5F5ED] border border-[#182018]/20 rounded-2xl">
-                <div className="font-mono-code text-xs font-bold uppercase text-[#182018] mb-4 pb-2 border-b border-[#182018]/15">
-                  WHAT I INVESTIGATED
-                </div>
-                <ul className="space-y-3 font-mono-code text-xs text-[#182018]/85">
-                  {p3.page2SurveyInsights.whatIInvestigated.map((inv, iIdx) => (
-                    <li key={iIdx} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#182018] mt-1.5 shrink-0" />
-                      <span>{inv}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        </section>
 
-              <div className="lg:col-span-7 p-6 bg-[#F5F5ED] border border-[#182018]/20 rounded-2xl">
-                <div className="font-mono-code text-xs font-bold uppercase text-[#182018] mb-4 pb-2 border-b border-[#182018]/15">
-                  MY APPROACH
-                </div>
-                <div className="space-y-3">
-                  {p3.page2SurveyInsights.myApproach.map((app, aIdx) => (
-                    <div key={aIdx} className="font-mono-code text-xs">
-                      <strong className="text-[#182018]">{app.step}:</strong>{" "}
-                      <span className="text-[#182018]/75">{app.desc}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+        {/* SECTION: FROM AN OBSERVATION TO AN OPPORTUNITY */}
+        <div className="bg-[#FFFFFF] border-[1.5px] border-[#182018] rounded-3xl p-8 sm:p-12 paper-shadow-lg relative mb-16">
+            <div className="absolute -top-3 right-12">
+              <WashiTape color="#AFC8FF" width="w-28" />
             </div>
 
+            {/* Section Header */}
+            <div className="max-w-4xl mb-10">
+              <span className="font-mono-code text-xs font-bold text-[#182018]/60 uppercase tracking-widest block mb-2">
+                PAGE 2 — {p3.page2SurveyInsights.pageLabel} // {p3.page2SurveyInsights.headerTag}
+              </span>
+              <h2 className="font-serif-display text-3xl sm:text-5xl text-[#182018] leading-tight mb-4 whitespace-pre-line">
+                FROM AN OBSERVATION
+                <br />
+                TO AN OPPORTUNITY
+              </h2>
+              <p className="font-body text-base text-[#182018]/85 leading-relaxed p-4 bg-[#F5F5ED] rounded-2xl border border-[#182018]/20 mb-0">
+                {p3.page2SurveyInsights.subtitle}
+              </p>
+            </div>
+
+            {/* 2x2 Quadrant Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {p3.page2SurveyInsights.quadrants.map((q, qIdx) => (
+                <div key={qIdx} className="p-8 bg-[#F5F5ED] border-[1.5px] border-[#182018] rounded-2xl paper-shadow-sm">
+                  {/* Quadrant header */}
+                  <div className="flex items-baseline gap-3 mb-5 pb-3 border-b border-[#182018]/15">
+                    <span className="font-mono-code text-sm font-bold text-[#182018]/50">
+                      {q.number}.
+                    </span>
+                    <h3 className="font-serif-display text-2xl text-[#182018] tracking-wide">
+                      {q.title}
+                    </h3>
+                  </div>
+
+                  {/* Q1 THE OBSERVATION */}
+                  {q.number === "01" && (
+                    <div className="space-y-5">
+                      <p className="font-body text-sm text-[#182018]/80 leading-relaxed">
+                        {q.text}
+                      </p>
+                      <div className="grid grid-cols-2 gap-3">
+                        {q.images!.map((img, i) => (
+                          <div key={i} className="space-y-1.5">
+                            <div className="rounded-xl overflow-hidden border border-[#182018]/20 bg-white aspect-[3/4]">
+                              <img src={img.image} alt={img.label} className="w-full h-full object-cover" />
+                            </div>
+                            <span className="font-mono-code text-[10px] font-bold text-[#182018]/70 block tracking-wider">
+                              {img.label}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#AFC8FF]/25 border border-[#182018] rounded-xl font-serif-display italic text-sm text-[#182018] whitespace-pre-line">
+                        <Scissors className="w-4 h-4 shrink-0" />
+                        {q.scriptCallout}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Q2 THE JOURNEY */}
+                  {q.number === "02" && (
+                    <div className="space-y-5">
+                      <p className="font-mono-code text-[11px] font-bold text-[#182018]/70 uppercase tracking-wider flex items-center gap-2">
+                        <span className="flex-1">{q.lead}</span>
+                      </p>
+                      <div className="space-y-4">
+                        {q.pillars!.map((pillar, i) => (
+                          <div key={i} className="p-4 bg-[#FFFFFF] border border-[#182018]/20 rounded-xl">
+                            <div className="font-mono-code text-xs font-bold text-[#182018] mb-2">
+                              {String(i + 1).padStart(2, "0")} — {pillar.name}
+                            </div>
+                            <ul className="space-y-1.5 font-body text-xs text-[#182018]/80">
+                              {pillar.points.map((pt, j) => (
+                                <li key={j} className="flex items-start gap-2">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-[#182018] mt-1.5 shrink-0" />
+                                  <span>{pt}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {q.frameworkBadges!.map((b, i) => (
+                          <span key={i} className="px-3 py-1 bg-[#182018] text-[#F5F5ED] rounded-full font-mono-code text-[10px] font-bold tracking-wider">
+                            {b}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Q3 WHAT I INVESTIGATED */}
+                  {q.number === "03" && (
+                    <div className="space-y-5">
+                      <div className="space-y-3">
+                        {q.flow!.map((f, i) => (
+                          <div
+                            key={i}
+                            className={`p-4 rounded-xl border ${
+                              f.isHighlight
+                                ? "bg-[#AFC8FF]/30 border-[#182018] paper-shadow-sm"
+                                : "bg-[#FFFFFF] border-[#182018]/20"
+                            }`}
+                          >
+                            <div className="flex items-center justify-between gap-2 mb-1.5">
+                              <span className="font-mono-code text-xs font-bold text-[#182018] tracking-wider">
+                                {String(i + 1).padStart(2, "0")} — {f.step}
+                              </span>
+                              {f.isHighlight && (
+                                <span className="font-mono-code text-[9px] font-bold bg-[#182018] text-[#F5F5ED] px-2 py-0.5 rounded-full">
+                                  OPPORTUNITY GAP
+                                </span>
+                              )}
+                            </div>
+                            <p className="font-body text-xs text-[#182018]/80 leading-relaxed">
+                              {f.desc}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                      <div>
+                        <div className="font-mono-code text-xs font-bold uppercase text-[#182018] mb-2">
+                          {q.natureTitle}
+                        </div>
+                        <div className="flex flex-wrap gap-2 mb-3">
+                          {q.naturePillars!.map((p, i) => (
+                            <span key={i} className="px-3 py-1 bg-[#FFFFFF] border border-[#182018]/30 rounded-full font-mono-code text-[10px] font-bold tracking-wider">
+                              ✦ {p}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="rounded-xl overflow-hidden border border-[#182018]/20 bg-white aspect-[16/9]">
+                          <img src={q.natureImage} alt={q.natureCaption} className="w-full h-full object-cover" />
+                        </div>
+                        <span className="font-mono-code text-[10px] text-[#182018]/60 block mt-1.5">
+                          {q.natureCaption}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Q4 MY APPROACH */}
+                  {q.number === "04" && (
+                    <div className="space-y-5">
+                      <p className="font-body text-sm text-[#182018]/80 leading-relaxed">
+                        {q.lead}
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {q.skills!.map((s, i) => (
+                          <div key={i} className="flex items-start gap-3 p-4 bg-[#FFFFFF] border border-[#182018]/20 rounded-xl">
+                            <div className="w-9 h-9 shrink-0 rounded-lg bg-[#AFC8FF]/30 border border-[#182018]/25 flex items-center justify-center">
+                              {(() => {
+                                const SkillIcon = skillIcons[s.icon] ?? Sparkles;
+                                return <SkillIcon className="w-4.5 h-4.5 text-[#182018]" />;
+                              })()}
+                            </div>
+                            <div>
+                              <div className="font-mono-code text-xs font-bold text-[#182018]">
+                                {s.title}
+                              </div>
+                              <div className="font-body text-[11px] text-[#182018]/70">
+                                {s.subtitle}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="rounded-xl overflow-hidden border border-[#182018]/20 bg-white aspect-[16/9]">
+                        <img src={q.bottlesImage} alt={q.bottlesCaption} className="w-full h-full object-cover" />
+                      </div>
+                      <span className="font-mono-code text-[10px] text-[#182018]/60 block -mt-2">
+                        {q.bottlesCaption}
+                      </span>
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#AFC8FF]/25 border border-[#182018] rounded-xl font-serif-display italic text-sm text-[#182018] whitespace-pre-line">
+                        <MessageSquare className="w-4 h-4 shrink-0" />
+                        {q.quote}
+                        <span className="font-mono-code text-[10px] font-bold bg-[#182018] text-[#F5F5ED] px-2 py-0.5 rounded-full not-italic">
+                          {q.tag}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
         </div>
 
         {/* SECTION: DESIGN, MATERIAL & PROTOTYPE */}

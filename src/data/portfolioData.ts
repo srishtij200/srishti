@@ -1,3 +1,28 @@
+export interface P3Page2Quadrant {
+  number: string;
+  title: string;
+  text?: string;
+  images?: { label: string; image: string }[];
+  scriptCallout?: string;
+  lead?: string;
+  pillars?: { name: string; points: string[] }[];
+  frameworkBadges?: string[];
+  notepadImage?: string;
+  notepadCaption?: string;
+  frameworkSentence?: string;
+  flow?: { step: string; desc: string; isHighlight: boolean }[];
+  natureTitle?: string;
+  naturePillars?: string[];
+  natureImage?: string;
+  natureCaption?: string;
+  takeaway?: string;
+  skills?: { title: string; subtitle: string; icon: string }[];
+  quote?: string;
+  tag?: string;
+  bottlesImage?: string;
+  bottlesCaption?: string;
+}
+
 export interface StudentBio {
   name: string;
   degree: string;
@@ -197,6 +222,79 @@ export const portfolioData = {
       context: "Strategic evaluation of UNIQLO’s brand equity, LifeWear philosophy, and retail footprint to identify a high-margin, scalable category extension: everyday lifestyle fragrances.",
       brief: "To develop a commercially viable, brand-aligned marketing plan for introducing a fragrance line under UNIQLO, ensuring brand resonance while capturing accessible luxury market share."
     },
+
+    // PAGE 2: FROM BRIEF TO CONCEPT
+    page2BriefToConcept: {
+      pageLabel: "PAGE 02",
+      headerTag: "UNIQLO FRAGRANCES // MARKETING MANAGEMENT PROJECT",
+      title: "FROM BRIEF TO CONCEPT",
+      subtitle: "How I turned a category-expansion brief into a fragrance concept.",
+      quadrant01: {
+        number: "01",
+        title: "PROJECT BRIEF",
+        text: "I was challenged to expand an existing fashion brand into a new product category. I chose UNIQLO and explored how its Life Wear philosophy could be extended beyond clothing.",
+        image: "/portfolio-assets/01_UNIQLO_main.jpg",
+        scriptCallout: "From Life Wear to Feel Wear"
+      },
+      quadrant02: {
+        number: "02",
+        title: "RESEARCH & INVESTIGATION",
+        lead: "I explored the market, understood the consumer and analysed competitors to identify the opportunity.",
+        pillars: [
+          {
+            name: "MARKET",
+            points: ["Fragrance industry growth", "Consumer demand", "Regional opportunities (Asia & India)"]
+          },
+          {
+            name: "CONSUMER",
+            points: ["Lifestyle & preferences", "Target audience", "Spending behaviour"]
+          },
+          {
+            name: "COMPETITION",
+            points: ["Zara, H&M, etc.", "Existing fragrance lines", "Positioning & gaps"]
+          }
+        ],
+        frameworkSentence: "I used SWOT, Porter's Five Forces, STP, 7Ps, Ansoff and BCG to structure my analysis.",
+        frameworkBadges: ["SWOT", "PORTER'S FIVE FORCES", "STP", "7Ps", "ANSOFF", "BCG"],
+        notepadImage: "/portfolio-assets/02_market_trends.jpg"
+      },
+      quadrant03: {
+        number: "03",
+        title: "HOW I CAME UP WITH THE CONCEPT",
+        flow: [
+          { step: "UNIQLO'S LIFE WEAR", desc: "Simple + Functional + Japanese Minimalism", isLogo: true },
+          { step: "What if Life Wear could be experienced through another sense?", desc: "", isQuestion: true },
+          { step: "FRAGRANCE", desc: "Nature-inspired Japanese scents", isHighlight: true }
+        ],
+        takeaway: "I saw an opportunity to extend UNIQLO's idea of everyday living from something we wear to something we experience.",
+        natureTitle: "INSPIRED BY JAPANESE NATURE",
+        naturePillars: ["Purity", "Calm", "Balance", "Harmony"],
+        natureImage: "/portfolio-assets/project-1/page5_creative_fuji.png",
+        variants: [
+          { name: "HANA", label: "FLOWER", color: "#FDE2E4", dotColor: "#F4B6D4" },
+          { name: "MIZU", label: "WATER", color: "#E0F2FE", dotColor: "#BAE6FD" },
+          { name: "KAZE", label: "WIND", color: "#DCFCE7", dotColor: "#BBF7D0" },
+          { name: "SORA", label: "SKY", color: "#E0E7FF", dotColor: "#C7D2FE" }
+        ]
+      },
+      quadrant04: {
+        number: "04",
+        title: "SKILLS I APPLIED",
+        lead: "I combined my marketing knowledge with creative thinking to bring the concept to life.",
+        skills: [
+          { title: "RESEARCH", subtitle: "Market & competitor investigation", icon: "Search" },
+          { title: "STRATEGIC THINKING", subtitle: "STP • 7Ps • BCG • Ansoff", icon: "Target" },
+          { title: "CREATIVE THINKING", subtitle: "Concept & fragrance development", icon: "Lightbulb" },
+          { title: "BRAND THINKING", subtitle: "Extending UNIQLO's identity", icon: "Tag" },
+          { title: "VISUAL COMMUNICATION", subtitle: "Packaging & presentation", icon: "Image" }
+        ],
+        quote: "More than just a fragrance, it's a feeling.",
+        tag: "UNIQLO FRAGRANCES",
+        bottlesImage: "/portfolio-assets/project-1/four_bottles_clean.jpg"
+      }
+    },
+
+    // PAGE 3: DESIGN DECISIONS & 4 VARIANTS
     page3DesignDecisions: [
       {
         number: "1",
@@ -229,37 +327,141 @@ export const portfolioData = {
       sevenPs: "Product (Minimalist glass bottle), Price (Accessible premium), Place (Global flagships + e-commerce), Promotion (In-store sensory displays + digital micro-creators), Process (Tester stations), Physical Evidence (Eco-refill pouches), People (Educated store associates).",
       bcg: "Positioned as a Question Mark with rapid transition pathway to Star status through UNIQLO’s existing foot-traffic and checkout counter cross-merchandising."
     },
+
+    // PAGE 4: FROM CONCEPT TO CONSUMER
+    page4ConceptToConsumer: {
+      pageLabel: "PAGE 04",
+      headerTag: "UNIQLO FRAGRANCES // CONSUMER VALIDATION",
+      title: "FROM CONCEPT TO CONSUMER",
+      subtitle: "WE DIDN'T JUST CREATE IT, WE TESTED IT.",
+      testPhotos: [
+        {
+          src: "/portfolio-assets/project-1/page4_product_display.png",
+          caption: "Product Display",
+          desc: "Acrylic tester riser with fragrance bottles & branding"
+        },
+        {
+          src: "/portfolio-assets/project-1/page4_consumer_interaction.png",
+          caption: "Consumer Interaction",
+          desc: "Consumers exploring tester strips and sampling aromas"
+        },
+        {
+          src: "/portfolio-assets/project-1/page4_fragrance_samples.png",
+          caption: "Fragrance Samples",
+          desc: "Structural carton prototypes and fragrance box samples"
+        },
+        {
+          src: "/portfolio-assets/project-1/page4_feedback.png",
+          caption: "Feedback",
+          desc: "Gathering direct quantitative & qualitative feedback"
+        }
+      ],
+      processSteps: [
+        { label: "SHOW", icon: "Eye" },
+        { label: "LET THEM EXPERIENCE", icon: "Users" },
+        { label: "ASK", icon: "MessageSquare" },
+        { label: "OBSERVE", icon: "BarChart2" },
+        { label: "LEARN", icon: "Lightbulb" }
+      ],
+      processDescription: "We presented the fragrance concepts and samples to consumers to understand their reactions, preferences and perception of the proposed category.",
+      keyInsights: [
+        {
+          title: "WHAT ATTRACTED THEM",
+          desc: "Visual identity, packaging, scent experience.",
+          bg: "#FFF5ED",
+          border: "#FFEDD5"
+        },
+        {
+          title: "WHAT THEY PREFERRED",
+          desc: "Clean, fresh and subtle scents (especially Mizu & Kaze).",
+          bg: "#F0FDF4",
+          border: "#DCFCE7"
+        },
+        {
+          title: "WHAT THEY ASSOCIATED WITH UNIQLO",
+          desc: "Simple, minimal, trustworthy, Japanese, everyday.",
+          bg: "#F0F9FF",
+          border: "#E0F2FE"
+        },
+        {
+          title: "WHAT WE LEARNED",
+          desc: "Importance of in-store experience, need for clearer fragrance communication, strong interest in gifting.",
+          bg: "#FDF2F8",
+          border: "#FCE7F3"
+        }
+      ],
+      bottomStatement: "THE IDEA MOVED FROM ASSUMPTION → VALIDATION",
+      pagePagination: "Page 4 / 5"
+    },
+
+    // PAGE 5: FROM IDEA TO IMPACT
     page5IdeaToImpact: {
-      headline: "FROM IDEA TO IMPACT",
+      pageLabel: "PAGE 05",
+      headerTag: "UNIQLO FRAGRANCES // MARKETING MANAGEMENT PROJECT",
+      title: "FROM IDEA TO IMPACT",
       subheadline: "What I learned through the project",
       learnings: [
         {
           num: "01",
           name: "RESEARCH",
-          detail: "I learned to look at the market, consumer and competition before developing a concept."
+          detail: "I learned to look at the market, consumer and competition before developing a concept.",
+          image: "/portfolio-assets/project-1/page5_research_papers.png",
+          icon: "Search"
         },
         {
           num: "02",
           name: "STRATEGY",
-          detail: "I learned to connect a creative idea with STP, 7Ps, BCG and market planning."
+          detail: "I learned to connect a creative idea with STP, 7Ps, BCG and market planning.",
+          image: "/portfolio-assets/project-1/page5_strategy_notebook.png",
+          icon: "Target"
         },
         {
           num: "03",
           name: "CREATIVE THINKING",
-          detail: "I learned to translate a brand philosophy into a new product and visual identity."
+          detail: "I learned to translate a brand philosophy into a new product and visual identity.",
+          image: "/portfolio-assets/project-1/page5_creative_fuji.png",
+          icon: "Lightbulb"
         },
         {
           num: "04",
           name: "BRAND THINKING",
-          detail: "I learned that a new category must still feel connected to the original brand."
+          detail: "I learned that a new category must still feel connected to the original brand.",
+          image: "/portfolio-assets/project-1/page5_brand_bag.png",
+          icon: "Award"
         }
       ],
+      quoteBanner: {
+        quote: "A good concept is not just creative — it needs a reason, a strategy and a story.",
+        callouts: ["Simple.", "Functional.", "Meaningful."],
+        bottleImage: "/portfolio-assets/project-1/page5_quote_bottle_clean.jpg"
+      },
+      journeyInAction: {
+        title: "THE JOURNEY IN ACTION",
+        steps: [
+          {
+            title: "FINAL PRODUCT",
+            image: "/portfolio-assets/project-1/four_bottles_clean.jpg"
+          },
+          {
+            title: "STORE EXPERIENCE",
+            image: "/portfolio-assets/project-1/page5_journey_store.png"
+          },
+          {
+            title: "DIGITAL EXPERIENCE",
+            image: "/portfolio-assets/project-1/page5_journey_digital.png"
+          },
+          {
+            title: "MARKET ROLLOUT",
+            image: "/portfolio-assets/project-1/page5_journey_rollout_clean.jpg"
+          }
+        ]
+      },
       skillsDeveloped: [
-        "Research",
-        "Strategic Thinking",
-        "Creative Thinking",
-        "Brand Thinking",
-        "Visual Communication"
+        { name: "Research", icon: "Search" },
+        { name: "Strategic Thinking", icon: "Target" },
+        { name: "Creative Thinking", icon: "Lightbulb" },
+        { name: "Brand Thinking", icon: "Award" },
+        { name: "Visual Communication", icon: "Image" }
       ]
     }
   },
@@ -267,54 +469,81 @@ export const portfolioData = {
   // 4. PROJECT 2: VISUAL MERCHANDISING (COVER STORY)
   projectVM: {
     cover: {
-      title: "Visual Merchandising Project 2",
+      title: "Bloom, Reimagined",
+      subtitle: "Future Florals × Cover Story",
+      tagline: "A flowering garden translated through a futuristic, iridescent lens.",
       brand: "Cover Story",
       season: "Spring / Summer",
       conceptName: "Future Florals",
       accentColor: "#F4B6D4"
     },
     page2Brief: {
+      pageLabel: "02 / 05",
+      headerTag: "HOW I REACHED THE CONCEPT",
+      title: "FROM INSIGHT TO CONCEPT",
+      subtitle: "How I translated the brand into a visual direction.",
       briefTitle: "THE BRIEF",
       briefText: "To develop a Spring/Summer visual merchandising concept for Cover Story, creating a fresh, feminine and contemporary in-store experience.",
       whatIInvestigated: [
         {
           pillar: "1. BRAND IDENTITY",
-          points: ["Feminine", "Contemporary", "Effortlessly Elegant"]
+          points: ["Feminine", "Contemporary", "Effortlessly Elegant"],
+          image: "/portfolio-assets/BRAND BOOK  - 16.png"
         },
         {
           pillar: "2. SEASONAL DIRECTION",
-          points: ["Spring/Summer", "Lightness", "Freshness"]
+          points: ["Spring/Summer", "Lightness", "Freshness"],
+          image: "/portfolio-assets/BRAND BOOK  - 18.png"
         },
         {
           pillar: "3. VISUAL INSPIRATION",
-          points: ["Florals", "Pastels", "Iridescence"]
+          points: ["Florals", "Pastels", "Iridescence"],
+          image: "/portfolio-assets/6fa49fa5-d790-4c76-9f00-69ca01bfcdc2.jpg"
         }
       ],
       howIReachedTheConcept: [
-        "COVER STORY",
-        "FEMININITY + SOFTNESS",
-        "FLORAL INSPIRATION",
-        "IRIDESCENCE + LIGHT",
-        "FUTURE FLORALS"
+        { step: "COVER STORY", image: "/portfolio-assets/97e20f9d-778d-44a3-bc5f-d32b6c39b7a3.jpg", isHighlight: false },
+        { step: "FEMININITY + SOFTNESS", image: "/portfolio-assets/1e36b3dd-85f2-438b-b90a-e7143dbd03cd.jpg", isHighlight: false },
+        { step: "FLORAL INSPIRATION", image: "/portfolio-assets/7eee7676-2ce8-4667-9ef7-abf624ba1833.jpg", isHighlight: false },
+        { step: "IRIDESCENCE + LIGHT", image: "/portfolio-assets/6fa49fa5-d790-4c76-9f00-69ca01bfcdc2.jpg", isHighlight: false },
+        { step: "FUTURE FLORALS", image: "/portfolio-assets/DD05B299-B533-4126-B54A-3B48CD3AA413.jpg", isHighlight: true }
       ],
+      conceptFlowTitle: "HOW I REACHED THE CONCEPT",
       conceptSummary: "I reimagined a blooming garden through a futuristic lens, combining delicate florals with holographic and iridescent elements.",
-      designInsight: "If florals represent nature, femininity and renewal, I wanted to explore what they could look like when infused with luminous modern materiality."
+      designInsight: "If florals represent nature, femininity and renewal, I wanted to explore what they could look like in a future-facing environment.",
+      heroImage: {
+        src: "/portfolio-assets/f72aff62-4ccf-4668-9ba7-1a88dc9a9eab.jpg",
+        caption: "The bloom, reimagined as a luminous in-store environment"
+      }
     },
     page3Boards: {
+      pageLabel: "03 / 05",
+      headerTag: "COLOUR PALETTE",
+      title: "THE VISUAL LANGUAGE",
+      subtitle: "Mood Board",
       moodBoard: {
         title: "Mood Board",
-        content: "A soft futuristic interpretation of nature, combining delicate florals, luminous textures and reflective surfaces. The mood balances Cover Story’s feminine identity with a contemporary, forward-looking aesthetic.",
-        keywords: ["FEMININE", "DREAMY", "SOFT", "FUTURISTIC"]
+        content: "Soft florals, futuristic touches, endless possibilities.",
+        keywords: ["SOFT FLORALS", "FUTURISTIC TOUCHES", "ENDLESS POSSIBILITIES"],
+        themes: [
+          { name: "BEAUTY", desc: "Glossy skin and iridescent pastel makeup." },
+          { name: "FLORALS", desc: "Soft pastel florals with translucent and iridescent qualities." },
+          { name: "FASHION", desc: "Feminine flowing silhouettes with floral detailing." },
+          { name: "TEXTURE", desc: "Holographic, reflective and translucent surfaces." },
+          { name: "SPACE", desc: "Soft futuristic environments with rounded architectural forms." }
+        ]
       },
       colourBoard: {
-        title: "Colour Board",
-        content: "Soft blush, lavender, blue and neutral tones create a light and feminine base, while holographic accents introduce the futuristic dimension. The palette was selected to keep the display cohesive, fresh and visually refined.",
+        title: "Colour Palette",
+        content: "A delicate balance of soft pastels and iridescent tones, inspired by nature, reimagined for a futuristic tomorrow.",
+        moodTag: "MOOD IN COLOURS",
         palette: [
-          { name: "Soft Blush", hex: "#F7D6D8" },
-          { name: "Muted Lavender", hex: "#E5D9F2" },
-          { name: "Sky Blue", hex: "#CFE2FE" },
-          { name: "Warm Neutral", hex: "#F3EFE6" },
-          { name: "Holographic Iridescence", hex: "#D4F1F4" }
+          { name: "Blush Pink", hex: "#E8C5C5", desc: "Warmth, femininity and a soft, romantic feel." },
+          { name: "Lavender", hex: "#C9B9D6", desc: "Adds a dreamy, ethereal quality to the palette." },
+          { name: "Soft Blue", hex: "#B5C9DA", desc: "Represents calmness, modernity and freshness." },
+          { name: "Sage Green", hex: "#B8BCB0", desc: "Balances the palette and connects with nature." },
+          { name: "Iridescent", hex: "#B8C0D1", desc: "Creates a futuristic touch with light-reflective finishes." },
+          { name: "Neutral", hex: "#DCD4C7", desc: "Grounds the overall look and keeps it elegant." }
         ]
       }
     },
@@ -346,35 +575,64 @@ export const portfolioData = {
       }
     ],
     page5SkillsAndPrinciples: {
+      pageLabel: "05 / 05",
+      headerTag: "VISUAL MERCHANDISING PROJECT // FUTURE FLORALS",
+      title: "FROM CONCEPT TO CAPABILITY",
+      subheadline: "What I applied. What I learned.",
+      quoteBanner: {
+        quote: "Creativity brings the idea to life, but it's the details that make it real.",
+        image: "/portfolio-assets/60e2e5dc-94d5-4c36-a798-a176fa769a23.jpg",
+        caption: "Inside the Future Florals installation",
+        accent: "FUTURE FLORALS"
+      },
+      processInAction: {
+        title: "THE PROCESS BEHIND THE BEAUTY",
+        intro: "From ideation to installation — every detail came together to bring the concept of Future Florals to life.",
+        steps: [
+          { title: "FINAL INSTALLATION", image: "/portfolio-assets/f72aff62-4ccf-4668-9ba7-1a88dc9a9eab.jpg" },
+          { title: "FLOWER DETAIL", image: "/portfolio-assets/97e20f9d-778d-44a3-bc5f-d32b6c39b7a3.jpg" },
+          { title: "MATERIAL DETAIL", image: "/portfolio-assets/1e36b3dd-85f2-438b-b90a-e7143dbd03cd.jpg" }
+        ]
+      },
       skillsApplied: [
         {
           title: "CONCEPT DEVELOPMENT",
-          desc: "Translating a seasonal brief into a clear visual concept."
+          desc: "Translating a seasonal brief into a clear visual concept.",
+          icon: "Lightbulb"
         },
         {
           title: "VISUAL MERCHANDISING",
-          desc: "Applying balance, proportion, scale, focal point, rhythm and unity."
+          desc: "Applying balance, proportion, scale, focal point, rhythm and unity.",
+          icon: "Eye"
         },
         {
           title: "MATERIAL EXPLORATION",
-          desc: "Working with holographic sheets, wire, organza and lighting to create visual effects."
+          desc: "Working with holographic sheets, wire, organza and lighting to create visual effects.",
+          icon: "Layers"
+        },
+        {
+          title: "SPATIAL PLANNING",
+          desc: "Planning placement, height, spacing and movement within the display.",
+          icon: "Box"
         },
         {
           title: "VISUAL STORYTELLING",
-          desc: "Creating a consistent narrative from nature to futuristic retail experience."
+          desc: "Creating a consistent narrative from nature to futuristic retail experience.",
+          icon: "Flower2"
         },
         {
           title: "EXECUTION & PROBLEM SOLVING",
-          desc: "Turning a visual concept into a physical installation through hands-on making and adjustments."
+          desc: "Turning a visual concept into a physical installation through hands-on making and adjustments.",
+          icon: "Settings"
         }
       ],
       vmPrinciplesApplied: [
-        { number: "1", name: "BALANCE", desc: "Symmetrical placement created visual stability." },
-        { number: "2", name: "SCALE", desc: "Oversized florals created height and impact." },
-        { number: "3", name: "FOCAL POINT", desc: "The mannequin remained the primary visual focus." },
-        { number: "4", name: "RHYTHM", desc: "Repeated floral forms and vertical drapes created visual flow." },
-        { number: "5", name: "COLOUR HARMONY", desc: "Pastels + iridescent finishes maintained a cohesive palette." },
-        { number: "6", name: "LIGHTING", desc: "Light enhanced reflections and added depth." }
+        { number: "1", name: "BALANCE", desc: "Symmetrical placement created visual stability.", icon: "Scale" },
+        { number: "2", name: "SCALE", desc: "Oversized florals created height and impact.", icon: "Maximize2" },
+        { number: "3", name: "FOCAL POINT", desc: "The mannequin remained the primary visual focus.", icon: "Target" },
+        { number: "4", name: "RHYTHM", desc: "Repeated floral forms and vertical drapes created visual flow.", icon: "Waves" },
+        { number: "5", name: "COLOUR HARMONY", desc: "Pastels + iridescent finishes maintained a cohesive palette.", icon: "Palette" },
+        { number: "6", name: "LIGHTING", desc: "Light enhanced reflections and added depth.", icon: "Sun" }
       ],
       whatILearned: "This project taught me how to translate an abstract visual idea into a physical retail experience. I learned that effective visual merchandising is not only about aesthetics, but also about proportion, placement, material selection, lighting and maintaining product focus. Working through the making and installation process strengthened my understanding of how creative decisions translate into a real retail environment."
     }
@@ -383,32 +641,165 @@ export const portfolioData = {
   // 5. PROJECT 3: START UP (ATHLEISURE HYBRID)
   projectThree: {
     cover: {
-      title: "Project 3 (Start Up)",
+      pageLabel: "PROJECT 3 (START UP) // PAGE 1",
+      title: "ATHERA",
+      subtitle: "ATHLEISURE WEAR BRAND",
+      tagline: "MODEST • VERSATILE • EVERYDAY",
       conceptSubtitle: "Athleisure Hybrid: Structured × Relaxed",
       timeline: "Concept to Physical Prototype",
-      accentColor: "#AFC8FF"
+      accentColor: "#AFC8FF",
+      bottomStatement: "Designed to move beyond the gym.",
+      heroImage: "/portfolio-assets/Screenshot 2026-09-18 at 7.51.59 PM.png",
+      heroCaption: "Athera athleisure — built for gym, café, airport and everyday",
+      gallery: [
+        { label: "GYM", image: "/portfolio-assets/IMG_2187.jpg" },
+        { label: "CAFÉ", image: "/portfolio-assets/IMG_4453.jpg" },
+        { label: "AIRPORT", image: "/portfolio-assets/IMG_1560.PNG" },
+        { label: "EVERYDAY", image: "/portfolio-assets/IMG_1559.PNG" }
+      ]
     },
     page2SurveyInsights: {
-      brief: "To develop a fashion business from identifying a real consumer problem to creating, testing and refining a market-ready product concept.",
-      journey: "OBSERVATION → INVESTIGATION → INSIGHTS → OPPORTUNITY",
-      theObservation: [
-        { num: "1", title: "Too restrictive", detail: "Fitted silhouettes that limit natural movement." },
-        { num: "2", title: "Limited versatility", detail: "Mostly gym-focused, unable to transition into everyday settings." },
-        { num: "3", title: "Comfort vs. style", detail: "Hard to find both simultaneously without compromising look." }
-      ],
-      whatIInvestigated: [
-        "1. Market trends & industry growth",
-        "2. Consumer preferences, pain points & buying behaviour",
-        "3. Competitor offerings & brand positioning",
-        "4. Fabric & functionality"
-      ],
-      myApproach: [
-        { step: "1. Trend Research", desc: "Understanding changing consumer preferences toward all-day comfort." },
-        { step: "2. Consumer Insight", desc: "Identifying real user problems through direct interviews and surveys." },
-        { step: "3. Market Analysis", desc: "Finding the opportunity gap between high-performance gymwear and casual loungewear." },
-        { step: "4. Product Thinking", desc: "Turning actionable insights into functional silhouettes and fabric pairing." },
-        { step: "5. Business Thinking", desc: "Planning for growth, unit economics, and lasting market impact." }
-      ]
+      pageLabel: "02 / 04",
+      headerTag: "ATHIRA",
+      title: "FROM AN OBSERVATION TO AN OPPORTUNITY",
+      subtitle:
+        "I saw an opportunity to create athleisure that could move beyond the gym, combining comfort, style and versatility for everyday life.",
+      scriptCallout: "One outfit.\nMultiple moments.",
+      quadrants: [
+        {
+          number: "01",
+          title: "THE OBSERVATION",
+          text: "I saw an opportunity to create athleisure that could move beyond the gym, combining comfort, style and versatility for everyday life.",
+          images: [
+            {
+              label: "FITTED SILHOUETTES",
+              image: "/portfolio-assets/IMG_2187.jpg"
+            },
+            {
+              label: "LIMITED VERSATILITY",
+              image: "/portfolio-assets/IMG_4453.jpg"
+            },
+            {
+              label: "COMFORT VS STYLE",
+              image: "/portfolio-assets/IMG_1559.PNG"
+            },
+            {
+              label: "NEED FOR COVERAGE",
+              image: "/portfolio-assets/IMG_1560.PNG"
+            }
+          ],
+          scriptCallout: "One outfit.\nMultiple moments."
+        },
+        {
+          number: "02",
+          title: "THE JOURNEY",
+          lead: "OBSERVATION → INVESTIGATION → INSIGHTS → OPPORTUNITY",
+          pillars: [
+            {
+              name: "OBSERVATION",
+              points: [
+                "Too restrictive fitted silhouettes",
+                "Limited versatility mostly gym-focused",
+                "Comfort vs. style — hard to find both"
+              ]
+            },
+            {
+              name: "INVESTIGATION",
+              points: [
+                "Market trends & industry growth",
+                "Consumer preferences, pain points & buying behaviour",
+                "Competitor offerings & brand positioning"
+              ]
+            },
+            {
+              name: "INSIGHTS",
+              points: ["Fabric & functionality"]
+            }
+          ],
+          frameworkBadges: [
+            "OBSERVATION",
+            "INVESTIGATION",
+            "INSIGHTS",
+            "OPPORTUNITY",
+            "ATHIRA"
+          ],
+          notepadImage: "/portfolio-assets/IMG_1559.PNG",
+          notepadCaption: "Comfort & style — observation notepad",
+          frameworkSentence: "One outfit.\nMultiple moments."
+        },
+        {
+          number: "03",
+          title: "WHAT I INVESTIGATED",
+          flow: [
+            {
+              step: "OBSERVATION",
+              desc: "Existing athleisure can be too restrictive, too gym-focused, and difficult to balance between comfort and style.",
+              isHighlight: false
+            },
+            {
+              step: "INVESTIGATION",
+              desc: "Market trends & industry growth; consumer preferences, pain points & buying behaviour; competitor offerings & brand positioning; fabric & functionality.",
+              isHighlight: false
+            },
+            {
+              step: "INSIGHTS",
+              desc: "Understanding changing preferences and identifying real user problems.",
+              isHighlight: false
+            },
+            {
+              step: "OPPORTUNITY",
+              desc: "Finding the opportunity gap and turning insights into a product with potential for growth and impact.",
+              isHighlight: true
+            }
+          ],
+          natureTitle: "MY APPROACH",
+          naturePillars: [
+            "Trend Research",
+            "Consumer Insight",
+            "Market Analysis",
+            "Product Thinking"
+          ],
+          natureImage: "/portfolio-assets/IMG_4453.jpg",
+          natureCaption: "Lifestyle — walking the daily moments",
+          takeaway: "One outfit.\nMultiple moments."
+        },
+        {
+          number: "04",
+          title: "MY APPROACH",
+          lead: "Turning observations and research into a clear product opportunity.",
+          skills: [
+            {
+              title: "Trend Research",
+              subtitle: "understanding changing preferences",
+              icon: "TrendingUp"
+            },
+            {
+              title: "Consumer Insight",
+              subtitle: "identifying real user problems",
+              icon: "Users"
+            },
+            {
+              title: "Market Analysis",
+              subtitle: "finding the opportunity gap",
+              icon: "BarChart2"
+            },
+            {
+              title: "Product Thinking",
+              subtitle: "turning insights into a product",
+              icon: "Lightbulb"
+            },
+            {
+              title: "Business Thinking",
+              subtitle: "planning for growth & impact",
+              icon: "Target"
+            }
+          ],
+          quote: "One outfit.\nMultiple moments.",
+          tag: "ATHIRA",
+          bottlesImage: "/portfolio-assets/IMG_1560.PNG",
+          bottlesCaption: "Need for coverage — more modest options"
+        }
+      ] as P3Page2Quadrant[]
     },
     page3DesignAndMaterial: {
       design: {

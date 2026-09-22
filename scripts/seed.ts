@@ -135,10 +135,12 @@ async function main() {
   }
   if (summaryDoc) documents.push(summaryDoc);
 
+  /* Order matters: the homepage renders by this array, so it mirrors the
+     published Site Settings order (Studio reorders via drag-and-drop). */
   const sections = [
     { _key: 's1', key: 'home.hero', label: 'Home — Hero & About', visible: true },
-    { _key: 's2', key: 'home.projects', label: 'Home — Selected Projects', visible: true },
     { _key: 's3', key: 'home.internship', label: 'Home — Internship Callout', visible: true },
+    { _key: 's2', key: 'home.projects', label: 'Home — Selected Projects', visible: true },
     { _key: 's4', key: 'home.skills', label: 'Home — Skills', visible: true },
     { _key: 's5', key: 'home.contact', label: 'Home — Contact', visible: true },
     { _key: 's6', key: 'project.marketing', label: 'Project 1 — Marketing', visible: true },

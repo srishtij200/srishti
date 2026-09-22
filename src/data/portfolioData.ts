@@ -849,7 +849,7 @@ export const portfolioData = {
   contact: {
     email: "srishtijain2012@gmail.com",
     phone: "9350894666",
-    location: "Hyderabad, India",
+    location: "Mumbai / New Delhi",
     socials: [
       { name: "LinkedIn", handle: "Srishti Jain", url: "https://www.linkedin.com/in/srishti-jain-263074228" }
     ]

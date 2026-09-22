@@ -31,6 +31,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
     projectsSection.cardCategories.map((item) => [item.id, item.title])
   );
 
+  /* Visual order is driven by Site Settings — Studio can reorder/renumber the
+     sections freely. The numbers in the comments below follow the fallback
+     order used when no Site Settings document exists. */
   const sectionOrder = getHomeSectionOrder();
 
   return (
@@ -151,7 +154,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
       </section>
       )}
 
-      {/* 2. THREE FEATURED PROJECTS PREVIEW */}
+      {/* 3. THREE FEATURED PROJECTS PREVIEW */}
       {isSectionVisible('home.projects') && (
       <section className="py-20 bg-[#FFFFFF] border-b border-[var(--c-ink)]/15" style={{ order: sectionOrder['home.projects'] }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -246,7 +249,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
       </section>
       )}
 
-      {/* 3. INTERNSHIP FEATURE CALLOUT */}
+      {/* 2. INTERNSHIP FEATURE CALLOUT */}
       {isSectionVisible('home.internship') && (
       <section className="py-20 bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15" style={{ order: sectionOrder['home.internship'] }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

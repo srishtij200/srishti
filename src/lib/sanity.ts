@@ -167,7 +167,10 @@ export function isProjectVisible(slug: string): boolean {
   return key ? isSectionVisible(key) : true;
 }
 
-const HOME_SECTION_DEFAULT_ORDER = ['home.hero', 'home.projects', 'home.internship', 'home.skills', 'home.contact'];
+/** Fallback order, used only when Site Settings has no `sections` array.
+    Mirrors the order published in Sanity (Studio may reorder at any time —
+    the published order always wins; this is purely the no-CMS fallback). */
+const HOME_SECTION_DEFAULT_ORDER = ['home.hero', 'home.internship', 'home.projects', 'home.skills', 'home.contact'];
 
 /** Studio-defined render order for homepage sections (falls back to default). */
 export function getHomeSectionOrder(): Record<string, number> {

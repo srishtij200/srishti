@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { WashiTape } from '../components/CustomDoodles';
 import { ProjectCardMedia } from '../components/ProjectCardMedia';
 import { SkillsSection } from '../components/home-sections/SkillsSection';
@@ -64,18 +64,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                   </span>
                 </span>
               </motion.h1>
-
-              {/* About Metadata */}
-              <div className="font-mono-code text-xs sm:text-sm text-[var(--c-ink)]/70 flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-5">
-                <span className="bg-[var(--c-highlight)] text-[var(--c-ink)] px-2.5 py-0.5 rounded border border-[var(--c-ink)] font-bold">
-                  {student.year}
-                </span>
-                <span className="flex items-center gap-1">
-                  <MapPin className="w-3.5 h-3.5" />
-                  {student.location}
-                </span>
-                <span className="border-l border-[var(--c-ink)]/20 pl-3">{student.degree}</span>
-              </div>
 
               {/* About Biography */}
               <motion.div

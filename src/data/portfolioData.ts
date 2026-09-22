@@ -54,9 +54,6 @@ export interface ProjectSummary {
 export const portfolioData = {
   student: {
     name: "Srishti Jain",
-    degree: "Fashion Communication & Visual Merchandising",
-    year: "Class of 2026",
-    location: "Mumbai / New Delhi",
     statement: "Translating brand philosophies into tangible retail environments, market-tested products, and high-impact digital experiences."
   },
 

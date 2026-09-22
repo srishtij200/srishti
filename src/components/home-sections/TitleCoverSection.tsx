@@ -71,7 +71,7 @@ export const TitleCoverSection: React.FC = () => {
         {/* ===== Name — top-center ===== */}
         <h1
           className='absolute left-1/2 -translate-x-1/2 font-hand text-[var(--c-ink)] whitespace-nowrap'
-          style={{ top: '26.5%', fontSize: '9.3cqw', lineHeight: 1 }}
+          style={{ top: '26.5%', fontSize: '10.5cqw', lineHeight: 1 }}
         >
           Srishti Jain
         </h1>

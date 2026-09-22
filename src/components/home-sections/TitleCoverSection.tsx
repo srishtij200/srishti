@@ -32,7 +32,7 @@ const SparkleStar = ({
  *
  * Layout map (x% of 1424, y% of 860):
  *  - top-center star ............ x 50%,   y 25.3%
- *  - name "Shristi Jain" ........ y 27.3% (bounds x 465-952, y 235-367)
+ *  - name "Srishti Jain" ........ y 27.3% (bounds x 465-952, y 235-367)
  *  - flanking lines ............. y 29%,   left x 20-30%, right x 70-80%
  *  - title "portfolio" .......... y 43.3% (bounds x 104-1318, y 372-711)
  *  - left-center star pair ...... x 3.5-6%, y 50%
@@ -73,7 +73,7 @@ export const TitleCoverSection: React.FC = () => {
           className='absolute left-1/2 -translate-x-1/2 font-hand text-[var(--c-ink)] whitespace-nowrap'
           style={{ top: '26.5%', fontSize: '9.3cqw', lineHeight: 1 }}
         >
-          Shristi Jain
+          Srishti Jain
         </h1>
 
         {/* Thin dark purple horizontal lines flanking the name (upper-left / upper-right) */}

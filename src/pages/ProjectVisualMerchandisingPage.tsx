@@ -5,10 +5,8 @@ import {
   ArrowLeft, 
   Sparkles, 
   Palette, 
-  Hammer, 
   Eye, 
   Lightbulb, 
-  CheckCircle2, 
   ArrowDown, 
   Layers, 
   Box, 
@@ -21,7 +19,7 @@ import {
   Scale, 
   type LucideIcon 
 } from 'lucide-react';
-import { FlowerMark, WashiTape } from '../components/CustomDoodles';
+import { FlowerMark } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectVisualMerchandisingPage: React.FC = () => {
@@ -32,8 +30,6 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
     Lightbulb, Eye, Layers, Box, Flower2, Settings,
     Target, Waves, Sun, Maximize2, Scale, Palette, Sparkles
   };
-
-  const stepImages = u.stepImages;
 
   return (
     <div className="bg-[var(--c-bg)] min-h-screen py-16 lg:py-24">
@@ -53,14 +49,10 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
 
         {/* SECTION: COVER PAGE */}
         <section className="space-y-12 mb-16">
-            <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative overflow-hidden">
-              <div className="absolute -top-3 right-12">
-                <WashiTape color="#F4B6D4" width="w-32" />
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-7 space-y-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] paper-shadow-sm">
+            <div className="relative">
+              <div className="grid grid-cols-1 gap-8 items-center">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)]">
                     <FlowerMark size={14} />
                     <span>{u.coverBadge}</span>
                   </div>
@@ -93,30 +85,13 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Brand Book Cover Graphic */}
-                <div className="lg:col-span-5">
-                  <div className="bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-4 paper-shadow">
-                    <img
-                      src={u.coverImage}
-                      alt={u.coverImageAlt}
-                      className="w-full h-auto object-cover rounded-xl border border-[var(--c-ink)]/15"
-                    />
-                    <div className="font-mono-code text-[11px] text-[var(--c-ink)]/70 text-center mt-2">
-                      {u.coverCaption}
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
         </section>
 
         {/* SECTION: PAGE 2 — FROM INSIGHT TO CONCEPT */}
-        <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative mb-16">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#F4B6D4" width="w-28" />
-            </div>
-
+        <div className="relative mb-16">
             {/* Slide Header */}
             <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
               <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-2">
@@ -132,7 +107,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
 
             {/* THE BRIEF */}
             <div className="max-w-4xl mb-12">
-              <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed p-5 bg-[var(--c-bg)] rounded-2xl border border-[var(--c-ink)]/20">
+              <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed border-l-2 border-[var(--c-ink)]/30 pl-5">
                 <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-2">
                   {vm.page2Brief.briefTitle}
                 </span>
@@ -149,10 +124,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 </div>
                 <div className="space-y-5">
                   {vm.page2Brief.whatIInvestigated.map((item, idx) => (
-                    <div key={idx} className="p-5 bg-[var(--c-bg)] border border-[var(--c-ink)]/20 rounded-2xl text-center">
-                      <div className="w-20 h-20 rounded-full overflow-hidden border-[1.5px] border-[var(--c-ink)]/25 mb-3 mx-auto shadow-xs">
-                        <img src={item.image} alt={item.pillar} className="w-full h-full object-cover" />
-                      </div>
+                    <div key={idx} className="border-t border-[var(--c-ink)]/20 pt-4 text-center">
                       <h3 className="font-serif-display text-lg text-[var(--c-ink)] mb-2">
                         {item.pillar}
                       </h3>
@@ -177,10 +149,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 <div className="flex flex-col items-center space-y-2">
                   {vm.page2Brief.howIReachedTheConcept.map((node, nIdx) => (
                     <React.Fragment key={nIdx}>
-                      <div className={`w-32 h-32 rounded-full overflow-hidden border-[1.5px] shadow-sm ${node.isHighlight ? 'border-[var(--c-ink)] ring-2 ring-[var(--c-warm)]/70' : 'border-[var(--c-ink)]/25'}`}>
-                        <img src={node.image} alt={node.step} className="w-full h-full object-cover" />
-                      </div>
-                      <span className={`font-mono-code text-xs font-bold text-[var(--c-ink)] leading-tight text-center ${node.isHighlight ? 'bg-[var(--c-warm)]/30 border border-[var(--c-ink)] px-2.5 py-0.5 rounded-full' : ''}`}>
+                      <span className={`font-mono-code text-xs font-bold text-[var(--c-ink)] leading-tight text-center py-2 ${node.isHighlight ? 'bg-[var(--c-warm)]/30 border border-[var(--c-ink)] px-2.5 py-0.5 rounded-full' : ''}`}>
                         {node.step}
                       </span>
                       {nIdx < vm.page2Brief.howIReachedTheConcept.length - 1 && (
@@ -189,7 +158,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                     </React.Fragment>
                   ))}
                 </div>
-                <p className="font-serif-display text-base text-center text-[var(--c-ink)] italic mt-6 p-5 bg-[var(--c-warm)]/20 rounded-2xl border border-[var(--c-ink)]/15 leading-snug">
+                <p className="font-serif-display text-base text-center text-[var(--c-ink)] italic mt-6 border-l-2 border-[var(--c-warm)] pl-5 leading-snug">
                   "{vm.page2Brief.conceptSummary}"
                 </p>
               </div>
@@ -199,17 +168,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] pb-2 border-b border-[var(--c-ink)]/15">
                   {u.visualDirectionHeader}
                 </div>
-                <div className="rounded-2xl overflow-hidden border-[1.5px] border-[var(--c-ink)]/20 paper-shadow-sm">
-                  <img
-                    src={vm.page2Brief.heroImage.src}
-                    alt={u.heroEnvAlt}
-                    className="w-full h-auto object-cover max-h-[440px]"
-                  />
-                  <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60 bg-white block text-center py-1.5 px-2">
-                    {vm.page2Brief.heroImage.caption}
-                  </span>
-                </div>
-                <div className="p-6 bg-[var(--c-warm)]/25 border border-[var(--c-ink)]/25 rounded-2xl">
+                <div className="border-t border-[var(--c-warm)]/40 pt-4">
                   <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-2">
                     {u.designInsightLabel}
                   </span>
@@ -224,11 +183,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
         </div>
 
         {/* SECTION: PAGE 3 — THE VISUAL LANGUAGE (MOOD & COLOUR BOARDS) */}
-        <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative mb-16">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#C9FF8C" width="w-28" />
-            </div>
-
+        <div className="relative mb-16">
             {/* Slide Header */}
             <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
               <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-2">
@@ -243,9 +198,9 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             </div>
 
             {/* MOOD BOARD */}
-            <div className="p-8 bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl mb-10">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start mb-8">
-                <div className="lg:col-span-6">
+            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-10">
+              <div className="grid grid-cols-1 gap-6 items-start mb-8">
+                <div>
                   <h2 className="font-serif-display text-3xl text-[var(--c-ink)] mb-3">
                     {vm.page3Boards.moodBoard.title}
                   </h2>
@@ -261,18 +216,6 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="lg:col-span-6">
-                  <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 paper-shadow-sm bg-white">
-                    <img
-                      src={u.moodBoardImage}
-                      alt={u.moodBoardAlt}
-                      className="w-full h-auto object-cover"
-                    />
-                  </div>
-                  <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60 block mt-1.5 text-center">
-                    {u.moodBoardCaption}
-                  </span>
-                </div>
               </div>
 
               {/* MOOD THEMES */}
@@ -282,7 +225,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
                   {vm.page3Boards.moodBoard.themes.map((t, tIdx) => (
-                    <div key={tIdx} className="p-4 bg-[#FFFFFF] border border-[var(--c-ink)]/20 rounded-xl">
+                    <div key={tIdx} className="border-t border-[var(--c-ink)]/20 pt-3">
                       <span className="font-mono-code text-[10px] text-[var(--c-ink)]/50 font-bold block mb-1">
                         0{tIdx + 1}
                       </span>
@@ -299,9 +242,9 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             </div>
 
             {/* COLOUR BOARD */}
-            <div className="p-8 bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl mb-8">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start mb-6">
-                <div className="lg:col-span-6">
+            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-8">
+              <div className="grid grid-cols-1 gap-6 items-start mb-6">
+                <div>
                   <h2 className="font-serif-display text-3xl text-[var(--c-ink)] mb-3">
                     {vm.page3Boards.colourBoard.title}
                   </h2>
@@ -313,23 +256,11 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="lg:col-span-6">
-                  <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 paper-shadow-sm bg-white">
-                    <img
-                      src={u.colourBoardImage}
-                      alt={u.colourBoardAlt}
-                      className="w-full h-auto object-cover"
-                    />
-                  </div>
-                  <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60 block mt-1.5 text-center">
-                    {u.colourBoardCaption}
-                  </span>
-                </div>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-4 border-t border-[var(--c-ink)]/15">
                 {vm.page3Boards.colourBoard.palette.map((color, idx) => (
-                  <div key={idx} className="bg-[#FFFFFF] border border-[var(--c-ink)]/25 rounded-xl p-3 text-center">
+                  <div key={idx} className="border-t border-[var(--c-ink)]/20 pt-3 text-center">
                     <div
                       className="w-full h-16 rounded-lg border border-[var(--c-ink)]/20 mb-2"
                       style={{ backgroundColor: color.hex }}
@@ -346,11 +277,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
         </div>
 
         {/* SECTION: BEHIND THE DISPLAY (5 STEPS WITH REAL PHOTOS) */}
-        <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative mb-16">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#F4B6D4" width="w-28" />
-            </div>
-
+        <div className="relative mb-16">
             <div className="max-w-4xl mb-8">
               <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2">
                 {u.behindPageTag}
@@ -365,36 +292,16 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
 
             <div className="space-y-8 mb-10">
               {vm.page4BehindTheDisplay.map((step, idx) => (
-                <div
-                  key={idx}
-                  className="p-6 bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl grid grid-cols-1 md:grid-cols-12 gap-6 items-center paper-shadow-sm"
-                >
-                  {/* Photo Slot */}
-                  <div className="md:col-span-5">
-                    <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/25 bg-black/5 aspect-[4/3] sm:aspect-[16/10]">
-                      <img
-                        src={stepImages[idx]?.src}
-                        alt={step.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Description Slot */}
-                  <div className="md:col-span-7 space-y-2">
-                    <span className="text-[10px] font-mono-code bg-[var(--c-ink)] text-[var(--c-bg)] px-2.5 py-0.5 rounded-full font-bold uppercase inline-block">
-                      {step.imageIndex}
-                    </span>
-                    <h3 className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)]">
-                      {step.title}
-                    </h3>
-                    <p className="font-body text-sm sm:text-base text-[var(--c-ink)]/85 leading-relaxed pt-1">
-                      {step.desc}
-                    </p>
-                    <div className="font-mono-code text-xs text-[var(--c-ink)]/60 pt-2 border-t border-[var(--c-ink)]/15">
-                      {u.processNotePrefix} {stepImages[idx]?.caption}
-                    </div>
-                  </div>
+                <div key={idx} className="border-t-2 border-[var(--c-ink)]/20 pt-6 space-y-2">
+                  <span className="text-[10px] font-mono-code bg-[var(--c-ink)] text-[var(--c-bg)] px-2.5 py-0.5 rounded-full font-bold uppercase inline-block">
+                    {step.imageIndex}
+                  </span>
+                  <h3 className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)]">
+                    {step.title}
+                  </h3>
+                  <p className="font-body text-sm sm:text-base text-[var(--c-ink)]/85 leading-relaxed pt-1">
+                    {step.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -402,11 +309,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
         </div>
 
         {/* SECTION: PAGE 5 — FROM CONCEPT TO CAPABILITY (SKILLS & PRINCIPLES) */}
-        <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#C9FF8C" width="w-28" />
-            </div>
-
+        <div className="relative">
             {/* Slide Header */}
             <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
               <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-2">
@@ -421,27 +324,15 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             </div>
 
             {/* QUOTE + PROCESS PORTRAIT */}
-            <div className="bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 sm:p-8 mb-10">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                <div className="lg:col-span-8 space-y-4">
+            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-10">
+              <div className="grid grid-cols-1 gap-6 items-center">
+                <div className="space-y-4">
                   <span className="inline-block px-2.5 py-1 bg-[var(--c-warm)]/40 border border-[var(--c-ink)] rounded-full font-mono-code text-[10px] font-bold uppercase text-[var(--c-ink)]">
                     {vm.page5SkillsAndPrinciples.quoteBanner.accent}
                   </span>
                   <p className="font-serif-display text-xl sm:text-3xl text-[var(--c-ink)] italic leading-snug">
                     "{vm.page5SkillsAndPrinciples.quoteBanner.quote}"
                   </p>
-                </div>
-                <div className="lg:col-span-4">
-                  <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-white paper-shadow-sm">
-                    <img
-                      src={vm.page5SkillsAndPrinciples.quoteBanner.image}
-                      alt={u.portraitAlt}
-                      className="w-full h-auto object-cover max-h-[300px]"
-                    />
-                    <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60 bg-white block text-center py-1.5 px-2">
-                      {vm.page5SkillsAndPrinciples.quoteBanner.caption}
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -461,14 +352,11 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {vm.page5SkillsAndPrinciples.processInAction.steps.map((s, sIdx) => (
-                  <div key={sIdx} className="space-y-2">
-                    <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-[var(--c-bg)] aspect-[4/5] relative">
-                      <img src={s.image} alt={s.title} className="w-full h-full object-cover" />
-                      <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-white/90 rounded text-[9px] font-mono-code font-bold text-[var(--c-ink)]">
-                        {sIdx + 1}
-                      </div>
-                    </div>
-                    <span className="font-mono-code text-[11px] font-bold text-[var(--c-ink)] block text-center leading-tight">
+                  <div key={sIdx} className="border-t border-[var(--c-ink)]/20 pt-3 text-center">
+                    <span className="font-mono-code text-[10px] text-[var(--c-ink)]/50 font-bold block mb-1">
+                      0{sIdx + 1}
+                    </span>
+                    <span className="font-mono-code text-[11px] font-bold text-[var(--c-ink)] block leading-tight">
                       {s.title}
                     </span>
                   </div>
@@ -485,7 +373,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 {vm.page5SkillsAndPrinciples.skillsApplied.map((sk, idx) => {
                   const SkillIcon = iconMap[sk.icon] ?? Lightbulb;
                   return (
-                    <div key={idx} className="p-5 bg-[var(--c-bg)] border border-[var(--c-ink)]/20 rounded-2xl">
+                    <div key={idx} className="border-t border-[var(--c-ink)]/20 pt-4">
                       <div className="w-9 h-9 rounded-full bg-white border border-[var(--c-ink)]/20 flex items-center justify-center mb-3">
                         <SkillIcon className="w-4 h-4 text-[var(--c-ink)]" />
                       </div>
@@ -510,7 +398,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 {vm.page5SkillsAndPrinciples.vmPrinciplesApplied.map((p, idx) => {
                   const PrIcon = iconMap[p.icon] ?? Sparkles;
                   return (
-                    <div key={idx} className="p-5 bg-[var(--c-bg)] border border-[var(--c-ink)]/20 rounded-2xl">
+                    <div key={idx} className="border-t border-[var(--c-ink)]/20 pt-4">
                       <div className="flex items-center justify-between mb-2">
                         <span className="font-mono-code text-xs text-[var(--c-ink)]/50 font-bold">
                           {p.number}.
@@ -532,7 +420,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             </div>
 
             {/* WHAT I LEARNED */}
-            <div className="p-8 bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl mb-8">
+            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-8">
               <h2 className="font-serif-display text-3xl text-[var(--c-ink)] mb-3">
                 {u.p5LearnedTitle}
               </h2>

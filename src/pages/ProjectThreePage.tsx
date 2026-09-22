@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, Sparkles, MessageSquare, TrendingUp, Scissors, Users, BarChart2, Lightbulb, Target, type LucideIcon } from 'lucide-react';
-import { FlowerMark, WashiTape } from '../components/CustomDoodles';
+import { FlowerMark } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectThreePage: React.FC = () => {
@@ -31,14 +31,10 @@ export const ProjectThreePage: React.FC = () => {
 
         {/* SECTION: COVER PAGE */}
         <section className="space-y-8 mb-16">
-            <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative overflow-hidden">
-              <div className="absolute -top-3 right-12">
-                <WashiTape color="#AFC8FF" width="w-32" />
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-7 space-y-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] paper-shadow-sm">
+            <div className="relative">
+              <div className="grid grid-cols-1 gap-8 items-center">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)]">
                     <FlowerMark size={14} />
                     <span>{p3.cover.pageLabel}</span>
                   </div>
@@ -75,24 +71,11 @@ export const ProjectThreePage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Cover Hero Image */}
-                <div className="lg:col-span-5">
-                  <div className="bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-4 paper-shadow">
-                    <img
-                      src={p3.cover.heroImage}
-                      alt={u.coverImageAlt}
-                      className="w-full h-auto object-cover rounded-xl border border-[var(--c-ink)]/15"
-                    />
-                    <div className="font-mono-code text-[11px] text-[var(--c-ink)]/70 text-center mt-2">
-                      {p3.cover.heroCaption}
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
             {/* GALLERY — FOUR LIFESTYLE MOMENTS */}
-            <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-6 sm:p-10 paper-shadow-lg">
+            <div className="relative border-t-2 border-[var(--c-ink)]/20 pt-8">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-6 pb-4 border-b border-[var(--c-ink)]/15">
                 <span className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)]">
                   {u.galleryTitle}
@@ -104,11 +87,8 @@ export const ProjectThreePage: React.FC = () => {
 
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {p3.cover.gallery.map((g, gIdx) => (
-                  <div key={gIdx} className="space-y-2">
-                    <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-[var(--c-bg)] aspect-[3/4]">
-                      <img src={g.image} alt={g.label} className="w-full h-full object-cover" />
-                    </div>
-                    <span className="font-mono-code text-xs font-bold text-[var(--c-ink)] block text-center tracking-wider">
+                  <div key={gIdx} className="border-t border-[var(--c-ink)]/20 pt-3 text-center">
+                    <span className="font-mono-code text-xs font-bold text-[var(--c-ink)] block tracking-wider">
                       {g.label}
                     </span>
                   </div>
@@ -119,11 +99,7 @@ export const ProjectThreePage: React.FC = () => {
         </section>
 
         {/* SECTION: FROM AN OBSERVATION TO AN OPPORTUNITY */}
-        <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-12 paper-shadow-lg relative mb-16">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#AFC8FF" width="w-28" />
-            </div>
-
+        <div className="relative mb-16">
             {/* Section Header */}
             <div className="max-w-4xl mb-10">
               <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2">
@@ -134,7 +110,7 @@ export const ProjectThreePage: React.FC = () => {
                 <br />
                 {u.page2Headline2}
               </h2>
-              <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed p-4 bg-[var(--c-bg)] rounded-2xl border border-[var(--c-ink)]/20 mb-0">
+              <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed border-l-2 border-[var(--c-ink)]/30 pl-4 mb-0">
                 {p3.page2SurveyInsights.subtitle}
               </p>
             </div>
@@ -142,7 +118,7 @@ export const ProjectThreePage: React.FC = () => {
             {/* 2x2 Quadrant Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {p3.page2SurveyInsights.quadrants.map((q, qIdx) => (
-                <div key={qIdx} className="p-8 bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl paper-shadow-sm">
+                <div key={qIdx} className="border-t-2 border-[var(--c-ink)]/20 pt-8">
                   {/* Quadrant header */}
                   <div className="flex items-baseline gap-3 mb-5 pb-3 border-b border-[var(--c-ink)]/15">
                     <span className="font-mono-code text-sm font-bold text-[var(--c-ink)]/50">
@@ -161,17 +137,14 @@ export const ProjectThreePage: React.FC = () => {
                       </p>
                       <div className="grid grid-cols-2 gap-3">
                         {q.images!.map((img, i) => (
-                          <div key={i} className="space-y-1.5">
-                            <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-white aspect-[3/4]">
-                              <img src={img.image} alt={img.label} className="w-full h-full object-cover" />
-                            </div>
+                          <div key={i} className="border-t border-[var(--c-ink)]/20 pt-3">
                             <span className="font-mono-code text-[10px] font-bold text-[var(--c-ink)]/70 block tracking-wider">
                               {img.label}
                             </span>
                           </div>
                         ))}
                       </div>
-                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--c-soft)]/25 border border-[var(--c-ink)] rounded-xl font-serif-display italic text-sm text-[var(--c-ink)] whitespace-pre-line">
+                      <div className="inline-flex items-center gap-2 border-l-2 border-[var(--c-soft)] pl-4 font-serif-display italic text-sm text-[var(--c-ink)] whitespace-pre-line">
                         <Scissors className="w-4 h-4 shrink-0" />
                         {q.scriptCallout}
                       </div>
@@ -186,7 +159,7 @@ export const ProjectThreePage: React.FC = () => {
                       </p>
                       <div className="space-y-4">
                         {q.pillars!.map((pillar, i) => (
-                          <div key={i} className="p-4 bg-[#FFFFFF] border border-[var(--c-ink)]/20 rounded-xl">
+                          <div key={i} className="border-t border-[var(--c-ink)]/20 pt-3">
                             <div className="font-mono-code text-xs font-bold text-[var(--c-ink)] mb-2">
                               {String(i + 1).padStart(2, "0")} — {pillar.name}
                             </div>
@@ -218,10 +191,10 @@ export const ProjectThreePage: React.FC = () => {
                         {q.flow!.map((f, i) => (
                           <div
                             key={i}
-                            className={`p-4 rounded-xl border ${
+                            className={`border-t pt-3 ${
                               f.isHighlight
-                                ? "bg-[var(--c-soft)]/30 border-[var(--c-ink)] paper-shadow-sm"
-                                : "bg-[#FFFFFF] border-[var(--c-ink)]/20"
+                                ? "border-[var(--c-ink)]"
+                                : "border-[var(--c-ink)]/20"
                             }`}
                           >
                             <div className="flex items-center justify-between gap-2 mb-1.5">
@@ -251,12 +224,6 @@ export const ProjectThreePage: React.FC = () => {
                             </span>
                           ))}
                         </div>
-                        <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-white aspect-[16/9]">
-                          <img src={q.natureImage} alt={q.natureCaption} className="w-full h-full object-cover" />
-                        </div>
-                        <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60 block mt-1.5">
-                          {q.natureCaption}
-                        </span>
                       </div>
                     </div>
                   )}
@@ -269,7 +236,7 @@ export const ProjectThreePage: React.FC = () => {
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {q.skills!.map((s, i) => (
-                          <div key={i} className="flex items-start gap-3 p-4 bg-[#FFFFFF] border border-[var(--c-ink)]/20 rounded-xl">
+                          <div key={i} className="flex items-start gap-3 border-t border-[var(--c-ink)]/20 pt-3">
                             <div className="w-9 h-9 shrink-0 rounded-lg bg-[var(--c-soft)]/30 border border-[var(--c-ink)]/25 flex items-center justify-center">
                               {(() => {
                                 const SkillIcon = skillIcons[s.icon] ?? Sparkles;
@@ -287,13 +254,7 @@ export const ProjectThreePage: React.FC = () => {
                           </div>
                         ))}
                       </div>
-                      <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-white aspect-[16/9]">
-                        <img src={q.bottlesImage} alt={q.bottlesCaption} className="w-full h-full object-cover" />
-                      </div>
-                      <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60 block -mt-2">
-                        {q.bottlesCaption}
-                      </span>
-                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--c-soft)]/25 border border-[var(--c-ink)] rounded-xl font-serif-display italic text-sm text-[var(--c-ink)] whitespace-pre-line">
+                      <div className="inline-flex items-center gap-2 border-l-2 border-[var(--c-soft)] pl-4 font-serif-display italic text-sm text-[var(--c-ink)] whitespace-pre-line">
                         <MessageSquare className="w-4 h-4 shrink-0" />
                         {q.quote}
                         <span className="font-mono-code text-[10px] font-bold bg-[var(--c-ink)] text-[var(--c-bg)] px-2 py-0.5 rounded-full not-italic">
@@ -308,19 +269,15 @@ export const ProjectThreePage: React.FC = () => {
         </div>
 
         {/* SECTION: DESIGN, MATERIAL & PROTOTYPE */}
-        <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative mb-16">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#C9FF8C" width="w-28" />
-            </div>
-
+        <div className="relative mb-16">
             <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-4">
               {u.p3PageLabel}
             </span>
 
             {/* 01 DESIGN WITH TECHNICAL FLAT DRAWING */}
-            <div className="p-8 bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl mb-8">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                <div className="lg:col-span-7 space-y-4">
+            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-8">
+              <div className="grid grid-cols-1 gap-6 items-center">
+                <div className="space-y-4">
                   <h2 className="font-serif-display text-3xl text-[var(--c-ink)]">
                     {p3.page3DesignAndMaterial.design.title}
                   </h2>
@@ -336,25 +293,13 @@ export const ProjectThreePage: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="lg:col-span-5">
-                  <div className="bg-white rounded-xl overflow-hidden border border-[var(--c-ink)]/25 p-2 paper-shadow-sm flex items-center justify-center">
-                    <img
-                      src={u.designFlatImage}
-                      alt={u.designFlatAlt}
-                      className="max-h-64 object-contain"
-                    />
-                  </div>
-                  <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60 block mt-1.5 text-center">
-                    {u.designFlatCaption}
-                  </span>
-                </div>
               </div>
             </div>
 
             {/* 02 MATERIAL WITH MATERIAL SPEC SHEET */}
-            <div className="p-8 bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl mb-8">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                <div className="lg:col-span-7 space-y-4">
+            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-8">
+              <div className="grid grid-cols-1 gap-6 items-center">
+                <div className="space-y-4">
                   <h2 className="font-serif-display text-3xl text-[var(--c-ink)]">
                     {p3.page3DesignAndMaterial.material.title}
                   </h2>
@@ -382,25 +327,13 @@ export const ProjectThreePage: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="lg:col-span-5">
-                  <div className="bg-white rounded-xl overflow-hidden border border-[var(--c-ink)]/25 p-2 paper-shadow-sm flex items-center justify-center">
-                    <img
-                      src={u.materialSheetImage}
-                      alt={u.materialSheetAlt}
-                      className="max-h-64 object-contain"
-                    />
-                  </div>
-                  <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60 block mt-1.5 text-center">
-                    {u.materialSheetCaption}
-                  </span>
-                </div>
               </div>
             </div>
 
             {/* 03 FINAL PROTOTYPE (MVP PHOTO) */}
-            <div className="p-8 bg-[var(--c-soft)]/30 border-[1.5px] border-[var(--c-ink)] rounded-2xl mb-8">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-6 space-y-3">
+            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-8">
+              <div className="grid grid-cols-1 gap-8 items-center">
+                <div className="space-y-3">
                   <span className="font-mono-code text-xs font-bold bg-[var(--c-ink)] text-[var(--c-bg)] px-3 py-1 rounded-full uppercase inline-block">
                     {p3.page3DesignAndMaterial.prototype.badge}
                   </span>
@@ -415,29 +348,13 @@ export const ProjectThreePage: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="lg:col-span-6">
-                  <div className="bg-white rounded-2xl overflow-hidden border-[1.5px] border-[var(--c-ink)] p-3 paper-shadow">
-                    <img
-                      src={u.prototypeImage}
-                      alt={u.prototypeAlt}
-                      className="w-full h-auto max-h-80 object-contain mx-auto"
-                    />
-                  </div>
-                  <span className="font-mono-code text-[11px] text-[var(--c-ink)]/70 block mt-2 text-center font-bold">
-                    {u.prototypeCaption}
-                  </span>
-                </div>
               </div>
             </div>
 
         </div>
 
         {/* SECTION: FEEDBACK & ITERATION */}
-        <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#F4B6D4" width="w-28" />
-            </div>
-
+        <div className="relative">
             <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-4">
               {u.p4PageLabel}
             </span>
@@ -449,7 +366,7 @@ export const ProjectThreePage: React.FC = () => {
               </h2>
               <div className="space-y-3">
                 {p3.page4FeedbackAndIteration.whatIHeard.map((quote, qIdx) => (
-                  <div key={qIdx} className="p-4 bg-[var(--c-bg)] border border-[var(--c-ink)]/20 rounded-xl font-serif-display text-lg text-[var(--c-ink)] italic">
+                  <div key={qIdx} className="border-l-2 border-[var(--c-ink)]/30 pl-4 font-serif-display text-lg text-[var(--c-ink)] italic">
                     {quote}
                   </div>
                 ))}
@@ -463,7 +380,7 @@ export const ProjectThreePage: React.FC = () => {
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {p3.page4FeedbackAndIteration.whatThisTaughtMe.map((item, tIdx) => (
-                  <div key={tIdx} className="p-6 bg-[var(--c-bg)] border border-[var(--c-ink)]/25 rounded-2xl">
+                  <div key={tIdx} className="border-t border-[var(--c-ink)]/20 pt-4">
                     <h3 className="font-serif-display text-xl text-[var(--c-ink)] mb-2">
                       {item.headline}
                     </h3>
@@ -476,7 +393,7 @@ export const ProjectThreePage: React.FC = () => {
             </div>
 
             {/* FEEDBACK → ITERATION → IMPACT */}
-            <div className="p-8 bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl mb-8">
+            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-8">
               <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-6 text-center">
                 {u.p4LoopHeader}
               </div>
@@ -512,14 +429,6 @@ export const ProjectThreePage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Graphical Feedback Loop Diagram */}
-              <div className="mt-8 rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-white max-h-48 flex items-center justify-center p-2">
-                <img
-                  src="/portfolio-assets/Screenshot 2026-09-18 at 8.44.29 PM.png"
-                  alt={u.feedbackAlt}
-                  className="max-h-40 w-auto object-contain"
-                />
-              </div>
             </div>
 
             <div className="flex justify-end pt-6 border-t border-[var(--c-ink)]/15 font-mono-code text-xs">

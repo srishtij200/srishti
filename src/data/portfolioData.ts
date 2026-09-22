@@ -871,10 +871,7 @@ export const portfolioData = {
   ui: {
     nav: {
       items: [
-        { to: "/projects", label: "Projects" },
-        { to: "/about", label: "About" },
-        { to: "/skills", label: "Skills" },
-        { to: "/contact", label: "Contact" }
+        { to: "/projects", label: "Projects" }
       ],
       footerCopyrightYear: "2026"
     },
@@ -1219,7 +1216,7 @@ export const portfolioData = {
       p4FeedbackLabel: "FEEDBACK",
       p4IterationLabel: "ITERATION",
       p4ImpactLabel: "IMPACT",
-      footerNext: "View Skills Matrix →"
+      footerNext: "Back to Home →"
     },
 
     cardPlaceholder: {

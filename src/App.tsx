@@ -5,15 +5,12 @@ import { Footer } from './components/Footer';
 import { WaitlistModal } from './components/WaitlistModal';
 import { ScrollToTop } from './components/ScrollToTop';
 import { HomePage } from './pages/HomePage';
-import { AboutPage } from './pages/AboutPage';
 import { InternshipExperiencePage } from './pages/InternshipExperiencePage';
 import { InternshipLearningsPage } from './pages/InternshipLearningsPage';
 import { ProjectsOverviewPage } from './pages/ProjectsOverviewPage';
 import { ProjectMarketingPage } from './pages/ProjectMarketingPage';
 import { ProjectVisualMerchandisingPage } from './pages/ProjectVisualMerchandisingPage';
 import { ProjectThreePage } from './pages/ProjectThreePage';
-import { SkillsPage } from './pages/SkillsPage';
-import { ContactPage } from './pages/ContactPage';
 import { ambientSound } from './utils/ambientAudio';
 import { hasSanity, hydrateFromSanity, isSectionVisible } from './lib/sanity';
 import { portfolioData } from './data/portfolioData';
@@ -63,15 +60,12 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage onOpenInquiry={() => setWaitlistOpen(true)} />} />
-            <Route path="/about" element={<AboutPage />} />
             <Route path="/internship/experience" element={<InternshipExperiencePage />} />
             <Route path="/internship/learnings" element={<InternshipLearningsPage />} />
             <Route path="/projects" element={isSectionVisible('home.projects') ? <ProjectsOverviewPage /> : <HiddenSection />} />
             <Route path="/projects/marketing" element={isSectionVisible('project.marketing') ? <ProjectMarketingPage /> : <HiddenSection />} />
             <Route path="/projects/visual-merchandising" element={isSectionVisible('project.vm') ? <ProjectVisualMerchandisingPage /> : <HiddenSection />} />
             <Route path="/projects/project-3" element={isSectionVisible('project.three') ? <ProjectThreePage /> : <HiddenSection />} />
-            <Route path="/skills" element={<SkillsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>
 

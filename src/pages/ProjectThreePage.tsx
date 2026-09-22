@@ -524,7 +524,7 @@ export const ProjectThreePage: React.FC = () => {
 
             <div className="flex justify-end pt-6 border-t border-[var(--c-ink)]/15 font-mono-code text-xs">
               <Link
-                to="/skills"
+                to="/"
                 className="bg-[var(--c-ink)] text-[var(--c-bg)] px-5 py-2.5 rounded-xl font-bold hover:bg-[#253325] cursor-pointer flex items-center gap-1.5"
               >
                 <span>{u.footerNext}</span>

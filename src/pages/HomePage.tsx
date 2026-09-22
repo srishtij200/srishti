@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight, MapPin } from 'lucide-react';
+import { WashiTape } from '../components/CustomDoodles';
 import { SkillsSection } from '../components/home-sections/SkillsSection';
 import { ContactSection } from '../components/home-sections/ContactSection';
 import { portfolioData } from '../data/portfolioData';
@@ -44,9 +45,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
         className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden bg-graph-paper border-b border-[var(--c-ink)]/15"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          {/* Hero + About */}
-          <div className="grid grid-cols-1 gap-12 lg:gap-16 items-center">
-            <div className="text-center lg:text-left flex flex-col relative z-10">
+          {/* Combined Hero + About: Side by Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-7 text-center lg:text-left flex flex-col relative z-10">
               <motion.h1
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -72,9 +73,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                   {student.location}
                 </span>
                 <span className="border-l border-[var(--c-ink)]/20 pl-3">{student.degree}</span>
-                <span className="bg-[var(--c-ink)] text-[var(--c-bg)] px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                  {hero.badge}
-                </span>
               </div>
 
               {/* About Biography */}
@@ -108,6 +106,32 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 </div>
               </motion.div>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="lg:col-span-5"
+            >
+              <div className="relative">
+                <div className="absolute -top-3 left-10 z-10">
+                  <WashiTape color="#F4B6D4" width="w-24" />
+                </div>
+
+                <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-3 paper-shadow-lg">
+                  <img
+                    src={hero.image}
+                    alt={hero.imageAlt}
+                    className="w-full h-[420px] lg:h-[560px] object-cover rounded-2xl"
+                  />
+                </div>
+
+                <span className="absolute -bottom-3 right-8 bg-[var(--c-ink)] text-[var(--c-bg)] font-mono-code text-xs px-3 py-1.5 rounded-full paper-shadow-sm uppercase tracking-wider">
+                  {hero.badge}
+                </span>
+              </div>
+            </motion.div>
           </div>
 
           {/* Portfolio Scope */}

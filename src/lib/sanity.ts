@@ -1,5 +1,6 @@
 import { createClient } from '@sanity/client';
 import { portfolioData } from '../data/portfolioData';
+import { sanitySiteSnapshot } from '../data/sanitySiteSnapshot';
 
 /* ------------------------------------------------------------------ */
 /*  Sanity runtime client                                             */
@@ -49,6 +50,13 @@ export interface SiteSettings {
 }
 
 export const siteSettings: SiteSettings = {};
+
+/* Apply the build-time snapshot so the first painted frame already reflects
+   the published Site Settings (visibility, order, colors, SEO). The live
+   runtime re-fetch below then reconciles any newer publishes. */
+if (typeof document !== 'undefined') {
+  applySiteSettings(sanitySiteSnapshot as SiteSettings);
+}
 
 /* ------------------------- asset mapping ------------------------- */
 

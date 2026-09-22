@@ -147,6 +147,33 @@ export function isSectionVisible(key: string): boolean {
   return item ? item.visible !== false : true;
 }
 
+const PROJECT_SLUG_TO_KEY: Record<string, string> = {
+  marketing: 'project.marketing',
+  'visual-merchandising': 'project.vm',
+  'project-3': 'project.three',
+};
+
+/** Whether an individual project card/list entry should render. */
+export function isProjectVisible(slug: string): boolean {
+  const key = PROJECT_SLUG_TO_KEY[slug];
+  return key ? isSectionVisible(key) : true;
+}
+
+const HOME_SECTION_DEFAULT_ORDER = ['home.hero', 'home.projects', 'home.internship', 'home.skills', 'home.contact'];
+
+/** Studio-defined render order for homepage sections (falls back to default). */
+export function getHomeSectionOrder(): Record<string, number> {
+  const from = (arr: string[]) => {
+    const map: Record<string, number> = {};
+    arr.forEach((k, i) => (map[k] = i));
+    return map;
+  };
+  if (!siteSettings.sections) return from(HOME_SECTION_DEFAULT_ORDER);
+  const configured = siteSettings.sections.map((s) => s.key).filter((k) => HOME_SECTION_DEFAULT_ORDER.includes(k));
+  const full = [...configured, ...HOME_SECTION_DEFAULT_ORDER.filter((k) => !configured.includes(k))];
+  return from(full);
+}
+
 /* ------------------------- hydration ----------------------------- */
 
 async function fetchDocs(): Promise<AnyDoc[]> {

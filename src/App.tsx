@@ -66,7 +66,7 @@ export default function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/internship/experience" element={<InternshipExperiencePage />} />
             <Route path="/internship/learnings" element={<InternshipLearningsPage />} />
-            <Route path="/projects" element={<ProjectsOverviewPage />} />
+            <Route path="/projects" element={isSectionVisible('home.projects') ? <ProjectsOverviewPage /> : <HiddenSection />} />
             <Route path="/projects/marketing" element={isSectionVisible('project.marketing') ? <ProjectMarketingPage /> : <HiddenSection />} />
             <Route path="/projects/visual-merchandising" element={isSectionVisible('project.vm') ? <ProjectVisualMerchandisingPage /> : <HiddenSection />} />
             <Route path="/projects/project-3" element={isSectionVisible('project.three') ? <ProjectThreePage /> : <HiddenSection />} />

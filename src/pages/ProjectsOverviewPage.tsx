@@ -5,9 +5,11 @@ import { Sparkles, ArrowRight, Layers, Tag, Eye } from 'lucide-react';
 import { FlowerMark, HandDrawnStar, WashiTape } from '../components/CustomDoodles';
 import { ProjectCardMedia } from '../components/ProjectCardMedia';
 import { portfolioData } from '../data/portfolioData';
+import { isProjectVisible } from '../lib/sanity';
 
 export const ProjectsOverviewPage: React.FC = () => {
   const ui = portfolioData.ui.projectsOverview;
+  const visibleProjects = portfolioData.selectedProjects.filter((proj) => isProjectVisible(proj.slug));
 
   return (
     <div className="bg-[var(--c-bg)] min-h-screen py-16 lg:py-24">
@@ -40,7 +42,7 @@ export const ProjectsOverviewPage: React.FC = () => {
 
         {/* Projects Display List */}
         <div className="space-y-12 mb-20">
-          {portfolioData.selectedProjects.map((proj) => (
+          {visibleProjects.map((proj) => (
             <div
               key={proj.id}
               className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-12 paper-shadow-lg relative overflow-hidden group hover:paper-shadow-xl transition-all"

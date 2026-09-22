@@ -7,7 +7,7 @@ import { ProjectCardMedia } from '../components/ProjectCardMedia';
 import { SkillsSection } from '../components/home-sections/SkillsSection';
 import { ContactSection } from '../components/home-sections/ContactSection';
 import { portfolioData } from '../data/portfolioData';
-import { isSectionVisible } from '../lib/sanity';
+import { isSectionVisible, isProjectVisible, getHomeSectionOrder } from '../lib/sanity';
 
 interface HomePageProps {
   onOpenInquiry: () => void;
@@ -30,12 +30,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
     projectsSection.cardCategories.map((item) => [item.id, item.title])
   );
 
+  const sectionOrder = getHomeSectionOrder();
+
   return (
-    <div className="bg-[var(--c-bg)]">
+    <div className="bg-[var(--c-bg)] flex flex-col">
       {/* 1. HERO / ABOUT SECTION */}
       {isSectionVisible('home.hero') && (
       <section
         id="about"
+        style={{ order: sectionOrder['home.hero'] }}
         className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden bg-graph-paper border-b border-[var(--c-ink)]/15"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -117,7 +120,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
 
       {/* 2. THREE FEATURED PROJECTS PREVIEW */}
       {isSectionVisible('home.projects') && (
-      <section className="py-20 bg-[#FFFFFF] border-b border-[var(--c-ink)]/15">
+      <section className="py-20 bg-[#FFFFFF] border-b border-[var(--c-ink)]/15" style={{ order: sectionOrder['home.projects'] }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-4 border-b border-[var(--c-ink)]/10">
             <div>
@@ -134,7 +137,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {selectedProjects.map((proj) => (
+            {selectedProjects.filter((proj) => isProjectVisible(proj.slug)).map((proj) => (
               <div
                 key={proj.id}
                 className={`bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow hover:translate-y-[-4px] hover:paper-shadow-lg transition-all flex flex-col justify-between relative group ${proj.rotation}`}
@@ -212,7 +215,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
 
       {/* 3. INTERNSHIP FEATURE CALLOUT */}
       {isSectionVisible('home.internship') && (
-      <section className="py-20 bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15">
+      <section className="py-20 bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15" style={{ order: sectionOrder['home.internship'] }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-12 paper-shadow-lg relative">
             <div className="absolute -top-3 left-12">
@@ -264,10 +267,18 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
       )}
 
       {/* 4. SKILLS SECTION */}
-      {isSectionVisible('home.skills') && <SkillsSection />}
+      {isSectionVisible('home.skills') && (
+        <div style={{ order: sectionOrder['home.skills'] }}>
+          <SkillsSection />
+        </div>
+      )}
 
       {/* 5. CONTACT ME SECTION */}
-      {isSectionVisible('home.contact') && <ContactSection />}
+      {isSectionVisible('home.contact') && (
+        <div style={{ order: sectionOrder['home.contact'] }}>
+          <ContactSection />
+        </div>
+      )}
     </div>
   );
 };

@@ -157,11 +157,11 @@ async function main() {
         'Portfolio of Srishti Jain — Marketing Management, Visual Merchandising, and E-Commerce.',
     },
     colors: {
-      background: '#F5F5ED',
-      ink: '#182018',
-      highlight: '#C9FF8C',
-      softAccent: '#AFC8FF',
-      warmAccent: '#F4B6D4',
+      background: '#F6E7D3',
+      ink: '#2A2E28',
+      highlight: '#A9B5A0',
+      softAccent: '#B7CDE2',
+      warmAccent: '#C9A0A4',
     },
     sections,
   });

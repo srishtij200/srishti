@@ -5,11 +5,11 @@ export const sanitySiteSnapshot = {
     "title": "Srishti Jain — Fashion Communication & Visual Merchandising Portfolio"
   },
   "colors": {
-    "background": "#F5F5ED",
-    "highlight": "#C9FF8C",
-    "ink": "#182018",
-    "softAccent": "#AFC8FF",
-    "warmAccent": "#F4B6D4"
+    "background": "#F6E7D3",
+    "highlight": "#A9B5A0",
+    "ink": "#2A2E28",
+    "softAccent": "#B7CDE2",
+    "warmAccent": "#C9A0A4"
   },
   "sections": [
     {

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { WaitlistModal } from './components/WaitlistModal';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -11,7 +10,6 @@ import { ProjectsOverviewPage } from './pages/ProjectsOverviewPage';
 import { ProjectMarketingPage } from './pages/ProjectMarketingPage';
 import { ProjectVisualMerchandisingPage } from './pages/ProjectVisualMerchandisingPage';
 import { ProjectThreePage } from './pages/ProjectThreePage';
-import { ambientSound } from './utils/ambientAudio';
 import { hasSanity, hydrateFromSanity, isSectionVisible } from './lib/sanity';
 import { portfolioData } from './data/portfolioData';
 
@@ -25,7 +23,6 @@ function HiddenSection() {
 
 export default function App() {
   const [waitlistOpen, setWaitlistOpen] = useState(false);
-  const [isAmbientActive, setIsAmbientActive] = useState(false);
   const [, forceUpdate] = useState(0);
 
   useEffect(() => {
@@ -34,28 +31,10 @@ export default function App() {
     }
   }, []);
 
-  const handleToggleAmbient = () => {
-    const active = ambientSound.toggle();
-    setIsAmbientActive(active);
-  };
-
-  useEffect(() => {
-    return () => {
-      ambientSound.stop();
-    };
-  }, []);
-
   return (
     <BrowserRouter>
       <ScrollToTop />
       <div className="min-h-screen bg-[var(--c-bg)] text-[var(--c-ink)] flex flex-col selection:bg-[var(--c-highlight)] selection:text-[var(--c-ink)]">
-        {/* Editorial Header */}
-        <Header
-          onOpenWaitlist={() => setWaitlistOpen(true)}
-          ambientSound={isAmbientActive}
-          onToggleAmbient={handleToggleAmbient}
-        />
-
         {/* Multi-Page Route Outlet */}
         <main className="flex-1">
           <Routes>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { FlowerMark } from '../CustomDoodles';
 import { portfolioData } from '../../data/portfolioData';
 
 export const SkillsSection: React.FC = () => {
@@ -8,7 +7,7 @@ export const SkillsSection: React.FC = () => {
   const section = portfolioData.ui.skills.section;
 
   return (
-    <section id="skills" className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[var(--c-ink)]/15">
+    <section id="skills" className="py-20 lg:py-28 bg-[var(--c-soft)] border-b border-[var(--c-ink)]/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-4 border-b border-[var(--c-ink)]/10">
@@ -18,14 +17,10 @@ export const SkillsSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[var(--c-ink)]/60 mb-2">
-              <FlowerMark className="w-3.5 h-3.5 text-[var(--c-ink)]" />
-              <span>{section.eyebrow}</span>
-            </div>
             <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[var(--c-ink)]">
               {section.titleFirst}{' '}
               <span className="relative inline-block whitespace-nowrap">
-                <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-soft)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
+                <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-highlight)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
                 <span className="relative z-10 italic font-serif-display font-normal">
                   {section.titleSecond}
                 </span>
@@ -48,7 +43,7 @@ export const SkillsSection: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                 <div className="lg:col-span-4">
                   <div className="mb-4 pb-2 border-b border-[var(--c-ink)]/10">
-                    <span className="bg-[#FFFFFF] px-2 py-0.5 rounded border border-[var(--c-ink)]/20 font-mono-code text-xs font-bold text-[var(--c-ink)]">{cat.tag}</span>
+                    <span className="bg-[var(--c-bg)] px-2 py-0.5 rounded border border-[var(--c-ink)]/20 font-mono-code text-xs font-bold text-[var(--c-ink)]">{cat.tag}</span>
                   </div>
 
                   <h3 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)] mb-4 leading-tight">
@@ -64,7 +59,7 @@ export const SkillsSection: React.FC = () => {
                   {cat.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className="px-4 py-2.5 bg-[#FFFFFF] rounded-xl border border-[var(--c-ink)]/15 font-mono-code text-xs sm:text-sm font-bold text-[var(--c-ink)]"
+                      className="px-4 py-2.5 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15 font-body text-xs sm:text-sm font-semibold uppercase tracking-wide text-[var(--c-ink)]"
                     >
                       {skill}
                     </span>

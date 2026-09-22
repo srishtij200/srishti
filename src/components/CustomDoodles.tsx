@@ -17,17 +17,17 @@ export const FlowerMark: React.FC<{ className?: string; size?: number }> = ({
     className={className}
   >
     {/* Abstract hand-drawn 8-petal daisy mark */}
-    <circle cx="16" cy="7" r="4.5" fill="#F4B6D4" stroke="#182018" strokeWidth="1.5" />
-    <circle cx="22.3" cy="9.7" r="4.5" fill="#AFC8FF" stroke="#182018" strokeWidth="1.5" />
-    <circle cx="25" cy="16" r="4.5" fill="#C9FF8C" stroke="#182018" strokeWidth="1.5" />
-    <circle cx="22.3" cy="22.3" r="4.5" fill="#F8DD65" stroke="#182018" strokeWidth="1.5" />
-    <circle cx="16" cy="25" r="4.5" fill="#C7B8FF" stroke="#182018" strokeWidth="1.5" />
-    <circle cx="9.7" cy="22.3" r="4.5" fill="#F4B6D4" stroke="#182018" strokeWidth="1.5" />
-    <circle cx="7" cy="16" r="4.5" fill="#AFC8FF" stroke="#182018" strokeWidth="1.5" />
-    <circle cx="9.7" cy="9.7" r="4.5" fill="#C9FF8C" stroke="#182018" strokeWidth="1.5" />
+    <circle cx="16" cy="7" r="4.5" fill="#C9A0A4" stroke="#2A2E28" strokeWidth="1.5" />
+    <circle cx="22.3" cy="9.7" r="4.5" fill="#B7CDE2" stroke="#2A2E28" strokeWidth="1.5" />
+    <circle cx="25" cy="16" r="4.5" fill="#A9B5A0" stroke="#2A2E28" strokeWidth="1.5" />
+    <circle cx="22.3" cy="22.3" r="4.5" fill="#F6E7D3" stroke="#2A2E28" strokeWidth="1.5" />
+    <circle cx="16" cy="25" r="4.5" fill="#C9A0A4" stroke="#2A2E28" strokeWidth="1.5" />
+    <circle cx="9.7" cy="22.3" r="4.5" fill="#B7CDE2" stroke="#2A2E28" strokeWidth="1.5" />
+    <circle cx="7" cy="16" r="4.5" fill="#A9B5A0" stroke="#2A2E28" strokeWidth="1.5" />
+    <circle cx="9.7" cy="9.7" r="4.5" fill="#F6E7D3" stroke="#2A2E28" strokeWidth="1.5" />
     {/* Center dot */}
-    <circle cx="16" cy="16" r="4.8" fill="#182018" />
-    <circle cx="16" cy="16" r="2" fill="#F5F5ED" />
+    <circle cx="16" cy="16" r="4.8" fill="#2A2E28" />
+    <circle cx="16" cy="16" r="2" fill="#F6E7D3" />
   </svg>
 );
 
@@ -35,7 +35,7 @@ export const HandDrawnArrow: React.FC<{
   className?: string; 
   direction?: 'down' | 'right' | 'curved-right' | 'curved-left';
   color?: string;
-}> = ({ className = "w-12 h-8", direction = 'curved-right', color = "#182018" }) => {
+}> = ({ className = "w-12 h-8", direction = 'curved-right', color = "#2A2E28" }) => {
   if (direction === 'curved-right') {
     return (
       <svg className={className} viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +87,7 @@ export const HandDrawnArrow: React.FC<{
 
 export const HandDrawnStar: React.FC<{ className?: string; color?: string }> = ({ 
   className = "w-5 h-5", 
-  color = "#182018" 
+  color = "#2A2E28" 
 }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path 
@@ -104,12 +104,12 @@ export const WashiTape: React.FC<{
   color?: string; 
   className?: string;
   width?: string;
-}> = ({ color = "#F4B6D4", className = "", width = "w-24" }) => (
+}> = ({ color = "#C9A0A4", className = "", width = "w-24" }) => (
   <div 
     className={`h-6 ${width} border border-[var(--c-ink)]/20 opacity-85 shadow-xs ${className}`}
     style={{ 
       backgroundColor: color,
-      backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(24,32,24,0.03) 4px, rgba(24,32,24,0.03) 8px)',
+      backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(42,46,40,0.03) 4px, rgba(42,46,40,0.03) 8px)',
       clipPath: 'polygon(0% 15%, 3% 0%, 97% 0%, 100% 18%, 98% 85%, 100% 100%, 2% 100%, 0% 82%)'
     }}
   />
@@ -117,7 +117,7 @@ export const WashiTape: React.FC<{
 
 export const PaperClip: React.FC<{ className?: string; color?: string }> = ({ 
   className = "w-6 h-10", 
-  color = "#182018" 
+  color = "#2A2E28" 
 }) => (
   <svg className={className} viewBox="0 0 24 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path 
@@ -134,7 +134,7 @@ export const PencilScribble: React.FC<{ className?: string }> = ({ className = "
   <svg className={className} viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path 
       d="M2 12C20 4 35 18 50 10C65 2 80 18 95 9C105 3 112 14 118 8" 
-      stroke="#182018" 
+      stroke="#2A2E28" 
       strokeWidth="1.5" 
       strokeLinecap="round" 
     />

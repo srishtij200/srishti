@@ -24,14 +24,14 @@ export const siteSettings = defineType({
     defineField({
       name: 'colors',
       title: 'Brand Colors (design tokens)',
-      description: 'These five colors power the whole site. Change one and every matching element updates.',
+      description: 'These colors power the whole site. Change one and every matching element updates. Only these four fills are allowed for backgrounds/accents (text ink is separate).',
       type: 'object',
       fields: [
-        { name: 'background', title: 'Background', type: 'string', initialValue: '#F5F5ED' },
-        { name: 'ink', title: 'Ink / Text', type: 'string', initialValue: '#182018' },
-        { name: 'highlight', title: 'Highlight (green)', type: 'string', initialValue: '#C9FF8C' },
-        { name: 'softAccent', title: 'Soft Accent (blue)', type: 'string', initialValue: '#AFC8FF' },
-        { name: 'warmAccent', title: 'Warm Accent (pink)', type: 'string', initialValue: '#F4B6D4' },
+        { name: 'background', title: 'Background (Cream Beige)', type: 'string', initialValue: '#F6E7D3' },
+        { name: 'ink', title: 'Ink / Text', type: 'string', initialValue: '#2A2E28' },
+        { name: 'highlight', title: 'Highlight (Sage Green)', type: 'string', initialValue: '#A9B5A0' },
+        { name: 'softAccent', title: 'Soft Accent (Dusty Blue)', type: 'string', initialValue: '#B7CDE2' },
+        { name: 'warmAccent', title: 'Warm Accent (Dusty Rose)', type: 'string', initialValue: '#C9A0A4' },
       ],
     }),
     defineField({

@@ -32,8 +32,8 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
   };
 
   return (
-    <div className="bg-[var(--c-bg)] min-h-screen py-16 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-[var(--c-bg)] min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24">
         {/* Top Breadcrumb */}
         <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/50 pb-4 border-b border-[var(--c-ink)]/10 mb-12">
           <div className="flex items-center gap-2">
@@ -46,9 +46,11 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
           </div>
           <span>{u.breadcrumbTag}</span>
         </div>
+      </div>
 
-        {/* SECTION: COVER PAGE */}
-        <section className="space-y-12 mb-16">
+      {/* SECTION: COVER PAGE */}
+      <section className="bg-[var(--c-soft)] border-b border-[var(--c-ink)]/15 scroll-mt-24 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             <div className="relative">
               <div className="grid grid-cols-1 gap-8 items-center">
                 <div className="space-y-6">
@@ -87,11 +89,12 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
 
               </div>
             </div>
+          </div>
+      </section>
 
-        </section>
-
-        {/* SECTION: PAGE 2 — FROM INSIGHT TO CONCEPT */}
-        <div className="relative mb-16">
+      {/* SECTION: PAGE 2 — FROM INSIGHT TO CONCEPT */}
+      <div className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Slide Header */}
             <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
               <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-2">
@@ -179,11 +182,12 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               </div>
 
             </div>
-
+          </div>
         </div>
 
-        {/* SECTION: PAGE 3 — THE VISUAL LANGUAGE (MOOD & COLOUR BOARDS) */}
-        <div className="relative mb-16">
+      {/* SECTION: PAGE 3 — THE VISUAL LANGUAGE (MOOD & COLOUR BOARDS) */}
+      <div className="bg-[var(--c-highlight)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Slide Header */}
             <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
               <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-2">
@@ -209,7 +213,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   </p>
                   <div className="flex flex-wrap gap-2 pt-2 border-t border-[var(--c-ink)]/15 font-mono-code text-xs font-bold text-[var(--c-ink)]">
                     {vm.page3Boards.moodBoard.keywords.map((kw, i) => (
-                      <span key={i} className="px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-full">
+                      <span key={i} className="px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full">
                         {kw}
                       </span>
                     ))}
@@ -273,11 +277,12 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 ))}
               </div>
             </div>
-
+          </div>
         </div>
 
-        {/* SECTION: BEHIND THE DISPLAY (5 STEPS WITH REAL PHOTOS) */}
-        <div className="relative mb-16">
+      {/* SECTION: BEHIND THE DISPLAY (5 STEPS WITH REAL PHOTOS) */}
+      <div className="bg-[var(--c-warm)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             <div className="max-w-4xl mb-8">
               <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2">
                 {u.behindPageTag}
@@ -305,11 +310,12 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 </div>
               ))}
             </div>
-
+          </div>
         </div>
 
-        {/* SECTION: PAGE 5 — FROM CONCEPT TO CAPABILITY (SKILLS & PRINCIPLES) */}
-        <div className="relative">
+      {/* SECTION: PAGE 5 — FROM CONCEPT TO CAPABILITY (SKILLS & PRINCIPLES) */}
+      <div className="bg-[var(--c-soft)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Slide Header */}
             <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
               <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-2">
@@ -374,7 +380,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   const SkillIcon = iconMap[sk.icon] ?? Lightbulb;
                   return (
                     <div key={idx} className="border-t border-[var(--c-ink)]/20 pt-4">
-                      <div className="w-9 h-9 rounded-full bg-white border border-[var(--c-ink)]/20 flex items-center justify-center mb-3">
+                      <div className="w-9 h-9 rounded-full bg-[var(--c-bg)] border border-[var(--c-ink)]/20 flex items-center justify-center mb-3">
                         <SkillIcon className="w-4 h-4 text-[var(--c-ink)]" />
                       </div>
                       <h3 className="font-mono-code text-xs font-bold text-[var(--c-ink)] uppercase mb-2">
@@ -403,7 +409,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                         <span className="font-mono-code text-xs text-[var(--c-ink)]/50 font-bold">
                           {p.number}.
                         </span>
-                        <div className="w-8 h-8 rounded-full bg-white border border-[var(--c-ink)]/20 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-[var(--c-bg)] border border-[var(--c-ink)]/20 flex items-center justify-center">
                           <PrIcon className="w-4 h-4 text-[var(--c-ink)]" />
                         </div>
                       </div>
@@ -432,7 +438,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             <div className="flex justify-end pt-6 border-t border-[var(--c-ink)]/15 font-mono-code text-xs">
               <Link
                 to="/projects/project-3"
-                className="bg-[var(--c-ink)] text-[var(--c-bg)] px-5 py-2.5 rounded-xl font-bold hover:bg-[#253325] cursor-pointer flex items-center gap-1.5"
+                className="bg-[var(--c-ink)] text-[var(--c-bg)] px-5 py-2.5 rounded-xl font-bold hover:bg-[var(--c-ink-hover)] cursor-pointer flex items-center gap-1.5"
               >
                 <span>{u.footerNext}</span>
               </Link>

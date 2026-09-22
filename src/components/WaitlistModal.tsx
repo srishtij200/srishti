@@ -78,7 +78,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
           >
             {/* Washi tape decoration */}
             <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-              <WashiTape color="#F4B6D4" width="w-28" />
+              <WashiTape color="#C9A0A4" width="w-28" />
             </div>
 
             {/* Close button */}
@@ -119,7 +119,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                       placeholder={w.emailPlaceholder}
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-xl px-4 py-3 font-mono-code text-sm text-[var(--c-ink)] placeholder-[var(--c-ink)]/40 focus:outline-hidden focus:ring-2 focus:ring-[var(--c-highlight)]"
+                      className="w-full bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-xl px-4 py-3 font-mono-code text-sm text-[var(--c-ink)] placeholder-[var(--c-ink)]/40 focus:outline-hidden focus:ring-2 focus:ring-[var(--c-highlight)]"
                     />
                   </div>
 
@@ -149,7 +149,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full flex items-center justify-center gap-2 bg-[var(--c-ink)] text-[var(--c-bg)] hover:bg-[#253325] border-[1.5px] border-[var(--c-ink)] py-3.5 px-6 rounded-xl font-mono-code text-sm tracking-wider uppercase paper-shadow-hover transition-all cursor-pointer"
+                      className="w-full flex items-center justify-center gap-2 bg-[var(--c-ink)] text-[var(--c-bg)] hover:bg-[var(--c-ink-hover)] border-[1.5px] border-[var(--c-ink)] py-3.5 px-6 rounded-xl font-mono-code text-sm tracking-wider uppercase paper-shadow-hover transition-all cursor-pointer"
                     >
                       {isSubmitting ? (
                         <span>{w.submitBusy}</span>
@@ -170,7 +170,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
             ) : (
               <div className="text-center py-2">
                 {/* Physical ticket look */}
-                <div className="relative bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-xl p-6 mb-6 paper-shadow text-left overflow-hidden">
+                <div className="relative bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-xl p-6 mb-6 paper-shadow text-left overflow-hidden">
                   <div className="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-[var(--c-highlight)]/30 border border-[var(--c-ink)]/10" />
                   
                   <div className="flex items-start justify-between border-b border-[var(--c-ink)]/20 pb-4 mb-4">
@@ -205,7 +205,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                     <div className="flex justify-between">
                       <span className="text-[var(--c-ink)]/60">{w.labelStatus}</span>
                       <span className="text-[var(--c-ink)] flex items-center gap-1">
-                        <Check className="w-3.5 h-3.5 text-emerald-600" />
+                        <Check className="w-3.5 h-3.5 text-[#4F5B4A]" />
                         {w.statusQueued}
                       </span>
                     </div>
@@ -219,7 +219,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                 </div>
 
                 <div className="flex items-center justify-center gap-2 mb-4">
-                  <Sparkles className="w-4 h-4 text-[#F8DD65]" />
+                  <Sparkles className="w-4 h-4 text-[var(--c-highlight)]" />
                   <span className="font-serif-display text-xl text-[var(--c-ink)]">{w.loggedTitle}</span>
                 </div>
                 <p className="font-body text-xs text-[var(--c-ink)]/80 max-w-sm mx-auto mb-6">

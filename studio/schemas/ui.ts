@@ -158,6 +158,16 @@ export const ui = defineType({
     }),
 
     defineField({
+      name: 'cardPlaceholder',
+      title: 'Project Card Placeholder',
+      type: 'object',
+      fields: [
+        { name: 'title', title: 'Title', type: 'string' },
+        { name: 'subtitle', title: 'Subtitle', type: 'string' },
+      ],
+    }),
+
+    defineField({
       name: 'skills',
       title: 'Skills',
       type: 'object',

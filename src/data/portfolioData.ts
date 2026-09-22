@@ -42,6 +42,7 @@ export interface ProjectSummary {
   tagline: string;
   accentColor: string;
   rotation: string;
+  image?: string;
   tags: string[];
   summary: string;
   brief?: string;
@@ -139,7 +140,7 @@ export const portfolioData = {
       category: "Category Extension & Marketing Strategy",
       discipline: "Brand Strategy, STP, 7Ps, BCG, Packaging & Product Design",
       tagline: "Translating brand philosophy into a new product category & strategic market plan.",
-      accentColor: "#C9FF8C",
+      accentColor: "#A9B5A0",
       rotation: "rotate-1",
       image: "",
       tags: ["UNIQLO", "Brand Strategy", "STP & 7Ps", "Minimal Packaging", "Market Planning"],
@@ -157,7 +158,7 @@ export const portfolioData = {
       category: "Window Display & In-Store Experience",
       discipline: "Spatial Design, Floral Sculpture, Iridescent Fabrication, VM Principles",
       tagline: "Future Florals: A blooming garden re-imagined through a futuristic, iridescent lens.",
-      accentColor: "#F4B6D4",
+      accentColor: "#C9A0A4",
       rotation: "-rotate-1",
       image: "",
       tags: ["Cover Story", "Spring/Summer", "Future Florals", "Holographic", "VM Principles"],
@@ -175,7 +176,7 @@ export const portfolioData = {
       category: "Consumer Research & Physical MVP",
       discipline: "Observation, Survey Insights, Material Sourcing, MVP Prototyping",
       tagline: "Structured × Relaxed: Athleisure engineered for transition between gym and everyday life.",
-      accentColor: "#AFC8FF",
+      accentColor: "#B7CDE2",
       rotation: "rotate-1",
       image: "",
       tags: ["Fashion Start-Up", "Consumer Pain Points", "MVP", "Lycra × Terry Cotton", "Iteration"],
@@ -331,26 +332,26 @@ export const portfolioData = {
         {
           title: "WHAT ATTRACTED THEM",
           desc: "Visual identity, packaging, scent experience.",
-          bg: "#FFF5ED",
-          border: "#FFEDD5"
+          bg: "#F6E7D3",
+          border: "#2A2E28"
         },
         {
           title: "WHAT THEY PREFERRED",
           desc: "Clean, fresh and subtle scents (especially Mizu & Kaze).",
-          bg: "#F0FDF4",
-          border: "#DCFCE7"
+          bg: "#B7CDE2",
+          border: "#2A2E28"
         },
         {
           title: "WHAT THEY ASSOCIATED WITH UNIQLO",
           desc: "Simple, minimal, trustworthy, Japanese, everyday.",
-          bg: "#F0F9FF",
-          border: "#E0F2FE"
+          bg: "#A9B5A0",
+          border: "#2A2E28"
         },
         {
           title: "WHAT WE LEARNED",
           desc: "Importance of in-store experience, need for clearer fragrance communication, strong interest in gifting.",
-          bg: "#FDF2F8",
-          border: "#FCE7F3"
+          bg: "#C9A0A4",
+          border: "#2A2E28"
         }
       ],
       bottomStatement: "THE IDEA MOVED FROM ASSUMPTION → VALIDATION",
@@ -782,7 +783,7 @@ export const portfolioData = {
       {
         name: "Business Skills",
         tag: "BUSINESS & STRATEGY",
-        color: "#C9FF8C",
+        color: "#A9B5A0",
         skills: [
           "Market Research",
           "Consumer Behaviour",
@@ -799,7 +800,7 @@ export const portfolioData = {
       {
         name: "Digital Skills",
         tag: "TOOLS & PLATFORMS",
-        color: "#AFC8FF",
+        color: "#B7CDE2",
         skills: [
           "MS Office (Word, Excel, PowerPoint)",
           "Canva",
@@ -816,7 +817,7 @@ export const portfolioData = {
   contact: {
     email: "srishtijain2012@gmail.com",
     phone: "9350894666",
-    location: "Mumbai / New Delhi",
+    location: "New Delhi, India",
     socials: [
       { name: "LinkedIn", handle: "Srishti Jain", url: "https://www.linkedin.com/in/srishti-jain-263074228" }
     ]
@@ -847,7 +848,7 @@ export const portfolioData = {
           "Trend Forecasting"
         ],
         badge: "Creative Producer",
-        image: "/portfolio-assets/IMG_2187.jpg",
+        image: "/portfolio-assets/srishti-hero-portrait.jpg",
         imageAlt: "Srishti Jain — curated creative exploration"
       },
       projects: {
@@ -1102,6 +1103,11 @@ export const portfolioData = {
       p4IterationLabel: "ITERATION",
       p4ImpactLabel: "IMPACT",
       footerNext: "Back to Home →"
+    },
+
+    cardPlaceholder: {
+      title: "Placeholder Image",
+      subtitle: "Project cover image goes here"
     },
 
     waitlist: {

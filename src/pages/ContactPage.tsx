@@ -6,6 +6,7 @@ import { portfolioData } from '../data/portfolioData';
 
 export const ContactPage: React.FC = () => {
   const { contact, student } = portfolioData;
+  const ui = portfolioData.ui.contact;
 
   return (
     <div className="bg-[var(--c-bg)] min-h-screen py-16 lg:py-24">
@@ -13,26 +14,26 @@ export const ContactPage: React.FC = () => {
         {/* Top Breadcrumb */}
         <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/50 pb-4 border-b border-[var(--c-ink)]/10 mb-12">
           <div className="flex items-center gap-2">
-            <Link to="/" className="hover:text-[var(--c-ink)]">HOME</Link>
+            <Link to="/" className="hover:text-[var(--c-ink)]">{ui.breadcrumbHome}</Link>
             <span>/</span>
-            <span className="text-[var(--c-ink)] font-semibold">CORRESPONDENCE & INQUIRIES</span>
+            <span className="text-[var(--c-ink)] font-semibold">{ui.breadcrumbCurrent}</span>
           </div>
-          <span>STUDIO DISPATCH // {student.name.toUpperCase()}</span>
+          <span>{ui.breadcrumbTagPrefix}{student.name.toUpperCase()}</span>
         </div>
 
         {/* Hero Title */}
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] mb-4 paper-shadow-sm">
             <FlowerMark size={14} />
-            <span>STUDIO INTAKE & DIALOGUE</span>
+            <span>{ui.badge}</span>
           </div>
 
           <h1 className="font-serif-display text-4xl sm:text-6xl text-[var(--c-ink)] leading-[1.05] tracking-tight mb-4">
-            Contact & Inquiries
+            {ui.title}
           </h1>
 
           <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed">
-            Currently accepting opportunities in visual merchandising, fashion marketing, e-commerce styling, and creative direction. Feel free to send a note or request complete project catalogs.
+            {ui.intro}
           </p>
         </div>
 
@@ -46,14 +47,14 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)]/60 mb-6 pb-2 border-b border-[var(--c-ink)]/10">
-                Direct Correspondence
+                {ui.cardHeader}
               </div>
 
               <div className="space-y-6">
                 <div>
                   <div className="flex items-center gap-2 font-mono-code text-xs text-[var(--c-ink)]/60 uppercase mb-1">
                     <Mail className="w-3.5 h-3.5" />
-                    <span>ELECTRONIC MAIL</span>
+                    <span>{ui.emailLabel}</span>
                   </div>
                   <a
                     href={`mailto:${contact.email}`}
@@ -66,20 +67,20 @@ export const ContactPage: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-2 font-mono-code text-xs text-[var(--c-ink)]/60 uppercase mb-1">
                     <MapPin className="w-3.5 h-3.5" />
-                    <span>LOCATION</span>
+                    <span>{ui.locationLabel}</span>
                   </div>
                   <p className="font-body text-sm text-[var(--c-ink)] leading-relaxed">
                     {contact.location}
                   </p>
                   <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60 mt-1 block">
-                    Available for on-site & remote projects
+                    {ui.availabilityNote}
                   </span>
                 </div>
 
                 <div>
                   <div className="flex items-center gap-2 font-mono-code text-xs text-[var(--c-ink)]/60 uppercase mb-1">
                     <Phone className="w-3.5 h-3.5" />
-                    <span>TELEPHONE & SIGNAL</span>
+                    <span>{ui.phoneLabel}</span>
                   </div>
                   <p className="font-mono-code text-sm text-[var(--c-ink)]">
                     {contact.phone}
@@ -91,7 +92,7 @@ export const ContactPage: React.FC = () => {
             {/* Social Links Panel */}
             <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 paper-shadow">
               <div className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)]/60 mb-4 pb-2 border-b border-[var(--c-ink)]/10">
-                Digital Channels & Profiles
+                {ui.socialsHeader}
               </div>
 
               <div className="space-y-3 font-mono-code text-xs">
@@ -121,20 +122,20 @@ export const ContactPage: React.FC = () => {
                 <WashiTape color="#F4B6D4" width="w-28" />
               </div>
               <img
-                src="/portfolio-assets/IMG_2187.jpg"
-                alt="Srishti Jain — curated creative exploration"
+                src={ui.image}
+                alt={ui.imageAlt}
                 className="w-full h-[420px] lg:h-[560px] object-cover rounded-2xl"
               />
               <div className="flex items-center justify-between px-3 pt-4 pb-1">
                 <span className="font-mono-code text-xs uppercase tracking-widest text-[var(--c-ink)]/70">
                   <FlowerMark size={14} className="inline mr-1.5" />
-                  CLOSER LOOK
+                  {ui.closerLook}
                 </span>
                 <Link
                   to="/about"
                   className="text-xs font-mono-code text-[var(--c-ink)] hover:underline underline-offset-4 decoration-[var(--c-highlight)] decoration-2"
                 >
-                  More About Me →
+                  {ui.moreAbout}
                 </Link>
               </div>
             </div>

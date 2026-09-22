@@ -24,6 +24,7 @@ import { portfolioData } from '../data/portfolioData';
 
 export const ProjectMarketingPage: React.FC = () => {
   const { projectMarketing: pm } = portfolioData;
+  const u = portfolioData.ui.projectMarketing;
   const p2 = pm.page2BriefToConcept;
   const p4 = pm.page4ConceptToConsumer;
   const p5 = pm.page5IdeaToImpact;
@@ -37,12 +38,12 @@ export const ProjectMarketingPage: React.FC = () => {
           <div className="flex items-center gap-2">
             <Link to="/projects" className="hover:text-[var(--c-ink)] flex items-center gap-1 transition-colors">
               <ArrowLeft className="w-3.5 h-3.5" />
-              <span>PROJECTS</span>
+              <span>{u.breadcrumbProjects}</span>
             </Link>
             <span>/</span>
-            <span className="text-[var(--c-ink)] font-semibold">PROJECT 1 — MARKETING MANAGEMENT</span>
+            <span className="text-[var(--c-ink)] font-semibold">{u.breadcrumbCurrent}</span>
           </div>
-          <span className="hidden sm:inline">UNIQLO FRAGRANCE EXTENSION</span>
+          <span className="hidden sm:inline">{u.breadcrumbTag}</span>
         </div>
 
         {/* ========================================================================= */}
@@ -58,7 +59,7 @@ export const ProjectMarketingPage: React.FC = () => {
               <div className="lg:col-span-7 space-y-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] paper-shadow-sm">
                   <FlowerMark size={14} />
-                  <span>PROJECT 1 // PAGE 01</span>
+                  <span>{u.coverBadge}</span>
                 </div>
 
                 <h1 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[var(--c-ink)] leading-[1.02] tracking-tight">
@@ -71,15 +72,15 @@ export const ProjectMarketingPage: React.FC = () => {
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-[var(--c-ink)]/15 font-mono-code text-xs">
                   <div>
-                    <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">BRAND / CLIENT:</span>
+                    <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">{u.metaBrandLabel}</span>
                     <span className="font-bold text-[var(--c-ink)]">{pm.cover.brand}</span>
                   </div>
                   <div>
-                    <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">DISCIPLINE:</span>
+                    <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">{u.metaDisciplineLabel}</span>
                     <span className="font-bold text-[var(--c-ink)]">{pm.cover.discipline}</span>
                   </div>
                   <div>
-                    <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">TIMELINE:</span>
+                    <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">{u.metaTimelineLabel}</span>
                     <span className="font-bold text-[var(--c-ink)]">{pm.cover.timeline}</span>
                   </div>
                 </div>
@@ -89,12 +90,12 @@ export const ProjectMarketingPage: React.FC = () => {
               <div className="lg:col-span-5">
                 <div className="bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-4 paper-shadow">
                   <img
-                    src="/portfolio-assets/01_UNIQLO_main.jpg"
-                    alt="UNIQLO Fragrance Hero Concept"
+                    src={u.heroImage}
+                    alt={u.heroImageAlt}
                     className="w-full h-auto object-cover rounded-xl border border-[var(--c-ink)]/15"
                   />
                   <div className="font-mono-code text-[11px] text-[var(--c-ink)]/70 text-center mt-2">
-                    UNIQLO LifeWear Fragrance Product Mockup & Identity
+                    {u.heroCaption}
                   </div>
                 </div>
               </div>
@@ -104,7 +105,7 @@ export const ProjectMarketingPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="p-8 bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl paper-shadow">
               <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)]/60 block mb-3">
-                CONTEXT & STRATEGIC OPPORTUNITY
+                {u.contextHeader}
               </span>
               <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed mb-6">
                 {pm.page1And2.context}
@@ -113,12 +114,12 @@ export const ProjectMarketingPage: React.FC = () => {
               {/* Market Trends Chart Image */}
               <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] p-2">
                 <img
-                  src="/portfolio-assets/02_market_trends.jpg"
+                  src={u.marketImage}
                   alt="Market Trends Analysis"
                   className="w-full h-auto object-cover rounded-lg"
                 />
                 <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60 block mt-2 text-center">
-                  Market Analysis & Accessible Fragrance Opportunity Gap
+                  {u.marketCaption}
                 </span>
               </div>
             </div>
@@ -126,7 +127,7 @@ export const ProjectMarketingPage: React.FC = () => {
             <div className="p-8 bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl paper-shadow flex flex-col justify-between">
               <div>
                 <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)]/60 block mb-3">
-                  THE STRATEGIC BRIEF
+                  {u.briefHeader}
                 </span>
                 <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed">
                   {pm.page1And2.brief}
@@ -134,7 +135,7 @@ export const ProjectMarketingPage: React.FC = () => {
               </div>
               <div className="mt-6 pt-4 border-t border-[var(--c-ink)]/10 font-mono-code text-xs text-emerald-800 font-bold flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
-                <span>Aligned with UNIQLO LifeWear core philosophy & global store architecture</span>
+                <span>{u.alignedNote}</span>
               </div>
             </div>
           </div>
@@ -155,7 +156,7 @@ export const ProjectMarketingPage: React.FC = () => {
                 <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-2 flex items-center gap-2">
                   <span>{p2.pageLabel}</span>
                   <span>•</span>
-                  <span>CATEGORY EXPANSION</span>
+                  <span>{u.p2SlideTag}</span>
                 </div>
                 <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] tracking-tight">
                   {p2.title}
@@ -168,10 +169,10 @@ export const ProjectMarketingPage: React.FC = () => {
               <div className="text-right flex flex-col items-start md:items-end">
                 <div className="w-16 h-[1.5px] bg-[var(--c-ink)]/30 mb-2 hidden md:block"></div>
                 <span className="font-mono-code text-[11px] font-bold tracking-widest text-[var(--c-ink)] uppercase">
-                  UNIQLO FRAGRANCES
+                  {u.p2HeaderBrand}
                 </span>
                 <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60 uppercase tracking-wider">
-                  MARKETING MANAGEMENT PROJECT
+                  {u.p2HeaderSub}
                 </span>
               </div>
             </div>
@@ -311,14 +312,14 @@ export const ProjectMarketingPage: React.FC = () => {
                       <div className="p-3 bg-[var(--c-bg)] border border-[var(--c-ink)]/20 rounded-xl">
                         <div className="flex items-center gap-2 mb-1">
                           <span className="px-1.5 py-0.5 bg-red-600 text-white font-bold text-[10px] rounded tracking-wider">
-                            UNIQLO
+                            {u.p2Flow.brandChip}
                           </span>
                           <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]">
-                            LIFEWEAR
+                            {u.p2Flow.brandName}
                           </span>
                         </div>
                         <p className="font-body text-xs text-[var(--c-ink)]/70">
-                          Simple + Functional + Japanese Minimalism
+                          {u.p2Flow.brandDesc}
                         </p>
                       </div>
 
@@ -328,7 +329,7 @@ export const ProjectMarketingPage: React.FC = () => {
 
                       <div className="p-3 bg-[var(--c-bg)] border border-[var(--c-ink)]/20 rounded-xl text-center">
                         <p className="font-serif-display italic text-xs sm:text-sm text-[var(--c-ink)] leading-snug">
-                          "What if Life Wear could be experienced through another sense?"
+                          "{u.p2Flow.question}"
                         </p>
                       </div>
 
@@ -338,10 +339,10 @@ export const ProjectMarketingPage: React.FC = () => {
 
                       <div className="p-3 bg-red-50 border border-red-200 rounded-xl">
                         <span className="font-mono-code text-xs font-bold text-red-900 block mb-0.5">
-                          FRAGRANCE
+                          {u.p2Flow.fragranceName}
                         </span>
                         <p className="font-body text-xs text-red-800">
-                          Nature-inspired Japanese scents
+                          {u.p2Flow.fragranceDesc}
                         </p>
                       </div>
                     </div>
@@ -474,13 +475,13 @@ export const ProjectMarketingPage: React.FC = () => {
 
             <div className="max-w-4xl mb-8">
               <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2">
-                PAGE 03 — CORE RATIONALE & PACKAGING
+                {u.p3PageTag}
               </span>
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] mb-4">
-                DESIGN DECISIONS & 4 VARIANTS
+                {u.p3Title}
               </h2>
               <p className="font-body text-base text-[var(--c-ink)]/80">
-                Five strategic design pillars grounding the fragrance line in UNIQLO's brand DNA.
+                {u.p3Intro}
               </p>
             </div>
 
@@ -511,16 +512,16 @@ export const ProjectMarketingPage: React.FC = () => {
                 <div className="bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-4 paper-shadow">
                   <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-white mb-2">
                     <img
-                      src="/portfolio-assets/Screenshot 2026-09-15 at 8.11.34 PM.png"
-                      alt="4 Variants Minimalist Bottle Packaging"
+                      src={u.p3Image}
+                      alt={u.p3ImageAlt}
                       className="w-full h-auto object-cover"
                     />
                   </div>
                   <div className="font-mono-code text-xs font-bold text-[var(--c-ink)] text-center pt-1">
-                    4 Curated Variants & Minimalist Glass Packaging
+                    {u.p3ImageCaption}
                   </div>
                   <div className="font-mono-code text-[11px] text-[var(--c-ink)]/60 text-center">
-                    Japanese nomenclature: Hana (Flower), Mizu (Water), Kaze (Wind), Sora (Sky)
+                    {u.p3ImageSub}
                   </div>
                 </div>
               </div>
@@ -530,7 +531,7 @@ export const ProjectMarketingPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 border-t border-[var(--c-ink)]/15">
               <div className="p-4 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15">
                 <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-1">
-                  STP ANALYSIS
+                  {u.strategyStpLabel}
                 </span>
                 <p className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed">
                   {pm.page4Strategy.stp}
@@ -539,7 +540,7 @@ export const ProjectMarketingPage: React.FC = () => {
 
               <div className="p-4 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15">
                 <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-1">
-                  7Ps MARKETING MIX
+                  {u.strategy7psLabel}
                 </span>
                 <p className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed">
                   {pm.page4Strategy.sevenPs}
@@ -548,7 +549,7 @@ export const ProjectMarketingPage: React.FC = () => {
 
               <div className="p-4 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15">
                 <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-1">
-                  BCG GROWTH MATRIX
+                  {u.strategyBcgLabel}
                 </span>
                 <p className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed">
                   {pm.page4Strategy.bcg}
@@ -588,7 +589,7 @@ export const ProjectMarketingPage: React.FC = () => {
               {/* ------------------------------------------------------------- */}
               <div className="lg:col-span-5 bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow">
                 <h3 className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
-                  THE TEST
+                  {u.p4TestHeader}
                 </h3>
 
                 <div className="grid grid-cols-2 gap-4">
@@ -618,7 +619,7 @@ export const ProjectMarketingPage: React.FC = () => {
               <div className="lg:col-span-3 bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow flex flex-col justify-between">
                 <div>
                   <h3 className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
-                    THE PROCESS
+                    {u.p4ProcessHeader}
                   </h3>
 
                   <div className="space-y-2">
@@ -657,7 +658,7 @@ export const ProjectMarketingPage: React.FC = () => {
               {/* ------------------------------------------------------------- */}
               <div className="lg:col-span-4 bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow">
                 <h3 className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
-                  KEY INSIGHTS
+                  {u.p4InsightsHeader}
                 </h3>
 
                 <div className="space-y-3">
@@ -687,7 +688,7 @@ export const ProjectMarketingPage: React.FC = () => {
             <div className="bg-[#EFECE6] border-[1.5px] border-[var(--c-ink)]/20 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left">
                 <span className="font-mono-code text-[11px] uppercase tracking-widest text-[var(--c-ink)]/60 block mb-1">
-                  STRATEGIC SYNTHESIS
+                  {u.p4SynthesisLabel}
                 </span>
                 <span className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)] font-bold tracking-wide">
                   {p4.bottomStatement}
@@ -729,14 +730,14 @@ export const ProjectMarketingPage: React.FC = () => {
               <div className="flex items-center gap-3">
                 <div className="text-right">
                   <span className="font-mono-code text-xs font-bold tracking-wider text-[var(--c-ink)] block uppercase">
-                    UNIQLO FRAGRANCES
+                    {u.p5HeaderBrand}
                   </span>
                   <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60 uppercase">
-                    MARKETING MANAGEMENT PROJECT
+                    {u.p5HeaderSub}
                   </span>
                 </div>
                 <span className="px-2 py-1 bg-red-600 text-white font-bold text-xs rounded">
-                  UNIQLO
+                  {u.p5Chip}
                 </span>
               </div>
             </div>
@@ -808,7 +809,7 @@ export const ProjectMarketingPage: React.FC = () => {
                       className="w-full h-auto object-cover"
                     />
                     <div className="font-mono-code text-[10px] text-center py-1 text-[var(--c-ink)]/60 bg-white">
-                      HANA (FLOWER) EAU DE PARFUM
+                      {u.p5BottleCaption}
                     </div>
                   </div>
                 </div>
@@ -825,7 +826,7 @@ export const ProjectMarketingPage: React.FC = () => {
                     {p5.journeyInAction.title}
                   </h3>
                   <span className="font-mono-code text-[10px] text-[var(--c-ink)]/50 uppercase">
-                    4-PHASE COMMERCIAL PIPELINE
+                    {u.p5PipelineTag}
                   </span>
                 </div>
 
@@ -854,7 +855,7 @@ export const ProjectMarketingPage: React.FC = () => {
               <div className="lg:col-span-4 bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow flex flex-col justify-between">
                 <div>
                   <h3 className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
-                    SKILLS I DEVELOPED
+                    {u.p5SkillsHeader}
                   </h3>
 
                   <div className="space-y-2.5">
@@ -879,7 +880,7 @@ export const ProjectMarketingPage: React.FC = () => {
 
                 <div className="mt-6 pt-4 border-t border-[var(--c-ink)]/10 text-center">
                   <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60">
-                    Capstone Academic & Strategic Synthesis
+                    {u.p5Capstone}
                   </span>
                 </div>
               </div>
@@ -893,14 +894,14 @@ export const ProjectMarketingPage: React.FC = () => {
                 className="hover:text-[var(--c-ink)] flex items-center gap-1.5 text-[var(--c-ink)]/70"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
-                <span>All Projects</span>
+                <span>{u.footerAll}</span>
               </Link>
 
               <Link
                 to="/projects/visual-merchandising"
                 className="bg-[var(--c-ink)] text-[var(--c-bg)] px-5 py-2.5 rounded-xl font-bold hover:bg-[#253325] cursor-pointer flex items-center gap-2 transition-all shadow-sm"
               >
-                <span>Next Project: Cover Story (Visual Merchandising)</span>
+                <span>{u.footerNext}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>

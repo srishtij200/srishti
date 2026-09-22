@@ -5,6 +5,7 @@ import { portfolioData } from '../../data/portfolioData';
 
 export const ContactSection: React.FC = () => {
   const { contact } = portfolioData;
+  const sectionTitles = portfolioData.ui.contact;
 
   return (
     <section id="contact" className="py-20 lg:py-28 bg-[var(--c-bg)]">
@@ -18,11 +19,11 @@ export const ContactSection: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[var(--c-ink)]">
-              Contact &{' '}
+              {sectionTitles.sectionTitleFirst}{' '}
               <span className="relative inline-block whitespace-nowrap">
                 <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-highlight)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
                 <span className="relative z-10 italic font-serif-display font-normal">
-                  Inquiries
+                  {sectionTitles.sectionTitleSecond}
                 </span>
               </span>
             </h2>

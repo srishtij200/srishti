@@ -898,5 +898,382 @@ export const portfolioData = {
     socials: [
       { name: "LinkedIn", handle: "Srishti Jain", url: "https://www.linkedin.com/in/srishti-jain-263074228" }
     ]
+  },
+
+  // 8. UI TEXT — every hardcoded interface string, editable from Sanity
+  ui: {
+    nav: {
+      items: [
+        { to: "/projects", label: "Projects" },
+        { to: "/about", label: "About" },
+        { to: "/skills", label: "Skills" },
+        { to: "/contact", label: "Contact" }
+      ],
+      footerCopyrightYear: "2026"
+    },
+
+    home: {
+      hero: {
+        headlineFirst: "Srishti's",
+        headlineSecond: "Portfolio",
+        ctaLabel: "Explore Selected Works",
+        paragraphs: [
+          "I'm a Fashion & Lifestyle Business Management student with a background in Business Administration, passionate about the space where creativity meets strategy. My academic journey has helped me build a strong understanding of business, while my interest in fashion has shaped the way I look at brands, trends, and consumer experiences.",
+          "I enjoy exploring branding, marketing, visual merchandising, trend forecasting, and product development, bringing a fresh and visual perspective to every idea. I'm an observant and emotionally intuitive person who finds inspiration in people, places, and new experiences. I love travelling, discovering new perspectives, and constantly learning along the way."
+        ],
+        signature: "Creative at heart. Business by mindset. Always curious.",
+        specializations: [
+          "Branding",
+          "Marketing",
+          "Visual Merchandising",
+          "Trend Forecasting"
+        ],
+        badge: "Creative Producer",
+        image: "/portfolio-assets/IMG_2187.jpg",
+        imageAlt: "Srishti Jain — curated creative exploration"
+      },
+      projects: {
+        titleFirst: "Selected",
+        titleSecond: "Projects",
+        projectPrefix: "PROJECT",
+        labels: {
+          brief: "Brief",
+          research: "Research",
+          contribution: "Contribution",
+          learning: "Learning"
+        },
+        readComplete: "Read Complete Project",
+        cardTitles: [
+          { id: "proj-1", title: "A new dimension of life wear : UNIQLO Fragrances" },
+          { id: "proj-2", title: "Future Florals × Cover Story" },
+          { id: "proj-3", title: "Athera — Athleisure Wear Brand" }
+        ],
+        cardCategories: [
+          { id: "proj-3", title: "Brand Concept & Development" }
+        ]
+      },
+      internship: {
+        eyebrow: "Turning Learning Into Experience",
+        titleWord: "Internship"
+      }
+    },
+
+    about: {
+      breadcrumbHome: "HOME",
+      breadcrumbCurrent: "ABOUT ME",
+      breadcrumbTag: "FOLIO ETHOS & BACKGROUND",
+      badge: "STUDENT BIOGRAPHY",
+      paragraph2:
+        "My foundation integrates hands-on making with strategic rigor: from conducting consumer interviews and testing fabric breathability, to building 1:1 scale floral window displays and executing daily e-commerce operations.",
+      scopeHeader: "PORTFOLIO SCOPE & EXPERIENCE",
+      scopeItems: [
+        {
+          title: "01. AADIYA JEWELS (INTERNSHIP)",
+          desc: "Social Media Content Production (videos & reels) + E-Commerce Shopify management."
+        },
+        {
+          title: "02. UNIQLO FRAGRANCE (PROJECT 1)",
+          desc: "Marketing Management, STP, 7Ps, and 5 Core Design Decisions."
+        },
+        {
+          title: "03. COVER STORY (PROJECT 2)",
+          desc: "Spring/Summer VM Concept, Future Florals, Holographic sheets & 6 VM Principles."
+        },
+        {
+          title: "04. FASHION START-UP (PROJECT 3)",
+          desc: "Survey research, Lycra & Terry cotton fabric testing, and physical MVP iteration."
+        }
+      ],
+      nextLabel: "NEXT IN PORTFOLIO",
+      nextTitle: "Explore Aadiya Jewels Internship",
+      nextCta: "View Internship"
+    },
+
+    contact: {
+      breadcrumbHome: "HOME",
+      breadcrumbCurrent: "CORRESPONDENCE & INQUIRIES",
+      breadcrumbTagPrefix: "STUDIO DISPATCH // ",
+      badge: "STUDIO INTAKE & DIALOGUE",
+      title: "Contact & Inquiries",
+      intro:
+        "Currently accepting opportunities in visual merchandising, fashion marketing, e-commerce styling, and creative direction. Feel free to send a note or request complete project catalogs.",
+      cardHeader: "Direct Correspondence",
+      emailLabel: "ELECTRONIC MAIL",
+      locationLabel: "LOCATION",
+      phoneLabel: "TELEPHONE & SIGNAL",
+      availabilityNote: "Available for on-site & remote projects",
+      socialsHeader: "Digital Channels & Profiles",
+      image: "/portfolio-assets/IMG_2187.jpg",
+      imageAlt: "Srishti Jain — curated creative exploration",
+      closerLook: "CLOSER LOOK",
+      moreAbout: "More About Me →",
+      sectionTitleFirst: "Contact &",
+      sectionTitleSecond: "Inquiries"
+    },
+
+    skills: {
+      page: {
+        breadcrumbHome: "HOME",
+        breadcrumbCurrent: "SKILLS MATRIX",
+        breadcrumbTag: "PRACTICAL & STRATEGIC COMPETENCIES",
+        badge: "DISCIPLINARY PROFICIENCIES",
+        title: "Skills & Applied Disciplines",
+        intro:
+          "A versatile skill set developed across real-world jewellery e-commerce at Aadiya Jewels, marketing frameworks for UNIQLO, in-store window fabrication for Cover Story, and user research for an athleisure startup.",
+        disciplinePrefix: "DISCIPLINE 0",
+        nextLabel: "NEXT STEP",
+        nextTitle: "Inquire for Commissions or Roles",
+        nextCta: "Proceed to Contact"
+      },
+      section: {
+        eyebrow: "SKILLS",
+        titleFirst: "Skills &",
+        titleSecond: "Applied Disciplines",
+        categoryDescriptions: [
+          "Strategy, analysis, and category thinking applied across marketing, retail, and product.",
+          "The tools and platforms behind turning concepts into published, engaging content."
+        ]
+      }
+    },
+
+    internshipExperience: {
+      badge: "FINE JEWELLERY BRAND INTERNSHIP",
+      sectionSocialTitle: "Social Media",
+      socialIntroTitle: "Concept to Live Content Production",
+      introPrefix: "Short introduction:",
+      videosBadge: "VIDEOS & REEL PRODUCTION INCLUDED",
+      videosHeader: "Video Content Production & Reels",
+      reel1Title: "Jewellery Reel 01 — Aesthetic & Product Styling",
+      reel1Desc: "Shot on set, edited, color graded and published for Aadiya Jewels social handle.",
+      reel2Title: "Studio Campaign & Jewellery Showcase",
+      reel2Desc: "Highlighting brilliance, luxury finishes, and craftsmanship through video capture.",
+      photoCaption1: "Macro Jewellery Styling",
+      photoCaption2: "Product Photography Framing",
+      workedOnLabel: "What I Worked On",
+      skillsLabel: "Skills Applied",
+      sectionEcomTitle: "E-Commerce & My Learning",
+      ecomIntroTitle: "From Product to Digital Shelf",
+      bannersHeader: "Website Banners & Storefront Visuals Designed for Aadiya Jewels",
+      banner1Title: "E-Commerce Desktop Hero Banner",
+      banner1Desc: "Designed for seasonal homepage campaign",
+      banner2Title: "Jewellery Collection Category Banner",
+      banner3Title: "Shopify Product Listing & Catalogue Management",
+      learningsLabel: "WHAT I GAINED",
+      learningsTitle: "Learnings of Internship",
+      learnings: [
+        { title: "Creative Content Production", desc: "Created reels, posts, stories and carousels through hands-on content production." },
+        { title: "E-commerce Management", desc: "Managed Shopify, product uploads, catalogues, descriptions and tags." },
+        { title: "Organisation & Execution", desc: "Managed content calendars, Excel sheets, deadlines and multiple tasks." },
+        { title: "Brand Communication", desc: "Maintained consistent brand communication across social media and e-commerce." }
+      ],
+      synthesisLabel: "SYNTHESIS",
+      synthesisTitle: "LEARNING OUTCOME",
+      nextLabel: "NEXT PROJECT",
+      nextTitle: "Project 1 — Marketing (UNIQLO)",
+      nextCta: "View UNIQLO Fragrance Case Study"
+    },
+
+    internshipLearnings: {
+      breadcrumbHome: "HOME",
+      breadcrumbInternship: "INTERNSHIP",
+      breadcrumbCurrent: "LEARNINGS",
+      breadcrumbTag: "AADIYA JEWELS // 4 LEARNING OUTCOMES",
+      badge: "INTERNSHIP SYNTHESIS",
+      title: "Internship Learnings",
+      intro:
+        "Detailed breakdown of my 4 core learning outcomes from the marketing and e-commerce residency at Aadiya Jewels, bridging creative content with practical business deadlines.",
+      backLabel: "← Back to Page 1 & Page 2 Overview",
+      outcomePrefix: "OUTCOME",
+      brandTag: "AADIYA JEWELS",
+      verifiedLabel: "Verified in production & store management",
+      backCta: "Return to Internship Experience",
+      nextCta: "Proceed to Project 1 (Marketing Management)"
+    },
+
+    projectsOverview: {
+      breadcrumbHome: "HOME",
+      breadcrumbCurrent: "SELECTED PROJECTS",
+      breadcrumbTag: "FOLIO: 001–003 // CASE STUDIES",
+      badge: "CURATED WORKS ARCHIVE",
+      title: "Selected Projects",
+      intro:
+        "Three comprehensive projects investigating marketing management & brand expansion (UNIQLO), Spring/Summer visual merchandising (Cover Story), and founding an athleisure startup from consumer observation to physical MVP.",
+      caseStudyPrefix: "CASE STUDY",
+      labelBrief: "PROJECT BRIEF",
+      labelResearch: "RESEARCH",
+      labelContribution: "MY CONTRIBUTION",
+      labelKeyLearnings: "KEY LEARNINGS",
+      coreFocus: "CORE FOCUS",
+      readComplete: "Read Complete Study"
+    },
+
+    projectMarketing: {
+      breadcrumbProjects: "PROJECTS",
+      breadcrumbCurrent: "PROJECT 1 — MARKETING MANAGEMENT",
+      breadcrumbTag: "UNIQLO FRAGRANCE EXTENSION",
+      coverBadge: "PROJECT 1 // PAGE 01",
+      metaBrandLabel: "BRAND / CLIENT:",
+      metaDisciplineLabel: "DISCIPLINE:",
+      metaTimelineLabel: "TIMELINE:",
+      heroImage: "/portfolio-assets/01_UNIQLO_main.jpg",
+      heroImageAlt: "UNIQLO Fragrance Hero Concept",
+      heroCaption: "UNIQLO LifeWear Fragrance Product Mockup & Identity",
+      contextHeader: "CONTEXT & STRATEGIC OPPORTUNITY",
+      marketImage: "/portfolio-assets/02_market_trends.jpg",
+      marketCaption: "Market Analysis & Accessible Fragrance Opportunity Gap",
+      briefHeader: "THE STRATEGIC BRIEF",
+      alignedNote: "Aligned with UNIQLO LifeWear core philosophy & global store architecture",
+      p2SlideTag: "CATEGORY EXPANSION",
+      p2HeaderBrand: "UNIQLO FRAGRANCES",
+      p2HeaderSub: "MARKETING MANAGEMENT PROJECT",
+      p2Flow: {
+        brandChip: "UNIQLO",
+        brandName: "LIFEWEAR",
+        brandDesc: "Simple + Functional + Japanese Minimalism",
+        question: "What if Life Wear could be experienced through another sense?",
+        fragranceName: "FRAGRANCE",
+        fragranceDesc: "Nature-inspired Japanese scents"
+      },
+      p3PageTag: "PAGE 03 — CORE RATIONALE & PACKAGING",
+      p3Title: "DESIGN DECISIONS & 4 VARIANTS",
+      p3Intro: "Five strategic design pillars grounding the fragrance line in UNIQLO's brand DNA.",
+      p3Image: "/portfolio-assets/Screenshot 2026-09-15 at 8.11.34 PM.png",
+      p3ImageAlt: "4 Variants Minimalist Bottle Packaging",
+      p3ImageCaption: "4 Curated Variants & Minimalist Glass Packaging",
+      p3ImageSub: "Japanese nomenclature: Hana (Flower), Mizu (Water), Kaze (Wind), Sora (Sky)",
+      strategyStpLabel: "STP ANALYSIS",
+      strategy7psLabel: "7Ps MARKETING MIX",
+      strategyBcgLabel: "BCG GROWTH MATRIX",
+      p4TestHeader: "THE TEST",
+      p4ProcessHeader: "THE PROCESS",
+      p4InsightsHeader: "KEY INSIGHTS",
+      p4SynthesisLabel: "STRATEGIC SYNTHESIS",
+      p5HeaderBrand: "UNIQLO FRAGRANCES",
+      p5HeaderSub: "MARKETING MANAGEMENT PROJECT",
+      p5Chip: "UNIQLO",
+      p5PipelineTag: "4-PHASE COMMERCIAL PIPELINE",
+      p5SkillsHeader: "SKILLS I DEVELOPED",
+      p5BottleCaption: "HANA (FLOWER) EAU DE PARFUM",
+      p5Capstone: "Capstone Academic & Strategic Synthesis",
+      footerAll: "All Projects",
+      footerNext: "Next Project: Cover Story (Visual Merchandising)"
+    },
+
+    projectVM: {
+      breadcrumbProjects: "PROJECTS",
+      breadcrumbCurrent: "PROJECT 2 — VISUAL MERCHANDISING",
+      breadcrumbTag: "COVER STORY // FUTURE FLORALS",
+      coverBadge: "VISUAL MERCHANDISING PROJECT 2 // PAGE 1",
+      metaBrandLabel: "CLIENT / BRAND:",
+      metaSeasonLabel: "SEASON:",
+      metaConceptLabel: "CONCEPT:",
+      coverImage: "/portfolio-assets/BRAND BOOK  - 1.png",
+      coverImageAlt: "Cover Story S/S Brand Book",
+      coverCaption: "Cover Story Spring/Summer In-Store Experience Dossier",
+      briefSectionHeader: "WHAT I INVESTIGATED",
+      visualDirectionHeader: "VISUAL DIRECTION",
+      designInsightLabel: "MY DESIGN INSIGHT",
+      moodBoardImage: "/portfolio-assets/BRAND BOOK  - 16.png",
+      moodBoardAlt: "Future Florals Mood Board",
+      moodBoardCaption: "Mood Board Visual Collages & Material Invocations",
+      moodThemesHeader: "MOOD IN THEMES",
+      colourBoardImage: "/portfolio-assets/BRAND BOOK  - 18.png",
+      colourBoardAlt: "Colour Board Palette",
+      colourBoardCaption: "Spring/Summer Colour Harmony & Iridescent Accents",
+      behindPageTag: "PAGE 4 — FABRICATION & ASSEMBLY",
+      behindTitle: "Behind the Display",
+      behindIntro: "5-step progression from raw holographic sheets to spatial environmental installation.",
+      processNotePrefix: "Process Note:",
+      stepImages: [
+        { src: "/portfolio-assets/1e36b3dd-85f2-438b-b90a-e7143dbd03cd.jpg", caption: "Holographic sheets shaped with wire" },
+        { src: "/portfolio-assets/6fa49fa5-d790-4c76-9f00-69ca01bfcdc2.jpg", caption: "First floral structure emerging" },
+        { src: "/portfolio-assets/7eee7676-2ce8-4667-9ef7-abf624ba1833.jpg", caption: "Refining petal curvature and fold geometry" },
+        { src: "/portfolio-assets/97e20f9d-778d-44a3-bc5f-d32b6c39b7a3.jpg", caption: "Clustered floral arrangement and composition" },
+        { src: "/portfolio-assets/DD05B299-B533-4126-B54A-3B48CD3AA413.jpg", caption: "Backdrop, organza drapes, and lighting installation" }
+      ],
+      p5ProcessTag: "IDEATION → INSTALLATION",
+      p5SkillsHeader: "SKILLS I APPLIED",
+      p5PrinciplesHeader: "VM PRINCIPLES APPLIED",
+      p5LearnedTitle: "WHAT I LEARNED",
+      footerNext: "Next Project: Start Up →"
+    },
+
+    projectThree: {
+      breadcrumbProjects: "PROJECTS",
+      breadcrumbCurrent: "PROJECT 3 — START UP",
+      breadcrumbTag: "ATHLEISURE HYBRID // STRUCTURED × RELAXED",
+      metaTypeLabel: "PROJECT TYPE:",
+      metaConceptLabel: "CONCEPT:",
+      metaScopeLabel: "SCOPE:",
+      metaTypeValue: "Fashion Start-Up & Athleisure",
+      metaScopeValue: "Research to Fabrication",
+      coverImageAlt: "Athera Athleisure Cover",
+      galleryTitle: "MADE FOR MULTIPLE MOMENTS",
+      page2Headline1: "FROM AN OBSERVATION",
+      page2Headline2: "TO AN OPPORTUNITY",
+      opportunityGap: "OPPORTUNITY GAP",
+      p3PageLabel: "PAGE 3",
+      p3DesignParagraph:
+        "Structured crop top tailored with compressive chest support paired with airy, comfortable relaxed joggers for effortless movement.",
+      designFlatImage: "/portfolio-assets/Screenshot 2026-09-18 at 7.03.12 PM.png",
+      designFlatAlt: "Design Flats Structured Crop Top and Joggers",
+      designFlatCaption: "01 Design — Structured Crop Top & Joggers Flat",
+      materialSheetImage: "/portfolio-assets/Screenshot 2026-09-18 at 7.03.20 PM.png",
+      materialSheetAlt: "Material Testing Lycra and Terry Cotton",
+      materialSheetCaption: "02 Material — Lycra & Terry Cotton Functional Pairing",
+      prototypeParagraph:
+        "The physical MVP garment produced and evaluated through user wear-testing sessions to gauge breathability and silhouette comfort.",
+      prototypeImage: "/portfolio-assets/Screenshot 2026-09-18 at 7.03.30 PM.png",
+      prototypeAlt: "03 Physical MVP Prototype",
+      prototypeCaption: "03 Final Prototype — Physical MVP Sample",
+      p4PageLabel: "PAGE 4",
+      p4HeardTitle: "WHAT I HEARD",
+      p4TaughtTitle: "WHAT THIS TAUGHT ME",
+      p4LoopHeader: "FEEDBACK → ITERATION → IMPACT",
+      p4FeedbackLabel: "FEEDBACK",
+      p4IterationLabel: "ITERATION",
+      p4ImpactLabel: "IMPACT",
+      footerNext: "View Skills Matrix →"
+    },
+
+    cardPlaceholder: {
+      title: "Placeholder Image",
+      subtitle: "Project cover image goes here"
+    },
+
+    waitlist: {
+      eyebrow: "Studio Inquiries • Class of '26",
+      title: "Request Full Portfolio & Studio Visit",
+      intro:
+        "Inquire about visual merchandising commissions, freelance retail strategy, exhibition catalogs, or schedule an in-person studio visit in New York or London.",
+      emailLabel: "Your Work Email",
+      emailPlaceholder: "curator.studio@gallery.com",
+      roleLabel: "Nature of Correspondence",
+      roles: [
+        "Exhibition / Curator",
+        "Retail Brand VM",
+        "Editorial Styling",
+        "Agency Role",
+        "Studio Visit",
+        "Thesis Catalog PDF"
+      ],
+      submitIdle: "Submit Studio Inquiry",
+      submitBusy: "Inscribing Studio Log...",
+      footnote: "✦ Responses typically dispatched within 24–48 hours.",
+      ticketBrand: "Studio Pass",
+      ticketReceived: "Inquiry Received",
+      labelContact: "CONTACT:",
+      labelInquiryType: "INQUIRY TYPE:",
+      labelStatus: "STATUS:",
+      statusQueued: "Queued for Response",
+      dossierPass: "PORTFOLIO DOSSIER PASS",
+      cityTag: "NEW YORK / LONDON",
+      loggedTitle: "Inquiry Logged",
+      thanks:
+        "Thank you for reaching out. A complete high-resolution PDF portfolio dossier and thesis catalog will be dispatched to your inbox shortly.",
+      copyLabel: "Copy Reference #",
+      copiedLabel: "Copied to Clipboard",
+      closeLabel: "Return to Portfolio"
+    }
   }
 };

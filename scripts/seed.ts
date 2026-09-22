@@ -60,6 +60,14 @@ async function uploadImage(assetPath: string): Promise<ImageStub | null> {
   return job;
 }
 
+let keyCounter = 0;
+
+/** Unique, deterministic-enough array item key (recommended: nanoid-ish). */
+function genKey(): string {
+  keyCounter += 1;
+  return `k${Date.now().toString(36)}${keyCounter.toString(36)}${Math.random().toString(36).slice(2, 8)}`;
+}
+
 /** Walk any value; upload local images and replace with Sanity image refs. */
 async function walk(value: unknown): Promise<any> {
   if (typeof value === 'string' && (value.includes('/portfolio-assets/') || value.includes('/src/assets/'))) {
@@ -67,7 +75,13 @@ async function walk(value: unknown): Promise<any> {
   }
   if (Array.isArray(value)) {
     const out = [];
-    for (const item of value) out.push(await walk(item));
+    for (const item of value) {
+      const walked = await walk(item);
+      if (walked && typeof walked === 'object' && !Array.isArray(walked) && !(walked._type === 'image' && walked.asset)) {
+        walked._key = genKey();
+      }
+      out.push(walked);
+    }
     return out;
   }
   if (value && typeof value === 'object') {
@@ -115,21 +129,21 @@ async function main() {
   const bioData = (portfolioData as any).student;
   const bioDoc = bioData ? { _id: 'bio', _type: 'bio', ...(await walk(bioData)) } : null;
   if (bioDoc) documents.push(bioDoc);
-  for (const key of ['internship', 'projectMarketing', 'projectVM', 'projectThree', 'skills', 'contact']) {
+  for (const key of ['internship', 'projectMarketing', 'projectVM', 'projectThree', 'skills', 'contact', 'ui']) {
     const doc = await build(key);
     if (doc) documents.push(doc);
   }
   if (summaryDoc) documents.push(summaryDoc);
 
   const sections = [
-    { key: 'home.hero', label: 'Home — Hero & About', visible: true },
-    { key: 'home.projects', label: 'Home — Selected Projects', visible: true },
-    { key: 'home.internship', label: 'Home — Internship Callout', visible: true },
-    { key: 'home.skills', label: 'Home — Skills', visible: true },
-    { key: 'home.contact', label: 'Home — Contact', visible: true },
-    { key: 'project.marketing', label: 'Project 1 — Marketing', visible: true },
-    { key: 'project.vm', label: 'Project 2 — Visual Merchandising', visible: true },
-    { key: 'project.three', label: 'Project 3 — Start-Up', visible: true },
+    { _key: 's1', key: 'home.hero', label: 'Home — Hero & About', visible: true },
+    { _key: 's2', key: 'home.projects', label: 'Home — Selected Projects', visible: true },
+    { _key: 's3', key: 'home.internship', label: 'Home — Internship Callout', visible: true },
+    { _key: 's4', key: 'home.skills', label: 'Home — Skills', visible: true },
+    { _key: 's5', key: 'home.contact', label: 'Home — Contact', visible: true },
+    { _key: 's6', key: 'project.marketing', label: 'Project 1 — Marketing', visible: true },
+    { _key: 's7', key: 'project.vm', label: 'Project 2 — Visual Merchandising', visible: true },
+    { _key: 's8', key: 'project.three', label: 'Project 3 — Start-Up', visible: true },
   ];
 
   documents.push({

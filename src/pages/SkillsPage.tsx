@@ -7,6 +7,7 @@ import { portfolioData } from '../data/portfolioData';
 
 export const SkillsPage: React.FC = () => {
   const { skills } = portfolioData;
+  const page = portfolioData.ui.skills.page;
 
   return (
     <div className="bg-[var(--c-bg)] min-h-screen py-16 lg:py-24">
@@ -14,26 +15,26 @@ export const SkillsPage: React.FC = () => {
         {/* Top Breadcrumb */}
         <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/50 pb-4 border-b border-[var(--c-ink)]/10 mb-12">
           <div className="flex items-center gap-2">
-            <Link to="/" className="hover:text-[var(--c-ink)]">HOME</Link>
+            <Link to="/" className="hover:text-[var(--c-ink)]">{page.breadcrumbHome}</Link>
             <span>/</span>
-            <span className="text-[var(--c-ink)] font-semibold">SKILLS MATRIX</span>
+            <span className="text-[var(--c-ink)] font-semibold">{page.breadcrumbCurrent}</span>
           </div>
-          <span>PRACTICAL & STRATEGIC COMPETENCIES</span>
+          <span>{page.breadcrumbTag}</span>
         </div>
 
         {/* Hero Title */}
         <div className="max-w-4xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] mb-4 paper-shadow-sm">
             <FlowerMark size={14} />
-            <span>DISCIPLINARY PROFICIENCIES</span>
+            <span>{page.badge}</span>
           </div>
 
           <h1 className="font-serif-display text-4xl sm:text-6xl text-[var(--c-ink)] leading-[1.05] tracking-tight mb-4">
-            Skills & Applied Disciplines
+            {page.title}
           </h1>
 
           <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed max-w-3xl mb-8">
-            A versatile skill set developed across real-world jewellery e-commerce at Aadiya Jewels, marketing frameworks for UNIQLO, in-store window fabrication for Cover Story, and user research for an athleisure startup.
+            {page.intro}
           </p>
         </div>
 
@@ -49,7 +50,7 @@ export const SkillsPage: React.FC = () => {
               </div>
 
               <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/50 mb-3 pb-2 border-b border-[var(--c-ink)]/10">
-                <span className="font-bold text-[var(--c-ink)]">DISCIPLINE 0{idx + 1}</span>
+                <span className="font-bold text-[var(--c-ink)]">{page.disciplinePrefix}{idx + 1}</span>
                 <span className="bg-[var(--c-bg)] px-2 py-0.5 rounded border border-[var(--c-ink)]/20">{cat.tag}</span>
               </div>
 
@@ -74,14 +75,14 @@ export const SkillsPage: React.FC = () => {
         {/* Bottom Banner */}
         <div className="flex flex-col sm:flex-row items-center justify-between p-8 bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-2xl gap-4">
           <div>
-            <div className="font-mono-code text-xs uppercase text-[var(--c-ink)]/60">NEXT STEP</div>
-            <div className="font-serif-display text-2xl text-[var(--c-ink)]">Inquire for Commissions or Roles</div>
+            <div className="font-mono-code text-xs uppercase text-[var(--c-ink)]/60">{page.nextLabel}</div>
+            <div className="font-serif-display text-2xl text-[var(--c-ink)]">{page.nextTitle}</div>
           </div>
           <Link
             to="/contact"
             className="flex items-center gap-2 px-6 py-3 bg-[var(--c-ink)] text-[var(--c-bg)] rounded-xl font-mono-code text-xs uppercase tracking-wider hover:bg-[#253325] transition-colors"
           >
-            <span>Proceed to Contact</span>
+            <span>{page.nextCta}</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

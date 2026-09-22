@@ -5,6 +5,7 @@ import { portfolioData } from '../../data/portfolioData';
 
 export const SkillsSection: React.FC = () => {
   const { skills } = portfolioData;
+  const section = portfolioData.ui.skills.section;
 
   return (
     <section id="skills" className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[var(--c-ink)]/15">
@@ -19,14 +20,14 @@ export const SkillsSection: React.FC = () => {
           >
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[var(--c-ink)]/60 mb-2">
               <FlowerMark className="w-3.5 h-3.5 text-[var(--c-ink)]" />
-              <span>SKILLS</span>
+              <span>{section.eyebrow}</span>
             </div>
             <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[var(--c-ink)]">
-              Skills &{' '}
+              {section.titleFirst}{' '}
               <span className="relative inline-block whitespace-nowrap">
                 <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-soft)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
                 <span className="relative z-10 italic font-serif-display font-normal">
-                  Applied Disciplines
+                  {section.titleSecond}
                 </span>
               </span>
             </h2>
@@ -59,9 +60,7 @@ export const SkillsSection: React.FC = () => {
                   </h3>
 
                   <p className="font-body text-sm text-[var(--c-ink)]/75 leading-relaxed">
-                    {idx === 0
-                      ? "Strategy, analysis, and category thinking applied across marketing, retail, and product."
-                      : "The tools and platforms behind turning concepts into published, engaging content."}
+                    {section.categoryDescriptions[idx] ?? ''}
                   </p>
                 </div>
 

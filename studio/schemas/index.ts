@@ -8,6 +8,7 @@ import { p3Quadrant } from './p3Quadrant';
 import { skills } from './skills';
 import { contact } from './contact';
 import { siteSettings } from './siteSettings';
+import { ui } from './ui';
 
 export const schemaTypes = [
   siteSettings,
@@ -19,5 +20,6 @@ export const schemaTypes = [
   projectThree,
   skills,
   contact,
+  ui,
   p3Quadrant,
 ];

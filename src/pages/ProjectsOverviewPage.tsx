@@ -7,6 +7,7 @@ import { ProjectCardMedia } from '../components/ProjectCardMedia';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectsOverviewPage: React.FC = () => {
+  const ui = portfolioData.ui.projectsOverview;
 
   return (
     <div className="bg-[var(--c-bg)] min-h-screen py-16 lg:py-24">
@@ -14,26 +15,26 @@ export const ProjectsOverviewPage: React.FC = () => {
         {/* Top Breadcrumb */}
         <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/50 pb-4 border-b border-[var(--c-ink)]/10 mb-12">
           <div className="flex items-center gap-2">
-            <Link to="/" className="hover:text-[var(--c-ink)]">HOME</Link>
+            <Link to="/" className="hover:text-[var(--c-ink)]">{ui.breadcrumbHome}</Link>
             <span>/</span>
-            <span className="text-[var(--c-ink)] font-semibold">SELECTED PROJECTS</span>
+            <span className="text-[var(--c-ink)] font-semibold">{ui.breadcrumbCurrent}</span>
           </div>
-          <span>FOLIO: 001–003 // CASE STUDIES</span>
+          <span>{ui.breadcrumbTag}</span>
         </div>
 
         {/* Hero Title & Intro */}
         <div className="max-w-4xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] mb-4 paper-shadow-sm">
             <FlowerMark size={14} />
-            <span>CURATED WORKS ARCHIVE</span>
+            <span>{ui.badge}</span>
           </div>
 
           <h1 className="font-serif-display text-4xl sm:text-6xl text-[var(--c-ink)] leading-[1.05] tracking-tight mb-4">
-            Selected Projects
+            {ui.title}
           </h1>
 
           <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed max-w-3xl mb-8">
-            Three comprehensive projects investigating marketing management & brand expansion (UNIQLO), Spring/Summer visual merchandising (Cover Story), and founding an athleisure startup from consumer observation to physical MVP.
+            {ui.intro}
           </p>
         </div>
 
@@ -54,7 +55,7 @@ export const ProjectsOverviewPage: React.FC = () => {
                 <div className="lg:col-span-8 space-y-4">
                   <div className="flex items-center gap-3">
                     <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase">
-                      CASE STUDY {proj.number}
+                      {ui.caseStudyPrefix} {proj.number}
                     </span>
                     <span className="text-xs font-mono-code px-2.5 py-0.5 rounded-full border border-[var(--c-ink)]/30 bg-[var(--c-bg)]">
                       {proj.category}
@@ -76,10 +77,10 @@ export const ProjectsOverviewPage: React.FC = () => {
                   {proj.brief && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                       {[
-                        { label: "PROJECT BRIEF", text: proj.brief },
-                        { label: "RESEARCH", text: proj.research },
-                        { label: "MY CONTRIBUTION", text: proj.contribution },
-                        { label: "KEY LEARNINGS", text: proj.keyLearnings }
+                        { label: ui.labelBrief, text: proj.brief },
+                        { label: ui.labelResearch, text: proj.research },
+                        { label: ui.labelContribution, text: proj.contribution },
+                        { label: ui.labelKeyLearnings, text: proj.keyLearnings }
                       ].map((b) => (
                         <div
                           key={b.label}
@@ -111,7 +112,7 @@ export const ProjectsOverviewPage: React.FC = () => {
                 <div className="lg:col-span-4 flex flex-col justify-between h-full pt-4 lg:pt-0">
                   <div className="p-6 bg-[var(--c-bg)] border border-[var(--c-ink)]/20 rounded-2xl mb-6">
                     <span className="font-mono-code text-xs font-bold text-[var(--c-ink)] block mb-2">
-                      CORE FOCUS
+                      {ui.coreFocus}
                     </span>
                     <p className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed">
                       {proj.tagline}
@@ -122,7 +123,7 @@ export const ProjectsOverviewPage: React.FC = () => {
                     to={`/projects/${proj.slug}`}
                     className="flex items-center justify-between w-full py-4 px-6 bg-[var(--c-ink)] text-[var(--c-bg)] hover:bg-[#253325] rounded-xl font-mono-code text-xs uppercase tracking-wider font-bold transition-all"
                   >
-                    <span>Read Complete Study</span>
+                    <span>{ui.readComplete}</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>

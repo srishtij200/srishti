@@ -31,6 +31,7 @@ const DOC_TO_KEY: Record<string, string> = {
   projectThree: 'projectThree',
   skills: 'skills',
   contact: 'contact',
+  ui: 'ui',
 };
 
 const QUERY = `*[_type in $types]`;

@@ -7,6 +7,7 @@ import { portfolioData } from '../data/portfolioData';
 
 export const AboutPage: React.FC = () => {
   const { student } = portfolioData;
+  const ui = portfolioData.ui.about;
 
   return (
     <div className="bg-[var(--c-bg)] min-h-screen py-16 lg:py-24">
@@ -14,11 +15,11 @@ export const AboutPage: React.FC = () => {
         {/* Top Breadcrumb */}
         <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/50 pb-4 border-b border-[var(--c-ink)]/10 mb-12">
           <div className="flex items-center gap-2">
-            <Link to="/" className="hover:text-[var(--c-ink)]">HOME</Link>
+            <Link to="/" className="hover:text-[var(--c-ink)]">{ui.breadcrumbHome}</Link>
             <span>/</span>
-            <span className="text-[var(--c-ink)] font-semibold">ABOUT ME</span>
+            <span className="text-[var(--c-ink)] font-semibold">{ui.breadcrumbCurrent}</span>
           </div>
-          <span>FOLIO ETHOS & BACKGROUND</span>
+          <span>{ui.breadcrumbTag}</span>
         </div>
 
         {/* Profile Card */}
@@ -26,7 +27,7 @@ export const AboutPage: React.FC = () => {
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] paper-shadow-sm">
               <FlowerMark size={14} />
-              <span>STUDENT BIOGRAPHY</span>
+              <span>{ui.badge}</span>
             </div>
 
             <h1 className="font-serif-display text-4xl sm:text-6xl text-[var(--c-ink)] leading-[1.05] tracking-tight">
@@ -53,7 +54,7 @@ export const AboutPage: React.FC = () => {
                 {student.secondaryStatement}
               </p>
               <p>
-                My foundation integrates hands-on making with strategic rigor: from conducting consumer interviews and testing fabric breathability, to building 1:1 scale floral window displays and executing daily e-commerce operations.
+                {ui.paragraph2}
               </p>
             </div>
 
@@ -73,45 +74,20 @@ export const AboutPage: React.FC = () => {
               </div>
 
               <div className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)]/60 mb-6 pb-2 border-b border-[var(--c-ink)]/15">
-                PORTFOLIO SCOPE & EXPERIENCE
+                {ui.scopeHeader}
               </div>
 
               <div className="space-y-6">
-                <div>
-                  <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]">
-                    01. AADIYA JEWELS (INTERNSHIP)
+                {ui.scopeItems.map((item) => (
+                  <div key={item.title}>
+                    <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]">
+                      {item.title}
+                    </div>
+                    <div className="font-body text-xs text-[var(--c-ink)]/80 mt-1">
+                      {item.desc}
+                    </div>
                   </div>
-                  <div className="font-body text-xs text-[var(--c-ink)]/80 mt-1">
-                    Social Media Content Production (videos & reels) + E-Commerce Shopify management.
-                  </div>
-                </div>
-
-                <div>
-                  <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]">
-                    02. UNIQLO FRAGRANCE (PROJECT 1)
-                  </div>
-                  <div className="font-body text-xs text-[var(--c-ink)]/80 mt-1">
-                    Marketing Management, STP, 7Ps, and 5 Core Design Decisions.
-                  </div>
-                </div>
-
-                <div>
-                  <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]">
-                    03. COVER STORY (PROJECT 2)
-                  </div>
-                  <div className="font-body text-xs text-[var(--c-ink)]/80 mt-1">
-                    Spring/Summer VM Concept, Future Florals, Holographic sheets & 6 VM Principles.
-                  </div>
-                </div>
-
-                <div>
-                  <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]">
-                    04. FASHION START-UP (PROJECT 3)
-                  </div>
-                  <div className="font-body text-xs text-[var(--c-ink)]/80 mt-1">
-                    Survey research, Lycra & Terry cotton fabric testing, and physical MVP iteration.
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -120,14 +96,14 @@ export const AboutPage: React.FC = () => {
         {/* Bottom Navigation */}
         <div className="flex flex-col sm:flex-row items-center justify-between p-8 bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-2xl gap-4">
           <div>
-            <div className="font-mono-code text-xs uppercase text-[var(--c-ink)]/60">NEXT IN PORTFOLIO</div>
-            <div className="font-serif-display text-2xl text-[var(--c-ink)]">Explore Aadiya Jewels Internship</div>
+            <div className="font-mono-code text-xs uppercase text-[var(--c-ink)]/60">{ui.nextLabel}</div>
+            <div className="font-serif-display text-2xl text-[var(--c-ink)]">{ui.nextTitle}</div>
           </div>
           <Link
             to="/internship/experience"
             className="flex items-center gap-2 px-6 py-3 bg-[var(--c-ink)] text-[var(--c-bg)] rounded-xl font-mono-code text-xs uppercase tracking-wider hover:bg-[#253325] transition-colors"
           >
-            <span>View Internship</span>
+            <span>{ui.nextCta}</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

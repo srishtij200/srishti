@@ -7,6 +7,7 @@ import { portfolioData } from '../data/portfolioData';
 
 export const ProjectThreePage: React.FC = () => {
   const { projectThree: p3 } = portfolioData;
+  const u = portfolioData.ui.projectThree;
 
   const skillIcons: Record<string, LucideIcon> = {
     TrendingUp, Users, BarChart2, Lightbulb, Target
@@ -20,12 +21,12 @@ export const ProjectThreePage: React.FC = () => {
           <div className="flex items-center gap-2">
             <Link to="/projects" className="hover:text-[var(--c-ink)] flex items-center gap-1">
               <ArrowLeft className="w-3.5 h-3.5" />
-              <span>PROJECTS</span>
+              <span>{u.breadcrumbProjects}</span>
             </Link>
             <span>/</span>
-            <span className="text-[var(--c-ink)] font-semibold">PROJECT 3 — START UP</span>
+            <span className="text-[var(--c-ink)] font-semibold">{u.breadcrumbCurrent}</span>
           </div>
-          <span>ATHLEISURE HYBRID // STRUCTURED × RELAXED</span>
+          <span>{u.breadcrumbTag}</span>
         </div>
 
         {/* SECTION: COVER PAGE */}
@@ -60,16 +61,16 @@ export const ProjectThreePage: React.FC = () => {
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-[var(--c-ink)]/15 font-mono-code text-xs">
                     <div>
-                      <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">PROJECT TYPE:</span>
-                      <span className="font-bold text-[var(--c-ink)]">Fashion Start-Up & Athleisure</span>
+                      <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">{u.metaTypeLabel}</span>
+                      <span className="font-bold text-[var(--c-ink)]">{u.metaTypeValue}</span>
                     </div>
                     <div>
-                      <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">CONCEPT:</span>
+                      <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">{u.metaConceptLabel}</span>
                       <span className="font-bold text-[var(--c-ink)]">{p3.cover.conceptSubtitle}</span>
                     </div>
                     <div>
-                      <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">SCOPE:</span>
-                      <span className="font-bold text-[var(--c-ink)]">Research to Fabrication</span>
+                      <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">{u.metaScopeLabel}</span>
+                      <span className="font-bold text-[var(--c-ink)]">{u.metaScopeValue}</span>
                     </div>
                   </div>
                 </div>
@@ -79,7 +80,7 @@ export const ProjectThreePage: React.FC = () => {
                   <div className="bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-4 paper-shadow">
                     <img
                       src={p3.cover.heroImage}
-                      alt="Athera Athleisure Cover"
+                      alt={u.coverImageAlt}
                       className="w-full h-auto object-cover rounded-xl border border-[var(--c-ink)]/15"
                     />
                     <div className="font-mono-code text-[11px] text-[var(--c-ink)]/70 text-center mt-2">
@@ -94,7 +95,7 @@ export const ProjectThreePage: React.FC = () => {
             <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-6 sm:p-10 paper-shadow-lg">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-6 pb-4 border-b border-[var(--c-ink)]/15">
                 <span className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)]">
-                  MADE FOR MULTIPLE MOMENTS
+                  {u.galleryTitle}
                 </span>
                 <span className="font-serif-display italic text-sm text-[var(--c-ink)]/70">
                   "{p3.cover.bottomStatement}"
@@ -129,9 +130,9 @@ export const ProjectThreePage: React.FC = () => {
                 PAGE 2 — {p3.page2SurveyInsights.pageLabel} // {p3.page2SurveyInsights.headerTag}
               </span>
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] leading-tight mb-4 whitespace-pre-line">
-                FROM AN OBSERVATION
+                {u.page2Headline1}
                 <br />
-                TO AN OPPORTUNITY
+                {u.page2Headline2}
               </h2>
               <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed p-4 bg-[var(--c-bg)] rounded-2xl border border-[var(--c-ink)]/20 mb-0">
                 {p3.page2SurveyInsights.subtitle}
@@ -229,7 +230,7 @@ export const ProjectThreePage: React.FC = () => {
                               </span>
                               {f.isHighlight && (
                                 <span className="font-mono-code text-[9px] font-bold bg-[var(--c-ink)] text-[var(--c-bg)] px-2 py-0.5 rounded-full">
-                                  OPPORTUNITY GAP
+                                  {u.opportunityGap}
                                 </span>
                               )}
                             </div>
@@ -313,7 +314,7 @@ export const ProjectThreePage: React.FC = () => {
             </div>
 
             <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-4">
-              PAGE 3
+              {u.p3PageLabel}
             </span>
 
             {/* 01 DESIGN WITH TECHNICAL FLAT DRAWING */}
@@ -331,20 +332,20 @@ export const ProjectThreePage: React.FC = () => {
                     ))}
                   </div>
                   <p className="font-body text-xs text-[var(--c-ink)]/75 leading-relaxed pt-2">
-                    Structured crop top tailored with compressive chest support paired with airy, comfortable relaxed joggers for effortless movement.
+                    {u.p3DesignParagraph}
                   </p>
                 </div>
 
                 <div className="lg:col-span-5">
                   <div className="bg-white rounded-xl overflow-hidden border border-[var(--c-ink)]/25 p-2 paper-shadow-sm flex items-center justify-center">
                     <img
-                      src="/portfolio-assets/Screenshot 2026-09-18 at 7.03.12 PM.png"
-                      alt="Design Flats Structured Crop Top and Joggers"
+                      src={u.designFlatImage}
+                      alt={u.designFlatAlt}
                       className="max-h-64 object-contain"
                     />
                   </div>
                   <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60 block mt-1.5 text-center">
-                    01 Design — Structured Crop Top & Joggers Flat
+                    {u.designFlatCaption}
                   </span>
                 </div>
               </div>
@@ -384,13 +385,13 @@ export const ProjectThreePage: React.FC = () => {
                 <div className="lg:col-span-5">
                   <div className="bg-white rounded-xl overflow-hidden border border-[var(--c-ink)]/25 p-2 paper-shadow-sm flex items-center justify-center">
                     <img
-                      src="/portfolio-assets/Screenshot 2026-09-18 at 7.03.20 PM.png"
-                      alt="Material Testing Lycra and Terry Cotton"
+                      src={u.materialSheetImage}
+                      alt={u.materialSheetAlt}
                       className="max-h-64 object-contain"
                     />
                   </div>
                   <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60 block mt-1.5 text-center">
-                    02 Material — Lycra & Terry Cotton Functional Pairing
+                    {u.materialSheetCaption}
                   </span>
                 </div>
               </div>
@@ -410,20 +411,20 @@ export const ProjectThreePage: React.FC = () => {
                     {p3.page3DesignAndMaterial.prototype.coreProposition}
                   </p>
                   <p className="font-body text-xs text-[var(--c-ink)]/80 pt-2 leading-relaxed">
-                    The physical MVP garment produced and evaluated through user wear-testing sessions to gauge breathability and silhouette comfort.
+                    {u.prototypeParagraph}
                   </p>
                 </div>
 
                 <div className="lg:col-span-6">
                   <div className="bg-white rounded-2xl overflow-hidden border-[1.5px] border-[var(--c-ink)] p-3 paper-shadow">
                     <img
-                      src="/portfolio-assets/Screenshot 2026-09-18 at 7.03.30 PM.png"
-                      alt="03 Physical MVP Prototype"
+                      src={u.prototypeImage}
+                      alt={u.prototypeAlt}
                       className="w-full h-auto max-h-80 object-contain mx-auto"
                     />
                   </div>
                   <span className="font-mono-code text-[11px] text-[var(--c-ink)]/70 block mt-2 text-center font-bold">
-                    03 Final Prototype — Physical MVP Sample
+                    {u.prototypeCaption}
                   </span>
                 </div>
               </div>
@@ -438,13 +439,13 @@ export const ProjectThreePage: React.FC = () => {
             </div>
 
             <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-4">
-              PAGE 4
+              {u.p4PageLabel}
             </span>
 
             {/* WHAT I HEARD */}
             <div className="mb-10">
               <h2 className="font-serif-display text-3xl text-[var(--c-ink)] mb-4">
-                WHAT I HEARD
+                {u.p4HeardTitle}
               </h2>
               <div className="space-y-3">
                 {p3.page4FeedbackAndIteration.whatIHeard.map((quote, qIdx) => (
@@ -458,7 +459,7 @@ export const ProjectThreePage: React.FC = () => {
             {/* WHAT THIS TAUGHT ME */}
             <div className="mb-10">
               <h2 className="font-serif-display text-3xl text-[var(--c-ink)] mb-4">
-                WHAT THIS TAUGHT ME
+                {u.p4TaughtTitle}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {p3.page4FeedbackAndIteration.whatThisTaughtMe.map((item, tIdx) => (
@@ -477,12 +478,12 @@ export const ProjectThreePage: React.FC = () => {
             {/* FEEDBACK → ITERATION → IMPACT */}
             <div className="p-8 bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl mb-8">
               <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-6 text-center">
-                FEEDBACK → ITERATION → IMPACT
+                {u.p4LoopHeader}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center text-center font-mono-code text-xs">
                 <div className="md:col-span-1 p-5 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-xl">
-                  <span className="text-[var(--c-ink)]/60 uppercase text-[10px] block mb-1">FEEDBACK</span>
+                  <span className="text-[var(--c-ink)]/60 uppercase text-[10px] block mb-1">{u.p4FeedbackLabel}</span>
                   <strong className="text-sm text-[var(--c-ink)]">
                     {p3.page4FeedbackAndIteration.feedbackLoop.feedback}
                   </strong>
@@ -493,7 +494,7 @@ export const ProjectThreePage: React.FC = () => {
                 </div>
 
                 <div className="md:col-span-1 p-5 bg-[var(--c-highlight)] border border-[var(--c-ink)] rounded-xl">
-                  <span className="text-[var(--c-ink)]/60 uppercase text-[10px] block mb-1">ITERATION</span>
+                  <span className="text-[var(--c-ink)]/60 uppercase text-[10px] block mb-1">{u.p4IterationLabel}</span>
                   <strong className="text-sm text-[var(--c-ink)]">
                     {p3.page4FeedbackAndIteration.feedbackLoop.iteration}
                   </strong>
@@ -504,7 +505,7 @@ export const ProjectThreePage: React.FC = () => {
                 </div>
 
                 <div className="md:col-span-1 p-5 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-xl">
-                  <span className="text-[var(--c-ink)]/60 uppercase text-[10px] block mb-1">IMPACT</span>
+                  <span className="text-[var(--c-ink)]/60 uppercase text-[10px] block mb-1">{u.p4ImpactLabel}</span>
                   <strong className="text-sm text-[var(--c-ink)]">
                     {p3.page4FeedbackAndIteration.feedbackLoop.impact}
                   </strong>
@@ -526,7 +527,7 @@ export const ProjectThreePage: React.FC = () => {
                 to="/skills"
                 className="bg-[var(--c-ink)] text-[var(--c-bg)] px-5 py-2.5 rounded-xl font-bold hover:bg-[#253325] cursor-pointer flex items-center gap-1.5"
               >
-                <span>View Skills Matrix →</span>
+                <span>{u.footerNext}</span>
               </Link>
             </div>
           </div>

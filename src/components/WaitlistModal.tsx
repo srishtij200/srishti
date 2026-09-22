@@ -11,7 +11,8 @@ interface WaitlistModalProps {
   initialRole?: string;
 }
 
-export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, initialRole = 'Exhibition / Curator' }) => {
+export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, initialRole = portfolioData.ui.waitlist.roles[0] }) => {
+  const w = portfolioData.ui.waitlist;
   const [email, setEmail] = useState('');
   const [role, setRole] = useState(initialRole);
   const [submitted, setSubmitted] = useState<WaitlistSubmission | null>(() => {
@@ -95,27 +96,27 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                 <div className="flex items-center gap-2 mb-3">
                   <FlowerMark size={22} />
                   <span className="font-mono-code text-xs uppercase tracking-widest text-[var(--c-ink)]/70">
-                    Studio Inquiries • Class of '26
+                    {w.eyebrow}
                   </span>
                 </div>
 
                 <h3 className="font-serif-display text-3xl sm:text-4xl leading-tight text-[var(--c-ink)] mb-3">
-                  Request Full Portfolio & Studio Visit
+                  {w.title}
                 </h3>
 
                 <p className="font-body text-sm text-[var(--c-ink)]/80 leading-relaxed mb-6">
-                  Inquire about visual merchandising commissions, freelance retail strategy, exhibition catalogs, or schedule an in-person studio visit in New York or London.
+                  {w.intro}
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label className="block font-mono-code text-xs uppercase tracking-wider text-[var(--c-ink)] mb-1.5">
-                      Your Work Email
+                      {w.emailLabel}
                     </label>
                     <input
                       type="email"
                       required
-                      placeholder="curator.studio@gallery.com"
+                      placeholder={w.emailPlaceholder}
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-xl px-4 py-3 font-mono-code text-sm text-[var(--c-ink)] placeholder-[var(--c-ink)]/40 focus:outline-hidden focus:ring-2 focus:ring-[var(--c-highlight)]"
@@ -124,17 +125,10 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
 
                   <div>
                     <label className="block font-mono-code text-xs uppercase tracking-wider text-[var(--c-ink)] mb-1.5">
-                      Nature of Correspondence
+                      {w.roleLabel}
                     </label>
                     <div className="grid grid-cols-3 gap-2">
-                      {[
-                        'Exhibition / Curator',
-                        'Retail Brand VM',
-                        'Editorial Styling',
-                        'Agency Role',
-                        'Studio Visit',
-                        'Thesis Catalog PDF'
-                      ].map((r) => (
+                      {w.roles.map((r) => (
                         <button
                           key={r}
                           type="button"
@@ -158,10 +152,10 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                       className="w-full flex items-center justify-center gap-2 bg-[var(--c-ink)] text-[var(--c-bg)] hover:bg-[#253325] border-[1.5px] border-[var(--c-ink)] py-3.5 px-6 rounded-xl font-mono-code text-sm tracking-wider uppercase paper-shadow-hover transition-all cursor-pointer"
                     >
                       {isSubmitting ? (
-                        <span>Inscribing Studio Log...</span>
+                        <span>{w.submitBusy}</span>
                       ) : (
                         <>
-                          <span>Submit Studio Inquiry</span>
+                          <span>{w.submitIdle}</span>
                           <ArrowRight className="w-4 h-4" />
                         </>
                       )}
@@ -169,7 +163,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                   </div>
 
                   <p className="font-mono-code text-[11px] text-center text-[var(--c-ink)]/60 mt-3">
-                    ✦ Responses typically dispatched within 24–48 hours.
+                    {w.footnote}
                   </p>
                 </form>
               </div>
@@ -183,10 +177,10 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                     <div>
                       <div className="flex items-center gap-1.5 text-xs font-mono-code uppercase text-[var(--c-ink)]/70">
                         <FlowerMark size={16} />
-                        {portfolioData.student.name} Studio Pass
+                        {portfolioData.student.name} {w.ticketBrand}
                       </div>
                       <div className="font-serif-display text-2xl text-[var(--c-ink)] mt-1">
-                        Inquiry Received
+                        {w.ticketReceived}
                       </div>
                     </div>
                     <div className="text-right">
@@ -201,35 +195,35 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
 
                   <div className="space-y-2 text-xs font-mono-code">
                     <div className="flex justify-between">
-                      <span className="text-[var(--c-ink)]/60">CONTACT:</span>
+                      <span className="text-[var(--c-ink)]/60">{w.labelContact}</span>
                       <span className="font-bold text-[var(--c-ink)] truncate max-w-[200px]">{submitted.email}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-[var(--c-ink)]/60">INQUIRY TYPE:</span>
+                      <span className="text-[var(--c-ink)]/60">{w.labelInquiryType}</span>
                       <span className="text-[var(--c-ink)]">{submitted.role}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-[var(--c-ink)]/60">STATUS:</span>
+                      <span className="text-[var(--c-ink)]/60">{w.labelStatus}</span>
                       <span className="text-[var(--c-ink)] flex items-center gap-1">
                         <Check className="w-3.5 h-3.5 text-emerald-600" />
-                        Queued for Response
+                        {w.statusQueued}
                       </span>
                     </div>
                   </div>
 
                   {/* Perforation line */}
                   <div className="border-t-2 border-dashed border-[var(--c-ink)]/30 mt-4 pt-3 flex justify-between items-center text-[10px] font-mono-code text-[var(--c-ink)]/50">
-                    <span>PORTFOLIO DOSSIER PASS</span>
-                    <span>NEW YORK / LONDON</span>
+                    <span>{w.dossierPass}</span>
+                    <span>{w.cityTag}</span>
                   </div>
                 </div>
 
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <Sparkles className="w-4 h-4 text-[#F8DD65]" />
-                  <span className="font-serif-display text-xl text-[var(--c-ink)]">Inquiry Logged</span>
+                  <span className="font-serif-display text-xl text-[var(--c-ink)]">{w.loggedTitle}</span>
                 </div>
                 <p className="font-body text-xs text-[var(--c-ink)]/80 max-w-sm mx-auto mb-6">
-                  Thank you for reaching out. A complete high-resolution PDF portfolio dossier and thesis catalog will be dispatched to your inbox shortly.
+                  {w.thanks}
                 </p>
 
                 <div className="flex items-center justify-center gap-3">
@@ -238,13 +232,13 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                     className="flex items-center gap-1.5 px-4 py-2 bg-[var(--c-soft)] border border-[var(--c-ink)] rounded-lg text-xs font-mono-code text-[var(--c-ink)] paper-shadow-sm hover:translate-y-[-1px] transition-all cursor-pointer"
                   >
                     {isCopied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                    <span>{isCopied ? 'Copied to Clipboard' : 'Copy Reference #'}</span>
+                    <span>{isCopied ? w.copiedLabel : w.copyLabel}</span>
                   </button>
                   <button
                     onClick={onClose}
                     className="px-4 py-2 bg-transparent hover:bg-[var(--c-ink)]/5 border border-[var(--c-ink)]/40 rounded-lg text-xs font-mono-code text-[var(--c-ink)] transition-all cursor-pointer"
                   >
-                    Return to Portfolio
+                    {w.closeLabel}
                   </button>
                 </div>
               </div>

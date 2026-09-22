@@ -7,13 +7,9 @@ import { portfolioData } from '../data/portfolioData';
 
 export const InternshipExperiencePage: React.FC = () => {
   const { internship } = portfolioData;
+  const ui = portfolioData.ui.internshipExperience;
 
-  const internshipLearnings = [
-    { title: 'Creative Content Production', desc: 'Created reels, posts, stories and carousels through hands-on content production.' },
-    { title: 'E-commerce Management', desc: 'Managed Shopify, product uploads, catalogues, descriptions and tags.' },
-    { title: 'Organisation & Execution', desc: 'Managed content calendars, Excel sheets, deadlines and multiple tasks.' },
-    { title: 'Brand Communication', desc: 'Maintained consistent brand communication across social media and e-commerce.' }
-  ];
+  const internshipLearnings = ui.learnings;
 
   return (
     <div className="bg-[var(--c-bg)] min-h-screen py-16 lg:py-24">
@@ -22,7 +18,7 @@ export const InternshipExperiencePage: React.FC = () => {
         <div className="max-w-4xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] mb-4 paper-shadow-sm">
             <FlowerMark size={14} />
-            <span>FINE JEWELLERY BRAND INTERNSHIP</span>
+            <span>{ui.badge}</span>
           </div>
 
           <h1 className="font-serif-display text-4xl sm:text-6xl text-[var(--c-ink)] leading-[1.05] tracking-tight mb-2">
@@ -44,7 +40,7 @@ export const InternshipExperiencePage: React.FC = () => {
           <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[var(--c-ink)]/15">
             <Video className="w-5 h-5 text-[var(--c-ink)]" />
             <h2 className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)]">
-              Social Media
+              {ui.sectionSocialTitle}
             </h2>
           </div>
           <div className="space-y-12">
@@ -55,24 +51,24 @@ export const InternshipExperiencePage: React.FC = () => {
 
               <div className="max-w-3xl mb-8">
                 <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)] mb-4">
-                  Concept to Live Content Production
+                  {ui.socialIntroTitle}
                 </h2>
                 <div className="p-4 bg-[var(--c-bg)] rounded-2xl border border-[var(--c-ink)]/20 font-body text-sm sm:text-base text-[var(--c-ink)]/85 leading-relaxed">
-                  <strong>Short introduction:</strong> {internship.page1SocialMedia.intro}
+                  <strong>{ui.introPrefix}</strong> {internship.page1SocialMedia.intro}
                 </div>
               </div>
 
               {/* Videos Callout Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#FFF3B3] border border-[var(--c-ink)] rounded-full text-xs font-mono-code font-bold text-[var(--c-ink)] mb-8">
                 <Camera className="w-3.5 h-3.5" />
-                <span>VIDEOS & REEL PRODUCTION INCLUDED</span>
+                <span>{ui.videosBadge}</span>
               </div>
 
               {/* REAL VIDEO MEDIA SHOWCASE (Reels & Studio Video) */}
               <div className="mb-12">
                 <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15 flex items-center gap-2">
                   <Play className="w-3.5 h-3.5 text-[var(--c-ink)]" />
-                  <span>Video Content Production & Reels</span>
+                  <span>{ui.videosHeader}</span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
@@ -89,10 +85,10 @@ export const InternshipExperiencePage: React.FC = () => {
                       />
                     </div>
                     <div className="font-mono-code text-xs text-[var(--c-ink)] font-bold">
-                      Jewellery Reel 01 — Aesthetic & Product Styling
+                      {ui.reel1Title}
                     </div>
                     <p className="font-body text-xs text-[var(--c-ink)]/70 mt-1">
-                      Shot on set, edited, color graded and published for Aadiya Jewels social handle.
+                      {ui.reel1Desc}
                     </p>
                   </div>
 
@@ -110,10 +106,10 @@ export const InternshipExperiencePage: React.FC = () => {
                         />
                       </div>
                       <div className="font-mono-code text-xs text-[var(--c-ink)] font-bold">
-                        Studio Campaign & Jewellery Showcase
+                        {ui.reel2Title}
                       </div>
                       <p className="font-body text-xs text-[var(--c-ink)]/70 mt-1">
-                        Highlighting brilliance, luxury finishes, and craftsmanship through video capture.
+                        {ui.reel2Desc}
                       </p>
                     </div>
 
@@ -126,7 +122,7 @@ export const InternshipExperiencePage: React.FC = () => {
                           className="w-full h-44 object-cover rounded-xl border border-[var(--c-ink)]/10"
                         />
                         <span className="font-mono-code text-[11px] text-[var(--c-ink)]/70 block mt-2 px-1">
-                          Macro Jewellery Styling
+                          {ui.photoCaption1}
                         </span>
                       </div>
                       <div className="bg-[var(--c-bg)] border border-[var(--c-ink)]/25 rounded-2xl p-2 paper-shadow-sm">
@@ -136,7 +132,7 @@ export const InternshipExperiencePage: React.FC = () => {
                           className="w-full h-44 object-cover rounded-xl border border-[var(--c-ink)]/10"
                         />
                         <span className="font-mono-code text-[11px] text-[var(--c-ink)]/70 block mt-2 px-1">
-                          Product Photography Framing
+                          {ui.photoCaption2}
                         </span>
                       </div>
                     </div>
@@ -147,7 +143,7 @@ export const InternshipExperiencePage: React.FC = () => {
               {/* What I Worked On Grid */}
               <div className="mb-10">
                 <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
-                  What I Worked On
+                  {ui.workedOnLabel}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {internship.page1SocialMedia.whatIWorkedOn.map((item) => (
@@ -171,7 +167,7 @@ export const InternshipExperiencePage: React.FC = () => {
               {/* Skills Applied */}
               <div>
                 <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-3">
-                  Skills Applied
+                  {ui.skillsLabel}
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {internship.page1SocialMedia.skillsApplied.map((skill, sIdx) => (
@@ -194,7 +190,7 @@ export const InternshipExperiencePage: React.FC = () => {
           <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[var(--c-ink)]/15">
             <ShoppingBag className="w-5 h-5 text-[var(--c-ink)]" />
             <h2 className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)]">
-              E-Commerce &amp; My Learning
+              {ui.sectionEcomTitle}
             </h2>
           </div>
           <div className="space-y-12">
@@ -205,10 +201,10 @@ export const InternshipExperiencePage: React.FC = () => {
 
               <div className="max-w-3xl mb-8">
                 <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)] mb-4">
-                  From Product to Digital Shelf
+                  {ui.ecomIntroTitle}
                 </h2>
                 <div className="p-4 bg-[var(--c-bg)] rounded-2xl border border-[var(--c-ink)]/20 font-body text-sm sm:text-base text-[var(--c-ink)]/85 leading-relaxed">
-                  <strong>Short introduction:</strong> {internship.page2Ecommerce.intro}
+                  <strong>{ui.introPrefix}</strong> {internship.page2Ecommerce.intro}
                 </div>
               </div>
 
@@ -216,7 +212,7 @@ export const InternshipExperiencePage: React.FC = () => {
               <div className="mb-12 space-y-6">
                 <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] pb-2 border-b border-[var(--c-ink)]/15 flex items-center gap-2">
                   <ImageIcon className="w-3.5 h-3.5 text-[var(--c-ink)]" />
-                  <span>Website Banners & Storefront Visuals Designed for Aadiya Jewels</span>
+                  <span>{ui.bannersHeader}</span>
                 </div>
 
                 <div className="bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-4 sm:p-6 paper-shadow">
@@ -228,8 +224,8 @@ export const InternshipExperiencePage: React.FC = () => {
                     />
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between font-mono-code text-xs text-[var(--c-ink)] pt-1">
-                    <span className="font-bold">E-Commerce Desktop Hero Banner</span>
-                    <span className="text-[var(--c-ink)]/60">Designed for seasonal homepage campaign</span>
+                    <span className="font-bold">{ui.banner1Title}</span>
+                    <span className="text-[var(--c-ink)]/60">{ui.banner1Desc}</span>
                   </div>
                 </div>
 
@@ -243,7 +239,7 @@ export const InternshipExperiencePage: React.FC = () => {
                       />
                     </div>
                     <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]">
-                      Jewellery Collection Category Banner
+                      {ui.banner2Title}
                     </div>
                   </div>
 
@@ -256,7 +252,7 @@ export const InternshipExperiencePage: React.FC = () => {
                       />
                     </div>
                     <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]">
-                      Shopify Product Listing & Catalogue Management
+                      {ui.banner3Title}
                     </div>
                   </div>
                 </div>
@@ -265,7 +261,7 @@ export const InternshipExperiencePage: React.FC = () => {
               {/* What I Worked On */}
               <div className="mb-10">
                 <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
-                  What I Worked On
+                  {ui.workedOnLabel}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {internship.page2Ecommerce.whatIWorkedOn.map((item) => (
@@ -289,7 +285,7 @@ export const InternshipExperiencePage: React.FC = () => {
               {/* Skills Applied */}
               <div>
                 <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-3">
-                  Skills Applied
+                  {ui.skillsLabel}
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {internship.page2Ecommerce.skillsApplied.map((skill, sIdx) => (
@@ -312,10 +308,10 @@ export const InternshipExperiencePage: React.FC = () => {
           <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-12 paper-shadow-lg">
             <div className="max-w-2xl mb-8">
               <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2">
-                WHAT I GAINED
+                {ui.learningsLabel}
               </span>
               <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
-                Learnings of Internship
+                {ui.learningsTitle}
               </h2>
             </div>
 
@@ -344,10 +340,10 @@ export const InternshipExperiencePage: React.FC = () => {
           <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-12 paper-shadow-lg">
           <div className="max-w-2xl mb-8">
             <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2">
-              SYNTHESIS
+              {ui.synthesisLabel}
             </span>
             <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
-              LEARNING OUTCOME
+              {ui.synthesisTitle}
             </h2>
           </div>
 
@@ -369,14 +365,14 @@ export const InternshipExperiencePage: React.FC = () => {
         {/* Bottom Navigation */}
         <div className="flex flex-col sm:flex-row items-center justify-between p-8 bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-2xl gap-4">
           <div>
-            <div className="font-mono-code text-xs uppercase text-[var(--c-ink)]/60">NEXT PROJECT</div>
-            <div className="font-serif-display text-2xl text-[var(--c-ink)]">Project 1 — Marketing (UNIQLO)</div>
+            <div className="font-mono-code text-xs uppercase text-[var(--c-ink)]/60">{ui.nextLabel}</div>
+            <div className="font-serif-display text-2xl text-[var(--c-ink)]">{ui.nextTitle}</div>
           </div>
           <Link
             to="/projects/marketing"
             className="flex items-center gap-2 px-6 py-3 bg-[var(--c-ink)] text-[var(--c-bg)] rounded-xl font-mono-code text-xs uppercase tracking-wider hover:bg-[#253325] transition-colors"
           >
-            <span>View UNIQLO Fragrance Case Study</span>
+            <span>{ui.nextCta}</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

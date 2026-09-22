@@ -2,7 +2,7 @@ import { defineType, defineField } from 'sanity';
 
 export const bio = defineType({
   name: 'bio',
-  title: 'Bio / About',
+  title: 'Home — Hero & About',
   type: 'document',
   fields: [
     defineField({ name: 'name', title: 'Name', type: 'string' }),

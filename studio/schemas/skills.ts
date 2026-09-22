@@ -2,7 +2,7 @@ import { defineType, defineField } from 'sanity';
 
 export const skills = defineType({
   name: 'skills',
-  title: 'Skills Matrix',
+  title: 'Home — Skills Matrix',
   type: 'document',
   fields: [
     defineField({

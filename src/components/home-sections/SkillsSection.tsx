@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { FlowerMark, WashiTape } from '../CustomDoodles';
+import { FlowerMark } from '../CustomDoodles';
 import { portfolioData } from '../../data/portfolioData';
 
 export const SkillsSection: React.FC = () => {
@@ -35,7 +35,7 @@ export const SkillsSection: React.FC = () => {
         </div>
 
         {/* SKILL GROUPS */}
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 gap-10">
           {skills.categories.map((cat, idx) => (
             <motion.div
               key={idx}
@@ -43,12 +43,8 @@ export const SkillsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
-              className="bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-6 sm:p-10 paper-shadow-lg relative"
+              className="relative border-t border-[var(--c-ink)]/20 pt-8"
             >
-              <div className="absolute -top-3 right-8">
-                <WashiTape color={cat.color} width="w-24" />
-              </div>
-
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                 <div className="lg:col-span-4">
                   <div className="mb-4 pb-2 border-b border-[var(--c-ink)]/10">

@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight, MapPin } from 'lucide-react';
-import { WashiTape } from '../components/CustomDoodles';
-import { ProjectCardMedia } from '../components/ProjectCardMedia';
 import { SkillsSection } from '../components/home-sections/SkillsSection';
 import { ContactSection } from '../components/home-sections/ContactSection';
 import { portfolioData } from '../data/portfolioData';
@@ -46,9 +44,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
         className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden bg-graph-paper border-b border-[var(--c-ink)]/15"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          {/* Combined Hero + About: Side by Side */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-7 text-center lg:text-left flex flex-col relative z-10">
+          {/* Hero + About */}
+          <div className="grid grid-cols-1 gap-12 lg:gap-16 items-center">
+            <div className="text-center lg:text-left flex flex-col relative z-10">
               <motion.h1
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -74,6 +72,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                   {student.location}
                 </span>
                 <span className="border-l border-[var(--c-ink)]/20 pl-3">{student.degree}</span>
+                <span className="bg-[var(--c-ink)] text-[var(--c-bg)] px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                  {hero.badge}
+                </span>
               </div>
 
               {/* About Biography */}
@@ -107,42 +108,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 </div>
               </motion.div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="lg:col-span-5"
-            >
-              <div className="relative">
-                <div className="absolute -top-3 left-10 z-10">
-                  <WashiTape color="#F4B6D4" width="w-24" />
-                </div>
-
-                <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-3 paper-shadow-lg">
-                  <img
-                    src={hero.image}
-                    alt={hero.imageAlt}
-                    className="w-full h-[420px] lg:h-[560px] object-cover rounded-2xl"
-                  />
-                </div>
-
-                <span className="absolute -bottom-3 right-8 bg-[var(--c-ink)] text-[var(--c-bg)] font-mono-code text-xs px-3 py-1.5 rounded-full paper-shadow-sm uppercase tracking-wider">
-                  {hero.badge}
-                </span>
-              </div>
-            </motion.div>
           </div>
 
-          {/* Portfolio Scope Card */}
+          {/* Portfolio Scope */}
           <div className="mt-14">
             <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)]/60 mb-4">{aboutUi.scopeHeader}</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {aboutUi.scopeItems.map((item) => (
                 <div
                   key={item.title}
-                  className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-5 sm:p-6 paper-shadow-sm"
+                  className="border-t border-[var(--c-ink)]/20 pt-5"
                 >
                   <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]">{item.title}</div>
                   <div className="font-body text-sm text-[var(--c-ink)]/80 mt-1.5 leading-relaxed">{item.desc}</div>
@@ -176,14 +151,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
             {selectedProjects.filter((proj) => isProjectVisible(proj.slug)).map((proj) => (
               <div
                 key={proj.id}
-                className={`bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow hover:translate-y-[-4px] hover:paper-shadow-lg transition-all flex flex-col justify-between relative group ${proj.rotation}`}
+                className="flex flex-col justify-between relative group border-t-2 border-[var(--c-ink)]/20 pt-6"
               >
-                <div className="absolute -top-3 right-8">
-                  <WashiTape color={proj.accentColor} width="w-20" />
-                </div>
-
-                <ProjectCardMedia image={proj.image} alt={proj.title} />
-
                 <div>
                   <div className="text-xs text-[var(--c-ink)]/60 mb-4 pb-2 border-b border-[var(--c-ink)]/15">
                     <span className="font-bold text-[var(--c-ink)]">{projectsSection.projectPrefix} {proj.number}</span>
@@ -253,11 +222,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
       {isSectionVisible('home.internship') && (
       <section className="py-20 bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15" style={{ order: sectionOrder['home.internship'] }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-12 paper-shadow-lg relative">
-            <div className="absolute -top-3 left-12">
-              <WashiTape color="#F4B6D4" width="w-28" />
-            </div>
-
+          <div className="relative border-t-2 border-[var(--c-ink)]/20 pt-8 sm:pt-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-4">
                 <span className="text-sm uppercase font-bold text-[var(--c-ink)]/60 block tracking-wider">

@@ -210,7 +210,6 @@ export const portfolioData = {
         number: "01",
         title: "PROJECT BRIEF",
         text: "I was challenged to expand an existing fashion brand into a new product category. I chose UNIQLO and explored how its Life Wear philosophy could be extended beyond clothing.",
-        image: "/portfolio-assets/01_UNIQLO_main.jpg",
         scriptCallout: "From Life Wear to Feel Wear"
       },
       quadrant02: {
@@ -233,7 +232,6 @@ export const portfolioData = {
         ],
         frameworkSentence: "I used SWOT, Porter's Five Forces, STP, 7Ps, Ansoff and BCG to structure my analysis.",
         frameworkBadges: ["SWOT", "PORTER'S FIVE FORCES", "STP", "7Ps", "ANSOFF", "BCG"],
-        notepadImage: "/portfolio-assets/02_market_trends.jpg"
       },
       quadrant03: {
         number: "03",
@@ -241,7 +239,6 @@ export const portfolioData = {
         takeaway: "I saw an opportunity to extend UNIQLO's idea of everyday living from something we wear to something we experience.",
         natureTitle: "INSPIRED BY JAPANESE NATURE",
         naturePillars: ["Purity", "Calm", "Balance", "Harmony"],
-        natureImage: "/portfolio-assets/project-1/page5_creative_fuji.png",
         variants: [
           { name: "HANA", label: "FLOWER", color: "#FDE2E4", dotColor: "#F4B6D4" },
           { name: "MIZU", label: "WATER", color: "#E0F2FE", dotColor: "#BAE6FD" },
@@ -262,7 +259,6 @@ export const portfolioData = {
         ],
         quote: "More than just a fragrance, it's a feeling.",
         tag: "UNIQLO FRAGRANCES",
-        bottlesImage: "/portfolio-assets/project-1/four_bottles_clean.jpg"
       }
     },
 
@@ -307,22 +303,18 @@ export const portfolioData = {
       subtitle: "WE DIDN'T JUST CREATE IT, WE TESTED IT.",
       testPhotos: [
         {
-          src: "/portfolio-assets/project-1/page4_product_display.png",
           caption: "Product Display",
           desc: "Acrylic tester riser with fragrance bottles & branding"
         },
         {
-          src: "/portfolio-assets/project-1/page4_consumer_interaction.png",
           caption: "Consumer Interaction",
           desc: "Consumers exploring tester strips and sampling aromas"
         },
         {
-          src: "/portfolio-assets/project-1/page4_fragrance_samples.png",
           caption: "Fragrance Samples",
           desc: "Structural carton prototypes and fragrance box samples"
         },
         {
-          src: "/portfolio-assets/project-1/page4_feedback.png",
           caption: "Feedback",
           desc: "Gathering direct quantitative & qualitative feedback"
         }
@@ -375,50 +367,41 @@ export const portfolioData = {
           num: "01",
           name: "RESEARCH",
           detail: "I learned to look at the market, consumer and competition before developing a concept.",
-          image: "/portfolio-assets/project-1/page5_research_papers.png"
         },
         {
           num: "02",
           name: "STRATEGY",
           detail: "I learned to connect a creative idea with STP, 7Ps, BCG and market planning.",
-          image: "/portfolio-assets/project-1/page5_strategy_notebook.png"
         },
         {
           num: "03",
           name: "CREATIVE THINKING",
           detail: "I learned to translate a brand philosophy into a new product and visual identity.",
-          image: "/portfolio-assets/project-1/page5_creative_fuji.png"
         },
         {
           num: "04",
           name: "BRAND THINKING",
           detail: "I learned that a new category must still feel connected to the original brand.",
-          image: "/portfolio-assets/project-1/page5_brand_bag.png"
         }
       ],
       quoteBanner: {
         quote: "A good concept is not just creative — it needs a reason, a strategy and a story.",
         callouts: ["Simple.", "Functional.", "Meaningful."],
-        bottleImage: "/portfolio-assets/project-1/page5_quote_bottle_clean.jpg"
       },
       journeyInAction: {
         title: "THE JOURNEY IN ACTION",
         steps: [
           {
             title: "FINAL PRODUCT",
-            image: "/portfolio-assets/project-1/four_bottles_clean.jpg"
           },
           {
             title: "STORE EXPERIENCE",
-            image: "/portfolio-assets/project-1/page5_journey_store.png"
           },
           {
             title: "DIGITAL EXPERIENCE",
-            image: "/portfolio-assets/project-1/page5_journey_digital.png"
           },
           {
             title: "MARKET ROLLOUT",
-            image: "/portfolio-assets/project-1/page5_journey_rollout_clean.jpg"
           }
         ]
       },
@@ -453,33 +436,27 @@ export const portfolioData = {
         {
           pillar: "1. BRAND IDENTITY",
           points: ["Feminine", "Contemporary", "Effortlessly Elegant"],
-          image: "/portfolio-assets/BRAND BOOK  - 16.png"
         },
         {
           pillar: "2. SEASONAL DIRECTION",
           points: ["Spring/Summer", "Lightness", "Freshness"],
-          image: "/portfolio-assets/BRAND BOOK  - 18.png"
         },
         {
           pillar: "3. VISUAL INSPIRATION",
           points: ["Florals", "Pastels", "Iridescence"],
-          image: "/portfolio-assets/6fa49fa5-d790-4c76-9f00-69ca01bfcdc2.jpg"
         }
       ],
       howIReachedTheConcept: [
-        { step: "COVER STORY", image: "/portfolio-assets/97e20f9d-778d-44a3-bc5f-d32b6c39b7a3.jpg", isHighlight: false },
-        { step: "FEMININITY + SOFTNESS", image: "/portfolio-assets/1e36b3dd-85f2-438b-b90a-e7143dbd03cd.jpg", isHighlight: false },
-        { step: "FLORAL INSPIRATION", image: "/portfolio-assets/7eee7676-2ce8-4667-9ef7-abf624ba1833.jpg", isHighlight: false },
-        { step: "IRIDESCENCE + LIGHT", image: "/portfolio-assets/6fa49fa5-d790-4c76-9f00-69ca01bfcdc2.jpg", isHighlight: false },
-        { step: "FUTURE FLORALS", image: "/portfolio-assets/DD05B299-B533-4126-B54A-3B48CD3AA413.jpg", isHighlight: true }
+        { step: "COVER STORY", isHighlight: false },
+        { step: "FEMININITY + SOFTNESS", isHighlight: false },
+        { step: "FLORAL INSPIRATION", isHighlight: false },
+        { step: "IRIDESCENCE + LIGHT", isHighlight: false },
+        { step: "FUTURE FLORALS", isHighlight: true }
       ],
       conceptFlowTitle: "HOW I REACHED THE CONCEPT",
       conceptSummary: "I reimagined a blooming garden through a futuristic lens, combining delicate florals with holographic and iridescent elements.",
       designInsight: "If florals represent nature, femininity and renewal, I wanted to explore what they could look like in a future-facing environment.",
-      heroImage: {
-        src: "/portfolio-assets/f72aff62-4ccf-4668-9ba7-1a88dc9a9eab.jpg",
-        caption: "The bloom, reimagined as a luminous in-store environment"
-      }
+
     },
     page3Boards: {
       pageLabel: "03 / 05",
@@ -546,7 +523,6 @@ export const portfolioData = {
       subheadline: "What I applied. What I learned.",
       quoteBanner: {
         quote: "Creativity brings the idea to life, but it's the details that make it real.",
-        image: "/portfolio-assets/60e2e5dc-94d5-4c36-a798-a176fa769a23.jpg",
         caption: "Inside the Future Florals installation",
         accent: "FUTURE FLORALS"
       },
@@ -554,9 +530,9 @@ export const portfolioData = {
         title: "THE PROCESS BEHIND THE BEAUTY",
         intro: "From ideation to installation — every detail came together to bring the concept of Future Florals to life.",
         steps: [
-          { title: "FINAL INSTALLATION", image: "/portfolio-assets/f72aff62-4ccf-4668-9ba7-1a88dc9a9eab.jpg" },
-          { title: "FLOWER DETAIL", image: "/portfolio-assets/97e20f9d-778d-44a3-bc5f-d32b6c39b7a3.jpg" },
-          { title: "MATERIAL DETAIL", image: "/portfolio-assets/1e36b3dd-85f2-438b-b90a-e7143dbd03cd.jpg" }
+          { title: "FINAL INSTALLATION" },
+          { title: "FLOWER DETAIL" },
+          { title: "MATERIAL DETAIL" }
         ]
       },
       skillsApplied: [
@@ -612,13 +588,12 @@ export const portfolioData = {
       tagline: "MODEST • VERSATILE • EVERYDAY",
       conceptSubtitle: "Athleisure Hybrid: Structured × Relaxed",
       bottomStatement: "Designed to move beyond the gym.",
-      heroImage: "/portfolio-assets/Screenshot 2026-09-18 at 7.51.59 PM.png",
-      heroCaption: "Athera athleisure — built for gym, café, airport and everyday",
+
       gallery: [
-        { label: "GYM", image: "/portfolio-assets/IMG_2187.jpg" },
-        { label: "CAFÉ", image: "/portfolio-assets/IMG_4453.jpg" },
-        { label: "AIRPORT", image: "/portfolio-assets/IMG_1560.PNG" },
-        { label: "EVERYDAY", image: "/portfolio-assets/IMG_1559.PNG" }
+        { label: "GYM" },
+        { label: "CAFÉ" },
+        { label: "AIRPORT" },
+        { label: "EVERYDAY" }
       ]
     },
     page2SurveyInsights: {
@@ -638,15 +613,12 @@ export const portfolioData = {
             },
             {
               label: "LIMITED VERSATILITY",
-              image: "/portfolio-assets/IMG_4453.jpg"
             },
             {
               label: "COMFORT VS STYLE",
-              image: "/portfolio-assets/IMG_1559.PNG"
             },
             {
               label: "NEED FOR COVERAGE",
-              image: "/portfolio-assets/IMG_1560.PNG"
             }
           ],
           scriptCallout: "One outfit.\nMultiple moments."
@@ -717,8 +689,6 @@ export const portfolioData = {
             "Market Analysis",
             "Product Thinking"
           ],
-          natureImage: "/portfolio-assets/IMG_4453.jpg",
-          natureCaption: "Lifestyle — walking the daily moments"
         },
         {
           number: "04",
@@ -753,8 +723,6 @@ export const portfolioData = {
           ],
           quote: "One outfit.\nMultiple moments.",
           tag: "ATHIRA",
-          bottlesImage: "/portfolio-assets/IMG_1560.PNG",
-          bottlesCaption: "Need for coverage — more modest options"
         }
       ] as P3Page2Quadrant[]
     },
@@ -975,11 +943,11 @@ export const portfolioData = {
       bannersHeader: "Website Banners & Storefront Visuals Designed for Aadiya Jewels",
       banner1Title: "E-Commerce Desktop Hero Banner",
       banner1Desc: "Designed for seasonal homepage campaign",
-      banner1Alt: "Aadiya Jewels Desktop Website Hero Banner",
+
       banner2Title: "Jewellery Collection Category Banner",
-      banner2Alt: "Jewellery Collection Category Banner artwork",
+
       banner3Title: "Shopify Product Listing & Catalogue Management",
-      banner3Alt: "Shopify product listing and catalogue screenshot preview",
+
       learningsLabel: "WHAT I GAINED",
       learningsTitle: "Learnings of Internship",
       learnings: [
@@ -1037,13 +1005,9 @@ export const portfolioData = {
       metaBrandLabel: "BRAND / CLIENT:",
       metaDisciplineLabel: "DISCIPLINE:",
       metaTimelineLabel: "TIMELINE:",
-      heroImage: "/portfolio-assets/01_UNIQLO_main.jpg",
-      heroImageAlt: "UNIQLO Fragrance Hero Concept",
-      heroCaption: "UNIQLO LifeWear Fragrance Product Mockup & Identity",
+
       contextHeader: "CONTEXT & STRATEGIC OPPORTUNITY",
-      marketImage: "/portfolio-assets/02_market_trends.jpg",
-      marketCaption: "Market Analysis & Accessible Fragrance Opportunity Gap",
-      marketImageAlt: "Market Trends Analysis",
+
       briefHeader: "THE STRATEGIC BRIEF",
       alignedNote: "Aligned with UNIQLO LifeWear core philosophy & global store architecture",
       p2SlideTag: "CATEGORY EXPANSION",
@@ -1060,28 +1024,21 @@ export const portfolioData = {
       p3PageTag: "PAGE 03 — CORE RATIONALE & PACKAGING",
       p3Title: "DESIGN DECISIONS & 4 VARIANTS",
       p3Intro: "Five strategic design pillars grounding the fragrance line in UNIQLO's brand DNA.",
-      p3Image: "/portfolio-assets/Screenshot 2026-09-15 at 8.11.34 PM.png",
-      p3ImageAlt: "4 Variants Minimalist Bottle Packaging",
-      p3ImageCaption: "4 Curated Variants & Minimalist Glass Packaging",
-      p3ImageSub: "Japanese nomenclature: Hana (Flower), Mizu (Water), Kaze (Wind), Sora (Sky)",
+
       strategyStpLabel: "STP ANALYSIS",
       strategy7psLabel: "7Ps MARKETING MIX",
       strategyBcgLabel: "BCG GROWTH MATRIX",
       p4TestHeader: "THE TEST",
       p4ProcessHeader: "THE PROCESS",
       p4InsightsHeader: "KEY INSIGHTS",
-      storefrontAlt: "UNIQLO Storefront",
-      opportunityAlt: "Market Trends + Consumer Insights + Brand Gap = Opportunity",
-      japaneseNatureAlt: "Mount Fuji with Cherry Blossoms",
-      bottleSetAlt: "4 Fragrance Bottles: Hana, Mizu, Kaze, Sora",
-      bannerBottleAlt: "Hana Fragrance Bottle",
+
       p4SynthesisLabel: "STRATEGIC SYNTHESIS",
       p5HeaderBrand: "UNIQLO FRAGRANCES",
       p5HeaderSub: "MARKETING MANAGEMENT PROJECT",
       p5Chip: "UNIQLO",
       p5PipelineTag: "4-PHASE COMMERCIAL PIPELINE",
       p5SkillsHeader: "SKILLS I DEVELOPED",
-      p5BottleCaption: "HANA (FLOWER) EAU DE PARFUM",
+
       p5Capstone: "Capstone Academic & Strategic Synthesis",
       footerAll: "All Projects",
       footerNext: "Next Project: Cover Story (Visual Merchandising)"
@@ -1095,32 +1052,18 @@ export const portfolioData = {
       metaBrandLabel: "CLIENT / BRAND:",
       metaSeasonLabel: "SEASON:",
       metaConceptLabel: "CONCEPT:",
-      coverImage: "/portfolio-assets/BRAND BOOK  - 1.png",
-      coverImageAlt: "Cover Story S/S Brand Book",
-      coverCaption: "Cover Story Spring/Summer In-Store Experience Dossier",
+
       briefSectionHeader: "WHAT I INVESTIGATED",
       visualDirectionHeader: "VISUAL DIRECTION",
       designInsightLabel: "MY DESIGN INSIGHT",
-      moodBoardImage: "/portfolio-assets/BRAND BOOK  - 16.png",
-      moodBoardAlt: "Future Florals Mood Board",
-      moodBoardCaption: "Mood Board Visual Collages & Material Invocations",
+
       moodThemesHeader: "MOOD IN THEMES",
-      colourBoardImage: "/portfolio-assets/BRAND BOOK  - 18.png",
-      colourBoardAlt: "Colour Board Palette",
-      colourBoardCaption: "Spring/Summer Colour Harmony & Iridescent Accents",
+
       behindPageTag: "PAGE 4 — FABRICATION & ASSEMBLY",
       behindTitle: "Behind the Display",
-      heroEnvAlt: "Future Florals in-store display environment",
-      portraitAlt: "Future Florals process portrait",
+
       behindIntro: "5-step progression from raw holographic sheets to spatial environmental installation.",
-      processNotePrefix: "Process Note:",
-      stepImages: [
-        { src: "/portfolio-assets/1e36b3dd-85f2-438b-b90a-e7143dbd03cd.jpg", caption: "Holographic sheets shaped with wire" },
-        { src: "/portfolio-assets/6fa49fa5-d790-4c76-9f00-69ca01bfcdc2.jpg", caption: "First floral structure emerging" },
-        { src: "/portfolio-assets/7eee7676-2ce8-4667-9ef7-abf624ba1833.jpg", caption: "Refining petal curvature and fold geometry" },
-        { src: "/portfolio-assets/97e20f9d-778d-44a3-bc5f-d32b6c39b7a3.jpg", caption: "Clustered floral arrangement and composition" },
-        { src: "/portfolio-assets/DD05B299-B533-4126-B54A-3B48CD3AA413.jpg", caption: "Backdrop, organza drapes, and lighting installation" }
-      ],
+
       p5ProcessTag: "IDEATION → INSTALLATION",
       p5SkillsHeader: "SKILLS I APPLIED",
       p5PrinciplesHeader: "VM PRINCIPLES APPLIED",
@@ -1137,7 +1080,7 @@ export const portfolioData = {
       metaScopeLabel: "SCOPE:",
       metaTypeValue: "Fashion Start-Up & Athleisure",
       metaScopeValue: "Research to Fabrication",
-      coverImageAlt: "Athera Athleisure Cover",
+
       galleryTitle: "MADE FOR MULTIPLE MOMENTS",
       page2Headline1: "FROM AN OBSERVATION",
       page2Headline2: "TO AN OPPORTUNITY",
@@ -1145,33 +1088,21 @@ export const portfolioData = {
       p3PageLabel: "PAGE 3",
       p3DesignParagraph:
         "Structured crop top tailored with compressive chest support paired with airy, comfortable relaxed joggers for effortless movement.",
-      designFlatImage: "/portfolio-assets/Screenshot 2026-09-18 at 7.03.12 PM.png",
-      designFlatAlt: "Design Flats Structured Crop Top and Joggers",
-      designFlatCaption: "01 Design — Structured Crop Top & Joggers Flat",
-      materialSheetImage: "/portfolio-assets/Screenshot 2026-09-18 at 7.03.20 PM.png",
-      materialSheetAlt: "Material Testing Lycra and Terry Cotton",
-      materialSheetCaption: "02 Material — Lycra & Terry Cotton Functional Pairing",
+
       prototypeParagraph:
         "The physical MVP garment produced and evaluated through user wear-testing sessions to gauge breathability and silhouette comfort.",
-      prototypeImage: "/portfolio-assets/Screenshot 2026-09-18 at 7.03.30 PM.png",
-      prototypeAlt: "03 Physical MVP Prototype",
-      prototypeCaption: "03 Final Prototype — Physical MVP Sample",
+
       p4PageLabel: "PAGE 4",
       p4HeardTitle: "WHAT I HEARD",
       p4TaughtTitle: "WHAT THIS TAUGHT ME",
       p4LoopHeader: "FEEDBACK → ITERATION → IMPACT",
-      feedbackAlt: "Feedback Iteration Impact Flow",
+
       p2LabelPrefix: "PAGE 2 — ",
       p2LabelSeparator: " // ",
       p4FeedbackLabel: "FEEDBACK",
       p4IterationLabel: "ITERATION",
       p4ImpactLabel: "IMPACT",
       footerNext: "Back to Home →"
-    },
-
-    cardPlaceholder: {
-      title: "Placeholder Image",
-      subtitle: "Project cover image goes here"
     },
 
     waitlist: {

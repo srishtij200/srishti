@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, ArrowLeft, CheckCircle2, Lightbulb, Compass, BookOpen } from 'lucide-react';
-import { FlowerMark, WashiTape } from '../components/CustomDoodles';
+import { ArrowRight, ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { FlowerMark } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
 export const InternshipLearningsPage: React.FC = () => {
@@ -26,7 +26,7 @@ export const InternshipLearningsPage: React.FC = () => {
 
         {/* Hero Title */}
         <div className="max-w-4xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] mb-4 paper-shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] mb-4">
             <FlowerMark size={14} />
             <span>{ui.badge}</span>
           </div>
@@ -49,17 +49,13 @@ export const InternshipLearningsPage: React.FC = () => {
           </div>
         </div>
 
-        {/* 4 LEARNING OUTCOMES CARDS */}
+        {/* 4 LEARNING OUTCOMES */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {internship.learningOutcomes.map((lo, idx) => (
+          {internship.learningOutcomes.map((lo) => (
             <div
               key={lo.number}
-              className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 paper-shadow-lg relative flex flex-col justify-between"
+              className="relative border-t-2 border-[var(--c-ink)]/20 pt-8 flex flex-col justify-between"
             >
-              <div className="absolute -top-3 right-8">
-                <WashiTape color={idx % 2 === 0 ? "#C9FF8C" : "#F4B6D4"} width="w-20" />
-              </div>
-
               <div>
                 <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/60 mb-4 pb-2 border-b border-[var(--c-ink)]/15">
                   <span className="font-bold text-[var(--c-ink)]">{ui.outcomePrefix} {lo.number}</span>
@@ -84,7 +80,7 @@ export const InternshipLearningsPage: React.FC = () => {
         </div>
 
         {/* Bottom Pagination */}
-        <div className="flex flex-col sm:flex-row items-center justify-between p-8 bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-2xl gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between border-t-2 border-[var(--c-ink)]/20 pt-8 gap-4">
           <Link
             to="/internship/experience"
             className="font-mono-code text-xs uppercase text-[var(--c-ink)]/70 hover:text-[var(--c-ink)] flex items-center gap-1.5"

@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Sparkles, ArrowRight, Layers, Tag, Eye } from 'lucide-react';
-import { FlowerMark, HandDrawnStar, WashiTape } from '../components/CustomDoodles';
-import { ProjectCardMedia } from '../components/ProjectCardMedia';
+import { ArrowRight } from 'lucide-react';
+import { FlowerMark } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 import { isProjectVisible } from '../lib/sanity';
 
@@ -26,7 +25,7 @@ export const ProjectsOverviewPage: React.FC = () => {
 
         {/* Hero Title & Intro */}
         <div className="max-w-4xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] mb-4 paper-shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFFFFF] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] mb-4">
             <FlowerMark size={14} />
             <span>{ui.badge}</span>
           </div>
@@ -45,14 +44,8 @@ export const ProjectsOverviewPage: React.FC = () => {
           {visibleProjects.map((proj) => (
             <div
               key={proj.id}
-              className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-12 paper-shadow-lg relative overflow-hidden group hover:paper-shadow-xl transition-all"
+              className="relative border-t-2 border-[var(--c-ink)]/20 pt-8 sm:pt-12 group"
             >
-              <div className="absolute -top-3 right-12">
-                <WashiTape color={proj.accentColor} width="w-28" />
-              </div>
-
-              <ProjectCardMedia image={proj.image} alt={proj.title} />
-
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div className="lg:col-span-8 space-y-4">
                   <div className="flex items-center gap-3">
@@ -86,7 +79,7 @@ export const ProjectsOverviewPage: React.FC = () => {
                       ].map((b) => (
                         <div
                           key={b.label}
-                          className="p-4 bg-[var(--c-bg)] border border-[var(--c-ink)]/20 rounded-xl"
+                          className="border-t border-[var(--c-ink)]/20 pt-4"
                         >
                           <span className="font-mono-code text-[10px] font-bold text-[var(--c-ink)]/60 uppercase tracking-wider block mb-1.5">
                             {b.label}
@@ -112,7 +105,7 @@ export const ProjectsOverviewPage: React.FC = () => {
                 </div>
 
                 <div className="lg:col-span-4 flex flex-col justify-between h-full pt-4 lg:pt-0">
-                  <div className="p-6 bg-[var(--c-bg)] border border-[var(--c-ink)]/20 rounded-2xl mb-6">
+                  <div className="border-t border-[var(--c-ink)]/20 pt-4 mb-6">
                     <span className="font-mono-code text-xs font-bold text-[var(--c-ink)] block mb-2">
                       {ui.coreFocus}
                     </span>

@@ -22,12 +22,7 @@ export const projectsSummary = defineType({
             { name: 'tagline', title: 'Tagline', type: 'string' },
             { name: 'accentColor', title: 'Accent Color', type: 'string' },
             { name: 'rotation', title: 'Rotation', type: 'string' },
-            {
-              name: 'image',
-              title: 'Cover Image',
-              type: 'image',
-              options: { hotspot: true },
-            },
+
             { name: 'tags', title: 'Tags', type: 'array', of: [{ type: 'string' }] },
             { name: 'summary', title: 'Summary', type: 'text', rows: 3 },
             { name: 'brief', title: 'Brief', type: 'text', rows: 3 },

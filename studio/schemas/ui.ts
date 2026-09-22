@@ -54,7 +54,7 @@ export const ui = defineType({
               of: [{ type: 'string' }],
             },
             { name: 'badge', title: 'Badge', type: 'string' },
-            { name: 'image', title: 'Portrait Image', type: 'image', options: { hotspot: true } },
+
             { name: 'imageAlt', title: 'Portrait Alt Text', type: 'string' },
           ],
         }),
@@ -158,16 +158,6 @@ export const ui = defineType({
     }),
 
     defineField({
-      name: 'cardPlaceholder',
-      title: 'Project Card Placeholder',
-      type: 'object',
-      fields: [
-        { name: 'title', title: 'Title', type: 'string' },
-        { name: 'subtitle', title: 'Subtitle', type: 'string' },
-      ],
-    }),
-
-    defineField({
       name: 'skills',
       title: 'Skills',
       type: 'object',
@@ -217,11 +207,11 @@ export const ui = defineType({
         { name: 'bannersHeader', title: 'Banners Header', type: 'string' },
         { name: 'banner1Title', title: 'Banner 1 Title', type: 'string' },
         { name: 'banner1Desc', title: 'Banner 1 Description', type: 'string' },
-        { name: 'banner1Alt', title: 'Banner 1 Alt', type: 'string' },
+
         { name: 'banner2Title', title: 'Banner 2 Title', type: 'string' },
-        { name: 'banner2Alt', title: 'Banner 2 Alt', type: 'string' },
+
         { name: 'banner3Title', title: 'Banner 3 Title', type: 'string' },
-        { name: 'banner3Alt', title: 'Banner 3 Alt', type: 'string' },
+
         { name: 'learningsLabel', title: 'Learnings Label', type: 'string' },
         { name: 'learningsTitle', title: 'Learnings Title', type: 'string' },
         {
@@ -300,13 +290,9 @@ export const ui = defineType({
         { name: 'metaBrandLabel', title: 'Meta — Brand Label', type: 'string' },
         { name: 'metaDisciplineLabel', title: 'Meta — Discipline Label', type: 'string' },
         { name: 'metaTimelineLabel', title: 'Meta — Timeline Label', type: 'string' },
-        { name: 'heroImage', title: 'Hero Image', type: 'image', options: { hotspot: true } },
-        { name: 'heroImageAlt', title: 'Hero Alt Text', type: 'string' },
-        { name: 'heroCaption', title: 'Hero Caption', type: 'string' },
+
         { name: 'contextHeader', title: 'Context Header', type: 'string' },
-        { name: 'marketImage', title: 'Market Chart Image', type: 'image', options: { hotspot: true } },
-        { name: 'marketCaption', title: 'Market Chart Caption', type: 'string' },
-        { name: 'marketImageAlt', title: 'Market Chart Alt Text', type: 'string' },
+
         { name: 'briefHeader', title: 'Brief Header', type: 'string' },
         { name: 'alignedNote', title: 'Aligned Note', type: 'string' },
         { name: 'p2SlideTag', title: 'Page 2 Slide Tag', type: 'string' },
@@ -328,28 +314,21 @@ export const ui = defineType({
         { name: 'p3PageTag', title: 'Page 3 Tag', type: 'string' },
         { name: 'p3Title', title: 'Page 3 Title', type: 'string' },
         { name: 'p3Intro', title: 'Page 3 Intro', type: 'string' },
-        { name: 'p3Image', title: 'Page 3 Image', type: 'image', options: { hotspot: true } },
-        { name: 'p3ImageAlt', title: 'Page 3 Image Alt', type: 'string' },
-        { name: 'p3ImageCaption', title: 'Page 3 Caption', type: 'string' },
-        { name: 'p3ImageSub', title: 'Page 3 Sub-Caption', type: 'string' },
+
         { name: 'strategyStpLabel', title: 'Strategy — STP Label', type: 'string' },
         { name: 'strategy7psLabel', title: 'Strategy — 7Ps Label', type: 'string' },
         { name: 'strategyBcgLabel', title: 'Strategy — BCG Label', type: 'string' },
         { name: 'p4TestHeader', title: 'Page 4 — Test Header', type: 'string' },
         { name: 'p4ProcessHeader', title: 'Page 4 — Process Header', type: 'string' },
         { name: 'p4InsightsHeader', title: 'Page 4 — Insights Header', type: 'string' },
-        { name: 'storefrontAlt', title: 'Storefront Image Alt Text', type: 'string' },
-        { name: 'opportunityAlt', title: 'Opportunity Diagram Alt Text', type: 'string' },
-        { name: 'japaneseNatureAlt', title: 'Japanese Nature Image Alt Text', type: 'string' },
-        { name: 'bottleSetAlt', title: 'Bottle Set Alt Text', type: 'string' },
-        { name: 'bannerBottleAlt', title: 'Banner Bottle Alt Text', type: 'string' },
+
         { name: 'p4SynthesisLabel', title: 'Page 4 — Synthesis Label', type: 'string' },
         { name: 'p5HeaderBrand', title: 'Page 5 Header — Brand', type: 'string' },
         { name: 'p5HeaderSub', title: 'Page 5 Header — Subtitle', type: 'string' },
         { name: 'p5Chip', title: 'Page 5 Chip', type: 'string' },
         { name: 'p5PipelineTag', title: 'Page 5 Pipeline Tag', type: 'string' },
         { name: 'p5SkillsHeader', title: 'Page 5 Skills Header', type: 'string' },
-        { name: 'p5BottleCaption', title: 'Page 5 Bottle Caption', type: 'string' },
+
         { name: 'p5Capstone', title: 'Page 5 Capstone', type: 'string' },
         { name: 'footerAll', title: 'Footer — All Projects', type: 'string' },
         { name: 'footerNext', title: 'Footer — Next', type: 'string' },
@@ -368,39 +347,18 @@ export const ui = defineType({
         { name: 'metaBrandLabel', title: 'Meta — Brand Label', type: 'string' },
         { name: 'metaSeasonLabel', title: 'Meta — Season Label', type: 'string' },
         { name: 'metaConceptLabel', title: 'Meta — Concept Label', type: 'string' },
-        { name: 'coverImage', title: 'Cover Image', type: 'image', options: { hotspot: true } },
-        { name: 'coverImageAlt', title: 'Cover Image Alt', type: 'string' },
-        { name: 'coverCaption', title: 'Cover Caption', type: 'string' },
+
         { name: 'briefSectionHeader', title: 'Brief Section Header', type: 'string' },
         { name: 'visualDirectionHeader', title: 'Visual Direction Header', type: 'string' },
         { name: 'designInsightLabel', title: 'Design Insight Label', type: 'string' },
-        { name: 'moodBoardImage', title: 'Mood Board Image', type: 'image', options: { hotspot: true } },
-        { name: 'moodBoardAlt', title: 'Mood Board Alt', type: 'string' },
-        { name: 'moodBoardCaption', title: 'Mood Board Caption', type: 'string' },
+
         { name: 'moodThemesHeader', title: 'Mood Themes Header', type: 'string' },
-        { name: 'colourBoardImage', title: 'Colour Board Image', type: 'image', options: { hotspot: true } },
-        { name: 'colourBoardAlt', title: 'Colour Board Alt', type: 'string' },
-        { name: 'colourBoardCaption', title: 'Colour Board Caption', type: 'string' },
+
         { name: 'behindPageTag', title: 'Behind — Page Tag', type: 'string' },
         { name: 'behindTitle', title: 'Behind — Title', type: 'string' },
-        { name: 'heroEnvAlt', title: 'Hero Environment Alt Text', type: 'string' },
-        { name: 'portraitAlt', title: 'Process Portrait Alt Text', type: 'string' },
+
         { name: 'behindIntro', title: 'Behind — Intro', type: 'string' },
-        { name: 'processNotePrefix', title: 'Process Note Prefix', type: 'string' },
-        {
-          name: 'stepImages',
-          title: 'Behind the Display Photos',
-          type: 'array',
-          of: [
-            {
-              type: 'object',
-              fields: [
-                { name: 'src', title: 'Image', type: 'image', options: { hotspot: true } },
-                { name: 'caption', title: 'Caption', type: 'string' },
-              ],
-            },
-          ],
-        },
+
         { name: 'p5ProcessTag', title: 'Page 5 Process Tag', type: 'string' },
         { name: 'p5SkillsHeader', title: 'Page 5 Skills Header', type: 'string' },
         { name: 'p5PrinciplesHeader', title: 'Page 5 Principles Header', type: 'string' },
@@ -422,28 +380,21 @@ export const ui = defineType({
         { name: 'metaScopeLabel', title: 'Meta — Scope Label', type: 'string' },
         { name: 'metaTypeValue', title: 'Meta — Type Value', type: 'string' },
         { name: 'metaScopeValue', title: 'Meta — Scope Value', type: 'string' },
-        { name: 'coverImageAlt', title: 'Cover Image Alt', type: 'string' },
+
         { name: 'galleryTitle', title: 'Gallery Title', type: 'string' },
         { name: 'page2Headline1', title: 'Page 2 — Headline Line 1', type: 'string' },
         { name: 'page2Headline2', title: 'Page 2 — Headline Line 2', type: 'string' },
         { name: 'opportunityGap', title: 'Opportunity Gap Badge', type: 'string' },
         { name: 'p3PageLabel', title: 'Page 3 Label', type: 'string' },
         { name: 'p3DesignParagraph', title: 'Page 3 Design Paragraph', type: 'text', rows: 3 },
-        { name: 'designFlatImage', title: 'Design Flat Image', type: 'image', options: { hotspot: true } },
-        { name: 'designFlatAlt', title: 'Design Flat Alt', type: 'string' },
-        { name: 'designFlatCaption', title: 'Design Flat Caption', type: 'string' },
-        { name: 'materialSheetImage', title: 'Material Sheet Image', type: 'image', options: { hotspot: true } },
-        { name: 'materialSheetAlt', title: 'Material Sheet Alt', type: 'string' },
-        { name: 'materialSheetCaption', title: 'Material Sheet Caption', type: 'string' },
+
         { name: 'prototypeParagraph', title: 'Prototype Paragraph', type: 'text', rows: 3 },
-        { name: 'prototypeImage', title: 'Prototype Image', type: 'image', options: { hotspot: true } },
-        { name: 'prototypeAlt', title: 'Prototype Alt', type: 'string' },
-        { name: 'prototypeCaption', title: 'Prototype Caption', type: 'string' },
+
         { name: 'p4PageLabel', title: 'Page 4 Label', type: 'string' },
         { name: 'p4HeardTitle', title: 'Page 4 — Heard Title', type: 'string' },
         { name: 'p4TaughtTitle', title: 'Page 4 — Taught Title', type: 'string' },
         { name: 'p4LoopHeader', title: 'Page 4 — Loop Header', type: 'string' },
-        { name: 'feedbackAlt', title: 'Feedback Diagram Alt Text', type: 'string' },
+
         { name: 'p2LabelPrefix', title: 'Page 2 — Label Prefix', type: 'string' },
         { name: 'p2LabelSeparator', title: 'Page 2 — Label Separator', type: 'string' },
         { name: 'p4FeedbackLabel', title: 'Page 4 — Feedback Label', type: 'string' },

@@ -16,8 +16,7 @@ export const projectThree = defineType({
         { name: 'tagline', title: 'Tagline', type: 'string' },
         { name: 'conceptSubtitle', title: 'Concept Subtitle', type: 'string' },
         { name: 'bottomStatement', title: 'Bottom Statement', type: 'string' },
-        { name: 'heroImage', title: 'Hero Image', type: 'image', options: { hotspot: true } },
-        { name: 'heroCaption', title: 'Hero Caption', type: 'string' },
+
         {
           name: 'gallery',
           title: 'Gallery',
@@ -27,7 +26,7 @@ export const projectThree = defineType({
               type: 'object',
               fields: [
                 { name: 'label', title: 'Label', type: 'string' },
-                { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+
               ],
             },
           ],

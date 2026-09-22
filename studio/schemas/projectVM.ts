@@ -40,7 +40,7 @@ export const projectVM = defineType({
               fields: [
                 { name: 'pillar', title: 'Pillar', type: 'string' },
                 { name: 'points', title: 'Points', type: 'array', of: [{ type: 'string' }] },
-                { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+
               ],
             },
           ],
@@ -54,7 +54,7 @@ export const projectVM = defineType({
               type: 'object',
               fields: [
                 { name: 'step', title: 'Step', type: 'string' },
-                { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+
                 { name: 'isHighlight', title: 'Highlight', type: 'boolean' },
               ],
             },
@@ -63,15 +63,7 @@ export const projectVM = defineType({
         { name: 'conceptFlowTitle', title: 'Concept Flow Title', type: 'string' },
         { name: 'conceptSummary', title: 'Concept Summary', type: 'text', rows: 3 },
         { name: 'designInsight', title: 'Design Insight', type: 'text', rows: 3 },
-        {
-          name: 'heroImage',
-          title: 'Hero Image',
-          type: 'object',
-          fields: [
-            { name: 'src', title: 'Image', type: 'image', options: { hotspot: true } },
-            { name: 'caption', title: 'Caption', type: 'string' },
-          ],
-        },
+
       ],
     }),
 
@@ -167,7 +159,7 @@ export const projectVM = defineType({
           type: 'object',
           fields: [
             { name: 'quote', title: 'Quote', type: 'text', rows: 3 },
-            { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+
             { name: 'caption', title: 'Caption', type: 'string' },
             { name: 'accent', title: 'Accent', type: 'string' },
           ],
@@ -188,7 +180,7 @@ export const projectVM = defineType({
                   type: 'object',
                   fields: [
                     { name: 'title', title: 'Title', type: 'string' },
-                    { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+
                   ],
                 },
               ],

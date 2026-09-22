@@ -44,7 +44,7 @@ export const projectMarketing = defineType({
             { name: 'number', title: 'Number', type: 'string' },
             { name: 'title', title: 'Title', type: 'string' },
             { name: 'text', title: 'Text', type: 'text', rows: 3 },
-            { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+
             { name: 'scriptCallout', title: 'Script Callout', type: 'string' },
           ],
         },
@@ -72,7 +72,7 @@ export const projectMarketing = defineType({
             },
             { name: 'frameworkSentence', title: 'Framework Sentence', type: 'text', rows: 3 },
             { name: 'frameworkBadges', title: 'Framework Badges', type: 'array', of: [{ type: 'string' }] },
-            { name: 'notepadImage', title: 'Notepad Image', type: 'image', options: { hotspot: true } },
+
           ],
         },
         {
@@ -85,7 +85,7 @@ export const projectMarketing = defineType({
             { name: 'takeaway', title: 'Takeaway', type: 'text', rows: 3 },
             { name: 'natureTitle', title: 'Nature Title', type: 'string' },
             { name: 'naturePillars', title: 'Nature Pillars', type: 'array', of: [{ type: 'string' }] },
-            { name: 'natureImage', title: 'Nature Image', type: 'image', options: { hotspot: true } },
+
             {
               name: 'variants',
               title: 'Fragrance Variants',
@@ -128,7 +128,7 @@ export const projectMarketing = defineType({
             },
             { name: 'quote', title: 'Quote', type: 'string' },
             { name: 'tag', title: 'Tag', type: 'string' },
-            { name: 'bottlesImage', title: 'Bottles Image', type: 'image', options: { hotspot: true } },
+
           ],
         },
       ],
@@ -177,7 +177,7 @@ export const projectMarketing = defineType({
             {
               type: 'object',
               fields: [
-                { name: 'src', title: 'Photo', type: 'image', options: { hotspot: true } },
+
                 { name: 'caption', title: 'Caption', type: 'string' },
                 { name: 'desc', title: 'Description', type: 'text', rows: 2 },
               ],
@@ -238,7 +238,7 @@ export const projectMarketing = defineType({
                 { name: 'num', title: 'Number', type: 'string' },
                 { name: 'name', title: 'Name', type: 'string' },
                 { name: 'detail', title: 'Detail', type: 'text', rows: 3 },
-                { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+
               ],
             },
           ],
@@ -250,7 +250,7 @@ export const projectMarketing = defineType({
           fields: [
             { name: 'quote', title: 'Quote', type: 'text', rows: 3 },
             { name: 'callouts', title: 'Callouts', type: 'array', of: [{ type: 'string' }] },
-            { name: 'bottleImage', title: 'Bottle Image', type: 'image', options: { hotspot: true } },
+
           ],
         },
         {
@@ -268,7 +268,7 @@ export const projectMarketing = defineType({
                   type: 'object',
                   fields: [
                     { name: 'title', title: 'Title', type: 'string' },
-                    { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+
                   ],
                 },
               ],

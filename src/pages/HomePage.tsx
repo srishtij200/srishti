@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 import { WashiTape } from '../components/CustomDoodles';
 import { ProjectCardMedia } from '../components/ProjectCardMedia';
 import { SkillsSection } from '../components/home-sections/SkillsSection';
@@ -14,9 +14,10 @@ interface HomePageProps {
 }
 
 export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
-  const { selectedProjects, internship } = portfolioData;
+  const { selectedProjects, internship, student } = portfolioData;
   const ui = portfolioData.ui;
   const hero = ui.home.hero;
+  const aboutUi = ui.about;
   const projectsSection = ui.home.projects;
   const internshipCallout = ui.home.internship;
 
@@ -60,6 +61,18 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 </span>
               </motion.h1>
 
+              {/* About Metadata */}
+              <div className="font-mono-code text-xs sm:text-sm text-[var(--c-ink)]/70 flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-5">
+                <span className="bg-[var(--c-highlight)] text-[var(--c-ink)] px-2.5 py-0.5 rounded border border-[var(--c-ink)] font-bold">
+                  {student.year}
+                </span>
+                <span className="flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5" />
+                  {student.location}
+                </span>
+                <span className="border-l border-[var(--c-ink)]/20 pl-3">{student.degree}</span>
+              </div>
+
               {/* About Biography */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -73,6 +86,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                     <p key={i}>{p}</p>
                   ))}
                 </div>
+
+                <p className="relative z-10 font-serif-display text-xl sm:text-2xl text-[var(--c-ink)] italic leading-snug pt-2 border-l-2 border-[var(--c-highlight)] pl-4">
+                  "{student.statement}"
+                </p>
 
                 <p className="font-serif-display text-2xl sm:text-2xl text-[var(--c-ink)] italic leading-snug pt-1">
                   {hero.signature}
@@ -113,6 +130,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 </span>
               </div>
             </motion.div>
+          </div>
+
+          {/* Portfolio Scope Card */}
+          <div className="mt-14">
+            <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)]/60 mb-4">{aboutUi.scopeHeader}</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {aboutUi.scopeItems.map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-5 sm:p-6 paper-shadow-sm"
+                >
+                  <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]">{item.title}</div>
+                  <div className="font-body text-sm text-[var(--c-ink)]/80 mt-1.5 leading-relaxed">{item.desc}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

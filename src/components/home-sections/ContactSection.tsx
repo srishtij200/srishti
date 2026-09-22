@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Mail, MapPin, Phone, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
 
 export const ContactSection: React.FC = () => {
@@ -55,6 +55,16 @@ export const ContactSection: React.FC = () => {
             <span>{contact.location}</span>
           </motion.p>
 
+          <motion.span
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.08 }}
+            className="font-mono-code text-xs uppercase tracking-wider text-[var(--c-ink)]/60"
+          >
+            {sectionTitles.availabilityNote}
+          </motion.span>
+
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -66,21 +76,22 @@ export const ContactSection: React.FC = () => {
             <span>{contact.phone}</span>
           </motion.p>
 
-          {contact.socials[0] && (
+          {contact.socials.map((soc, i) => (
             <motion.a
+              key={i}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              href={contact.socials[0].url}
+              transition={{ duration: 0.5, delay: 0.12 + i * 0.05 }}
+              href={soc.url}
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-3 font-mono-code text-lg font-bold text-[var(--c-ink)] border-b border-[var(--c-ink)]/30 hover:border-[var(--c-ink)]"
             >
-              <Linkedin className="w-6 h-6 text-[var(--c-ink)]/60 shrink-0" />
-              <span>{contact.socials[0].name} — {contact.socials[0].handle}</span>
+              <ExternalLink className="w-5 h-5 text-[var(--c-ink)]/60 shrink-0" />
+              <span>{soc.name} — {soc.handle}</span>
             </motion.a>
-          )}
+          ))}
         </div>
       </div>
     </section>

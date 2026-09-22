@@ -10,12 +10,5 @@ export const bio = defineType({
     defineField({ name: 'year', title: 'Year', type: 'string' }),
     defineField({ name: 'location', title: 'Location', type: 'string' }),
     defineField({ name: 'statement', title: 'Statement', type: 'text', rows: 3 }),
-    defineField({ name: 'secondaryStatement', title: 'Secondary Statement', type: 'text', rows: 4 }),
-    defineField({
-      name: 'specializations',
-      title: 'Specializations',
-      type: 'array',
-      of: [{ type: 'string' }],
-    }),
   ],
 });

@@ -122,14 +122,9 @@ export const ui = defineType({
 
     defineField({
       name: 'about',
-      title: 'About Page',
+      title: 'About Scope',
       type: 'object',
       fields: [
-        { name: 'breadcrumbHome', title: 'Breadcrumb — Home', type: 'string' },
-        { name: 'breadcrumbCurrent', title: 'Breadcrumb — Current', type: 'string' },
-        { name: 'breadcrumbTag', title: 'Breadcrumb — Tag', type: 'string' },
-        { name: 'badge', title: 'Badge', type: 'string' },
-        { name: 'paragraph2', title: 'Paragraph 2', type: 'text', rows: 4 },
         { name: 'scopeHeader', title: 'Scope Card Header', type: 'string' },
         {
           name: 'scopeItems',
@@ -153,25 +148,10 @@ export const ui = defineType({
 
     defineField({
       name: 'contact',
-      title: 'Contact Page',
+      title: 'Contact Section',
       type: 'object',
       fields: [
-        { name: 'breadcrumbHome', title: 'Breadcrumb — Home', type: 'string' },
-        { name: 'breadcrumbCurrent', title: 'Breadcrumb — Current', type: 'string' },
-        { name: 'breadcrumbTagPrefix', title: 'Breadcrumb — Tag Prefix', type: 'string' },
-        { name: 'badge', title: 'Badge', type: 'string' },
-        { name: 'title', title: 'Title', type: 'string' },
-        { name: 'intro', title: 'Intro', type: 'text', rows: 3 },
-        { name: 'cardHeader', title: 'Card Header', type: 'string' },
-        { name: 'emailLabel', title: 'Email Label', type: 'string' },
-        { name: 'locationLabel', title: 'Location Label', type: 'string' },
-        { name: 'phoneLabel', title: 'Phone Label', type: 'string' },
         { name: 'availabilityNote', title: 'Availability Note', type: 'string' },
-        { name: 'socialsHeader', title: 'Socials Header', type: 'string' },
-        { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
-        { name: 'imageAlt', title: 'Image Alt Text', type: 'string' },
-        { name: 'closerLook', title: 'Closer Look Label', type: 'string' },
-        { name: 'moreAbout', title: 'More About Link', type: 'string' },
         { name: 'sectionTitleFirst', title: 'Section Title (First Part)', type: 'string' },
         { name: 'sectionTitleSecond', title: 'Section Title (Second Part)', type: 'string' },
       ],
@@ -192,23 +172,6 @@ export const ui = defineType({
       title: 'Skills',
       type: 'object',
       fields: [
-        defineField({
-          name: 'page',
-          title: 'Skills Page',
-          type: 'object',
-          fields: [
-            { name: 'breadcrumbHome', title: 'Breadcrumb — Home', type: 'string' },
-            { name: 'breadcrumbCurrent', title: 'Breadcrumb — Current', type: 'string' },
-            { name: 'breadcrumbTag', title: 'Breadcrumb — Tag', type: 'string' },
-            { name: 'badge', title: 'Badge', type: 'string' },
-            { name: 'title', title: 'Title', type: 'string' },
-            { name: 'intro', title: 'Intro', type: 'text', rows: 3 },
-            { name: 'disciplinePrefix', title: 'Discipline Prefix', type: 'string' },
-            { name: 'nextLabel', title: 'Next — Label', type: 'string' },
-            { name: 'nextTitle', title: 'Next — Title', type: 'string' },
-            { name: 'nextCta', title: 'Next — CTA', type: 'string' },
-          ],
-        }),
         defineField({
           name: 'section',
           title: 'Home Skills Section',

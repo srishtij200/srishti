@@ -26,13 +26,9 @@ export interface P3Page2Quadrant {
 export interface StudentBio {
   name: string;
   degree: string;
-  institution: string;
   year: string;
   location: string;
-  tagline: string;
   statement: string;
-  secondaryStatement: string;
-  specializations: string[];
 }
 
 export interface ProjectSummary {
@@ -60,15 +56,7 @@ export const portfolioData = {
     degree: "Fashion Communication & Visual Merchandising",
     year: "Class of 2026",
     location: "Mumbai / New Delhi",
-    statement: "Translating brand philosophies into tangible retail environments, market-tested products, and high-impact digital experiences.",
-    secondaryStatement: "My body of work spans industry internship at fine jewellery brand Aadiya Jewels, marketing management and category expansion for UNIQLO, visual merchandising for Cover Story, and founding an athleisure startup from consumer pain points to physical MVP.",
-    specializations: [
-      "Visual Merchandising & Window Concepts",
-      "Marketing Strategy (STP, 7Ps, BCG)",
-      "E-Commerce & Shopify Management",
-      "Social Media Content Production",
-      "Fashion Prototyping & Consumer Research"
-    ]
+    statement: "Translating brand philosophies into tangible retail environments, market-tested products, and high-impact digital experiences."
   },
 
   // 1. INTERNSHIP: AADIYA JEWELS (Page 1 Social Media, Page 2 E-Commerce & Learnings)
@@ -861,7 +849,7 @@ export const portfolioData = {
   contact: {
     email: "srishtijain2012@gmail.com",
     phone: "9350894666",
-    location: "New Delhi, India",
+    location: "Hyderabad, India",
     socials: [
       { name: "LinkedIn", handle: "Srishti Jain", url: "https://www.linkedin.com/in/srishti-jain-263074228" }
     ]
@@ -922,12 +910,6 @@ export const portfolioData = {
     },
 
     about: {
-      breadcrumbHome: "HOME",
-      breadcrumbCurrent: "ABOUT ME",
-      breadcrumbTag: "FOLIO ETHOS & BACKGROUND",
-      badge: "STUDENT BIOGRAPHY",
-      paragraph2:
-        "My foundation integrates hands-on making with strategic rigor: from conducting consumer interviews and testing fabric breathability, to building 1:1 scale floral window displays and executing daily e-commerce operations.",
       scopeHeader: "PORTFOLIO SCOPE & EXPERIENCE",
       scopeItems: [
         {
@@ -946,10 +928,7 @@ export const portfolioData = {
           title: "04. FASHION START-UP (PROJECT 3)",
           desc: "Survey research, Lycra & Terry cotton fabric testing, and physical MVP iteration."
         }
-      ],
-      nextLabel: "NEXT IN PORTFOLIO",
-      nextTitle: "Explore Aadiya Jewels Internship",
-      nextCta: "View Internship"
+      ]
     },
 
     site: {
@@ -957,41 +936,12 @@ export const portfolioData = {
     },
 
     contact: {
-      breadcrumbHome: "HOME",
-      breadcrumbCurrent: "CORRESPONDENCE & INQUIRIES",
-      breadcrumbTagPrefix: "STUDIO DISPATCH // ",
-      badge: "STUDIO INTAKE & DIALOGUE",
-      title: "Contact & Inquiries",
-      intro:
-        "Currently accepting opportunities in visual merchandising, fashion marketing, e-commerce styling, and creative direction. Feel free to send a note or request complete project catalogs.",
-      cardHeader: "Direct Correspondence",
-      emailLabel: "ELECTRONIC MAIL",
-      locationLabel: "LOCATION",
-      phoneLabel: "TELEPHONE & SIGNAL",
       availabilityNote: "Available for on-site & remote projects",
-      socialsHeader: "Digital Channels & Profiles",
-      image: "/portfolio-assets/IMG_2187.jpg",
-      imageAlt: "Srishti Jain — curated creative exploration",
-      closerLook: "CLOSER LOOK",
-      moreAbout: "More About Me →",
       sectionTitleFirst: "Contact &",
       sectionTitleSecond: "Inquiries"
     },
 
     skills: {
-      page: {
-        breadcrumbHome: "HOME",
-        breadcrumbCurrent: "SKILLS MATRIX",
-        breadcrumbTag: "PRACTICAL & STRATEGIC COMPETENCIES",
-        badge: "DISCIPLINARY PROFICIENCIES",
-        title: "Skills & Applied Disciplines",
-        intro:
-          "A versatile skill set developed across real-world jewellery e-commerce at Aadiya Jewels, marketing frameworks for UNIQLO, in-store window fabrication for Cover Story, and user research for an athleisure startup.",
-        disciplinePrefix: "DISCIPLINE 0",
-        nextLabel: "NEXT STEP",
-        nextTitle: "Inquire for Commissions or Roles",
-        nextCta: "Proceed to Contact"
-      },
       section: {
         eyebrow: "SKILLS",
         titleFirst: "Skills &",

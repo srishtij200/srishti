@@ -16,7 +16,6 @@ export const projectVM = defineType({
         { name: 'brand', title: 'Brand', type: 'string' },
         { name: 'season', title: 'Season', type: 'string' },
         { name: 'conceptName', title: 'Concept Name', type: 'string' },
-        { name: 'accentColor', title: 'Accent Color', type: 'string' },
       ],
     }),
 
@@ -155,7 +154,7 @@ export const projectVM = defineType({
 
     defineField({
       name: 'page5SkillsAndPrinciples',
-      title: 'Page 5 — From Concept to Capability',
+      title: 'Page 5 — Ideation → Installation',
       type: 'object',
       fields: [
         { name: 'pageLabel', title: 'Page Label', type: 'string' },

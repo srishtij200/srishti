@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { WashiTape } from '../components/CustomDoodles';
 import { ProjectCardMedia } from '../components/ProjectCardMedia';
 import { SkillsSection } from '../components/home-sections/SkillsSection';
@@ -56,24 +56,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                   </span>
                 </span>
               </motion.h1>
-
-              {/* SAVED FOR LATER USE — Explore Selected Works CTA (hidden for now) */}
-              {false && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="flex flex-col sm:flex-row items-center lg:items-start gap-4 sm:gap-6"
-                >
-                  <Link
-                    to="/projects"
-                    className="flex items-center gap-2 bg-[var(--c-highlight)] text-[var(--c-ink)] border-[1.5px] border-[var(--c-ink)] px-7 py-3 rounded-full text-sm uppercase tracking-wider font-bold paper-shadow hover:translate-y-[-2px] hover:paper-shadow-lg transition-all cursor-pointer group"
-                  >
-                    <Sparkles className="w-4 h-4 text-[var(--c-ink)] group-hover:rotate-12 transition-transform" />
-                    <span>{hero.ctaLabel}</span>
-                  </Link>
-                </motion.div>
-              )}
 
               {/* About Biography */}
               <motion.div

@@ -118,7 +118,7 @@ export const InternshipExperiencePage: React.FC = () => {
                       <div className="bg-[var(--c-bg)] border border-[var(--c-ink)]/25 rounded-2xl p-2 paper-shadow-sm">
                         <img
                           src="/portfolio-assets/WhatsApp Image 2026-09-13 at 19.42.18.jpeg"
-                          alt="Jewellery on-set photography"
+                          alt={ui.photoAlt1}
                           className="w-full h-44 object-cover rounded-xl border border-[var(--c-ink)]/10"
                         />
                         <span className="font-mono-code text-[11px] text-[var(--c-ink)]/70 block mt-2 px-1">
@@ -128,7 +128,7 @@ export const InternshipExperiencePage: React.FC = () => {
                       <div className="bg-[var(--c-bg)] border border-[var(--c-ink)]/25 rounded-2xl p-2 paper-shadow-sm">
                         <img
                           src="/portfolio-assets/WhatsApp Image 2026-09-13 at 19.42.18 (1).jpeg"
-                          alt="Product photography framing"
+                          alt={ui.photoAlt2}
                           className="w-full h-44 object-cover rounded-xl border border-[var(--c-ink)]/10"
                         />
                         <span className="font-mono-code text-[11px] text-[var(--c-ink)]/70 block mt-2 px-1">
@@ -219,7 +219,7 @@ export const InternshipExperiencePage: React.FC = () => {
                   <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 mb-3 bg-white">
                     <img
                       src="/portfolio-assets/Screenshot 2026-09-13 at 6.31.18 PM.png"
-                      alt="Aadiya Jewels Desktop Website Hero Banner"
+                      alt={ui.banner1Alt}
                       className="w-full h-auto object-cover"
                     />
                   </div>
@@ -234,7 +234,7 @@ export const InternshipExperiencePage: React.FC = () => {
                     <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 mb-3 bg-white">
                       <img
                         src="/portfolio-assets/Screenshot 2026-09-13 at 6.34.14 PM.png"
-                        alt="Collection promotional banner"
+                        alt={ui.banner2Alt}
                         className="w-full h-auto object-cover"
                       />
                     </div>
@@ -247,7 +247,7 @@ export const InternshipExperiencePage: React.FC = () => {
                     <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 mb-3 bg-white">
                       <img
                         src="/portfolio-assets/Screenshot 2026-09-13 at 6.31.58 PM.png"
-                        alt="Shopify product listing layout"
+                        alt={ui.banner3Alt}
                         className="w-full h-auto object-cover"
                       />
                     </div>

@@ -15,8 +15,6 @@ export const projectThree = defineType({
         { name: 'subtitle', title: 'Subtitle', type: 'string' },
         { name: 'tagline', title: 'Tagline', type: 'string' },
         { name: 'conceptSubtitle', title: 'Concept Subtitle', type: 'string' },
-        { name: 'timeline', title: 'Timeline', type: 'string' },
-        { name: 'accentColor', title: 'Accent Color', type: 'string' },
         { name: 'bottomStatement', title: 'Bottom Statement', type: 'string' },
         { name: 'heroImage', title: 'Hero Image', type: 'image', options: { hotspot: true } },
         { name: 'heroCaption', title: 'Hero Caption', type: 'string' },
@@ -44,9 +42,7 @@ export const projectThree = defineType({
       fields: [
         { name: 'pageLabel', title: 'Page Label', type: 'string' },
         { name: 'headerTag', title: 'Header Tag', type: 'string' },
-        { name: 'title', title: 'Title', type: 'text', rows: 2 },
         { name: 'subtitle', title: 'Subtitle', type: 'text', rows: 3 },
-        { name: 'scriptCallout', title: 'Script Callout', type: 'string' },
         {
           name: 'quadrants',
           title: 'Quadrants',
@@ -102,7 +98,6 @@ export const projectThree = defineType({
           title: 'Prototype',
           type: 'object',
           fields: [
-            { name: 'title', title: 'Title', type: 'string' },
             { name: 'badge', title: 'Badge', type: 'string' },
             { name: 'tagline', title: 'Tagline', type: 'string' },
             { name: 'coreProposition', title: 'Core Proposition', type: 'string' },
@@ -113,7 +108,7 @@ export const projectThree = defineType({
 
     defineField({
       name: 'page4FeedbackAndIteration',
-      title: 'Page 4 — Feedback & Iteration',
+      title: 'Page 4 — Feedback → Iteration → Impact',
       type: 'object',
       fields: [
         { name: 'whatIHeard', title: 'What I Heard', type: 'array', of: [{ type: 'string' }] },

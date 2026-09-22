@@ -127,7 +127,7 @@ export const ProjectThreePage: React.FC = () => {
             {/* Section Header */}
             <div className="max-w-4xl mb-10">
               <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2">
-                PAGE 2 — {p3.page2SurveyInsights.pageLabel} // {p3.page2SurveyInsights.headerTag}
+                {u.p2LabelPrefix}{p3.page2SurveyInsights.pageLabel}{u.p2LabelSeparator}{p3.page2SurveyInsights.headerTag}
               </span>
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] leading-tight mb-4 whitespace-pre-line">
                 {u.page2Headline1}
@@ -516,7 +516,7 @@ export const ProjectThreePage: React.FC = () => {
               <div className="mt-8 rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-white max-h-48 flex items-center justify-center p-2">
                 <img
                   src="/portfolio-assets/Screenshot 2026-09-18 at 8.44.29 PM.png"
-                  alt="Feedback Iteration Impact Flow"
+                  alt={u.feedbackAlt}
                   className="max-h-40 w-auto object-contain"
                 />
               </div>

@@ -19,7 +19,6 @@ export const projectsSummary = defineType({
             { name: 'title', title: 'Title', type: 'string' },
             { name: 'category', title: 'Category', type: 'string' },
             { name: 'discipline', title: 'Discipline', type: 'string' },
-            { name: 'year', title: 'Year', type: 'string' },
             { name: 'tagline', title: 'Tagline', type: 'string' },
             { name: 'accentColor', title: 'Accent Color', type: 'string' },
             { name: 'rotation', title: 'Rotation', type: 'string' },

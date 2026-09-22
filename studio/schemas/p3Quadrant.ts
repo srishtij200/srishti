@@ -45,9 +45,6 @@ export const p3Quadrant = defineType({
       type: 'array',
       of: [{ type: 'string' }],
     }),
-    defineField({ name: 'notepadImage', title: 'Notepad Image', type: 'image', options: { hotspot: true } }),
-    defineField({ name: 'notepadCaption', title: 'Notepad Caption', type: 'string' }),
-    defineField({ name: 'frameworkSentence', title: 'Framework Sentence', type: 'string' }),
     defineField({
       name: 'flow',
       title: 'Flow',
@@ -72,7 +69,6 @@ export const p3Quadrant = defineType({
     }),
     defineField({ name: 'natureImage', title: 'Nature Image', type: 'image', options: { hotspot: true } }),
     defineField({ name: 'natureCaption', title: 'Nature Caption', type: 'string' }),
-    defineField({ name: 'takeaway', title: 'Takeaway', type: 'string' }),
     defineField({
       name: 'skills',
       title: 'Skills',

@@ -16,11 +16,12 @@ import { SkillsPage } from './pages/SkillsPage';
 import { ContactPage } from './pages/ContactPage';
 import { ambientSound } from './utils/ambientAudio';
 import { hasSanity, hydrateFromSanity, isSectionVisible } from './lib/sanity';
+import { portfolioData } from './data/portfolioData';
 
 function HiddenSection() {
   return (
     <div className="min-h-[40vh] flex items-center justify-center">
-      <p className="font-serif-display italic text-lg text-[var(--c-ink)]/60">This section is hidden in Site Settings.</p>
+      <p className="font-serif-display italic text-lg text-[var(--c-ink)]/60">{portfolioData.ui.site.hiddenSectionText}</p>
     </div>
   );
 }

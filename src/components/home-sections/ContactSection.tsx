@@ -78,7 +78,7 @@ export const ContactSection: React.FC = () => {
               className="flex items-center justify-center gap-3 font-mono-code text-lg font-bold text-[var(--c-ink)] border-b border-[var(--c-ink)]/30 hover:border-[var(--c-ink)]"
             >
               <Linkedin className="w-6 h-6 text-[var(--c-ink)]/60 shrink-0" />
-              <span>LinkedIn — {contact.socials[0].handle}</span>
+              <span>{contact.socials[0].name} — {contact.socials[0].handle}</span>
             </motion.a>
           )}
         </div>

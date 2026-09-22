@@ -7,10 +7,8 @@ export const bio = defineType({
   fields: [
     defineField({ name: 'name', title: 'Name', type: 'string' }),
     defineField({ name: 'degree', title: 'Degree', type: 'string' }),
-    defineField({ name: 'institution', title: 'Institution', type: 'string' }),
     defineField({ name: 'year', title: 'Year', type: 'string' }),
     defineField({ name: 'location', title: 'Location', type: 'string' }),
-    defineField({ name: 'tagline', title: 'Tagline', type: 'string' }),
     defineField({ name: 'statement', title: 'Statement', type: 'text', rows: 3 }),
     defineField({ name: 'secondaryStatement', title: 'Secondary Statement', type: 'text', rows: 4 }),
     defineField({

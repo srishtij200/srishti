@@ -58,10 +58,8 @@ export const portfolioData = {
   student: {
     name: "Srishti Jain",
     degree: "Fashion Communication & Visual Merchandising",
-    institution: "Design & Fashion Studies",
     year: "Class of 2026",
     location: "Mumbai / New Delhi",
-    tagline: "Marketing Management, Visual Merchandising & Fashion Entrepreneurship",
     statement: "Translating brand philosophies into tangible retail environments, market-tested products, and high-impact digital experiences.",
     secondaryStatement: "My body of work spans industry internship at fine jewellery brand Aadiya Jewels, marketing management and category expansion for UNIQLO, visual merchandising for Cover Story, and founding an athleisure startup from consumer pain points to physical MVP.",
     specializations: [
@@ -77,12 +75,9 @@ export const portfolioData = {
   internship: {
     company: "Aadiya Jewels",
     role: "Marketing and E-Commerce Intern",
-    period: "Internship Term",
-    location: "Studio & Digital Operations",
     overview: "Worked across creative social media content production and end-to-end e-commerce management. Handled everything from planning, shooting, editing, and publishing video content to website banners, product listings, and digital merchandising on Shopify.",
     
     page1SocialMedia: {
-      title: "PAGE 1 — SOCIAL MEDIA",
       intro: "During my internship at Aadiya Jewels, I worked on creating and managing social media content for the brand. From planning content to shooting, editing and publishing, I was involved in taking ideas from concept to live content.",
       whatIWorkedOn: [
         { id: "01", title: "Content Creation", desc: "Brainstorming reel concepts, product styling hooks, and jewellery aesthetic storytelling." },
@@ -103,7 +98,6 @@ export const portfolioData = {
     },
 
     page2Ecommerce: {
-      title: "PAGE 2 — E-COMMERCE",
       intro: "Alongside social media, worked on the brand’s e-commerce presence by creating website banners, uploading and organising products on Shopify, and developing digital product catalogues with images, descriptions and tags.",
       whatIWorkedOn: [
         { id: "01", title: "Website Banners", desc: "Designing desktop and mobile homepage hero banners and seasonal collection promotional graphics." },
@@ -156,7 +150,6 @@ export const portfolioData = {
       title: "A new dimension of life wear : UNIQLO Fragrance",
       category: "Category Extension & Marketing Strategy",
       discipline: "Brand Strategy, STP, 7Ps, BCG, Packaging & Product Design",
-      year: "2025",
       tagline: "Translating brand philosophy into a new product category & strategic market plan.",
       accentColor: "#C9FF8C",
       rotation: "rotate-1",
@@ -175,7 +168,6 @@ export const portfolioData = {
       title: "Visual Merchandising — Cover Story",
       category: "Window Display & In-Store Experience",
       discipline: "Spatial Design, Floral Sculpture, Iridescent Fabrication, VM Principles",
-      year: "2025",
       tagline: "Future Florals: A blooming garden re-imagined through a futuristic, iridescent lens.",
       accentColor: "#F4B6D4",
       rotation: "-rotate-1",
@@ -194,7 +186,6 @@ export const portfolioData = {
       title: "Fashion Start-Up — Athleisure Hybrid",
       category: "Consumer Research & Physical MVP",
       discipline: "Observation, Survey Insights, Material Sourcing, MVP Prototyping",
-      year: "2025–2026",
       tagline: "Structured × Relaxed: Athleisure engineered for transition between gym and everyday life.",
       accentColor: "#AFC8FF",
       rotation: "rotate-1",
@@ -215,8 +206,7 @@ export const portfolioData = {
       subtitle: "UNIQLO Fragrance Category Extension",
       brand: "UNIQLO",
       discipline: "Marketing Strategy & Brand Extension",
-      timeline: "Strategic Research & Capstone",
-      accentColor: "#C9FF8C"
+      timeline: "Strategic Research & Capstone"
     },
     page1And2: {
       context: "Strategic evaluation of UNIQLO’s brand equity, LifeWear philosophy, and retail footprint to identify a high-margin, scalable category extension: everyday lifestyle fragrances.",
@@ -226,7 +216,6 @@ export const portfolioData = {
     // PAGE 2: FROM BRIEF TO CONCEPT
     page2BriefToConcept: {
       pageLabel: "PAGE 02",
-      headerTag: "UNIQLO FRAGRANCES // MARKETING MANAGEMENT PROJECT",
       title: "FROM BRIEF TO CONCEPT",
       subtitle: "How I turned a category-expansion brief into a fragrance concept.",
       quadrant01: {
@@ -261,11 +250,6 @@ export const portfolioData = {
       quadrant03: {
         number: "03",
         title: "HOW I CAME UP WITH THE CONCEPT",
-        flow: [
-          { step: "UNIQLO'S LIFE WEAR", desc: "Simple + Functional + Japanese Minimalism", isLogo: true },
-          { step: "What if Life Wear could be experienced through another sense?", desc: "", isQuestion: true },
-          { step: "FRAGRANCE", desc: "Nature-inspired Japanese scents", isHighlight: true }
-        ],
         takeaway: "I saw an opportunity to extend UNIQLO's idea of everyday living from something we wear to something we experience.",
         natureTitle: "INSPIRED BY JAPANESE NATURE",
         naturePillars: ["Purity", "Calm", "Balance", "Harmony"],
@@ -282,11 +266,11 @@ export const portfolioData = {
         title: "SKILLS I APPLIED",
         lead: "I combined my marketing knowledge with creative thinking to bring the concept to life.",
         skills: [
-          { title: "RESEARCH", subtitle: "Market & competitor investigation", icon: "Search" },
-          { title: "STRATEGIC THINKING", subtitle: "STP • 7Ps • BCG • Ansoff", icon: "Target" },
-          { title: "CREATIVE THINKING", subtitle: "Concept & fragrance development", icon: "Lightbulb" },
-          { title: "BRAND THINKING", subtitle: "Extending UNIQLO's identity", icon: "Tag" },
-          { title: "VISUAL COMMUNICATION", subtitle: "Packaging & presentation", icon: "Image" }
+          { title: "RESEARCH", subtitle: "Market & competitor investigation" },
+          { title: "STRATEGIC THINKING", subtitle: "STP • 7Ps • BCG • Ansoff" },
+          { title: "CREATIVE THINKING", subtitle: "Concept & fragrance development" },
+          { title: "BRAND THINKING", subtitle: "Extending UNIQLO's identity" },
+          { title: "VISUAL COMMUNICATION", subtitle: "Packaging & presentation" }
         ],
         quote: "More than just a fragrance, it's a feeling.",
         tag: "UNIQLO FRAGRANCES",
@@ -331,7 +315,6 @@ export const portfolioData = {
     // PAGE 4: FROM CONCEPT TO CONSUMER
     page4ConceptToConsumer: {
       pageLabel: "PAGE 04",
-      headerTag: "UNIQLO FRAGRANCES // CONSUMER VALIDATION",
       title: "FROM CONCEPT TO CONSUMER",
       subtitle: "WE DIDN'T JUST CREATE IT, WE TESTED IT.",
       testPhotos: [
@@ -357,11 +340,11 @@ export const portfolioData = {
         }
       ],
       processSteps: [
-        { label: "SHOW", icon: "Eye" },
-        { label: "LET THEM EXPERIENCE", icon: "Users" },
-        { label: "ASK", icon: "MessageSquare" },
-        { label: "OBSERVE", icon: "BarChart2" },
-        { label: "LEARN", icon: "Lightbulb" }
+        { label: "SHOW" },
+        { label: "LET THEM EXPERIENCE" },
+        { label: "ASK" },
+        { label: "OBSERVE" },
+        { label: "LEARN" }
       ],
       processDescription: "We presented the fragrance concepts and samples to consumers to understand their reactions, preferences and perception of the proposed category.",
       keyInsights: [
@@ -397,7 +380,6 @@ export const portfolioData = {
     // PAGE 5: FROM IDEA TO IMPACT
     page5IdeaToImpact: {
       pageLabel: "PAGE 05",
-      headerTag: "UNIQLO FRAGRANCES // MARKETING MANAGEMENT PROJECT",
       title: "FROM IDEA TO IMPACT",
       subheadline: "What I learned through the project",
       learnings: [
@@ -405,29 +387,25 @@ export const portfolioData = {
           num: "01",
           name: "RESEARCH",
           detail: "I learned to look at the market, consumer and competition before developing a concept.",
-          image: "/portfolio-assets/project-1/page5_research_papers.png",
-          icon: "Search"
+          image: "/portfolio-assets/project-1/page5_research_papers.png"
         },
         {
           num: "02",
           name: "STRATEGY",
           detail: "I learned to connect a creative idea with STP, 7Ps, BCG and market planning.",
-          image: "/portfolio-assets/project-1/page5_strategy_notebook.png",
-          icon: "Target"
+          image: "/portfolio-assets/project-1/page5_strategy_notebook.png"
         },
         {
           num: "03",
           name: "CREATIVE THINKING",
           detail: "I learned to translate a brand philosophy into a new product and visual identity.",
-          image: "/portfolio-assets/project-1/page5_creative_fuji.png",
-          icon: "Lightbulb"
+          image: "/portfolio-assets/project-1/page5_creative_fuji.png"
         },
         {
           num: "04",
           name: "BRAND THINKING",
           detail: "I learned that a new category must still feel connected to the original brand.",
-          image: "/portfolio-assets/project-1/page5_brand_bag.png",
-          icon: "Award"
+          image: "/portfolio-assets/project-1/page5_brand_bag.png"
         }
       ],
       quoteBanner: {
@@ -457,11 +435,11 @@ export const portfolioData = {
         ]
       },
       skillsDeveloped: [
-        { name: "Research", icon: "Search" },
-        { name: "Strategic Thinking", icon: "Target" },
-        { name: "Creative Thinking", icon: "Lightbulb" },
-        { name: "Brand Thinking", icon: "Award" },
-        { name: "Visual Communication", icon: "Image" }
+        { name: "Research" },
+        { name: "Strategic Thinking" },
+        { name: "Creative Thinking" },
+        { name: "Brand Thinking" },
+        { name: "Visual Communication" }
       ]
     }
   },
@@ -474,8 +452,7 @@ export const portfolioData = {
       tagline: "A flowering garden translated through a futuristic, iridescent lens.",
       brand: "Cover Story",
       season: "Spring / Summer",
-      conceptName: "Future Florals",
-      accentColor: "#F4B6D4"
+      conceptName: "Future Florals"
     },
     page2Brief: {
       pageLabel: "02 / 05",
@@ -646,8 +623,6 @@ export const portfolioData = {
       subtitle: "ATHLEISURE WEAR BRAND",
       tagline: "MODEST • VERSATILE • EVERYDAY",
       conceptSubtitle: "Athleisure Hybrid: Structured × Relaxed",
-      timeline: "Concept to Physical Prototype",
-      accentColor: "#AFC8FF",
       bottomStatement: "Designed to move beyond the gym.",
       heroImage: "/portfolio-assets/Screenshot 2026-09-18 at 7.51.59 PM.png",
       heroCaption: "Athera athleisure — built for gym, café, airport and everyday",
@@ -661,10 +636,8 @@ export const portfolioData = {
     page2SurveyInsights: {
       pageLabel: "02 / 04",
       headerTag: "ATHIRA",
-      title: "FROM AN OBSERVATION TO AN OPPORTUNITY",
       subtitle:
         "I saw an opportunity to create athleisure that could move beyond the gym, combining comfort, style and versatility for everyday life.",
-      scriptCallout: "One outfit.\nMultiple moments.",
       quadrants: [
         {
           number: "01",
@@ -722,10 +695,7 @@ export const portfolioData = {
             "INSIGHTS",
             "OPPORTUNITY",
             "ATHIRA"
-          ],
-          notepadImage: "/portfolio-assets/IMG_1559.PNG",
-          notepadCaption: "Comfort & style — observation notepad",
-          frameworkSentence: "One outfit.\nMultiple moments."
+          ]
         },
         {
           number: "03",
@@ -760,8 +730,7 @@ export const portfolioData = {
             "Product Thinking"
           ],
           natureImage: "/portfolio-assets/IMG_4453.jpg",
-          natureCaption: "Lifestyle — walking the daily moments",
-          takeaway: "One outfit.\nMultiple moments."
+          natureCaption: "Lifestyle — walking the daily moments"
         },
         {
           number: "04",
@@ -819,7 +788,6 @@ export const portfolioData = {
         colorNote: "Custom-dyed colour palette for effortless daily styling."
       },
       prototype: {
-        title: "03 Final Prototype",
         badge: "PHYSICAL MVP",
         tagline: "STRUCTURED × RELAXED",
         coreProposition: "MADE FOR MULTIPLE MOMENTS"
@@ -894,7 +862,6 @@ export const portfolioData = {
     email: "srishtijain2012@gmail.com",
     phone: "9350894666",
     location: "New Delhi, India",
-    availability: "Available for Visual Merchandising, E-Commerce Styling, and Fashion Marketing Roles",
     socials: [
       { name: "LinkedIn", handle: "Srishti Jain", url: "https://www.linkedin.com/in/srishti-jain-263074228" }
     ]
@@ -916,7 +883,6 @@ export const portfolioData = {
       hero: {
         headlineFirst: "Srishti's",
         headlineSecond: "Portfolio",
-        ctaLabel: "Explore Selected Works",
         paragraphs: [
           "I'm a Fashion & Lifestyle Business Management student with a background in Business Administration, passionate about the space where creativity meets strategy. My academic journey has helped me build a strong understanding of business, while my interest in fashion has shaped the way I look at brands, trends, and consumer experiences.",
           "I enjoy exploring branding, marketing, visual merchandising, trend forecasting, and product development, bringing a fresh and visual perspective to every idea. I'm an observant and emotionally intuitive person who finds inspiration in people, places, and new experiences. I love travelling, discovering new perspectives, and constantly learning along the way."
@@ -989,6 +955,10 @@ export const portfolioData = {
       nextCta: "View Internship"
     },
 
+    site: {
+      hiddenSectionText: "This section is hidden in Site Settings."
+    },
+
     contact: {
       breadcrumbHome: "HOME",
       breadcrumbCurrent: "CORRESPONDENCE & INQUIRIES",
@@ -1049,6 +1019,8 @@ export const portfolioData = {
       reel2Desc: "Highlighting brilliance, luxury finishes, and craftsmanship through video capture.",
       photoCaption1: "Macro Jewellery Styling",
       photoCaption2: "Product Photography Framing",
+      photoAlt1: "Product still photography shot on set for Aadiya Jewels",
+      photoAlt2: "Macro jewellery styling close-up during content shoot",
       workedOnLabel: "What I Worked On",
       skillsLabel: "Skills Applied",
       sectionEcomTitle: "E-Commerce & My Learning",
@@ -1056,8 +1028,11 @@ export const portfolioData = {
       bannersHeader: "Website Banners & Storefront Visuals Designed for Aadiya Jewels",
       banner1Title: "E-Commerce Desktop Hero Banner",
       banner1Desc: "Designed for seasonal homepage campaign",
+      banner1Alt: "Aadiya Jewels Desktop Website Hero Banner",
       banner2Title: "Jewellery Collection Category Banner",
+      banner2Alt: "Jewellery Collection Category Banner artwork",
       banner3Title: "Shopify Product Listing & Catalogue Management",
+      banner3Alt: "Shopify product listing and catalogue screenshot preview",
       learningsLabel: "WHAT I GAINED",
       learningsTitle: "Learnings of Internship",
       learnings: [
@@ -1082,7 +1057,7 @@ export const portfolioData = {
       title: "Internship Learnings",
       intro:
         "Detailed breakdown of my 4 core learning outcomes from the marketing and e-commerce residency at Aadiya Jewels, bridging creative content with practical business deadlines.",
-      backLabel: "← Back to Page 1 & Page 2 Overview",
+      backLabel: "Back to Internship Experience",
       outcomePrefix: "OUTCOME",
       brandTag: "AADIYA JEWELS",
       verifiedLabel: "Verified in production & store management",
@@ -1121,6 +1096,7 @@ export const portfolioData = {
       contextHeader: "CONTEXT & STRATEGIC OPPORTUNITY",
       marketImage: "/portfolio-assets/02_market_trends.jpg",
       marketCaption: "Market Analysis & Accessible Fragrance Opportunity Gap",
+      marketImageAlt: "Market Trends Analysis",
       briefHeader: "THE STRATEGIC BRIEF",
       alignedNote: "Aligned with UNIQLO LifeWear core philosophy & global store architecture",
       p2SlideTag: "CATEGORY EXPANSION",
@@ -1147,6 +1123,11 @@ export const portfolioData = {
       p4TestHeader: "THE TEST",
       p4ProcessHeader: "THE PROCESS",
       p4InsightsHeader: "KEY INSIGHTS",
+      storefrontAlt: "UNIQLO Storefront",
+      opportunityAlt: "Market Trends + Consumer Insights + Brand Gap = Opportunity",
+      japaneseNatureAlt: "Mount Fuji with Cherry Blossoms",
+      bottleSetAlt: "4 Fragrance Bottles: Hana, Mizu, Kaze, Sora",
+      bannerBottleAlt: "Hana Fragrance Bottle",
       p4SynthesisLabel: "STRATEGIC SYNTHESIS",
       p5HeaderBrand: "UNIQLO FRAGRANCES",
       p5HeaderSub: "MARKETING MANAGEMENT PROJECT",
@@ -1182,6 +1163,8 @@ export const portfolioData = {
       colourBoardCaption: "Spring/Summer Colour Harmony & Iridescent Accents",
       behindPageTag: "PAGE 4 — FABRICATION & ASSEMBLY",
       behindTitle: "Behind the Display",
+      heroEnvAlt: "Future Florals in-store display environment",
+      portraitAlt: "Future Florals process portrait",
       behindIntro: "5-step progression from raw holographic sheets to spatial environmental installation.",
       processNotePrefix: "Process Note:",
       stepImages: [
@@ -1230,6 +1213,9 @@ export const portfolioData = {
       p4HeardTitle: "WHAT I HEARD",
       p4TaughtTitle: "WHAT THIS TAUGHT ME",
       p4LoopHeader: "FEEDBACK → ITERATION → IMPACT",
+      feedbackAlt: "Feedback Iteration Impact Flow",
+      p2LabelPrefix: "PAGE 2 — ",
+      p2LabelSeparator: " // ",
       p4FeedbackLabel: "FEEDBACK",
       p4IterationLabel: "ITERATION",
       p4ImpactLabel: "IMPACT",

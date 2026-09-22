@@ -202,7 +202,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 <div className="rounded-2xl overflow-hidden border-[1.5px] border-[var(--c-ink)]/20 paper-shadow-sm">
                   <img
                     src={vm.page2Brief.heroImage.src}
-                    alt="Future Florals in-store display environment"
+                    alt={u.heroEnvAlt}
                     className="w-full h-auto object-cover max-h-[440px]"
                   />
                   <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60 bg-white block text-center py-1.5 px-2">
@@ -435,7 +435,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-white paper-shadow-sm">
                     <img
                       src={vm.page5SkillsAndPrinciples.quoteBanner.image}
-                      alt="Future Florals process portrait"
+                      alt={u.portraitAlt}
                       className="w-full h-auto object-cover max-h-[300px]"
                     />
                     <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60 bg-white block text-center py-1.5 px-2">

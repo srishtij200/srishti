@@ -15,7 +15,6 @@ export const projectMarketing = defineType({
         { name: 'brand', title: 'Brand', type: 'string' },
         { name: 'discipline', title: 'Discipline', type: 'string' },
         { name: 'timeline', title: 'Timeline', type: 'string' },
-        { name: 'accentColor', title: 'Accent Color', type: 'string' },
       ],
     }),
     defineField({
@@ -31,11 +30,10 @@ export const projectMarketing = defineType({
     // PAGE 2: FROM BRIEF TO CONCEPT
     defineField({
       name: 'page2BriefToConcept',
-      title: 'Page 2 — From Brief to Concept',
+      title: 'Page 2 — Category Expansion',
       type: 'object',
       fields: [
         { name: 'pageLabel', title: 'Page Label', type: 'string' },
-        { name: 'headerTag', title: 'Header Tag', type: 'string' },
         { name: 'title', title: 'Title', type: 'string' },
         { name: 'subtitle', title: 'Subtitle', type: 'string' },
         {
@@ -84,23 +82,6 @@ export const projectMarketing = defineType({
           fields: [
             { name: 'number', title: 'Number', type: 'string' },
             { name: 'title', title: 'Title', type: 'string' },
-            {
-              name: 'flow',
-              title: 'Flow',
-              type: 'array',
-              of: [
-                {
-                  type: 'object',
-                  fields: [
-                    { name: 'step', title: 'Step', type: 'string' },
-                    { name: 'desc', title: 'Description', type: 'text', rows: 2 },
-                    { name: 'isLogo', title: 'Is Logo', type: 'boolean' },
-                    { name: 'isQuestion', title: 'Is Question', type: 'boolean' },
-                    { name: 'isHighlight', title: 'Is Highlight', type: 'boolean' },
-                  ],
-                },
-              ],
-            },
             { name: 'takeaway', title: 'Takeaway', type: 'text', rows: 3 },
             { name: 'natureTitle', title: 'Nature Title', type: 'string' },
             { name: 'naturePillars', title: 'Nature Pillars', type: 'array', of: [{ type: 'string' }] },
@@ -141,7 +122,6 @@ export const projectMarketing = defineType({
                   fields: [
                     { name: 'title', title: 'Title', type: 'string' },
                     { name: 'subtitle', title: 'Subtitle', type: 'string' },
-                    { name: 'icon', title: 'Icon', type: 'string' },
                   ],
                 },
               ],
@@ -156,7 +136,7 @@ export const projectMarketing = defineType({
 
     defineField({
       name: 'page3DesignDecisions',
-      title: 'Page 3 — Design Decisions',
+      title: 'Page 3 — Core Rationale & Packaging',
       type: 'array',
       of: [
         {
@@ -183,11 +163,10 @@ export const projectMarketing = defineType({
 
     defineField({
       name: 'page4ConceptToConsumer',
-      title: 'Page 4 — From Concept to Consumer',
+      title: 'Page 4 — Test, Process & Insights',
       type: 'object',
       fields: [
         { name: 'pageLabel', title: 'Page Label', type: 'string' },
-        { name: 'headerTag', title: 'Header Tag', type: 'string' },
         { name: 'title', title: 'Title', type: 'string' },
         { name: 'subtitle', title: 'Subtitle', type: 'string' },
         {
@@ -214,7 +193,6 @@ export const projectMarketing = defineType({
               type: 'object',
               fields: [
                 { name: 'label', title: 'Label', type: 'string' },
-                { name: 'icon', title: 'Icon', type: 'string' },
               ],
             },
           ],
@@ -243,11 +221,10 @@ export const projectMarketing = defineType({
 
     defineField({
       name: 'page5IdeaToImpact',
-      title: 'Page 5 — From Idea to Impact',
+      title: 'Page 5 — Commercial Pipeline',
       type: 'object',
       fields: [
         { name: 'pageLabel', title: 'Page Label', type: 'string' },
-        { name: 'headerTag', title: 'Header Tag', type: 'string' },
         { name: 'title', title: 'Title', type: 'string' },
         { name: 'subheadline', title: 'Subheadline', type: 'string' },
         {
@@ -262,7 +239,6 @@ export const projectMarketing = defineType({
                 { name: 'name', title: 'Name', type: 'string' },
                 { name: 'detail', title: 'Detail', type: 'text', rows: 3 },
                 { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
-                { name: 'icon', title: 'Icon', type: 'string' },
               ],
             },
           ],
@@ -308,7 +284,6 @@ export const projectMarketing = defineType({
               type: 'object',
               fields: [
                 { name: 'name', title: 'Name', type: 'string' },
-                { name: 'icon', title: 'Icon', type: 'string' },
               ],
             },
           ],

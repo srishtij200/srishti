@@ -115,7 +115,7 @@ export const ProjectMarketingPage: React.FC = () => {
               <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] p-2">
                 <img
                   src={u.marketImage}
-                  alt="Market Trends Analysis"
+                  alt={u.marketImageAlt}
                   className="w-full h-auto object-cover rounded-lg"
                 />
                 <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60 block mt-2 text-center">
@@ -203,7 +203,7 @@ export const ProjectMarketingPage: React.FC = () => {
                   <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
                     <img
                       src={p2.quadrant01.image}
-                      alt="UNIQLO Storefront"
+                      alt={u.storefrontAlt}
                       className="w-full h-48 sm:h-56 object-cover"
                     />
                   </div>
@@ -267,7 +267,7 @@ export const ProjectMarketingPage: React.FC = () => {
                       <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] p-1">
                         <img
                           src={p2.quadrant02.notepadImage}
-                          alt="Market Trends + Consumer Insights + Brand Gap = Opportunity"
+                          alt={u.opportunityAlt}
                           className="w-full h-auto object-cover rounded-lg shadow-sm"
                         />
                       </div>
@@ -365,7 +365,7 @@ export const ProjectMarketingPage: React.FC = () => {
                       <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
                         <img
                           src={p2.quadrant03.natureImage}
-                          alt="Mount Fuji with Cherry Blossoms"
+                          alt={u.japaneseNatureAlt}
                           className="w-full h-28 object-cover"
                         />
                       </div>
@@ -453,7 +453,7 @@ export const ProjectMarketingPage: React.FC = () => {
                   <div className="rounded-lg overflow-hidden border border-[var(--c-ink)]/15">
                     <img
                       src={p2.quadrant04.bottlesImage}
-                      alt="4 Fragrance Bottles: Hana, Mizu, Kaze, Sora"
+                      alt={u.bottleSetAlt}
                       className="w-full h-28 sm:h-32 object-cover"
                     />
                   </div>
@@ -805,7 +805,7 @@ export const ProjectMarketingPage: React.FC = () => {
                   <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-[var(--c-bg)] max-w-[200px]">
                     <img
                       src={p5.quoteBanner.bottleImage}
-                      alt="Hana Fragrance Bottle"
+                      alt={u.bannerBottleAlt}
                       className="w-full h-auto object-cover"
                     />
                     <div className="font-mono-code text-[10px] text-center py-1 text-[var(--c-ink)]/60 bg-white">

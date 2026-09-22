@@ -608,8 +608,7 @@ export const portfolioData = {
           text: "I saw an opportunity to create athleisure that could move beyond the gym, combining comfort, style and versatility for everyday life.",
           images: [
             {
-              label: "FITTED SILHOUETTES",
-              image: "/portfolio-assets/IMG_2187.jpg"
+              label: "FITTED SILHOUETTES"
             },
             {
               label: "LIMITED VERSATILITY",

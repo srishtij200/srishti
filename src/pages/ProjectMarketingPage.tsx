@@ -19,7 +19,7 @@ import {
   ArrowRight, 
   ArrowDown 
 } from 'lucide-react';
-import { FlowerMark, WashiTape } from '../components/CustomDoodles';
+import { FlowerMark } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectMarketingPage: React.FC = () => {
@@ -50,14 +50,10 @@ export const ProjectMarketingPage: React.FC = () => {
         {/* PAGE 1: COVER, CONTEXT & BRIEF                                            */}
         {/* ========================================================================= */}
         <section id="page-1" className="space-y-12 mb-20 scroll-mt-24">
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative overflow-hidden">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#C9FF8C" width="w-32" />
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] paper-shadow-sm">
+          <div className="relative">
+            <div className="grid grid-cols-1 gap-8 items-center">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)]">
                   <FlowerMark size={14} />
                   <span>{u.coverBadge}</span>
                 </div>
@@ -86,45 +82,20 @@ export const ProjectMarketingPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Fragrance Concept Image Hero */}
-              <div className="lg:col-span-5">
-                <div className="bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-4 paper-shadow">
-                  <img
-                    src={u.heroImage}
-                    alt={u.heroImageAlt}
-                    className="w-full h-auto object-cover rounded-xl border border-[var(--c-ink)]/15"
-                  />
-                  <div className="font-mono-code text-[11px] text-[var(--c-ink)]/70 text-center mt-2">
-                    {u.heroCaption}
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-8 bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl paper-shadow">
+            <div className="border-t border-[var(--c-ink)]/20 pt-6">
               <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)]/60 block mb-3">
                 {u.contextHeader}
               </span>
-              <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed mb-6">
+              <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed">
                 {pm.page1And2.context}
               </p>
-
-              {/* Market Trends Chart Image */}
-              <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] p-2">
-                <img
-                  src={u.marketImage}
-                  alt={u.marketImageAlt}
-                  className="w-full h-auto object-cover rounded-lg"
-                />
-                <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60 block mt-2 text-center">
-                  {u.marketCaption}
-                </span>
-              </div>
             </div>
 
-            <div className="p-8 bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl paper-shadow flex flex-col justify-between">
+            <div className="border-t border-[var(--c-ink)]/20 pt-6 flex flex-col justify-between">
               <div>
                 <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)]/60 block mb-3">
                   {u.briefHeader}
@@ -145,11 +116,7 @@ export const ProjectMarketingPage: React.FC = () => {
         {/* PAGE 2: FROM BRIEF TO CONCEPT (Exact 4 Quadrants: 01, 02, 03, 04)         */}
         {/* ========================================================================= */}
         <section id="page-2" className="mb-20 scroll-mt-24">
-          <div className="bg-[#FAF8F5] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-6 sm:p-12 lg:p-14 paper-shadow-lg relative">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#AFC8FF" width="w-28" />
-            </div>
-
+          <div className="relative">
             {/* Slide Top Header Bar */}
             <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-[var(--c-ink)]/15 mb-10 gap-4">
               <div>
@@ -183,7 +150,7 @@ export const ProjectMarketingPage: React.FC = () => {
               {/* ------------------------------------------------------------- */}
               {/* QUADRANT 01: PROJECT BRIEF                                    */}
               {/* ------------------------------------------------------------- */}
-              <div className="bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 sm:p-8 paper-shadow flex flex-col justify-between">
+              <div className="border-t-2 border-[var(--c-ink)]/20 pt-6 flex flex-col justify-between">
                 <div>
                   <div className="flex items-baseline gap-3 mb-4">
                     <span className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)] font-bold">
@@ -199,16 +166,8 @@ export const ProjectMarketingPage: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="relative pt-2">
-                  <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
-                    <img
-                      src={p2.quadrant01.image}
-                      alt={u.storefrontAlt}
-                      className="w-full h-48 sm:h-56 object-cover"
-                    />
-                  </div>
-                  {/* Handwritten Script Callout */}
-                  <div className="absolute -bottom-4 right-4 sm:right-6 bg-white/95 backdrop-blur-sm px-4 py-1.5 rounded-lg border border-[var(--c-ink)]/30 shadow-md rotate-[-3deg]">
+                <div className="pt-2">
+                  <div className="border-l-2 border-[var(--c-ink)]/30 pl-4">
                     <span className="font-serif-display italic text-base sm:text-lg text-[var(--c-ink)] font-bold">
                       "{p2.quadrant01.scriptCallout}"
                     </span>
@@ -219,7 +178,7 @@ export const ProjectMarketingPage: React.FC = () => {
               {/* ------------------------------------------------------------- */}
               {/* QUADRANT 02: RESEARCH & INVESTIGATION                         */}
               {/* ------------------------------------------------------------- */}
-              <div className="bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 sm:p-8 paper-shadow flex flex-col justify-between">
+              <div className="border-t-2 border-[var(--c-ink)]/20 pt-6 flex flex-col justify-between">
                 <div>
                   <div className="flex items-baseline gap-3 mb-3">
                     <span className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)] font-bold">
@@ -234,13 +193,13 @@ export const ProjectMarketingPage: React.FC = () => {
                     {p2.quadrant02.lead}
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-start mb-6">
+                  <div className="grid grid-cols-1 gap-4 items-start mb-6">
                     {/* Left: 3 Pillars */}
-                    <div className="sm:col-span-8 space-y-3">
+                    <div className="space-y-3">
                       {p2.quadrant02.pillars.map((pillar, idx) => {
                         const IconComponent = idx === 0 ? TrendingUp : idx === 1 ? Users : Target;
                         return (
-                          <div key={idx} className="p-3 bg-[var(--c-bg)] border border-[var(--c-ink)]/15 rounded-xl">
+                          <div key={idx} className="border-t border-[var(--c-ink)]/20 pt-3">
                             <div className="flex items-center gap-2 mb-1.5">
                               <div className="w-5 h-5 rounded-full bg-white border border-[var(--c-ink)]/20 flex items-center justify-center">
                                 <IconComponent className="w-3 h-3 text-[var(--c-ink)]" />
@@ -262,16 +221,6 @@ export const ProjectMarketingPage: React.FC = () => {
                       })}
                     </div>
 
-                    {/* Right: Notepad Opportunity Image */}
-                    <div className="sm:col-span-4">
-                      <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] p-1">
-                        <img
-                          src={p2.quadrant02.notepadImage}
-                          alt={u.opportunityAlt}
-                          className="w-full h-auto object-cover rounded-lg shadow-sm"
-                        />
-                      </div>
-                    </div>
                   </div>
                 </div>
 
@@ -295,7 +244,7 @@ export const ProjectMarketingPage: React.FC = () => {
               {/* ------------------------------------------------------------- */}
               {/* QUADRANT 03: HOW I CAME UP WITH THE CONCEPT                   */}
               {/* ------------------------------------------------------------- */}
-              <div className="bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 sm:p-8 paper-shadow flex flex-col justify-between">
+              <div className="border-t-2 border-[var(--c-ink)]/20 pt-6 flex flex-col justify-between">
                 <div>
                   <div className="flex items-baseline gap-3 mb-4">
                     <span className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)] font-bold">
@@ -309,7 +258,7 @@ export const ProjectMarketingPage: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start mb-6">
                     {/* Flow Column */}
                     <div className="space-y-2.5">
-                      <div className="p-3 bg-[var(--c-bg)] border border-[var(--c-ink)]/20 rounded-xl">
+                      <div className="border-t border-[var(--c-ink)]/20 pt-3">
                         <div className="flex items-center gap-2 mb-1">
                           <span className="px-1.5 py-0.5 bg-red-600 text-white font-bold text-[10px] rounded tracking-wider">
                             {u.p2Flow.brandChip}
@@ -327,7 +276,7 @@ export const ProjectMarketingPage: React.FC = () => {
                         <ArrowDown className="w-4 h-4 text-[var(--c-ink)]/40" />
                       </div>
 
-                      <div className="p-3 bg-[var(--c-bg)] border border-[var(--c-ink)]/20 rounded-xl text-center">
+                      <div className="border-t border-[var(--c-ink)]/20 pt-3 text-center">
                         <p className="font-serif-display italic text-xs sm:text-sm text-[var(--c-ink)] leading-snug">
                           "{u.p2Flow.question}"
                         </p>
@@ -337,7 +286,7 @@ export const ProjectMarketingPage: React.FC = () => {
                         <ArrowDown className="w-4 h-4 text-[var(--c-ink)]/40" />
                       </div>
 
-                      <div className="p-3 bg-red-50 border border-red-200 rounded-xl">
+                      <div className="border-t border-red-300 pt-3">
                         <span className="font-mono-code text-xs font-bold text-red-900 block mb-0.5">
                           {u.p2Flow.fragranceName}
                         </span>
@@ -360,14 +309,6 @@ export const ProjectMarketingPage: React.FC = () => {
                             </span>
                           ))}
                         </div>
-                      </div>
-
-                      <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
-                        <img
-                          src={p2.quadrant03.natureImage}
-                          alt={u.japaneseNatureAlt}
-                          className="w-full h-28 object-cover"
-                        />
                       </div>
 
                       {/* 4 Variant Palette Swatches */}
@@ -396,7 +337,7 @@ export const ProjectMarketingPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-3 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15 font-body text-xs text-[var(--c-ink)]/85 leading-relaxed">
+                <div className="border-t border-[var(--c-ink)]/20 pt-3 font-body text-xs text-[var(--c-ink)]/85 leading-relaxed">
                   {p2.quadrant03.takeaway}
                 </div>
               </div>
@@ -404,7 +345,7 @@ export const ProjectMarketingPage: React.FC = () => {
               {/* ------------------------------------------------------------- */}
               {/* QUADRANT 04: SKILLS I APPLIED                                 */}
               {/* ------------------------------------------------------------- */}
-              <div className="bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 sm:p-8 paper-shadow flex flex-col justify-between">
+              <div className="border-t-2 border-[var(--c-ink)]/20 pt-6 flex flex-col justify-between">
                 <div>
                   <div className="flex items-baseline gap-3 mb-3">
                     <span className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)] font-bold">
@@ -424,7 +365,7 @@ export const ProjectMarketingPage: React.FC = () => {
                     {p2.quadrant04.skills.map((sk, sIdx) => {
                       const IconComp = sIdx === 0 ? Search : sIdx === 1 ? Target : sIdx === 2 ? Lightbulb : sIdx === 3 ? Tag : ImageIcon;
                       return (
-                        <div key={sIdx} className="p-2.5 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15 text-center flex flex-col items-center">
+                        <div key={sIdx} className="border-t border-[var(--c-ink)]/20 pt-3 text-center flex flex-col items-center">
                           <div className="w-8 h-8 rounded-full bg-white border border-[var(--c-ink)]/20 flex items-center justify-center mb-1.5 shadow-xs">
                             <IconComp className="w-4 h-4 text-[var(--c-ink)]" />
                           </div>
@@ -440,22 +381,14 @@ export const ProjectMarketingPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Bottom Showcase Card */}
-                <div className="rounded-xl border border-[var(--c-ink)]/20 overflow-hidden bg-[#FAF8F5] p-3">
-                  <div className="flex items-center justify-between mb-2">
+                <div className="pt-2">
+                  <div className="flex items-center justify-between gap-3 border-t border-[var(--c-ink)]/20 pt-3">
                     <span className="font-serif-display italic text-xs text-[var(--c-ink)]/90">
                       "{p2.quadrant04.quote}"
                     </span>
-                    <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60 font-bold">
+                    <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60 font-bold shrink-0">
                       {p2.quadrant04.tag}
                     </span>
-                  </div>
-                  <div className="rounded-lg overflow-hidden border border-[var(--c-ink)]/15">
-                    <img
-                      src={p2.quadrant04.bottlesImage}
-                      alt={u.bottleSetAlt}
-                      className="w-full h-28 sm:h-32 object-cover"
-                    />
                   </div>
                 </div>
               </div>
@@ -468,10 +401,7 @@ export const ProjectMarketingPage: React.FC = () => {
         {/* PAGE 3: DESIGN DECISIONS & 4 VARIANTS                                     */}
         {/* ========================================================================= */}
         <section id="page-3" className="mb-20 scroll-mt-24">
-          <div className="bg-[#FFFFFF] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-8 sm:p-14 paper-shadow-lg relative">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#C9FF8C" width="w-28" />
-            </div>
+          <div className="relative">
 
             <div className="max-w-4xl mb-8">
               <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2">
@@ -485,12 +415,12 @@ export const ProjectMarketingPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-10">
-              <div className="lg:col-span-7 space-y-4">
+            <div className="grid grid-cols-1 gap-8 items-start mb-10">
+              <div className="space-y-4">
                 {pm.page3DesignDecisions.map((item) => (
                   <div
                     key={item.number}
-                    className="p-5 bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl flex flex-col sm:flex-row sm:items-baseline justify-between gap-4"
+                    className="border-t border-[var(--c-ink)]/20 pt-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-4"
                   >
                     <div className="flex items-baseline gap-4">
                       <span className="font-mono-code text-base font-bold text-[var(--c-ink)] bg-[var(--c-highlight)] w-8 h-8 rounded-full border border-[var(--c-ink)] flex items-center justify-center shrink-0">
@@ -507,29 +437,11 @@ export const ProjectMarketingPage: React.FC = () => {
                 ))}
               </div>
 
-              {/* 4 Variants Bottle Packaging Graphic */}
-              <div className="lg:col-span-5">
-                <div className="bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-4 paper-shadow">
-                  <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-white mb-2">
-                    <img
-                      src={u.p3Image}
-                      alt={u.p3ImageAlt}
-                      className="w-full h-auto object-cover"
-                    />
-                  </div>
-                  <div className="font-mono-code text-xs font-bold text-[var(--c-ink)] text-center pt-1">
-                    {u.p3ImageCaption}
-                  </div>
-                  <div className="font-mono-code text-[11px] text-[var(--c-ink)]/60 text-center">
-                    {u.p3ImageSub}
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Strategic Frameworks Summary */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 border-t border-[var(--c-ink)]/15">
-              <div className="p-4 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15">
+              <div className="border-t border-[var(--c-ink)]/20 pt-3">
                 <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-1">
                   {u.strategyStpLabel}
                 </span>
@@ -538,7 +450,7 @@ export const ProjectMarketingPage: React.FC = () => {
                 </p>
               </div>
 
-              <div className="p-4 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15">
+              <div className="border-t border-[var(--c-ink)]/20 pt-3">
                 <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-1">
                   {u.strategy7psLabel}
                 </span>
@@ -547,7 +459,7 @@ export const ProjectMarketingPage: React.FC = () => {
                 </p>
               </div>
 
-              <div className="p-4 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15">
+              <div className="border-t border-[var(--c-ink)]/20 pt-3">
                 <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-1">
                   {u.strategyBcgLabel}
                 </span>
@@ -563,10 +475,7 @@ export const ProjectMarketingPage: React.FC = () => {
         {/* PAGE 4: FROM CONCEPT TO CONSUMER (Exact 3-Column Architecture & Banner)   */}
         {/* ========================================================================= */}
         <section id="page-4" className="mb-20 scroll-mt-24">
-          <div className="bg-[#FAF8F5] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-6 sm:p-12 lg:p-14 paper-shadow-lg relative">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#F4B6D4" width="w-28" />
-            </div>
+          <div className="relative">
 
             {/* Slide Header Bar */}
             <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
@@ -587,21 +496,14 @@ export const ProjectMarketingPage: React.FC = () => {
               {/* ------------------------------------------------------------- */}
               {/* COLUMN 1: THE TEST (2x2 Photo Grid)                           */}
               {/* ------------------------------------------------------------- */}
-              <div className="lg:col-span-5 bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow">
+              <div className="lg:col-span-5">
                 <h3 className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
                   {u.p4TestHeader}
                 </h3>
 
                 <div className="grid grid-cols-2 gap-4">
                   {p4.testPhotos.map((photo, pIdx) => (
-                    <div key={pIdx} className="space-y-1.5">
-                      <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-[var(--c-bg)] aspect-4/5">
-                        <img
-                          src={photo.src}
-                          alt={photo.caption}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                    <div key={pIdx} className="border-t border-[var(--c-ink)]/20 pt-3">
                       <span className="font-mono-code text-xs font-bold text-[var(--c-ink)] block leading-tight">
                         {photo.caption}
                       </span>
@@ -616,7 +518,7 @@ export const ProjectMarketingPage: React.FC = () => {
               {/* ------------------------------------------------------------- */}
               {/* COLUMN 2: THE PROCESS (Funnel Flow)                           */}
               {/* ------------------------------------------------------------- */}
-              <div className="lg:col-span-3 bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow flex flex-col justify-between">
+              <div className="lg:col-span-3 flex flex-col justify-between">
                 <div>
                   <h3 className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
                     {u.p4ProcessHeader}
@@ -627,7 +529,7 @@ export const ProjectMarketingPage: React.FC = () => {
                       const StepIcon = sIdx === 0 ? Eye : sIdx === 1 ? Users : sIdx === 2 ? MessageSquare : sIdx === 3 ? BarChart2 : Lightbulb;
                       return (
                         <React.Fragment key={sIdx}>
-                          <div className="p-3 bg-[var(--c-bg)] border border-[var(--c-ink)]/20 rounded-xl flex items-center gap-3">
+                          <div className="border-t border-[var(--c-ink)]/20 pt-3 flex items-center gap-3">
                             <div className="w-7 h-7 rounded-full bg-white border border-[var(--c-ink)]/20 flex items-center justify-center shrink-0">
                               <StepIcon className="w-3.5 h-3.5 text-[var(--c-ink)]" />
                             </div>
@@ -656,7 +558,7 @@ export const ProjectMarketingPage: React.FC = () => {
               {/* ------------------------------------------------------------- */}
               {/* COLUMN 3: KEY INSIGHTS (4 Colored Cards)                      */}
               {/* ------------------------------------------------------------- */}
-              <div className="lg:col-span-4 bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow">
+              <div className="lg:col-span-4">
                 <h3 className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
                   {u.p4InsightsHeader}
                 </h3>
@@ -665,11 +567,7 @@ export const ProjectMarketingPage: React.FC = () => {
                   {p4.keyInsights.map((insight, inIdx) => (
                     <div
                       key={inIdx}
-                      className="p-4 rounded-xl border transition-transform hover:-translate-y-0.5 duration-200"
-                      style={{
-                        backgroundColor: insight.bg,
-                        borderColor: insight.border
-                      }}
+                      className="border-t border-[var(--c-ink)]/20 pt-3"
                     >
                       <span className="font-mono-code text-xs font-bold text-[var(--c-ink)] uppercase tracking-wider block mb-1">
                         {insight.title}
@@ -685,7 +583,7 @@ export const ProjectMarketingPage: React.FC = () => {
             </div>
 
             {/* Bottom Statement Banner */}
-            <div className="bg-[#EFECE6] border-[1.5px] border-[var(--c-ink)]/20 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="border-t-2 border-[var(--c-ink)]/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left">
                 <span className="font-mono-code text-[11px] uppercase tracking-widest text-[var(--c-ink)]/60 block mb-1">
                   {u.p4SynthesisLabel}
@@ -708,10 +606,7 @@ export const ProjectMarketingPage: React.FC = () => {
         {/* PAGE 5: FROM IDEA TO IMPACT (4 Pillars, Quote Banner, Journey & Skills)  */}
         {/* ========================================================================= */}
         <section id="page-5" className="mb-16 scroll-mt-24">
-          <div className="bg-[#FAF8F5] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-6 sm:p-12 lg:p-14 paper-shadow-lg relative">
-            <div className="absolute -top-3 right-12">
-              <WashiTape color="#C9FF8C" width="w-28" />
-            </div>
+          <div className="relative">
 
             {/* Slide Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-[var(--c-ink)]/15 mb-10 gap-4">
@@ -747,7 +642,7 @@ export const ProjectMarketingPage: React.FC = () => {
               {p5.learnings.map((learn, lIdx) => {
                 const LearnIcon = lIdx === 0 ? Search : lIdx === 1 ? Target : lIdx === 2 ? Lightbulb : Award;
                 return (
-                  <div key={lIdx} className="bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-5 paper-shadow flex flex-col justify-between">
+                  <div key={lIdx} className="border-t-2 border-[var(--c-ink)]/20 pt-5 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center justify-between mb-3">
                         <span className="font-serif-display text-2xl font-bold text-[var(--c-ink)]">
@@ -766,23 +661,15 @@ export const ProjectMarketingPage: React.FC = () => {
                         {learn.detail}
                       </p>
                     </div>
-
-                    <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] aspect-4/3">
-                      <img
-                        src={learn.image}
-                        alt={learn.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
                   </div>
                 );
               })}
             </div>
 
             {/* Middle Quote Banner */}
-            <div className="bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 sm:p-8 paper-shadow mb-10 relative overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                <div className="lg:col-span-8 space-y-4">
+            <div className="mb-10">
+              <div className="grid grid-cols-1 gap-6 items-center">
+                <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <span className="font-serif-display text-4xl sm:text-5xl text-[var(--c-ink)]/30 leading-none">
                       “
@@ -801,18 +688,6 @@ export const ProjectMarketingPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="lg:col-span-4 flex justify-center lg:justify-end">
-                  <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/20 bg-[var(--c-bg)] max-w-[200px]">
-                    <img
-                      src={p5.quoteBanner.bottleImage}
-                      alt={u.bannerBottleAlt}
-                      className="w-full h-auto object-cover"
-                    />
-                    <div className="font-mono-code text-[10px] text-center py-1 text-[var(--c-ink)]/60 bg-white">
-                      {u.p5BottleCaption}
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -820,7 +695,7 @@ export const ProjectMarketingPage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
 
               {/* THE JOURNEY IN ACTION (8 cols) */}
-              <div className="lg:col-span-8 bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow">
+              <div className="lg:col-span-8">
                 <div className="flex items-center justify-between mb-4 pb-2 border-b border-[var(--c-ink)]/15">
                   <h3 className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)]">
                     {p5.journeyInAction.title}
@@ -832,18 +707,11 @@ export const ProjectMarketingPage: React.FC = () => {
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {p5.journeyInAction.steps.map((step, stIdx) => (
-                    <div key={stIdx} className="space-y-2">
-                      <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] aspect-4/3 relative">
-                        <img
-                          src={step.image}
-                          alt={step.title}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-white/90 backdrop-blur-xs rounded text-[9px] font-mono-code font-bold text-[var(--c-ink)]">
-                          0{stIdx + 1}
-                        </div>
-                      </div>
-                      <span className="font-mono-code text-[11px] font-bold text-[var(--c-ink)] block text-center leading-tight">
+                    <div key={stIdx} className="border-t border-[var(--c-ink)]/20 pt-3 text-center">
+                      <span className="font-mono-code text-[10px] text-[var(--c-ink)]/50 font-bold block">
+                        0{stIdx + 1}
+                      </span>
+                      <span className="font-mono-code text-[11px] font-bold text-[var(--c-ink)] block leading-tight">
                         {step.title}
                       </span>
                     </div>
@@ -852,7 +720,7 @@ export const ProjectMarketingPage: React.FC = () => {
               </div>
 
               {/* SKILLS I DEVELOPED (4 cols) */}
-              <div className="lg:col-span-4 bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow flex flex-col justify-between">
+              <div className="lg:col-span-4 flex flex-col justify-between">
                 <div>
                   <h3 className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
                     {u.p5SkillsHeader}
@@ -864,7 +732,7 @@ export const ProjectMarketingPage: React.FC = () => {
                       return (
                         <div
                           key={skIdx}
-                          className="p-3 bg-[var(--c-bg)] border border-[var(--c-ink)]/15 rounded-xl flex items-center gap-3 transition-colors hover:bg-white"
+                          className="border-t border-[var(--c-ink)]/20 pt-3 flex items-center gap-3"
                         >
                           <div className="w-7 h-7 rounded-full bg-white border border-[var(--c-ink)]/20 flex items-center justify-center shrink-0 shadow-xs">
                             <SIcon className="w-3.5 h-3.5 text-[var(--c-ink)]" />

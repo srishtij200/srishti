@@ -196,32 +196,11 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 />
               </div>
 
-              {/* Lower Section: 3-Image Collage + Design Insight Card */}
-              <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-stretch">
-                {/* 3 Vertical Photos */}
-                <div className="sm:col-span-7 grid grid-cols-3 gap-2">
-                  {vm.page2Brief.supportingCollage.map((item, cIdx) => (
-                    <div
-                      key={cIdx}
-                      className="rounded-lg overflow-hidden border border-[var(--c-ink)]/15 shadow-xs bg-white/70 h-36 sm:h-44"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.alt}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  ))}
-                </div>
+              {/* Lower Section: Design Insight Card */}
+              <div className="grid grid-cols-1 gap-4 items-stretch">
 
                 {/* Design Insight Card */}
-                <div className="sm:col-span-5 relative rounded-xl border border-[var(--c-ink)]/15 p-4 flex flex-col justify-center bg-white/60 backdrop-blur-xs shadow-xs overflow-hidden">
-                  <img
-                    src={vm.page2Brief.designInsightBg}
-                    alt=""
-                    aria-hidden="true"
-                    className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
-                  />
+                <div className="relative rounded-xl border border-[var(--c-ink)]/15 p-4 flex flex-col justify-center bg-white/60 shadow-xs overflow-hidden">
                   <div className="relative z-10">
                     <h4 className="font-mono-code text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--c-ink)] mb-1">
                       {vm.page2Brief.designInsightTitle}

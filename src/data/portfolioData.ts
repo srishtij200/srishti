@@ -334,33 +334,13 @@ export const portfolioData = {
       subtitle: "WE DIDN'T JUST CREATE IT, WE TESTED IT.",
       testPhotos: [
         {
-          src: "/portfolio-assets/project-1/page4_product_display.png",
-          caption: "Product Display",
-          desc: "Acrylic tester riser with fragrance bottles & branding"
-        },
-        {
-          src: "/portfolio-assets/project-1/page4_consumer_interaction.png",
-          caption: "Consumer Interaction",
-          desc: "Consumers exploring tester strips and sampling aromas"
-        },
-        {
-          src: "/portfolio-assets/project-1/page4_fragrance_samples.png",
-          caption: "Fragrance Samples",
-          desc: "Structural carton prototypes and fragrance box samples"
-        },
-        {
-          src: "/portfolio-assets/project-1/page4_feedback.png",
-          caption: "Feedback",
-          desc: "Gathering direct quantitative & qualitative feedback"
-        },
-        {
           src: "/portfolio-assets/project-1/page4_testing_setup.jpeg",
-          caption: "Testing Setup",
-          desc: "Test station with prototypes, devices & feedback forms ready for consumer sessions"
+          caption: "Group Picture",
+          desc: "Our team at the testing station with prototypes & feedback forms"
         },
         {
           src: "/portfolio-assets/project-1/page4_consumer_feedback.jpeg",
-          caption: "Consumer Feedback",
+          caption: "Feedback Form",
           desc: "Completed product feedback form with ratings & written responses"
         }
       ],
@@ -424,7 +404,7 @@ export const portfolioData = {
           num: "03",
           name: "CREATIVE THINKING",
           detail: "I learned to translate a brand philosophy into a new product and visual identity.",
-          image: "/portfolio-assets/project-1/page5_creative_fuji.png"
+          image: "/portfolio-assets/project-1/page5_creative_thinking.jpeg"
         },
         {
           num: "04",

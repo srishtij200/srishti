@@ -33,7 +33,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-[var(--c-bg)] text-[var(--c-ink)] flex flex-col selection:bg-[var(--c-highlight)] selection:text-[var(--c-ink)]">
+      <div className="min-h-screen bg-[var(--c-bg)] text-[var(--c-ink)] flex flex-col selection:bg-[var(--c-warm)] selection:text-[var(--c-ink)]">
         {/* Multi-Page Route Outlet */}
         <main className="flex-1">
           <Routes>

@@ -21,7 +21,7 @@ export const ContactSection: React.FC = () => {
             <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[var(--c-ink)]">
               {sectionTitles.sectionTitleFirst}{' '}
               <span className="relative inline-block whitespace-nowrap">
-                <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-highlight)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
+                <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-warm)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
                 <span className="relative z-10 italic font-serif-display font-normal">
                   {sectionTitles.sectionTitleSecond}
                 </span>
@@ -39,7 +39,7 @@ export const ContactSection: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               href={`mailto:${contact.email}`}
-              className="flex items-center gap-3 font-mono-code text-lg text-[var(--c-ink)]/80 hover:underline underline-offset-4 decoration-[var(--c-highlight)] break-all"
+              className="flex items-center gap-3 font-mono-code text-lg text-[var(--c-ink)]/80 hover:underline underline-offset-4 decoration-[var(--c-warm)] break-all"
             >
               <Mail className="w-6 h-6 text-[var(--c-ink)]/60 shrink-0" />
               <span>{contact.email}</span>
@@ -77,7 +77,7 @@ export const ContactSection: React.FC = () => {
                 href={soc.url}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 font-mono-code text-lg text-[var(--c-ink)]/80 hover:underline underline-offset-4 decoration-[var(--c-highlight)]"
+                className="flex items-center gap-3 font-mono-code text-lg text-[var(--c-ink)]/80 hover:underline underline-offset-4 decoration-[var(--c-warm)]"
               >
                 <Linkedin className="w-6 h-6 text-[var(--c-ink)]/60 shrink-0" />
                 <span>{soc.name} — {soc.handle}</span>

@@ -7,7 +7,7 @@ export const SkillsSection: React.FC = () => {
   const section = portfolioData.ui.skills.section;
 
   return (
-    <section id="skills" className="py-20 lg:py-28 bg-[var(--c-soft)] border-b border-[var(--c-ink)]/15">
+    <section id="skills" className="py-20 lg:py-28 bg-[var(--c-warm)] border-b border-[var(--c-ink)]/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-4 border-b border-[var(--c-ink)]/10">
@@ -18,13 +18,15 @@ export const SkillsSection: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[var(--c-ink)]">
-              {section.titleFirst}{' '}
-              <span className="relative inline-block whitespace-nowrap">
-                <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-highlight)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
-                <span className="relative z-10 italic font-serif-display font-normal">
-                  {section.titleSecond}
+              {section.titleFirst}
+              {section.titleSecond ? (
+                <span className="relative inline-block whitespace-nowrap">
+                  <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-bg)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
+                  <span className="relative z-10 italic font-serif-display font-normal">
+                    {section.titleSecond}
+                  </span>
                 </span>
-              </span>
+              ) : null}
             </h2>
           </motion.div>
         </div>

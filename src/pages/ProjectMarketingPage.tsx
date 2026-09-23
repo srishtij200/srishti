@@ -83,7 +83,7 @@ export const ProjectMarketingPage: React.FC = () => {
       {/* PAGE 1: HERO (full-bleed image background, overlay text removed)       */}
       {/* Image: /portfolio-assets/project1-hero-bg.png (drop your PNG there)   */}
       {/* ========================================================================= */}
-      <section id="page-1" className="relative border-b border-[var(--c-ink)]/15 scroll-mt-24 overflow-hidden bg-[var(--c-soft)]">
+      <section id="page-1" className="relative border-b border-[var(--c-ink)]/15 scroll-mt-24 overflow-hidden bg-[var(--c-bg)]">
         {/* Hero image: uses project1-hero-bg.png when you drop it in public/portfolio-assets/,
             falls back to project1.png so the section is never blank. */}
         <img
@@ -199,7 +199,7 @@ export const ProjectMarketingPage: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
                     {p2.quadrant02.pillars.map((pillar, idx) => {
                       const IconComponent = idx === 0 ? TrendingUp : idx === 1 ? Users : Target;
-                      const bg = idx === 0 ? "#F6E7D3" : idx === 1 ? "#B7CDE2" : "#A9B5A0";
+                      const bg = idx === 0 ? "#F6E7D3" : idx === 1 ? "#C9A0A4" : "#F6E7D3";
                       return (
                         <div
                           key={idx}
@@ -263,7 +263,7 @@ export const ProjectMarketingPage: React.FC = () => {
 
                   <div className="flex-1 flex flex-col space-y-2.5">
                     {/* Stage 1 — Brand */}
-                    <div className="rounded-xl border border-[var(--c-ink)]/20 px-3.5 py-3 shadow-xs" style={{ backgroundColor: "#B7CDE2" }}>
+                    <div className="rounded-xl border border-[var(--c-ink)]/20 px-3.5 py-3 shadow-xs" style={{ backgroundColor: "#C9A0A4" }}>
                       <div className="flex items-center gap-2 mb-1">
                         <img
                           src={u.p2Flow.brandLogo}
@@ -333,7 +333,7 @@ export const ProjectMarketingPage: React.FC = () => {
                   <div className="flex flex-col gap-2.5 flex-1 justify-center">
                     {p2.quadrant04.skills.map((sk, sIdx) => {
                       const IconComp = sIdx === 0 ? Search : sIdx === 1 ? Target : sIdx === 2 ? Lightbulb : sIdx === 3 ? Tag : ImageIcon;
-                      const bg = sIdx % 2 === 0 ? "#C9A0A4" : "#B7CDE2";
+                      const bg = sIdx % 2 === 0 ? "#C9A0A4" : "#F6E7D3";
                       return (
                         <div
                           key={sIdx}
@@ -448,7 +448,7 @@ export const ProjectMarketingPage: React.FC = () => {
                   return (
                     <React.Fragment key={sIdx}>
                       <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--c-ink)]/25 bg-[var(--c-bg)] shadow-xs">
-                        <div className="w-6 h-6 rounded-full bg-[var(--c-soft)]/50 border border-[var(--c-ink)]/20 flex items-center justify-center shrink-0">
+                        <div className="w-6 h-6 rounded-full bg-[var(--c-bg)]/50 border border-[var(--c-ink)]/20 flex items-center justify-center shrink-0">
                           <StepIcon className="w-3.5 h-3.5 text-[var(--c-ink)]" />
                         </div>
                         <span className="font-mono-code text-[11px] font-bold uppercase tracking-wider text-[var(--c-ink)]">
@@ -683,7 +683,7 @@ export const ProjectMarketingPage: React.FC = () => {
       {/* ========================================================================= */}
       {/* PAGE 5: FROM IDEA TO IMPACT (4 Pillars, Quote Banner, Journey & Skills)  */}
       {/* ========================================================================= */}
-      <section id="page-5" className="bg-[var(--c-soft)] border-b border-[var(--c-ink)]/15 scroll-mt-24">
+      <section id="page-5" className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
           <div className="relative">
 

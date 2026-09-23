@@ -21,8 +21,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
   const projectsSection = ui.home.projects;
   const internshipCallout = ui.home.internship;
 
-  const heroSpecializations = hero.specializations;
-
   const homeProjectTitles: Record<string, string> = Object.fromEntries(
     projectsSection.cardTitles.map((item) => [item.id, item.title])
   );
@@ -79,21 +77,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                   ))}
                 </div>
 
-                <p className="relative z-10 font-serif-display text-xl sm:text-2xl text-[var(--c-ink)] italic leading-snug pt-2 border-l-2 border-[var(--c-highlight)] pl-4">
+                <p className="relative z-10 font-serif-display text-xl sm:text-2xl text-[var(--c-ink)] italic leading-snug pt-2 border-l-2 border-[var(--c-warm)] pl-4">
                   "{student.statement}"
                 </p>
 
                 <p className="font-serif-display text-2xl sm:text-2xl text-[var(--c-ink)] italic leading-snug pt-1">
                   {hero.signature}
                 </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {heroSpecializations.map((spec, i) => (
-                    <span key={i} className="font-mono-code text-xs px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)]/30 rounded-lg text-[var(--c-ink)]">
-                      ✦ {spec}
-                    </span>
-                  ))}
-                </div>
               </motion.div>
             </div>
 
@@ -110,11 +100,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 </div>
 
                 <div className="bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-3xl p-3 paper-shadow-lg">
-                  <img
-                    src={hero.image}
-                    alt={hero.imageAlt}
-                    className="w-full h-[420px] lg:h-[560px] object-cover rounded-2xl"
-                  />
+                  <div className="overflow-hidden rounded-2xl">
+                    <img
+                      src={hero.image}
+                      alt={hero.imageAlt}
+                      className="w-full h-[420px] lg:h-[560px] object-cover scale-[1.4] origin-top"
+                    />
+                  </div>
                 </div>
 
                 <span className="absolute -bottom-3 right-8 bg-[var(--c-ink)] text-[var(--c-bg)] font-mono-code text-xs px-3 py-1.5 rounded-full paper-shadow-sm uppercase tracking-wider">
@@ -129,14 +121,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
 
       {/* 3. THREE FEATURED PROJECTS PREVIEW */}
       {isSectionVisible('home.projects') && (
-      <section className="py-20 bg-[var(--c-warm)] border-b border-[var(--c-ink)]/15" style={{ order: sectionOrder['home.projects'] }}>
+      <section className="py-20 bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15" style={{ order: sectionOrder['home.projects'] }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-4 border-b border-[var(--c-ink)]/10">
             <div>
               <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[var(--c-ink)]">
                 {projectsSection.titleFirst}{' '}
                 <span className="relative inline-block whitespace-nowrap">
-                  <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-soft)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
+                  <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-warm)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
                   <span className="relative z-10 italic font-serif-display font-normal">
                     {projectsSection.titleSecond}
                   </span>
@@ -224,7 +216,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
 
       {/* 2. INTERNSHIP FEATURE CALLOUT */}
       {isSectionVisible('home.internship') && (
-      <section className="py-20 bg-[var(--c-highlight)] border-b border-[var(--c-ink)]/15" style={{ order: sectionOrder['home.internship'] }}>
+      <section className="py-20 bg-[var(--c-warm)] border-b border-[var(--c-ink)]/15" style={{ order: sectionOrder['home.internship'] }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative border-t-2 border-[var(--c-ink)]/20 pt-8 sm:pt-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -235,7 +227,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 <h2 className="relative z-10 font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[var(--c-ink)]">
                   {internship.company}{' '}
                   <span className="relative inline-block whitespace-nowrap">
-                    <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-warm)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
+                    <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-bg)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
                     <span className="relative z-10 italic font-serif-display font-normal">
                       {internshipCallout.titleWord}
                     </span>
@@ -260,7 +252,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 <Link
                   to="/internship/experience"
                   aria-label="View internship experience"
-                  className="group flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[var(--c-warm)] text-[var(--c-ink)] border-[1.5px] border-[var(--c-ink)] hover:bg-[var(--c-ink)] hover:text-[var(--c-warm)] transition-colors"
+                  className="group flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[var(--c-bg)] text-[var(--c-ink)] border-[1.5px] border-[var(--c-ink)] hover:bg-[var(--c-ink)] hover:text-[var(--c-bg)] transition-colors"
                 >
                   <ArrowRight className="w-10 h-10 sm:w-12 sm:h-12 group-hover:translate-x-1.5 transition-transform" />
                 </Link>

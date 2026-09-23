@@ -133,7 +133,7 @@ export const portfolioData = {
       category: "Category Extension & Marketing Strategy",
       discipline: "Brand Strategy, STP, 7Ps, BCG, Packaging & Product Design",
       tagline: "Translating brand philosophy into a new product category & strategic market plan.",
-      accentColor: "#A9B5A0",
+      accentColor: "#C9A0A4",
       rotation: "rotate-1",
       image: "/portfolio-assets/project1.png",
       tags: ["UNIQLO", "Brand Strategy", "STP & 7Ps", "Minimal Packaging", "Market Planning"],
@@ -169,7 +169,7 @@ export const portfolioData = {
       category: "Consumer Research & Physical MVP",
       discipline: "Observation, Survey Insights, Material Sourcing, MVP Prototyping",
       tagline: "Structured × Relaxed: Athleisure engineered for transition between gym and everyday life.",
-      accentColor: "#B7CDE2",
+      accentColor: "#C9A0A4",
       rotation: "rotate-1",
       image: "/portfolio-assets/project3.png",
       tags: ["Fashion Start-Up", "Consumer Pain Points", "MVP", "Lycra × Terry Cotton", "Iteration"],
@@ -272,7 +272,7 @@ export const portfolioData = {
             image: "/portfolio-assets/p1-mizu.png",
             notes: "Lotus · Matcha · Amberwood",
             mood: "Fresh · Clean · Balanced",
-            color: "#E3EEF3"
+            color: "#F6E7D3"
           },
           {
             name: "KAZE",
@@ -280,7 +280,7 @@ export const portfolioData = {
             image: "/portfolio-assets/p1-kaze.png",
             notes: "Citrus",
             mood: "Fresh · Energetic · Light",
-            color: "#EDF0E4"
+            color: "#F8E7E3"
           },
           {
             name: "SORA",
@@ -288,7 +288,7 @@ export const portfolioData = {
             image: "/portfolio-assets/p1-sora.png",
             notes: "Green tea · Bamboo · Sandalwood",
             mood: "Green · Calm · Grounded",
-            color: "#E4EFF5"
+            color: "#F6E7D3"
           }
         ]
       },
@@ -382,13 +382,13 @@ export const portfolioData = {
         {
           title: "WHAT THEY PREFERRED",
           desc: "Clean, fresh and subtle scents (especially Mizu & Kaze).",
-          bg: "#B7CDE2",
+          bg: "#C9A0A4",
           border: "#2A2E28"
         },
         {
           title: "WHAT THEY ASSOCIATED WITH UNIQLO",
           desc: "Simple, minimal, trustworthy, Japanese, everyday.",
-          bg: "#A9B5A0",
+          bg: "#F6E7D3",
           border: "#2A2E28"
         },
         {
@@ -804,7 +804,7 @@ export const portfolioData = {
       {
         name: "Business Skills",
         tag: "BUSINESS & STRATEGY",
-        color: "#A9B5A0",
+        color: "#C9A0A4",
         skills: [
           "Market Research",
           "Consumer Behaviour",
@@ -821,7 +821,7 @@ export const portfolioData = {
       {
         name: "Digital Skills",
         tag: "TOOLS & PLATFORMS",
-        color: "#B7CDE2",
+        color: "#F6E7D3",
         skills: [
           "MS Office (Word, Excel, PowerPoint)",
           "Canva",
@@ -853,19 +853,13 @@ export const portfolioData = {
 
     home: {
       hero: {
-        headlineFirst: "Srishti's",
-        headlineSecond: "Portfolio",
+        headlineFirst: "About",
+        headlineSecond: "me",
         paragraphs: [
-          "I'm a Fashion & Lifestyle Business Management student with a background in Business Administration, passionate about the space where creativity meets strategy. My academic journey has helped me build a strong understanding of business, while my interest in fashion has shaped the way I look at brands, trends, and consumer experiences.",
-          "I enjoy exploring branding, marketing, visual merchandising, trend forecasting, and product development, bringing a fresh and visual perspective to every idea. I'm an observant and emotionally intuitive person who finds inspiration in people, places, and new experiences. I love travelling, discovering new perspectives, and constantly learning along the way."
+          "I'm a Fashion & Lifestyle Business Management student with a background in Business Administration, passionate about the space where creativity meets strategy. My academic journey has helped me build a strong understanding of business, while my interest in fashion has shaped the way I look at brands, trends, and consumer experiences. I enjoy exploring branding, marketing, visual merchandising, trend forecasting, and product development, bringing a fresh and visual perspective to every idea."
         ],
         signature: "Creative at heart. Business by mindset. Always curious.",
-        specializations: [
-          "Branding",
-          "Marketing",
-          "Visual Merchandising",
-          "Trend Forecasting"
-        ],
+        specializations: [] as string[],
         badge: "Creative Producer",
         image: "/portfolio-assets/srishti-hero-portrait.jpg",
         imageAlt: "Srishti Jain — curated creative exploration"
@@ -931,8 +925,8 @@ export const portfolioData = {
     skills: {
       section: {
         eyebrow: "SKILLS",
-        titleFirst: "Skills &",
-        titleSecond: "Applied Disciplines",
+        titleFirst: "Skills",
+        titleSecond: "",
         categoryDescriptions: [
           "Strategy, analysis, and category thinking applied across marketing, retail, and product.",
           "The tools and platforms behind turning concepts into published, engaging content."

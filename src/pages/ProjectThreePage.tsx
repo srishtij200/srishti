@@ -31,7 +31,7 @@ export const ProjectThreePage: React.FC = () => {
       </div>
 
       {/* SECTION: COVER PAGE */}
-      <section className="bg-[var(--c-soft)] border-b border-[var(--c-ink)]/15 scroll-mt-24 space-y-8">
+      <section className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 space-y-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             <div className="relative">
               <div className="grid grid-cols-1 gap-8 items-center">
@@ -51,7 +51,7 @@ export const ProjectThreePage: React.FC = () => {
 
                   <div className="flex flex-wrap gap-2 font-mono-code text-xs font-bold text-[var(--c-ink)]">
                     {p3.cover.tagline.split(" • ").map((tag, tIdx) => (
-                      <span key={tIdx} className="px-3 py-1 bg-[var(--c-soft)]/25 border border-[var(--c-ink)]/25 rounded-full">
+                      <span key={tIdx} className="px-3 py-1 bg-[var(--c-bg)]/25 border border-[var(--c-ink)]/25 rounded-full">
                         {tag}
                       </span>
                     ))}
@@ -144,7 +144,7 @@ export const ProjectThreePage: React.FC = () => {
                           </div>
                         ))}
                       </div>
-                      <div className="inline-flex items-center gap-2 border-l-2 border-[var(--c-soft)] pl-4 font-serif-display italic text-sm text-[var(--c-ink)] whitespace-pre-line">
+                      <div className="inline-flex items-center gap-2 border-l-2 border-[var(--c-warm)] pl-4 font-serif-display italic text-sm text-[var(--c-ink)] whitespace-pre-line">
                         <Scissors className="w-4 h-4 shrink-0" />
                         {q.scriptCallout}
                       </div>
@@ -225,7 +225,7 @@ export const ProjectThreePage: React.FC = () => {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {q.skills!.map((s, i) => (
                           <div key={i} className="flex items-start gap-3 border-t border-[var(--c-ink)]/20 pt-3">
-                            <div className="w-9 h-9 shrink-0 rounded-lg bg-[var(--c-soft)]/30 border border-[var(--c-ink)]/25 flex items-center justify-center">
+                            <div className="w-9 h-9 shrink-0 rounded-lg bg-[var(--c-bg)]/30 border border-[var(--c-ink)]/25 flex items-center justify-center">
                               {(() => {
                                 const SkillIcon = skillIcons[s.icon] ?? Sparkles;
                                 return <SkillIcon className="w-4.5 h-4.5 text-[var(--c-ink)]" />;
@@ -251,7 +251,7 @@ export const ProjectThreePage: React.FC = () => {
         </div>
 
       {/* SECTION: DESIGN, MATERIAL & PROTOTYPE */}
-      <div className="bg-[var(--c-highlight)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
+      <div className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-4">
               {u.p3PageLabel}
@@ -394,7 +394,7 @@ export const ProjectThreePage: React.FC = () => {
                   →
                 </div>
 
-                <div className="md:col-span-1 p-5 bg-[var(--c-highlight)] border border-[var(--c-ink)] rounded-xl">
+                <div className="md:col-span-1 p-5 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-xl">
                   <span className="text-[var(--c-ink)]/60 uppercase text-[10px] block mb-1">{u.p4IterationLabel}</span>
                   <strong className="text-sm text-[var(--c-ink)]">
                     {p3.page4FeedbackAndIteration.feedbackLoop.iteration}

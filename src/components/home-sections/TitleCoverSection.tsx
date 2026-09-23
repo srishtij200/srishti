@@ -78,16 +78,16 @@ export const TitleCoverSection: React.FC = () => {
 
         {/* Thin dark purple horizontal lines flanking the name (upper-left / upper-right) */}
         <div
-          className='absolute h-px bg-[var(--c-highlight)]'
+          className='absolute h-px bg-[var(--c-bg)]'
           style={{ top: '35%', left: '20%', width: '10%', opacity: 0.9 }}
         />
         <div
-          className='absolute h-px bg-[var(--c-highlight)]'
+          className='absolute h-px bg-[var(--c-bg)]'
           style={{ top: '35%', left: '70%', width: '10%', opacity: 0.9 }}
         />
 
         {/* Small dark purple sparkle — top-center above name */}
-        <SparkleStar size='1.15cqw' color='var(--c-highlight)' style={{ left: '49.4%', top: '30.6%' }} />
+        <SparkleStar size='1.15cqw' color='var(--c-bg)' style={{ left: '49.4%', top: '30.6%' }} />
 
         {/* ===== Title — center ===== */}
         <h2
@@ -128,9 +128,9 @@ export const TitleCoverSection: React.FC = () => {
           className='absolute left-1/2 -translate-x-1/2 flex items-center'
           style={{ top: '94.2%', gap: '1.4cqw' }}
         >
-          <div className='h-px bg-[var(--c-highlight)]' style={{ width: '6cqw', opacity: 0.9 }} />
-          <SparkleStar size='1.3cqw' color='var(--c-highlight)' className='!relative' />
-          <div className='h-px bg-[var(--c-highlight)]' style={{ width: '6cqw', opacity: 0.9 }} />
+          <div className='h-px bg-[var(--c-bg)]' style={{ width: '6cqw', opacity: 0.9 }} />
+          <SparkleStar size='1.3cqw' color='var(--c-bg)' className='!relative' />
+          <div className='h-px bg-[var(--c-bg)]' style={{ width: '6cqw', opacity: 0.9 }} />
         </div>
       </div>
     </section>

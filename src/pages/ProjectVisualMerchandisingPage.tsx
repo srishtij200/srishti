@@ -79,11 +79,8 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
         />
 
         <div className="relative z-10 max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-16">
-          {/* Top Page Number & Title Header */}
+          {/* Top Title Header */}
           <div className="mb-8 max-w-3xl">
-            <span className="font-serif-display text-xs sm:text-sm tracking-[0.28em] text-[var(--c-ink)]/70 uppercase block mb-3">
-              {vm.page2Brief.pageLabel}
-            </span>
             <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl text-[var(--c-ink)] uppercase leading-[1.04] tracking-tight font-normal">
               FROM INSIGHT<br />TO CONCEPT
             </h2>
@@ -153,11 +150,11 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   {vm.page2Brief.howIReachedTheConcept.map((node, nIdx) => (
                     <React.Fragment key={nIdx}>
                       <div className="flex items-center gap-3.5">
-                        <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full overflow-hidden border border-[var(--c-ink)]/25 shadow-xs shrink-0 bg-white/70 flex items-center justify-center p-0.5">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-[var(--c-ink)]/25 shadow-xs shrink-0 bg-white/70 flex items-center justify-center p-1.5">
                           <img
                             src={node.image}
                             alt={node.label.replace('\n', ' ')}
-                            className="w-full h-full object-cover rounded-full"
+                            className="w-full h-full object-contain rounded-full"
                           />
                         </div>
                         <div className="min-w-0">

@@ -453,7 +453,7 @@ export const portfolioData = {
     page2Brief: {
       pageLabel: "02 / 05",
       title: "FROM INSIGHT TO CONCEPT",
-      subtitle: "How I translated the brand into a visual direction.",
+      subtitle: "How we translated the brand into a visual direction.",
       briefTitle: "THE BRIEF",
       briefText: "To develop a Spring/Summer visual merchandising concept for Cover Story, creating a fresh, feminine and contemporary in-store experience.",
       investigationTitle: "WHAT I INVESTIGATED",
@@ -474,7 +474,7 @@ export const portfolioData = {
           points: ["Florals", "Pastels", "Iridescence"],
         }
       ],
-      conceptFlowTitle: "HOW I REACHED THE CONCEPT",
+      conceptFlowTitle: "HOW WE REACHED THE CONCEPT",
       howIReachedTheConcept: [
         {
           order: 1,

@@ -51,7 +51,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* Breadcrumb overlay on hero image */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-14 lg:pb-20 min-h-[70vh] lg:min-h-[85vh] flex flex-col justify-start gap-4">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-14 lg:pb-20 min-h-[70vh] lg:min-h-[85vh] flex flex-col justify-center gap-4">
           <div className="flex items-center font-mono-code text-[11px] sm:text-xs uppercase tracking-widest text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
             <div className="flex items-center gap-2">
               <Link to="/" className="hover:opacity-80 flex items-center gap-1 transition-opacity">
@@ -60,8 +60,8 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               </Link>
             </div>
           </div>
-          <div className="max-w-4xl pt-8 sm:pt-12">
-            <h1 className="font-serif-display font-bold text-[var(--c-ink)] leading-[1.02] tracking-tight text-3xl sm:text-5xl lg:text-6xl drop-shadow-[0_1px_0_rgba(255,255,255,0.35)]">
+          <div className="max-w-4xl">
+            <h1 className="font-serif-display font-bold text-[var(--c-ink)] leading-[1.02] tracking-tight text-3xl sm:text-5xl lg:text-6xl drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] uppercase">
               {vm.cover.title}
             </h1>
             <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] mt-2">

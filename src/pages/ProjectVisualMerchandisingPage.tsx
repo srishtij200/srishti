@@ -228,7 +228,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               </p>
             </div>
 
-            {/* MOOD BOARD — keep heading, image + content; tags/themes removed */}
+            {/* MOOD BOARD — keep heading, image + content + tiny keywords */}
             <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-10">
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 {/* Mood Board Image - LEFT */}
@@ -244,8 +244,11 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
                     {vm.page3Boards.moodBoard.title}
                   </h2>
-                  <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug">
+                  <p className="font-body text-base sm:text-lg text-[var(--c-ink)]/85 leading-relaxed">
                     {vm.page3Boards.moodBoard.content}
+                  </p>
+                  <p className="font-mono-code text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--c-ink)]/70">
+                    {vm.page3Boards.moodBoard.keywords.join(' · ')}
                   </p>
                 </div>
               </div>
@@ -267,6 +270,9 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
                     {vm.page3Boards.colourBoard.title}
                   </h2>
+                  <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug">
+                    {(vm.page3Boards.colourBoard as { subtitle?: string }).subtitle}
+                  </p>
                   <p className="font-body text-base sm:text-lg text-[var(--c-ink)]/85 leading-relaxed">
                     {vm.page3Boards.colourBoard.content}
                   </p>

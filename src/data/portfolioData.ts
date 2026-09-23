@@ -533,8 +533,8 @@ export const portfolioData = {
       subtitle: "Mood Board",
       moodBoard: {
         title: "Mood Board",
-        content: "Soft florals, futuristic touches, endless possibilities.",
-        keywords: ["SOFT FLORALS", "FUTURISTIC TOUCHES", "ENDLESS POSSIBILITIES"],
+        content: "A soft futuristic interpretation of nature, combining delicate florals, luminous textures and reflective surfaces. The mood balances Cover Story’s feminine identity with a contemporary, forward-looking aesthetic.",
+        keywords: ["FEMININE", "DREAMY", "SOFT", "FUTURISTIC"],
         themes: [
           { name: "BEAUTY", desc: "Glossy skin and iridescent pastel makeup." },
           { name: "FLORALS", desc: "Soft pastel florals with translucent and iridescent qualities." },
@@ -542,12 +542,13 @@ export const portfolioData = {
           { name: "TEXTURE", desc: "Holographic, reflective and translucent surfaces." },
           { name: "SPACE", desc: "Soft futuristic environments with rounded architectural forms." }
         ],
-        image: "/portfolio-assets/project-2/future-florals-hero.png"
+        image: "/portfolio-assets/project-2/mood-board.jpg"
       },
       colourBoard: {
         title: "Colour Board",
-        content: "A delicate balance of soft pastels and iridescent tones, inspired by nature, reimagined for a futuristic tomorrow.",
-        image: "/portfolio-assets/project-2/future-florals-iridescent-detail.png"
+        subtitle: "A Soft Spectrum",
+        content: "Soft blush, lavender, blue and neutral tones create a light and feminine base, while holographic accents introduce the futuristic dimension. The palette was selected to keep the display cohesive, fresh and visually refined.",
+        image: "/portfolio-assets/project-2/colour-board.jpg"
       }
     },
     page4BehindTheDisplay: [

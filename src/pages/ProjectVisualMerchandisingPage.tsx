@@ -62,7 +62,8 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
           </div>
           <div className="max-w-4xl">
             <h1 className="font-serif-display font-bold text-[var(--c-ink)] leading-[1.02] tracking-tight text-3xl sm:text-5xl lg:text-6xl drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] uppercase">
-              {vm.cover.title}
+              {vm.cover.title.split(', ')[0]},<br />
+              {vm.cover.title.split(', ')[1]}
             </h1>
             <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] mt-2">
               {vm.cover.subtitle}

@@ -1076,7 +1076,7 @@ export const portfolioData = {
 
       moodThemesHeader: "MOOD IN THEMES",
 
-      behindTitle: "Behind the Display",
+      behindTitle: "FROM IDEA TO MAKING",
 
       behindIntro: "5-step progression from raw holographic sheets to spatial environmental installation.",
 

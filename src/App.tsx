@@ -6,7 +6,6 @@ import { ScrollToTop } from './components/ScrollToTop';
 import { HomePage } from './pages/HomePage';
 import { InternshipExperiencePage } from './pages/InternshipExperiencePage';
 import { InternshipLearningsPage } from './pages/InternshipLearningsPage';
-import { ProjectsOverviewPage } from './pages/ProjectsOverviewPage';
 import { ProjectMarketingPage } from './pages/ProjectMarketingPage';
 import { ProjectVisualMerchandisingPage } from './pages/ProjectVisualMerchandisingPage';
 import { ProjectThreePage } from './pages/ProjectThreePage';
@@ -41,7 +40,6 @@ export default function App() {
             <Route path="/" element={<HomePage onOpenInquiry={() => setWaitlistOpen(true)} />} />
             <Route path="/internship/experience" element={<InternshipExperiencePage />} />
             <Route path="/internship/learnings" element={<InternshipLearningsPage />} />
-            <Route path="/projects" element={isSectionVisible('home.projects') ? <ProjectsOverviewPage /> : <HiddenSection />} />
             <Route path="/projects/marketing" element={isSectionVisible('project.marketing') ? <ProjectMarketingPage /> : <HiddenSection />} />
             <Route path="/projects/visual-merchandising" element={isSectionVisible('project.vm') ? <ProjectVisualMerchandisingPage /> : <HiddenSection />} />
             <Route path="/projects/project-3" element={isSectionVisible('project.three') ? <ProjectThreePage /> : <HiddenSection />} />

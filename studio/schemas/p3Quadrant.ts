@@ -60,13 +60,6 @@ export const p3Quadrant = defineType({
         },
       ],
     }),
-    defineField({ name: 'natureTitle', title: 'Nature Title', type: 'string' }),
-    defineField({
-      name: 'naturePillars',
-      title: 'Nature Pillars',
-      type: 'array',
-      of: [{ type: 'string' }],
-    }),
             defineField({
       name: 'skills',
       title: 'Skills',
@@ -82,7 +75,5 @@ export const p3Quadrant = defineType({
         },
       ],
     }),
-    defineField({ name: 'quote', title: 'Quote', type: 'string' }),
-    defineField({ name: 'tag', title: 'Tag', type: 'string' }),
           ],
 });

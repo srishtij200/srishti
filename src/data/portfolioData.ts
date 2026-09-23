@@ -11,14 +11,10 @@ export interface P3Page2Quadrant {
   notepadCaption?: string;
   frameworkSentence?: string;
   flow?: { step: string; desc: string; isHighlight: boolean }[];
-  natureTitle?: string;
-  naturePillars?: string[];
   natureImage?: string;
   natureCaption?: string;
   takeaway?: string;
   skills?: { title: string; subtitle: string; icon: string }[];
-  quote?: string;
-  tag?: string;
   bottlesImage?: string;
   bottlesCaption?: string;
 }
@@ -382,16 +378,9 @@ export const portfolioData = {
           detail: "I learned that a new category must still feel connected to the original brand.",
         }
       ],
-      quoteBanner: {
-        quote: "A good concept is not just creative — it needs a reason, a strategy and a story.",
-        callouts: ["Simple.", "Functional.", "Meaningful."],
-      },
       journeyInAction: {
         title: "THE JOURNEY IN ACTION",
         steps: [
-          {
-            title: "FINAL PRODUCT",
-          },
           {
             title: "STORE EXPERIENCE",
           },
@@ -424,8 +413,6 @@ export const portfolioData = {
       conceptName: "Future Florals"
     },
     page2Brief: {
-      pageLabel: "02 / 05",
-      headerTag: "HOW I REACHED THE CONCEPT",
       title: "FROM INSIGHT TO CONCEPT",
       subtitle: "How I translated the brand into a visual direction.",
       briefTitle: "THE BRIEF",
@@ -457,8 +444,6 @@ export const portfolioData = {
 
     },
     page3Boards: {
-      pageLabel: "03 / 05",
-      headerTag: "COLOUR PALETTE",
       title: "THE VISUAL LANGUAGE",
       subtitle: "Mood Board",
       moodBoard: {
@@ -476,15 +461,7 @@ export const portfolioData = {
       colourBoard: {
         title: "Colour Palette",
         content: "A delicate balance of soft pastels and iridescent tones, inspired by nature, reimagined for a futuristic tomorrow.",
-        moodTag: "MOOD IN COLOURS",
-        palette: [
-          { name: "Blush Pink", hex: "#E8C5C5", desc: "Warmth, femininity and a soft, romantic feel." },
-          { name: "Lavender", hex: "#C9B9D6", desc: "Adds a dreamy, ethereal quality to the palette." },
-          { name: "Soft Blue", hex: "#B5C9DA", desc: "Represents calmness, modernity and freshness." },
-          { name: "Sage Green", hex: "#B8BCB0", desc: "Balances the palette and connects with nature." },
-          { name: "Iridescent", hex: "#B8C0D1", desc: "Creates a futuristic touch with light-reflective finishes." },
-          { name: "Neutral", hex: "#DCD4C7", desc: "Grounds the overall look and keeps it elegant." }
-        ]
+        moodTag: "MOOD IN COLOURS"
       }
     },
     page4BehindTheDisplay: [
@@ -595,8 +572,6 @@ export const portfolioData = {
       ]
     },
     page2SurveyInsights: {
-      pageLabel: "02 / 04",
-      headerTag: "ATHIRA",
       subtitle:
         "I saw an opportunity to create athleisure that could move beyond the gym, combining comfort, style and versatility for everyday life.",
       quadrants: [
@@ -679,13 +654,6 @@ export const portfolioData = {
               isHighlight: true
             }
           ],
-          natureTitle: "MY APPROACH",
-          naturePillars: [
-            "Trend Research",
-            "Consumer Insight",
-            "Market Analysis",
-            "Product Thinking"
-          ],
         },
         {
           number: "04",
@@ -718,8 +686,6 @@ export const portfolioData = {
               icon: "Target"
             }
           ],
-          quote: "One outfit.\nMultiple moments.",
-          tag: "ATHIRA",
         }
       ] as P3Page2Quadrant[]
     },
@@ -823,9 +789,7 @@ export const portfolioData = {
   // 8. UI TEXT — every hardcoded interface string, editable from Sanity
   ui: {
     nav: {
-      items: [
-        { to: "/projects", label: "Projects" }
-      ],
+      items: [] as { to: string; label: string }[],
       footerCopyrightYear: "2026"
     },
 
@@ -977,25 +941,8 @@ export const portfolioData = {
       nextCta: "Proceed to Project 1 (Marketing Management)"
     },
 
-    projectsOverview: {
-      breadcrumbHome: "HOME",
-      breadcrumbCurrent: "SELECTED PROJECTS",
-      breadcrumbTag: "FOLIO: 001–003 // CASE STUDIES",
-      badge: "CURATED WORKS ARCHIVE",
-      title: "Selected Projects",
-      intro:
-        "Three comprehensive projects investigating marketing management & brand expansion (UNIQLO), Spring/Summer visual merchandising (Cover Story), and founding an athleisure startup from consumer observation to physical MVP.",
-      caseStudyPrefix: "CASE STUDY",
-      labelBrief: "PROJECT BRIEF",
-      labelResearch: "RESEARCH",
-      labelContribution: "MY CONTRIBUTION",
-      labelKeyLearnings: "KEY LEARNINGS",
-      coreFocus: "CORE FOCUS",
-      readComplete: "Read Complete Study"
-    },
-
     projectMarketing: {
-      breadcrumbProjects: "PROJECTS",
+      breadcrumbProjects: "HOME",
       breadcrumbCurrent: "PROJECT 1 — MARKETING MANAGEMENT",
       breadcrumbTag: "UNIQLO FRAGRANCE EXTENSION",
       coverBadge: "PROJECT 1 // PAGE 01",
@@ -1008,8 +955,6 @@ export const portfolioData = {
       briefHeader: "THE STRATEGIC BRIEF",
       alignedNote: "Aligned with UNIQLO LifeWear core philosophy & global store architecture",
       p2SlideTag: "CATEGORY EXPANSION",
-      p2HeaderBrand: "UNIQLO FRAGRANCES",
-      p2HeaderSub: "MARKETING MANAGEMENT PROJECT",
       p2Flow: {
         brandChip: "UNIQLO",
         brandName: "LIFEWEAR",
@@ -1030,22 +975,18 @@ export const portfolioData = {
       p4InsightsHeader: "KEY INSIGHTS",
 
       p4SynthesisLabel: "STRATEGIC SYNTHESIS",
-      p5HeaderBrand: "UNIQLO FRAGRANCES",
-      p5HeaderSub: "MARKETING MANAGEMENT PROJECT",
-      p5Chip: "UNIQLO",
       p5PipelineTag: "4-PHASE COMMERCIAL PIPELINE",
       p5SkillsHeader: "SKILLS I DEVELOPED",
 
       p5Capstone: "Capstone Academic & Strategic Synthesis",
-      footerAll: "All Projects",
+      footerAll: "Back to Home",
       footerNext: "Next Project: Cover Story (Visual Merchandising)"
     },
 
     projectVM: {
-      breadcrumbProjects: "PROJECTS",
+      breadcrumbProjects: "HOME",
       breadcrumbCurrent: "PROJECT 2 — VISUAL MERCHANDISING",
       breadcrumbTag: "COVER STORY // FUTURE FLORALS",
-      coverBadge: "VISUAL MERCHANDISING PROJECT 2 // PAGE 1",
       metaBrandLabel: "CLIENT / BRAND:",
       metaSeasonLabel: "SEASON:",
       metaConceptLabel: "CONCEPT:",
@@ -1056,7 +997,6 @@ export const portfolioData = {
 
       moodThemesHeader: "MOOD IN THEMES",
 
-      behindPageTag: "PAGE 4 — FABRICATION & ASSEMBLY",
       behindTitle: "Behind the Display",
 
       behindIntro: "5-step progression from raw holographic sheets to spatial environmental installation.",
@@ -1069,7 +1009,7 @@ export const portfolioData = {
     },
 
     projectThree: {
-      breadcrumbProjects: "PROJECTS",
+      breadcrumbProjects: "HOME",
       breadcrumbCurrent: "PROJECT 3 — START UP",
       breadcrumbTag: "ATHLEISURE HYBRID // STRUCTURED × RELAXED",
       metaTypeLabel: "PROJECT TYPE:",
@@ -1094,8 +1034,6 @@ export const portfolioData = {
       p4TaughtTitle: "WHAT THIS TAUGHT ME",
       p4LoopHeader: "FEEDBACK → ITERATION → IMPACT",
 
-      p2LabelPrefix: "PAGE 2 — ",
-      p2LabelSeparator: " // ",
       p4FeedbackLabel: "FEEDBACK",
       p4IterationLabel: "ITERATION",
       p4ImpactLabel: "IMPACT",

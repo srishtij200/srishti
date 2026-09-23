@@ -39,8 +39,6 @@ export const projectThree = defineType({
       title: 'Page 2 — From an Observation to an Opportunity',
       type: 'object',
       fields: [
-        { name: 'pageLabel', title: 'Page Label', type: 'string' },
-        { name: 'headerTag', title: 'Header Tag', type: 'string' },
         { name: 'subtitle', title: 'Subtitle', type: 'text', rows: 3 },
         {
           name: 'quadrants',

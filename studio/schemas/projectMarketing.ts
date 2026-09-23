@@ -244,16 +244,6 @@ export const projectMarketing = defineType({
           ],
         },
         {
-          name: 'quoteBanner',
-          title: 'Quote Banner',
-          type: 'object',
-          fields: [
-            { name: 'quote', title: 'Quote', type: 'text', rows: 3 },
-            { name: 'callouts', title: 'Callouts', type: 'array', of: [{ type: 'string' }] },
-
-          ],
-        },
-        {
           name: 'journeyInAction',
           title: 'Journey in Action',
           type: 'object',

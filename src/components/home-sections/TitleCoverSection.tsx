@@ -71,7 +71,7 @@ export const TitleCoverSection: React.FC = () => {
         {/* ===== Name — top-center ===== */}
         <h1
           className='absolute left-1/2 -translate-x-1/2 font-hand text-[var(--c-ink)] whitespace-nowrap'
-          style={{ top: '30%', fontSize: '10.5cqw', lineHeight: 1 }}
+          style={{ top: '32.5%', fontSize: '10.5cqw', lineHeight: 1 }}
         >
           Srishti Jain
         </h1>
@@ -79,15 +79,15 @@ export const TitleCoverSection: React.FC = () => {
         {/* Thin dark purple horizontal lines flanking the name (upper-left / upper-right) */}
         <div
           className='absolute h-px bg-[var(--c-highlight)]'
-          style={{ top: '32.5%', left: '20%', width: '10%', opacity: 0.9 }}
+          style={{ top: '35%', left: '20%', width: '10%', opacity: 0.9 }}
         />
         <div
           className='absolute h-px bg-[var(--c-highlight)]'
-          style={{ top: '32.5%', left: '70%', width: '10%', opacity: 0.9 }}
+          style={{ top: '35%', left: '70%', width: '10%', opacity: 0.9 }}
         />
 
         {/* Small dark purple sparkle — top-center above name */}
-        <SparkleStar size='1.15cqw' color='var(--c-highlight)' style={{ left: '49.4%', top: '28.1%' }} />
+        <SparkleStar size='1.15cqw' color='var(--c-highlight)' style={{ left: '49.4%', top: '30.6%' }} />
 
         {/* ===== Title — center ===== */}
         <h2

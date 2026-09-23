@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, Sparkles, MessageSquare, TrendingUp, Scissors, Users, BarChart2, Lightbulb, Target, type LucideIcon } from 'lucide-react';
+import { ArrowLeft, Sparkles, TrendingUp, Scissors, Users, BarChart2, Lightbulb, Target, type LucideIcon } from 'lucide-react';
 import { FlowerMark } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
@@ -19,7 +19,7 @@ export const ProjectThreePage: React.FC = () => {
         {/* Top Breadcrumb */}
         <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/50 pb-4 border-b border-[var(--c-ink)]/10 mb-12">
           <div className="flex items-center gap-2">
-            <Link to="/projects" className="hover:text-[var(--c-ink)] flex items-center gap-1">
+            <Link to="/" className="hover:text-[var(--c-ink)] flex items-center gap-1">
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>{u.breadcrumbProjects}</span>
             </Link>
@@ -105,9 +105,6 @@ export const ProjectThreePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Section Header */}
             <div className="max-w-4xl mb-10">
-              <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2">
-                {u.p2LabelPrefix}{p3.page2SurveyInsights.pageLabel}{u.p2LabelSeparator}{p3.page2SurveyInsights.headerTag}
-              </span>
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] leading-tight mb-4 whitespace-pre-line">
                 {u.page2Headline1}
                 <br />
@@ -216,18 +213,6 @@ export const ProjectThreePage: React.FC = () => {
                           </div>
                         ))}
                       </div>
-                      <div>
-                        <div className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] mb-2">
-                          {q.natureTitle}
-                        </div>
-                        <div className="flex flex-wrap gap-2 mb-3">
-                          {q.naturePillars!.map((p, i) => (
-                            <span key={i} className="px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)]/30 rounded-full font-mono-code text-[10px] font-bold tracking-wider">
-                              ✦ {p}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
                     </div>
                   )}
 
@@ -256,13 +241,6 @@ export const ProjectThreePage: React.FC = () => {
                             </div>
                           </div>
                         ))}
-                      </div>
-                      <div className="inline-flex items-center gap-2 border-l-2 border-[var(--c-soft)] pl-4 font-serif-display italic text-sm text-[var(--c-ink)] whitespace-pre-line">
-                        <MessageSquare className="w-4 h-4 shrink-0" />
-                        {q.quote}
-                        <span className="font-mono-code text-[10px] font-bold bg-[var(--c-ink)] text-[var(--c-bg)] px-2 py-0.5 rounded-full not-italic">
-                          {q.tag}
-                        </span>
                       </div>
                     </div>
                   )}

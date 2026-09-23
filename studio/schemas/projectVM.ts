@@ -24,8 +24,6 @@ export const projectVM = defineType({
       title: 'Page 2 — From Insight to Concept',
       type: 'object',
       fields: [
-        { name: 'pageLabel', title: 'Page Label', type: 'string' },
-        { name: 'headerTag', title: 'Header Tag', type: 'string' },
         { name: 'title', title: 'Title', type: 'string' },
         { name: 'subtitle', title: 'Subtitle', type: 'string' },
         { name: 'briefTitle', title: 'Brief Title', type: 'string' },
@@ -72,8 +70,6 @@ export const projectVM = defineType({
       title: 'Page 3 — The Visual Language',
       type: 'object',
       fields: [
-        { name: 'pageLabel', title: 'Page Label', type: 'string' },
-        { name: 'headerTag', title: 'Header Tag', type: 'string' },
         { name: 'title', title: 'Title', type: 'string' },
         { name: 'subtitle', title: 'Subtitle', type: 'string' },
         {
@@ -108,21 +104,6 @@ export const projectVM = defineType({
             { name: 'title', title: 'Title', type: 'string' },
             { name: 'content', title: 'Content', type: 'text', rows: 2 },
             { name: 'moodTag', title: 'Mood Tag', type: 'string' },
-            {
-              name: 'palette',
-              title: 'Palette',
-              type: 'array',
-              of: [
-                {
-                  type: 'object',
-                  fields: [
-                    { name: 'name', title: 'Name', type: 'string' },
-                    { name: 'hex', title: 'Hex', type: 'string' },
-                    { name: 'desc', title: 'Description', type: 'text', rows: 2 },
-                  ],
-                },
-              ],
-            },
           ],
         },
       ],

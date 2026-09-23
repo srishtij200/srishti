@@ -268,27 +268,6 @@ export const ui = defineType({
     }),
 
     defineField({
-      name: 'projectsOverview',
-      title: 'Projects Overview Page',
-      type: 'object',
-      fields: [
-        { name: 'breadcrumbHome', title: 'Breadcrumb — Home', type: 'string' },
-        { name: 'breadcrumbCurrent', title: 'Breadcrumb — Current', type: 'string' },
-        { name: 'breadcrumbTag', title: 'Breadcrumb — Tag', type: 'string' },
-        { name: 'badge', title: 'Badge', type: 'string' },
-        { name: 'title', title: 'Title', type: 'string' },
-        { name: 'intro', title: 'Intro', type: 'text', rows: 3 },
-        { name: 'caseStudyPrefix', title: 'Case Study Prefix', type: 'string' },
-        { name: 'labelBrief', title: 'Label — Brief', type: 'string' },
-        { name: 'labelResearch', title: 'Label — Research', type: 'string' },
-        { name: 'labelContribution', title: 'Label — Contribution', type: 'string' },
-        { name: 'labelKeyLearnings', title: 'Label — Key Learnings', type: 'string' },
-        { name: 'coreFocus', title: 'Core Focus', type: 'string' },
-        { name: 'readComplete', title: 'Read Link Label', type: 'string' },
-      ],
-    }),
-
-    defineField({
       name: 'projectMarketing',
       title: 'Project 1 — Marketing Page',
       type: 'object',
@@ -306,8 +285,6 @@ export const ui = defineType({
         { name: 'briefHeader', title: 'Brief Header', type: 'string' },
         { name: 'alignedNote', title: 'Aligned Note', type: 'string' },
         { name: 'p2SlideTag', title: 'Page 2 Slide Tag', type: 'string' },
-        { name: 'p2HeaderBrand', title: 'Page 2 Header — Brand', type: 'string' },
-        { name: 'p2HeaderSub', title: 'Page 2 Header — Subtitle', type: 'string' },
         defineField({
           name: 'p2Flow',
           title: 'Page 2 Flow Labels',
@@ -333,9 +310,6 @@ export const ui = defineType({
         { name: 'p4InsightsHeader', title: 'Page 4 — Insights Header', type: 'string' },
 
         { name: 'p4SynthesisLabel', title: 'Page 4 — Synthesis Label', type: 'string' },
-        { name: 'p5HeaderBrand', title: 'Page 5 Header — Brand', type: 'string' },
-        { name: 'p5HeaderSub', title: 'Page 5 Header — Subtitle', type: 'string' },
-        { name: 'p5Chip', title: 'Page 5 Chip', type: 'string' },
         { name: 'p5PipelineTag', title: 'Page 5 Pipeline Tag', type: 'string' },
         { name: 'p5SkillsHeader', title: 'Page 5 Skills Header', type: 'string' },
 
@@ -353,7 +327,6 @@ export const ui = defineType({
         { name: 'breadcrumbProjects', title: 'Breadcrumb — Projects', type: 'string' },
         { name: 'breadcrumbCurrent', title: 'Breadcrumb — Current', type: 'string' },
         { name: 'breadcrumbTag', title: 'Breadcrumb — Tag', type: 'string' },
-        { name: 'coverBadge', title: 'Cover Badge', type: 'string' },
         { name: 'metaBrandLabel', title: 'Meta — Brand Label', type: 'string' },
         { name: 'metaSeasonLabel', title: 'Meta — Season Label', type: 'string' },
         { name: 'metaConceptLabel', title: 'Meta — Concept Label', type: 'string' },
@@ -364,7 +337,6 @@ export const ui = defineType({
 
         { name: 'moodThemesHeader', title: 'Mood Themes Header', type: 'string' },
 
-        { name: 'behindPageTag', title: 'Behind — Page Tag', type: 'string' },
         { name: 'behindTitle', title: 'Behind — Title', type: 'string' },
 
         { name: 'behindIntro', title: 'Behind — Intro', type: 'string' },
@@ -405,8 +377,6 @@ export const ui = defineType({
         { name: 'p4TaughtTitle', title: 'Page 4 — Taught Title', type: 'string' },
         { name: 'p4LoopHeader', title: 'Page 4 — Loop Header', type: 'string' },
 
-        { name: 'p2LabelPrefix', title: 'Page 2 — Label Prefix', type: 'string' },
-        { name: 'p2LabelSeparator', title: 'Page 2 — Label Separator', type: 'string' },
         { name: 'p4FeedbackLabel', title: 'Page 4 — Feedback Label', type: 'string' },
         { name: 'p4IterationLabel', title: 'Page 4 — Iteration Label', type: 'string' },
         { name: 'p4ImpactLabel', title: 'Page 4 — Impact Label', type: 'string' },

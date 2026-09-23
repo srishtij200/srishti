@@ -36,7 +36,7 @@ export const ProjectMarketingPage: React.FC = () => {
         {/* Top Breadcrumb */}
         <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/50 pb-4 border-b border-[var(--c-ink)]/10 mb-12">
           <div className="flex items-center gap-2">
-            <Link to="/projects" className="hover:text-[var(--c-ink)] flex items-center gap-1 transition-colors">
+            <Link to="/" className="hover:text-[var(--c-ink)] flex items-center gap-1 transition-colors">
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>{u.breadcrumbProjects}</span>
             </Link>
@@ -135,16 +135,6 @@ export const ProjectMarketingPage: React.FC = () => {
                 <p className="font-serif-display text-lg sm:text-xl text-[var(--c-ink)]/80 italic mt-1">
                   {p2.subtitle}
                 </p>
-              </div>
-
-              <div className="text-right flex flex-col items-start md:items-end">
-                <div className="w-16 h-[1.5px] bg-[var(--c-ink)]/30 mb-2 hidden md:block"></div>
-                <span className="font-mono-code text-[11px] font-bold tracking-widest text-[var(--c-ink)] uppercase">
-                  {u.p2HeaderBrand}
-                </span>
-                <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60 uppercase tracking-wider">
-                  {u.p2HeaderSub}
-                </span>
               </div>
             </div>
 
@@ -632,19 +622,6 @@ export const ProjectMarketingPage: React.FC = () => {
                 </p>
               </div>
 
-              <div className="flex items-center gap-3">
-                <div className="text-right">
-                  <span className="font-mono-code text-xs font-bold tracking-wider text-[var(--c-ink)] block uppercase">
-                    {u.p5HeaderBrand}
-                  </span>
-                  <span className="font-mono-code text-[10px] text-[var(--c-ink)]/60 uppercase">
-                    {u.p5HeaderSub}
-                  </span>
-                </div>
-                <span className="px-2 py-1 bg-[var(--c-warm)] text-[var(--c-ink)] font-bold text-xs rounded">
-                  {u.p5Chip}
-                </span>
-              </div>
             </div>
 
             {/* Top 4 Learning Pillars */}
@@ -674,31 +651,6 @@ export const ProjectMarketingPage: React.FC = () => {
                   </div>
                 );
               })}
-            </div>
-
-            {/* Middle Quote Banner */}
-            <div className="mb-10">
-              <div className="grid grid-cols-1 gap-6 items-center">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <span className="font-serif-display text-4xl sm:text-5xl text-[var(--c-ink)]/30 leading-none">
-                      “
-                    </span>
-                    <p className="font-serif-display text-xl sm:text-3xl text-[var(--c-ink)] italic leading-snug">
-                      {p5.quoteBanner.quote}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-4 pl-6 font-serif-display italic text-sm sm:text-base text-[var(--c-ink)]/70 font-semibold">
-                    {p5.quoteBanner.callouts.map((co, cIdx) => (
-                      <span key={cIdx} className="after:content-['•'] after:ml-4 last:after:content-none">
-                        {co}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-              </div>
             </div>
 
             {/* Bottom Two Columns: Journey in Action & Skills I Developed */}
@@ -768,7 +720,7 @@ export const ProjectMarketingPage: React.FC = () => {
             {/* Next Project Footer Link */}
             <div className="flex justify-between items-center pt-6 border-t border-[var(--c-ink)]/15 font-mono-code text-xs">
               <Link
-                to="/projects"
+                to="/"
                 className="hover:text-[var(--c-ink)] flex items-center gap-1.5 text-[var(--c-ink)]/70"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />

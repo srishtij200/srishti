@@ -19,7 +19,6 @@ import {
   Scale, 
   type LucideIcon 
 } from 'lucide-react';
-import { FlowerMark } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectVisualMerchandisingPage: React.FC = () => {
@@ -37,7 +36,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
         {/* Top Breadcrumb */}
         <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/50 pb-4 border-b border-[var(--c-ink)]/10 mb-12">
           <div className="flex items-center gap-2">
-            <Link to="/projects" className="hover:text-[var(--c-ink)] flex items-center gap-1">
+            <Link to="/" className="hover:text-[var(--c-ink)] flex items-center gap-1">
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>{u.breadcrumbProjects}</span>
             </Link>
@@ -54,11 +53,6 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             <div className="relative">
               <div className="grid grid-cols-1 gap-8 items-center">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)]">
-                    <FlowerMark size={14} />
-                    <span>{u.coverBadge}</span>
-                  </div>
-
                   <h1 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[var(--c-ink)] leading-[1.02] tracking-tight">
                     {vm.cover.title}
                   </h1>
@@ -97,9 +91,6 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Slide Header */}
             <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
-              <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-2">
-                {vm.page2Brief.pageLabel} <span className="px-1">•</span> {vm.page2Brief.headerTag}
-              </div>
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] tracking-tight">
                 {vm.page2Brief.title}
               </h2>
@@ -190,9 +181,6 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Slide Header */}
             <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
-              <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-2">
-                {vm.page3Boards.pageLabel} <span className="px-1">•</span> {vm.page3Boards.headerTag}
-              </div>
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] tracking-tight">
                 {vm.page3Boards.title}
               </h2>
@@ -262,20 +250,6 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
 
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-4 border-t border-[var(--c-ink)]/15">
-                {vm.page3Boards.colourBoard.palette.map((color, idx) => (
-                  <div key={idx} className="border-t border-[var(--c-ink)]/20 pt-3 text-center">
-                    <div
-                      className="w-full h-16 rounded-lg border border-[var(--c-ink)]/20 mb-2"
-                      style={{ backgroundColor: color.hex }}
-                    />
-                    <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]">{color.name}</div>
-                    <div className="font-body text-[10px] text-[var(--c-ink)]/65 leading-tight mt-1">
-                      {color.desc}
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
@@ -284,9 +258,6 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
       <div className="bg-[var(--c-warm)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             <div className="max-w-4xl mb-8">
-              <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2">
-                {u.behindPageTag}
-              </span>
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] mb-2">
                 {u.behindTitle}
               </h2>

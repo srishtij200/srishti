@@ -451,35 +451,82 @@ export const portfolioData = {
       conceptName: "Future Florals"
     },
     page2Brief: {
+      pageLabel: "02 / 05",
       title: "FROM INSIGHT TO CONCEPT",
       subtitle: "How I translated the brand into a visual direction.",
       briefTitle: "THE BRIEF",
       briefText: "To develop a Spring/Summer visual merchandising concept for Cover Story, creating a fresh, feminine and contemporary in-store experience.",
+      investigationTitle: "WHAT I INVESTIGATED",
       whatIInvestigated: [
         {
-          pillar: "1. BRAND IDENTITY",
+          name: "BRAND IDENTITY",
+          image: "/portfolio-assets/project-2/brand-identity-pink-floral.png",
           points: ["Feminine", "Contemporary", "Effortlessly Elegant"],
         },
         {
-          pillar: "2. SEASONAL DIRECTION",
+          name: "SEASONAL DIRECTION",
+          image: "/portfolio-assets/project-2/seasonal-direction-floral-iridescent.png",
           points: ["Spring/Summer", "Lightness", "Freshness"],
         },
         {
-          pillar: "3. VISUAL INSPIRATION",
+          name: "VISUAL INSPIRATION",
+          image: "/portfolio-assets/project-2/visual-inspiration-iridescent-texture.png",
           points: ["Florals", "Pastels", "Iridescence"],
         }
       ],
-      howIReachedTheConcept: [
-        { step: "COVER STORY", isHighlight: false },
-        { step: "FEMININITY + SOFTNESS", isHighlight: false },
-        { step: "FLORAL INSPIRATION", isHighlight: false },
-        { step: "IRIDESCENCE + LIGHT", isHighlight: false },
-        { step: "FUTURE FLORALS", isHighlight: true }
-      ],
       conceptFlowTitle: "HOW I REACHED THE CONCEPT",
+      howIReachedTheConcept: [
+        {
+          order: 1,
+          label: "COVER STORY",
+          image: "/portfolio-assets/project-2/concept-cover-story.png",
+          isHighlight: false
+        },
+        {
+          order: 2,
+          label: "FEMININITY +\nSOFTNESS",
+          image: "/portfolio-assets/project-2/concept-femininity-softness.png",
+          isHighlight: false
+        },
+        {
+          order: 3,
+          label: "FLORAL\nINSPIRATION",
+          image: "/portfolio-assets/project-2/concept-floral-inspiration.png",
+          isHighlight: false
+        },
+        {
+          order: 4,
+          label: "IRIDESCENCE +\nLIGHT",
+          image: "/portfolio-assets/project-2/concept-iridescence-light.png",
+          isHighlight: false
+        },
+        {
+          order: 5,
+          label: "FUTURE FLORALS",
+          image: "/portfolio-assets/project-2/concept-future-florals.png",
+          isHighlight: true
+        }
+      ],
       conceptSummary: "I reimagined a blooming garden through a futuristic lens, combining delicate florals with holographic and iridescent elements.",
+      heroTitle: "FUTURE\nFLORALS",
+      heroImage: "/portfolio-assets/project-2/future-florals-hero.png",
+      supportingCollage: [
+        {
+          image: "/portfolio-assets/project-2/future-florals-hydrangea.png",
+          alt: "Pale pink and white floral arrangement"
+        },
+        {
+          image: "/portfolio-assets/project-2/future-florals-iridescent-detail.png",
+          alt: "Close-up iridescent translucent floral petal detail"
+        },
+        {
+          image: "/portfolio-assets/project-2/future-florals-futuristic-interior.png",
+          alt: "Futuristic rounded-arch interior with soft ambient light"
+        }
+      ],
+      designInsightTitle: "MY DESIGN INSIGHT",
       designInsight: "If florals represent nature, femininity and renewal, I wanted to explore what they could look like in a future-facing environment.",
-
+      designInsightBg: "/portfolio-assets/project-2/design-insight-card.png"
     },
     page3Boards: {
       title: "THE VISUAL LANGUAGE",
@@ -494,12 +541,13 @@ export const portfolioData = {
           { name: "FASHION", desc: "Feminine flowing silhouettes with floral detailing." },
           { name: "TEXTURE", desc: "Holographic, reflective and translucent surfaces." },
           { name: "SPACE", desc: "Soft futuristic environments with rounded architectural forms." }
-        ]
+        ],
+        image: "/portfolio-assets/project-2/future-florals-hero.png"
       },
       colourBoard: {
-        title: "Colour Palette",
+        title: "Colour Board",
         content: "A delicate balance of soft pastels and iridescent tones, inspired by nature, reimagined for a futuristic tomorrow.",
-        moodTag: "MOOD IN COLOURS"
+        image: "/portfolio-assets/project-2/future-florals-iridescent-detail.png"
       }
     },
     page4BehindTheDisplay: [

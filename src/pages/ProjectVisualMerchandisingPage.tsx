@@ -73,46 +73,86 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
       </section>
 
       {/* SECTION: PAGE 2 — FROM INSIGHT TO CONCEPT */}
-      <div className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
-            {/* Slide Header */}
-            <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
-              <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] tracking-tight">
-                {vm.page2Brief.title}
-              </h2>
-              <p className="font-serif-display text-lg sm:text-xl text-[var(--c-ink)]/80 italic mt-2">
-                {vm.page2Brief.subtitle}
-              </p>
-            </div>
+      <section
+        id="page-2"
+        className="relative border-b border-[var(--c-ink)]/15 scroll-mt-24 overflow-hidden"
+        style={{ backgroundColor: '#F8F1EF' }}
+      >
+        {/* Corner Botanical Illustrations & Iridescent Ribbon */}
+        <img
+          src="/portfolio-assets/project-2/line-art-flower-top-right.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute -top-2 -right-2 w-32 sm:w-48 lg:w-60 pointer-events-none opacity-45 mix-blend-multiply select-none z-0"
+        />
+        <img
+          src="/portfolio-assets/project-2/line-art-flower-bottom-left.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute -bottom-2 -left-2 w-28 sm:w-40 lg:w-52 pointer-events-none opacity-40 mix-blend-multiply select-none z-0"
+        />
+        <img
+          src="/portfolio-assets/project-2/iridescent-ribbon-bottom.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute bottom-0 left-0 w-full max-w-xl pointer-events-none opacity-40 mix-blend-multiply select-none z-0"
+        />
 
-            {/* THE BRIEF */}
-            <div className="max-w-4xl mb-12">
-              <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed border-l-2 border-[var(--c-ink)]/30 pl-5">
-                <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-2">
+        <div className="relative z-10 max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-16">
+          {/* Top Page Number & Title Header */}
+          <div className="mb-8 max-w-3xl">
+            <span className="font-serif-display text-xs sm:text-sm tracking-[0.28em] text-[var(--c-ink)]/70 uppercase block mb-3">
+              {vm.page2Brief.pageLabel}
+            </span>
+            <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl text-[var(--c-ink)] uppercase leading-[1.04] tracking-tight font-normal">
+              FROM INSIGHT<br />TO CONCEPT
+            </h2>
+            <p className="font-hand text-2xl sm:text-3xl lg:text-4xl text-[var(--c-ink)]/85 mt-2 mb-4 leading-snug">
+              {vm.page2Brief.subtitle}
+            </p>
+            <div className="w-20 sm:w-28 h-[1px] bg-[var(--c-ink)]/30" />
+          </div>
+
+          {/* 3-Column Editorial Portfolio Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+            
+            {/* COLUMN 1 (LEFT): THE BRIEF + WHAT I INVESTIGATED */}
+            <div className="lg:col-span-4 flex flex-col justify-between space-y-8">
+              {/* The Brief */}
+              <div>
+                <h3 className="font-mono-code text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[var(--c-ink)] mb-3">
                   {vm.page2Brief.briefTitle}
-                </span>
-                {vm.page2Brief.briefText}
-              </p>
-            </div>
+                </h3>
+                <p className="font-serif-display italic text-base sm:text-lg lg:text-[19px] text-[var(--c-ink)]/90 leading-snug">
+                  {vm.page2Brief.briefText}
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-
-              {/* LEFT: WHAT I INVESTIGATED */}
-              <div className="lg:col-span-4">
-                <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-5 pb-2 border-b border-[var(--c-ink)]/15">
-                  {u.briefSectionHeader}
-                </div>
-                <div className="space-y-5">
+              {/* What I Investigated */}
+              <div className="pt-4 border-t border-[var(--c-ink)]/15">
+                <h3 className="font-mono-code text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[var(--c-ink)] mb-5">
+                  {vm.page2Brief.investigationTitle}
+                </h3>
+                <div className="grid grid-cols-3 divide-x divide-[var(--c-ink)]/20">
                   {vm.page2Brief.whatIInvestigated.map((item, idx) => (
-                    <div key={idx} className="border-t border-[var(--c-ink)]/20 pt-4 text-center">
-                      <h3 className="font-serif-display text-lg text-[var(--c-ink)] mb-2">
-                        {item.pillar}
-                      </h3>
-                      <ul className="space-y-1.5 font-body text-xs text-[var(--c-ink)]/80">
+                    <div key={idx} className="px-2 sm:px-3 text-center flex flex-col items-center">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-[var(--c-ink)]/20 shadow-xs mb-3 bg-white/60">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <h4 className="font-mono-code text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[var(--c-ink)] mb-1.5 leading-tight">
+                        {item.name}
+                      </h4>
+                      <ul className="space-y-0.5">
                         {item.points.map((pt, pIdx) => (
-                          <li key={pIdx} className="flex items-center justify-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[var(--c-ink)]" />
-                            <span>{pt}</span>
+                          <li
+                            key={pIdx}
+                            className="font-serif-display italic text-xs sm:text-[13px] text-[var(--c-ink)]/80 leading-tight"
+                          >
+                            {pt}
                           </li>
                         ))}
                       </ul>
@@ -120,47 +160,104 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   ))}
                 </div>
               </div>
+            </div>
 
-              {/* CENTER: HOW I REACHED THE CONCEPT */}
-              <div className="lg:col-span-4">
-                <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-5 pb-2 border-b border-[var(--c-ink)]/15">
+            {/* COLUMN 2 (CENTER): HOW I REACHED THE CONCEPT (Vertical Flow Journey) */}
+            <div className="lg:col-span-3 lg:border-l lg:border-[var(--c-ink)]/15 lg:pl-8 flex flex-col justify-between space-y-6">
+              <div>
+                <h3 className="font-mono-code text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[var(--c-ink)] mb-6">
                   {vm.page2Brief.conceptFlowTitle}
-                </div>
-                <div className="flex flex-col items-center space-y-2">
+                </h3>
+
+                <div className="space-y-1">
                   {vm.page2Brief.howIReachedTheConcept.map((node, nIdx) => (
                     <React.Fragment key={nIdx}>
-                      <span className={`font-mono-code text-xs font-bold text-[var(--c-ink)] leading-tight text-center py-2 ${node.isHighlight ? 'bg-[var(--c-warm)]/30 border border-[var(--c-ink)] px-2.5 py-0.5 rounded-full' : ''}`}>
-                        {node.step}
-                      </span>
+                      <div className="flex items-center gap-3.5">
+                        <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full overflow-hidden border border-[var(--c-ink)]/25 shadow-xs shrink-0 bg-white/70 flex items-center justify-center p-0.5">
+                          <img
+                            src={node.image}
+                            alt={node.label.replace('\n', ' ')}
+                            className="w-full h-full object-cover rounded-full"
+                          />
+                        </div>
+                        <div className="min-w-0">
+                          <span className={`font-mono-code text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] leading-tight block whitespace-pre-line ${node.isHighlight ? 'underline decoration-1 underline-offset-4' : ''}`}>
+                            {node.label}
+                          </span>
+                        </div>
+                      </div>
+
                       {nIdx < vm.page2Brief.howIReachedTheConcept.length - 1 && (
-                        <ArrowDown className="w-4 h-4 text-[var(--c-ink)]/40 pb-0.5" />
+                        <div className="w-13 sm:w-14 flex justify-center py-0.5">
+                          <ArrowDown className="w-3.5 h-3.5 text-[var(--c-ink)]/45" />
+                        </div>
                       )}
                     </React.Fragment>
                   ))}
                 </div>
-                <p className="font-serif-display text-base text-center text-[var(--c-ink)] italic mt-6 border-l-2 border-[var(--c-warm)] pl-5 leading-snug">
+              </div>
+
+              {/* Bottom Takeaway Quote */}
+              <div className="pt-4 border-t border-[var(--c-ink)]/15">
+                <p className="font-serif-display italic text-sm sm:text-base text-[var(--c-ink)]/85 leading-snug">
                   "{vm.page2Brief.conceptSummary}"
                 </p>
               </div>
+            </div>
 
-              {/* RIGHT: HERO + DESIGN INSIGHT */}
-              <div className="lg:col-span-4 space-y-6">
-                <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] pb-2 border-b border-[var(--c-ink)]/15">
-                  {u.visualDirectionHeader}
-                </div>
-                <div className="border-t border-[var(--c-warm)]/40 pt-4">
-                  <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-2">
-                    {u.designInsightLabel}
-                  </span>
-                  <p className="font-body text-sm text-[var(--c-ink)]/85 leading-relaxed">
-                    {vm.page2Brief.designInsight}
-                  </p>
-                </div>
+            {/* COLUMN 3 (RIGHT): HERO BLOOM COMPOSITION + COLLAGE + DESIGN INSIGHT */}
+            <div className="lg:col-span-5 flex flex-col space-y-6">
+              {/* Hero Blooming Visual Banner */}
+              <div className="relative rounded-2xl overflow-hidden border border-[var(--c-ink)]/20 shadow-md bg-[#FAF4F2]">
+                <img
+                  src={vm.page2Brief.heroImage}
+                  alt="Future Florals blooming concept hero"
+                  className="w-full h-auto object-cover"
+                />
               </div>
 
+              {/* Lower Section: 3-Image Collage + Design Insight Card */}
+              <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-stretch">
+                {/* 3 Vertical Photos */}
+                <div className="sm:col-span-7 grid grid-cols-3 gap-2">
+                  {vm.page2Brief.supportingCollage.map((item, cIdx) => (
+                    <div
+                      key={cIdx}
+                      className="rounded-lg overflow-hidden border border-[var(--c-ink)]/15 shadow-xs bg-white/70 h-36 sm:h-44"
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.alt}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Design Insight Card */}
+                <div className="sm:col-span-5 relative rounded-xl border border-[var(--c-ink)]/15 p-4 flex flex-col justify-center bg-white/60 backdrop-blur-xs shadow-xs overflow-hidden">
+                  <img
+                    src={vm.page2Brief.designInsightBg}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+                  />
+                  <div className="relative z-10">
+                    <h4 className="font-mono-code text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--c-ink)] mb-1">
+                      {vm.page2Brief.designInsightTitle}
+                    </h4>
+                    <div className="w-10 h-[1px] bg-[var(--c-ink)]/30 mb-2.5" />
+                    <p className="font-serif-display italic text-xs sm:text-[13px] text-[var(--c-ink)]/85 leading-snug">
+                      "{vm.page2Brief.designInsight}"
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
+      </section>
 
       {/* SECTION: PAGE 3 — THE VISUAL LANGUAGE (MOOD & COLOUR BOARDS) */}
       <div className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
@@ -177,12 +274,21 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
 
             {/* MOOD BOARD */}
             <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-10">
-              <div className="grid grid-cols-1 gap-6 items-start mb-8">
-                <div>
-                  <h2 className="font-serif-display text-3xl text-[var(--c-ink)] mb-3">
+              <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                {/* Mood Board Image - LEFT */}
+                <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
+                  <img
+                    src={vm.page3Boards.moodBoard.image}
+                    alt="Mood Board - Future Florals"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Mood Board Content - RIGHT */}
+                <div className="space-y-6">
+                  <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
                     {vm.page3Boards.moodBoard.title}
                   </h2>
-                  <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug mb-6">
+                  <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug">
                     {vm.page3Boards.moodBoard.content}
                   </p>
                   <div className="flex flex-wrap gap-2 pt-2 border-t border-[var(--c-ink)]/15 font-mono-code text-xs font-bold text-[var(--c-ink)]">
@@ -193,7 +299,6 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                     ))}
                   </div>
                 </div>
-
               </div>
 
               {/* MOOD THEMES */}
@@ -221,21 +326,25 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
 
             {/* COLOUR BOARD */}
             <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-8">
-              <div className="grid grid-cols-1 gap-6 items-start mb-6">
-                <div>
-                  <h2 className="font-serif-display text-3xl text-[var(--c-ink)] mb-3">
+              <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                {/* Colour Board Image - LEFT */}
+                <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
+                  <img
+                    src={vm.page3Boards.colourBoard.image}
+                    alt="Colour Board - Future Florals"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Colour Board Content - RIGHT */}
+                <div className="space-y-4">
+                  <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
                     {vm.page3Boards.colourBoard.title}
                   </h2>
-                  <span className="inline-block px-2.5 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full font-mono-code text-[10px] font-bold uppercase text-[var(--c-ink)] mb-3">
-                    {vm.page3Boards.colourBoard.moodTag}
-                  </span>
-                  <p className="font-body text-sm sm:text-base text-[var(--c-ink)]/85 leading-relaxed">
+                  <p className="font-body text-base sm:text-lg text-[var(--c-ink)]/85 leading-relaxed">
                     {vm.page3Boards.colourBoard.content}
                   </p>
                 </div>
-
               </div>
-
             </div>
           </div>
         </div>

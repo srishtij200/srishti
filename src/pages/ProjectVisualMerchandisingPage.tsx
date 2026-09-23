@@ -223,9 +223,6 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] tracking-tight">
                 {vm.page3Boards.title}
               </h2>
-              <p className="font-serif-display text-lg sm:text-xl text-[var(--c-ink)]/80 italic mt-2">
-                {vm.page3Boards.subtitle}
-              </p>
             </div>
 
             {/* MOOD BOARD — keep heading, image + content + tiny keywords */}

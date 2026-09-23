@@ -231,54 +231,15 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               </p>
             </div>
 
-            {/* MOOD BOARD */}
-            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-10">
-              <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                {/* Mood Board Image - LEFT */}
-                <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
+            {/* MOOD BOARD — minimal scaled-down image only */}
+            <div className="pt-8 mb-10">
+              <div className="max-w-md mx-auto">
+                <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] shadow-sm">
                   <img
                     src={vm.page3Boards.moodBoard.image}
                     alt="Mood Board - Future Florals"
-                    className="w-full h-full object-cover"
+                    className="w-full aspect-[4/5] object-cover"
                   />
-                </div>
-                {/* Mood Board Content - RIGHT */}
-                <div className="space-y-6">
-                  <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
-                    {vm.page3Boards.moodBoard.title}
-                  </h2>
-                  <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug">
-                    {vm.page3Boards.moodBoard.content}
-                  </p>
-                  <div className="flex flex-wrap gap-2 pt-2 border-t border-[var(--c-ink)]/15 font-mono-code text-xs font-bold text-[var(--c-ink)]">
-                    {vm.page3Boards.moodBoard.keywords.map((kw, i) => (
-                      <span key={i} className="px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full">
-                        {kw}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* MOOD THEMES */}
-              <div className="pt-6 border-t border-[var(--c-ink)]/15">
-                <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4">
-                  {u.moodThemesHeader}
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-                  {vm.page3Boards.moodBoard.themes.map((t, tIdx) => (
-                    <div key={tIdx} className="border-t border-[var(--c-ink)]/20 pt-3">
-                      <span className="font-mono-code text-[10px] text-[var(--c-ink)]/50 font-bold block mb-1">
-                        0{tIdx + 1}
-                      </span>
-                      <h4 className="font-mono-code text-xs font-bold text-[var(--c-ink)] uppercase mb-1">
-                        {t.name}
-                      </h4>
-                      <p className="font-body text-[11px] text-[var(--c-ink)]/70 leading-snug">
-                        {t.desc}
-                      </p>
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>

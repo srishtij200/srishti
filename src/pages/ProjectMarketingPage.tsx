@@ -4,7 +4,6 @@ import { motion } from 'motion/react';
 import { 
   ArrowLeft, 
   Sparkles, 
-  CheckCircle2, 
   Target, 
   Lightbulb, 
   Search, 
@@ -19,7 +18,6 @@ import {
   ArrowRight, 
   ArrowDown 
 } from 'lucide-react';
-import { FlowerMark } from '../components/CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectMarketingPage: React.FC = () => {
@@ -48,69 +46,19 @@ export const ProjectMarketingPage: React.FC = () => {
       </div>
 
       {/* ========================================================================= */}
-      {/* PAGE 1: COVER, CONTEXT & BRIEF                                            */}
+      {/* PAGE 1: HERO (full-bleed image background, overlay text removed)       */}
+      {/* Image: /portfolio-assets/project1-hero-bg.png (drop your PNG there)   */}
       {/* ========================================================================= */}
-      <section id="page-1" className="bg-[var(--c-soft)] border-b border-[var(--c-ink)]/15 scroll-mt-24 space-y-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 space-y-12">
-          <div className="relative">
-            <div className="grid grid-cols-1 gap-8 items-center">
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)]">
-                  <FlowerMark size={14} />
-                  <span>{u.coverBadge}</span>
-                </div>
-
-                <h1 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[var(--c-ink)] leading-[1.02] tracking-tight">
-                  {pm.cover.title}
-                </h1>
-
-                <p className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)]/80 italic leading-snug">
-                  {pm.cover.subtitle}
-                </p>
-
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-[var(--c-ink)]/15 font-mono-code text-xs">
-                  <div>
-                    <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">{u.metaBrandLabel}</span>
-                    <span className="font-bold text-[var(--c-ink)]">{pm.cover.brand}</span>
-                  </div>
-                  <div>
-                    <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">{u.metaDisciplineLabel}</span>
-                    <span className="font-bold text-[var(--c-ink)]">{pm.cover.discipline}</span>
-                  </div>
-                  <div>
-                    <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">{u.metaTimelineLabel}</span>
-                    <span className="font-bold text-[var(--c-ink)]">{pm.cover.timeline}</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="border-t border-[var(--c-ink)]/20 pt-6">
-              <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)]/60 block mb-3">
-                {u.contextHeader}
-              </span>
-              <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed">
-                {pm.page1And2.context}
-              </p>
-            </div>
-
-            <div className="border-t border-[var(--c-ink)]/20 pt-6 flex flex-col justify-between">
-              <div>
-                <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)]/60 block mb-3">
-                  {u.briefHeader}
-                </span>
-                <p className="font-body text-base text-[var(--c-ink)]/85 leading-relaxed">
-                  {pm.page1And2.brief}
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-[var(--c-ink)]/10 font-mono-code text-xs text-[#4F5B4A] font-bold flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#4F5B4A] shrink-0" />
-                <span>{u.alignedNote}</span>
-              </div>
-            </div>
+      <section id="page-1" className="relative border-b border-[var(--c-ink)]/15 scroll-mt-24 overflow-hidden bg-[var(--c-soft)]">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/portfolio-assets/project1-hero-bg.png')" }}
+          aria-hidden="true"
+        />
+        {/* Content slot — headings + two texts will go here (cleared for now) */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 min-h-[70vh] lg:min-h-[85vh] flex items-end">
+          <div className="space-y-6">
+            {/* TODO(project1): add few headings + two texts here */}
           </div>
         </div>
       </section>
@@ -124,11 +72,6 @@ export const ProjectMarketingPage: React.FC = () => {
             {/* Slide Top Header Bar */}
             <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-[var(--c-ink)]/15 mb-10 gap-4">
               <div>
-                <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-2 flex items-center gap-2">
-                  <span>{p2.pageLabel}</span>
-                  <span>•</span>
-                  <span>{u.p2SlideTag}</span>
-                </div>
                 <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] tracking-tight">
                   {p2.title}
                 </h2>

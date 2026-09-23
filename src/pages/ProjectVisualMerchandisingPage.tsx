@@ -246,6 +246,9 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
                     {vm.page3Boards.moodBoard.title}
                   </h2>
+                  <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug">
+                    {(vm.page3Boards.moodBoard as { tagline?: string }).tagline}
+                  </p>
                   <p className="font-body text-base sm:text-lg text-[var(--c-ink)]/85 leading-relaxed">
                     {vm.page3Boards.moodBoard.content}
                   </p>

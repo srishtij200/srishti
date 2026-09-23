@@ -530,9 +530,10 @@ export const portfolioData = {
     },
     page3Boards: {
       title: "THE VISUAL LANGUAGE",
-      subtitle: "Soft florals, Futuristic touches, endless possibilities",
+      subtitle: "Mood Board",
       moodBoard: {
         title: "Mood Board",
+        tagline: "Soft florals, Futuristic touches, endless possibilities",
         content: "A soft futuristic interpretation of nature, combining delicate florals, luminous textures and reflective surfaces. The mood balances Cover Story’s feminine identity with a contemporary, forward-looking aesthetic.",
         keywords: ["FEMININE", "DREAMY", "SOFT", "FUTURISTIC"],
         themes: [

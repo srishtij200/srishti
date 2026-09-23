@@ -78,6 +78,7 @@ export const projectVM = defineType({
           type: 'object',
           fields: [
             { name: 'title', title: 'Title', type: 'string' },
+            { name: 'tagline', title: 'Tagline', type: 'string' },
             { name: 'content', title: 'Content', type: 'text', rows: 2 },
             { name: 'keywords', title: 'Keywords', type: 'array', of: [{ type: 'string' }] },
             {

@@ -1,34 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
-import { 
-  ArrowLeft, 
-  Sparkles, 
-  Palette, 
-  Eye, 
-  Lightbulb, 
-  ArrowDown, 
-  Layers, 
-  Box, 
-  Flower2, 
-  Settings, 
-  Target, 
-  Waves, 
-  Sun, 
-  Maximize2, 
-  Scale, 
-  type LucideIcon 
+import {
+  ArrowLeft,
+  ArrowDown
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectVisualMerchandisingPage: React.FC = () => {
   const { projectVM: vm } = portfolioData;
   const u = portfolioData.ui.projectVM;
-
-  const iconMap: Record<string, LucideIcon> = {
-    Lightbulb, Eye, Layers, Box, Flower2, Settings,
-    Target, Waves, Sun, Maximize2, Scale, Palette, Sparkles
-  };
 
   return (
     <div className="bg-[var(--c-bg)] min-h-screen">
@@ -361,20 +341,33 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="space-y-8 mb-10">
-              {vm.page4BehindTheDisplay.map((step, idx) => (
-                <div key={idx} className="border-t-2 border-[var(--c-ink)]/20 pt-6 space-y-2">
-                  <span className="text-[10px] font-mono-code bg-[var(--c-ink)] text-[var(--c-bg)] px-2.5 py-0.5 rounded-full font-bold uppercase inline-block">
-                    {step.imageIndex}
-                  </span>
-                  <h3 className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)]">
-                    {step.title}
-                  </h3>
-                  <p className="font-body text-sm sm:text-base text-[var(--c-ink)]/85 leading-relaxed pt-1">
-                    {step.desc}
-                  </p>
+            <div className="space-y-10 sm:space-y-12 lg:space-y-16 mb-10">
+              {vm.page4BehindTheDisplay.map((step, idx) => {
+                const imageLeft = idx % 2 === 0;
+                return (
+                <div key={idx} className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center`}>
+                  <div className={`rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] shadow-sm ${imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+                    <img
+                      src={(step as { image?: string }).image}
+                      alt={`${step.imageIndex}: ${step.title}`}
+                      className="w-full aspect-[4/3] object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className={`space-y-2 ${imageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+                    <span className="text-[10px] font-mono-code bg-[var(--c-ink)] text-[var(--c-bg)] px-2.5 py-0.5 rounded-full font-bold uppercase inline-block">
+                      {step.imageIndex}
+                    </span>
+                    <h3 className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)]">
+                      {step.title}
+                    </h3>
+                    <p className="font-body text-sm sm:text-base text-[var(--c-ink)]/85 leading-relaxed pt-1">
+                      {step.desc}
+                    </p>
+                  </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -395,102 +388,34 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               </p>
             </div>
 
-            {/* QUOTE + PROCESS PORTRAIT */}
-            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-10">
-              <div className="grid grid-cols-1 gap-6 items-center">
-                <div className="space-y-4">
-                  <span className="inline-block px-2.5 py-1 bg-[var(--c-warm)]/40 border border-[var(--c-ink)] rounded-full font-mono-code text-[10px] font-bold uppercase text-[var(--c-ink)]">
-                    {vm.page5SkillsAndPrinciples.quoteBanner.accent}
-                  </span>
-                  <p className="font-serif-display text-xl sm:text-3xl text-[var(--c-ink)] italic leading-snug">
-                    "{vm.page5SkillsAndPrinciples.quoteBanner.quote}"
-                  </p>
-                </div>
+            {/* PAGE 5 TOP: SINGLE HERO IMAGE (LEFT) + SKILLS/PRINCIPLES BOXES (RIGHT) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch mb-10">
+              <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] shadow-sm">
+                <img
+                  src={(vm.page5SkillsAndPrinciples.quoteBanner as { image?: string }).image ?? "/portfolio-assets/project-2/page5-final-installation.jpg"}
+                  alt={`${vm.page5SkillsAndPrinciples.quoteBanner.accent} — ${vm.page5SkillsAndPrinciples.quoteBanner.caption}`}
+                  className="w-full h-full min-h-[320px] lg:min-h-[520px] object-cover"
+                />
               </div>
-            </div>
-
-            {/* THE PROCESS BEHIND THE BEAUTY */}
-            <div className="mb-10">
-              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-4 pb-2 border-b border-[var(--c-ink)]/15">
-                <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)]">
-                  {vm.page5SkillsAndPrinciples.processInAction.title}
-                </div>
-                <span className="font-mono-code text-[10px] text-[var(--c-ink)]/50 uppercase">
-                  {u.p5ProcessTag}
-                </span>
-              </div>
-              <p className="font-serif-display text-base sm:text-lg text-[var(--c-ink)]/80 italic mb-6">
-                {vm.page5SkillsAndPrinciples.processInAction.intro}
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {vm.page5SkillsAndPrinciples.processInAction.steps.map((s, sIdx) => (
-                  <div key={sIdx} className="border-t border-[var(--c-ink)]/20 pt-3 text-center">
-                    <span className="font-mono-code text-[10px] text-[var(--c-ink)]/50 font-bold block mb-1">
-                      0{sIdx + 1}
-                    </span>
-                    <span className="font-mono-code text-[11px] font-bold text-[var(--c-ink)] block leading-tight">
-                      {s.title}
-                    </span>
+              <div className="flex flex-col gap-6">
+                <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-8 flex-1 flex items-center justify-center">
+                  <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center">
+                    {u.p5SkillsHeader}
                   </div>
-                ))}
+                </div>
+                <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-8 flex-1 flex items-center justify-center">
+                  <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center">
+                    {u.p5PrinciplesHeader}
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* SKILLS I APPLIED */}
-            <div className="mb-10">
-              <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
-                {u.p5SkillsHeader}
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {vm.page5SkillsAndPrinciples.skillsApplied.map((sk, idx) => {
-                  const SkillIcon = iconMap[sk.icon] ?? Lightbulb;
-                  return (
-                    <div key={idx} className="border-t border-[var(--c-ink)]/20 pt-4">
-                      <div className="w-9 h-9 rounded-full bg-[var(--c-bg)] border border-[var(--c-ink)]/20 flex items-center justify-center mb-3">
-                        <SkillIcon className="w-4 h-4 text-[var(--c-ink)]" />
-                      </div>
-                      <h3 className="font-mono-code text-xs font-bold text-[var(--c-ink)] uppercase mb-2">
-                        {sk.title}
-                      </h3>
-                      <p className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed">
-                        {sk.desc}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* VM PRINCIPLES APPLIED */}
-            <div className="mb-10">
-              <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
-                {u.p5PrinciplesHeader}
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {vm.page5SkillsAndPrinciples.vmPrinciplesApplied.map((p, idx) => {
-                  const PrIcon = iconMap[p.icon] ?? Sparkles;
-                  return (
-                    <div key={idx} className="border-t border-[var(--c-ink)]/20 pt-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="font-mono-code text-xs text-[var(--c-ink)]/50 font-bold">
-                          {p.number}.
-                        </span>
-                        <div className="w-8 h-8 rounded-full bg-[var(--c-bg)] border border-[var(--c-ink)]/20 flex items-center justify-center">
-                          <PrIcon className="w-4 h-4 text-[var(--c-ink)]" />
-                        </div>
-                      </div>
-                      <h3 className="font-serif-display text-xl text-[var(--c-ink)] mb-1">
-                        {p.name}
-                      </h3>
-                      <p className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed">
-                        {p.desc}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
+            {/* WHAT I LEARNED + PROJECT TAKEAWAY — soft pastel wash panel */}
+            <div
+              className="border border-[var(--c-ink)]/10 px-6 sm:px-10 py-8 sm:py-10 mb-8"
+              style={{ background: 'linear-gradient(135deg, rgba(243,231,228,0.55) 0%, rgba(232,237,247,0.55) 55%, rgba(230,216,226,0.45) 100%)' }}
+            >
             {/* WHAT I LEARNED */}
             <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-8">
               <h2 className="font-serif-display text-3xl text-[var(--c-ink)] mb-3">
@@ -499,6 +424,17 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               <p className="font-body text-sm sm:text-base text-[var(--c-ink)]/85 leading-relaxed">
                 {vm.page5SkillsAndPrinciples.whatILearned}
               </p>
+            </div>
+
+            {/* PROJECT TAKEAWAY */}
+            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8">
+              <h2 className="font-serif-display text-3xl text-[var(--c-ink)] mb-3">
+                PROJECT TAKEAWAY
+              </h2>
+              <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)] italic leading-snug">
+                “{vm.page5SkillsAndPrinciples.quoteBanner.quote}”
+              </p>
+            </div>
             </div>
 
             <div className="flex justify-end pt-6 border-t border-[var(--c-ink)]/15 font-mono-code text-xs">

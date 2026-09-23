@@ -554,27 +554,32 @@ export const portfolioData = {
       {
         imageIndex: "Image 1",
         title: "Crafting the Details",
-        desc: "Holographic sheets were shaped with the wire to create the floral forms."
+        desc: "Holographic sheets were shaped with the wire to create the floral forms.",
+        image: "/portfolio-assets/project-2/page4-step-1-crafting-details.jpg"
       },
       {
         imageIndex: "Image 2",
         title: "The concept takes form",
-        desc: "The first floral element was created, transforming the initial concept into a structure."
+        desc: "The first floral element was created, transforming the initial concept into a structure.",
+        image: "/portfolio-assets/project-2/page4-step-2-concept-takes-form.jpg"
       },
       {
         imageIndex: "Image 3",
         title: "Refining the Form",
-        desc: "Each flower was carefully folded and adjusted to enhance the shape and overall visual appeal."
+        desc: "Each flower was carefully folded and adjusted to enhance the shape and overall visual appeal.",
+        image: "/portfolio-assets/project-2/page4-step-3-refining-form.jpg"
       },
       {
         imageIndex: "Image 4",
         title: "Building the Collection",
-        desc: "Multiple floral elements were developed and brought together."
+        desc: "Multiple floral elements were developed and brought together.",
+        image: "/portfolio-assets/project-2/page4-step-4-building-collection.jpg"
       },
       {
         imageIndex: "Image 5",
         title: "Creating the environment",
-        desc: "The backdrop and drapes were installed to add softness, depth and movement to the visual experience."
+        desc: "The backdrop and drapes were installed to add softness, depth and movement to the visual experience.",
+        image: "/portfolio-assets/project-2/page4-step-5-creating-environment.jpg"
       }
     ],
     page5SkillsAndPrinciples: {
@@ -585,7 +590,8 @@ export const portfolioData = {
       quoteBanner: {
         quote: "Creativity brings the idea to life, but it's the details that make it real.",
         caption: "Inside the Future Florals installation",
-        accent: "FUTURE FLORALS"
+        accent: "FUTURE FLORALS",
+        image: "/portfolio-assets/project-2/page5-final-installation.jpg"
       },
       processInAction: {
         title: "THE PROCESS BEHIND THE BEAUTY",

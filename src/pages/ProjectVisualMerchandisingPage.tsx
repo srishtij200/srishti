@@ -303,7 +303,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 const imageLeft = idx % 2 === 0;
                 return (
                 <div key={idx} className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center`}>
-                  <div className={`rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] shadow-sm w-full max-w-md mx-auto ${imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <div className={`rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] shadow-sm w-full max-w-md mx-auto ${imageLeft ? 'lg:order-1 lg:ml-auto lg:mr-0' : 'lg:order-2 lg:mr-auto lg:ml-0'}`}>
                     <img
                       src={(step as { image?: string }).image}
                       alt={`${step.imageIndex}: ${step.title}`}
@@ -311,7 +311,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                       loading="lazy"
                     />
                   </div>
-                  <div className={`space-y-2 ${imageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+                  <div className={`space-y-2 text-left ${imageLeft ? 'lg:order-2' : 'lg:order-1 lg:text-right'}`}>
                     <span className="text-[10px] font-mono-code bg-[var(--c-ink)] text-[var(--c-bg)] px-2.5 py-0.5 rounded-full font-bold uppercase inline-block">
                       {step.imageIndex}
                     </span>

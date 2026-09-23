@@ -2,24 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
-  ArrowDown,
-  Lightbulb,
-  Eye,
-  Layers,
-  Flower2,
-  Settings,
-  Scale,
-  Maximize2,
-  Target,
-  Waves,
-  Palette,
-  Sun
+  ArrowDown
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
-
-const vmIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Lightbulb, Eye, Layers, Flower2, Settings, Scale, Maximize2, Target, Waves, Palette, Sun
-};
 
 export const ProjectVisualMerchandisingPage: React.FC = () => {
   const { projectVM: vm } = portfolioData;
@@ -370,40 +355,33 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 />
               </div>
               <div className="flex flex-col gap-6">
-                <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-6 flex-1">
-                  <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center mb-4">
+                <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-6 flex-1 flex flex-col">
+                  <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center pb-4 border-b border-[var(--c-ink)]/15">
                     {u.p5SkillsHeader}
                   </div>
-                  <ul className="space-y-3">
-                    {vm.page5SkillsAndPrinciples.skillsApplied.map((sk, idx) => {
-                      const Icon = vmIconMap[sk.icon] ?? Lightbulb;
-                      return (
-                        <li key={idx} className="flex items-center justify-center gap-2.5">
-                          <Icon className="w-4 h-4 text-[var(--c-ink)]/70 shrink-0" />
-                          <span className="font-mono-code text-[11px] font-bold uppercase tracking-wider text-[var(--c-ink)]/85">
-                            {sk.title}
-                          </span>
-                        </li>
-                      );
-                    })}
+                  <ul className="flex-1 flex flex-col justify-evenly divide-y divide-[var(--c-ink)]/10">
+                    {vm.page5SkillsAndPrinciples.skillsApplied.map((sk, idx) => (
+                      <li key={idx} className="py-3 text-center font-mono-code text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--c-ink)]/85">
+                        {sk.title}
+                      </li>
+                    ))}
                   </ul>
                 </div>
-                <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-6 flex-1">
-                  <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center mb-4">
+                <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-6 flex-1 flex flex-col">
+                  <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center pb-4 border-b border-[var(--c-ink)]/15">
                     {u.p5PrinciplesHeader}
                   </div>
-                  <ul className="space-y-3">
-                    {vm.page5SkillsAndPrinciples.vmPrinciplesApplied.map((p, idx) => {
-                      const Icon = vmIconMap[p.icon] ?? Scale;
-                      return (
-                        <li key={idx} className="flex items-center justify-center gap-2.5">
-                          <Icon className="w-4 h-4 text-[var(--c-ink)]/70 shrink-0" />
-                          <span className="font-mono-code text-[11px] font-bold uppercase tracking-wider text-[var(--c-ink)]/85">
-                            {p.number}. {p.name}
-                          </span>
-                        </li>
-                      );
-                    })}
+                  <ul className="flex-1 flex flex-col justify-evenly divide-y divide-[var(--c-ink)]/10">
+                    {vm.page5SkillsAndPrinciples.vmPrinciplesApplied.map((p, idx) => (
+                      <li key={idx} className="py-3 flex items-baseline justify-between gap-4">
+                        <span className="font-serif-display italic text-base text-[var(--c-ink)]/60">
+                          {String(p.number).padStart(2, '0')}
+                        </span>
+                        <span className="font-mono-code text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--c-ink)]/85">
+                          {p.name}
+                        </span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>

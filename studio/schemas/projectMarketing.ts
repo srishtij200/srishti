@@ -177,7 +177,7 @@ export const projectMarketing = defineType({
             {
               type: 'object',
               fields: [
-
+                { name: 'src', title: 'Photo', type: 'image', options: { hotspot: true } },
                 { name: 'caption', title: 'Caption', type: 'string' },
                 { name: 'desc', title: 'Description', type: 'text', rows: 2 },
               ],

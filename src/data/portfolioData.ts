@@ -226,26 +226,12 @@ export const portfolioData = {
           }
         ],
         frameworkSentence: "The research was structured using strategic framework to evaluate the market, consumer & competitive landscape.",
-        frameworkBadges: ["SWOT", "PORTER'S FIVE FORCES", "STP", "7Ps", "ANSOFF", "BCG"],
         image: { src: "", label: "RESEARCH SNAPSHOT", alt: "Market, consumer and competition research visual" }
       },
       quadrant03: {
         number: "03",
-        title: "HOW I CAME UP WITH THE CONCEPT",
-        takeaway: "I saw an opportunity to extend UNIQLO's idea of everyday living from something we wear to something we experience.",
-        natureTitle: "INSPIRED BY JAPANESE NATURE",
-        naturePillars: ["Purity", "Calm", "Balance", "Harmony"],
-        variants: [
-          { name: "HANA", label: "FLOWER", color: "#FDE2E4", dotColor: "#F4B6D4" },
-          { name: "MIZU", label: "WATER", color: "#E0F2FE", dotColor: "#BAE6FD" },
-          { name: "KAZE", label: "WIND", color: "#DCFCE7", dotColor: "#BBF7D0" },
-          { name: "SORA", label: "SKY", color: "#E0E7FF", dotColor: "#C7D2FE" }
-        ],
-        images: [
-          { src: "", label: "CONCEPT VISUAL 01", alt: "Concept development visual one" },
-          { src: "", label: "CONCEPT VISUAL 02", alt: "Concept development visual two" },
-          { src: "", label: "CONCEPT VISUAL 03", alt: "Concept development visual three" }
-        ]
+        title: "HOW WE CAME UP WITH THE CONCEPT",
+        takeaway: "I saw an opportunity to extend UNIQLO's idea of everyday living from something we wear to something we experience."
       },
       quadrant04: {
         number: "04",
@@ -263,34 +249,84 @@ export const portfolioData = {
       }
     },
 
-    // PAGE 3: DESIGN DECISIONS & 4 VARIANTS
-    page3DesignDecisions: [
-      {
-        number: "1",
-        title: "Japanese names",
-        desc: "Connected to UNIQLO’s Japanese identity and cultural heritage."
+    // PAGE 3: FROM STRATEGY TO SCENT
+    page3: {
+      pageLabel: "03",
+      headerTag: "FROM STRATEGY TO SCENT",
+      title: "FROM STRATEGY TO SCENT",
+      subtitle: "Translating UNIQLO's brand DNA into a fragrance collection.",
+      conceptSection: {
+        title: "ONE CONCEPT → FOUR EXPRESSIONS",
+        expressions: [
+          {
+            name: "HANA",
+            label: "(FLOWER)",
+            image: "/portfolio-assets/p1-hana.png",
+            notes: "Soft floral\nCherry blossom inspired",
+            mood: "Soft · Feminine · Calm",
+            color: "#F8E7E3"
+          },
+          {
+            name: "MIZU",
+            label: "(WATER)",
+            image: "/portfolio-assets/p1-mizu.png",
+            notes: "Lotus · Matcha · Amberwood",
+            mood: "Fresh · Clean · Balanced",
+            color: "#E3EEF3"
+          },
+          {
+            name: "KAZE",
+            label: "(WIND)",
+            image: "/portfolio-assets/p1-kaze.png",
+            notes: "Citrus",
+            mood: "Fresh · Energetic · Light",
+            color: "#EDF0E4"
+          },
+          {
+            name: "SORA",
+            label: "(SKY)",
+            image: "/portfolio-assets/p1-sora.png",
+            notes: "Green tea · Bamboo · Sandalwood",
+            mood: "Green · Calm · Grounded",
+            color: "#E4EFF5"
+          }
+        ]
       },
-      {
-        number: "2",
-        title: "Minimal packaging",
-        desc: "Maintains the brand’s clean visual language and functional LifeWear aesthetic."
+      processSection: {
+        title: "PRODUCT DEVELOPMENT & DESIGN PROCESS",
+        processSteps: [
+          { label: "CONCEPT", icon: "Lightbulb" },
+          { label: "NAMING", icon: "Tag" },
+          { label: "VISUAL IDENTITY", icon: "Eye" },
+          { label: "PACKAGING", icon: "Package" },
+          { label: "PHYSICAL PROTOTYPE", icon: "Box" }
+        ],
+        physicalPackaging: {
+          title: "PHYSICAL PACKAGING (HANA & MIZU)",
+          photos: [
+            { src: "/portfolio-assets/p1-packaging-1.png", caption: "HANA", desc: "Physical packaging." },
+            { src: "/portfolio-assets/p1-packaging-2.png", caption: "MIZU", desc: "Physical packaging." }
+          ]
+        }
       },
-      {
-        number: "3",
-        title: "Nature-inspired scents",
-        desc: "Connects fragrances to everyday life, subtle presence, and natural well-being."
+      designDecisions: {
+        title: "DESIGN DECISIONS",
+        background: "#F3E7D8",
+        items: [
+          { title: "Japanese names", description: "Connect to Uniqlo's Japanese identity.", icon: "Globe" },
+          { title: "Minimal packaging", description: "Mirrors the brand's clean visual language.", icon: "Package" },
+          { title: "Nature-inspired scents", description: "Connects fragrance to its everyday lifestyle.", icon: "Leaf" },
+          { title: "Four variants", description: "Create choice while keeping the range focused.", icon: "Circle" },
+          { title: "Accessible premium positioning", description: "Makes the category approachable.", icon: "Award" }
+        ]
       },
-      {
-        number: "4",
-        title: "Four variants",
-        desc: "Create choice and versatility while keeping the launch collection cohesive and curated."
-      },
-      {
-        number: "5",
-        title: "Accessible premium positioning",
-        desc: "Makes the fragrance category approachable to the everyday shopper without losing quality."
+      footer: {
+        brand: "UNIQLO FRAGRANCES",
+        separator: "|",
+        statement: "Life Wear, for your senses.",
+        pagePagination: "Page 3 / 5"
       }
-    ],
+    },
     page4Strategy: {
       stp: "Segmentation based on urban minimalism and daily wellness. Targeting existing LifeWear customers seeking daily subtle scents. Positioning as essential everyday fragrance rather than overpowering luxury.",
       sevenPs: "Product (Minimalist glass bottle), Price (Accessible premium), Place (Global flagships + e-commerce), Promotion (In-store sensory displays + digital micro-creators), Process (Tester stations), Physical Evidence (Eco-refill pouches), People (Educated store associates).",
@@ -304,18 +340,22 @@ export const portfolioData = {
       subtitle: "WE DIDN'T JUST CREATE IT, WE TESTED IT.",
       testPhotos: [
         {
+          src: "/portfolio-assets/project-1/page4_product_display.png",
           caption: "Product Display",
           desc: "Acrylic tester riser with fragrance bottles & branding"
         },
         {
+          src: "/portfolio-assets/project-1/page4_consumer_interaction.png",
           caption: "Consumer Interaction",
           desc: "Consumers exploring tester strips and sampling aromas"
         },
         {
+          src: "/portfolio-assets/project-1/page4_fragrance_samples.png",
           caption: "Fragrance Samples",
           desc: "Structural carton prototypes and fragrance box samples"
         },
         {
+          src: "/portfolio-assets/project-1/page4_feedback.png",
           caption: "Feedback",
           desc: "Gathering direct quantitative & qualitative feedback"
         }
@@ -965,6 +1005,7 @@ export const portfolioData = {
       p2Flow: {
         brandChip: "UNIQLO",
         brandName: "LIFEWEAR",
+        brandLogo: "/portfolio-assets/lifewear-logo.jpeg",
         brandDesc: "Simple + Functional + Japanese Minimalism",
         question: "What if Life Wear could be experienced through another sense?",
         fragranceName: "FRAGRANCE",

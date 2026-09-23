@@ -355,15 +355,29 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 />
               </div>
               <div className="flex flex-col gap-6">
-                <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-8 flex-1 flex items-center justify-center">
-                  <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center">
+                <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-6 flex-1">
+                  <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center mb-4">
                     {u.p5SkillsHeader}
                   </div>
+                  <ul className="space-y-2">
+                    {vm.page5SkillsAndPrinciples.skillsApplied.map((sk, idx) => (
+                      <li key={idx} className="font-mono-code text-[11px] font-bold uppercase tracking-wider text-[var(--c-ink)]/85 text-center">
+                        {sk.title}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-8 flex-1 flex items-center justify-center">
-                  <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center">
+                <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-6 flex-1">
+                  <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center mb-4">
                     {u.p5PrinciplesHeader}
                   </div>
+                  <ul className="space-y-2">
+                    {vm.page5SkillsAndPrinciples.vmPrinciplesApplied.map((p, idx) => (
+                      <li key={idx} className="font-mono-code text-[11px] font-bold uppercase tracking-wider text-[var(--c-ink)]/85 text-center">
+                        {p.number}. {p.name}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>

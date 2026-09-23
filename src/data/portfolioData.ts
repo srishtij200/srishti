@@ -621,11 +621,6 @@ export const portfolioData = {
           icon: "Layers"
         },
         {
-          title: "SPATIAL PLANNING",
-          desc: "Planning placement, height, spacing and movement within the display.",
-          icon: "Box"
-        },
-        {
           title: "VISUAL STORYTELLING",
           desc: "Creating a consistent narrative from nature to futuristic retail experience.",
           icon: "Flower2"

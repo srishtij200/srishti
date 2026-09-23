@@ -228,15 +228,25 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               </p>
             </div>
 
-            {/* MOOD BOARD — minimal scaled-down image only */}
-            <div className="pt-8 mb-10">
-              <div className="max-w-md mx-auto">
-                <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] shadow-sm">
+            {/* MOOD BOARD — keep heading, image + content; tags/themes removed */}
+            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-10">
+              <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                {/* Mood Board Image - LEFT */}
+                <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
                   <img
                     src={vm.page3Boards.moodBoard.image}
                     alt="Mood Board - Future Florals"
-                    className="w-full aspect-[4/5] object-cover"
+                    className="w-full h-full object-cover"
                   />
+                </div>
+                {/* Mood Board Content - RIGHT */}
+                <div className="space-y-6">
+                  <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
+                    {vm.page3Boards.moodBoard.title}
+                  </h2>
+                  <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug">
+                    {vm.page3Boards.moodBoard.content}
+                  </p>
                 </div>
               </div>
             </div>

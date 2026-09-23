@@ -55,8 +55,26 @@ export const ProjectMarketingPage: React.FC = () => {
     '/portfolio-assets/project-1/page4_product_display.png',
     '/portfolio-assets/project-1/page4_consumer_interaction.png',
     '/portfolio-assets/project-1/page4_fragrance_samples.png',
-    '/portfolio-assets/project-1/page4_feedback.png'
+    '/portfolio-assets/project-1/page4_feedback.png',
+    '/portfolio-assets/project-1/page4_testing_setup.jpeg',
+    '/portfolio-assets/project-1/page4_consumer_feedback.jpeg'
   ];
+
+  // Page 5 learnings: CMS learnings arrays carry no image field — component-local map.
+  const p5LearningImages = [
+    '/portfolio-assets/project-1/page5_research_papers.png',
+    '/portfolio-assets/project-1/page5_strategy_notebook.png',
+    '/portfolio-assets/project-1/page5_creative_fuji.png',
+    '/portfolio-assets/project-1/page5_brand_bag.png'
+  ];
+
+  // Page 5 journey steps: CMS step objects carry only `title` — image resolved by step title.
+  const p5JourneyImages: Record<string, string> = {
+    'STORE EXPERIENCE': '/portfolio-assets/project-1/page5_journey_store.jpg',
+    'DIGITAL EXPERIENCE': '/portfolio-assets/project-1/page5_journey_digital.jpg',
+    'BILLBOARDS': '/portfolio-assets/project-1/page5_journey_billboards.jpg',
+    'MARKET ROLLOUT': '/portfolio-assets/project-1/page5_journey_billboards.jpg'
+  };
 
   return (
     <div className="bg-[var(--c-bg)] min-h-screen">
@@ -83,24 +101,22 @@ export const ProjectMarketingPage: React.FC = () => {
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* Breadcrumb overlay on hero image */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-14 lg:pb-20 min-h-[70vh] lg:min-h-[85vh] flex flex-col justify-start gap-4">
-          {/* Top breadcrumb row — sits on the image */}
-          <div className="flex items-center justify-between font-mono-code text-[11px] sm:text-xs uppercase tracking-widest text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
-            <div className="flex items-center gap-2">
-              <Link to="/" className="hover:opacity-80 flex items-center gap-1 transition-opacity">
-                <ArrowLeft className="w-3.5 h-3.5" />
-                <span>{u.breadcrumbProjects}</span>
-              </Link>
-              <span>/</span>
-              <span className="font-semibold">{u.breadcrumbCurrent}</span>
-            </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-14 lg:pb-20 min-h-[70vh] lg:min-h-[85vh] flex flex-col justify-start gap-4">
+        {/* Top breadcrumb row — sits on the image (page-specific heading removed) */}
+        <div className="flex items-center justify-between font-mono-code text-[11px] sm:text-xs uppercase tracking-widest text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+          <div className="flex items-center gap-2">
+            <Link to="/" className="hover:opacity-80 flex items-center gap-1 transition-opacity">
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>{u.breadcrumbProjects}</span>
+            </Link>
           </div>
-          {/* Top-centre hero heading overlay */}
-          <div className="max-w-4xl mx-auto text-center pt-0">
-            <h1 className="font-serif-display font-bold text-[var(--c-ink)] leading-[1.02] tracking-tight text-4xl sm:text-6xl drop-shadow-[0_1px_0_rgba(255,255,255,0.35)]">
-              A New Dimension of Life Wear : UNIQLO Fragrances
-            </h1>
-          </div>
+        </div>
+        {/* Hero heading overlay — moved up (tighter top spacing) */}
+        <div className="max-w-4xl mx-auto text-center pt-0 -mt-2 sm:-mt-4">
+          <h1 className="font-serif-display font-bold text-[var(--c-ink)] leading-[1.02] tracking-tight text-4xl sm:text-6xl drop-shadow-[0_1px_0_rgba(255,255,255,0.35)]">
+            A New Dimension of Life Wear : UNIQLO Fragrances
+          </h1>
+        </div>
         </div>
       </section>
 
@@ -643,36 +659,6 @@ export const ProjectMarketingPage: React.FC = () => {
 
             </div>
 
-            {/* Strategic Frameworks Summary */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 pt-6 border-t border-[var(--c-ink)]/15">
-              <div className="p-4 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15">
-                <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-1">
-                  {u.strategyStpLabel}
-                </span>
-                <p className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed">
-                  {pm.page4Strategy.stp}
-                </p>
-              </div>
-
-              <div className="p-4 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15">
-                <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-1">
-                  {u.strategy7psLabel}
-                </span>
-                <p className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed">
-                  {pm.page4Strategy.sevenPs}
-                </p>
-              </div>
-
-              <div className="p-4 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15">
-                <span className="font-mono-code text-xs font-bold uppercase text-[var(--c-ink)] block mb-1">
-                  {u.strategyBcgLabel}
-                </span>
-                <p className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed">
-                  {pm.page4Strategy.bcg}
-                </p>
-              </div>
-            </div>
-
             {/* Bottom Statement Banner */}
             <div className="bg-[#EFECE6] border-[1.5px] border-[var(--c-ink)]/20 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left">
@@ -741,6 +727,14 @@ export const ProjectMarketingPage: React.FC = () => {
                         {learn.detail}
                       </p>
                     </div>
+
+                    <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] aspect-[4/3]">
+                      <img
+                        src={learn.image || p5LearningImages[lIdx]}
+                        alt={learn.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 );
               })}
@@ -755,22 +749,31 @@ export const ProjectMarketingPage: React.FC = () => {
                   <h3 className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)]">
                     {p5.journeyInAction.title}
                   </h3>
-                  <span className="font-mono-code text-[10px] text-[var(--c-ink)]/50 uppercase">
-                    {u.p5PipelineTag}
-                  </span>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                  {p5.journeyInAction.steps.map((step, stIdx) => (
-                    <div key={stIdx} className="border-t border-[var(--c-ink)]/20 pt-3 text-center">
-                      <span className="font-mono-code text-[10px] text-[var(--c-ink)]/50 font-bold block">
-                        0{stIdx + 1}
-                      </span>
-                      <span className="font-mono-code text-[11px] font-bold text-[var(--c-ink)] block leading-tight">
-                        {step.title}
-                      </span>
-                    </div>
-                  ))}
+                  {p5.journeyInAction.steps.map((step, stIdx) => {
+                    const stepImage = step.image || p5JourneyImages[step.title];
+                    return (
+                      <div key={stIdx} className="border-t border-[var(--c-ink)]/20 pt-3 text-center">
+                        <span className="font-mono-code text-[10px] text-[var(--c-ink)]/50 font-bold block">
+                          0{stIdx + 1}
+                        </span>
+                        <span className="font-mono-code text-[11px] font-bold text-[var(--c-ink)] block leading-tight">
+                          {step.title}
+                        </span>
+                        {stepImage ? (
+                          <div className="mt-2 rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] aspect-[4/3]">
+                            <img
+                              src={stepImage}
+                              alt={step.title}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ) : null}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -799,12 +802,6 @@ export const ProjectMarketingPage: React.FC = () => {
                       );
                     })}
                   </div>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-[var(--c-ink)]/10 text-center">
-                  <span className="font-mono-code text-[11px] text-[var(--c-ink)]/60">
-                    {u.p5Capstone}
-                  </span>
                 </div>
               </div>
 

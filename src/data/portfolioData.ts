@@ -205,7 +205,7 @@ export const portfolioData = {
         title: "PROJECT BRIEF",
         text: "We were challenged to expand an existing fashion brand into a new product category. We chose UNIQLO and explored how its Life Wear philosophy could be extended beyond clothing.",
         scriptCallout: "From Life Wear to Feel Wear",
-        image: { src: "", label: "PROJECT BRIEF VISUAL", alt: "Project brief brand visual" }
+        image: { src: "/portfolio-assets/01_UNIQLO_main.jpg", label: "PROJECT BRIEF VISUAL", alt: "Project brief brand visual" }
       },
       quadrant02: {
         number: "02",
@@ -226,7 +226,7 @@ export const portfolioData = {
           }
         ],
         frameworkSentence: "The research was structured using strategic framework to evaluate the market, consumer & competitive landscape.",
-        image: { src: "", label: "RESEARCH SNAPSHOT", alt: "Market, consumer and competition research visual" }
+        image: { src: "/portfolio-assets/02_market_trends.jpg", label: "RESEARCH SNAPSHOT", alt: "Market, consumer and competition research visual" }
       },
       quadrant03: {
         number: "03",
@@ -327,12 +327,6 @@ export const portfolioData = {
         pagePagination: "Page 3 / 5"
       }
     },
-    page4Strategy: {
-      stp: "Segmentation based on urban minimalism and daily wellness. Targeting existing LifeWear customers seeking daily subtle scents. Positioning as essential everyday fragrance rather than overpowering luxury.",
-      sevenPs: "Product (Minimalist glass bottle), Price (Accessible premium), Place (Global flagships + e-commerce), Promotion (In-store sensory displays + digital micro-creators), Process (Tester stations), Physical Evidence (Eco-refill pouches), People (Educated store associates).",
-      bcg: "Positioned as a Question Mark with rapid transition pathway to Star status through UNIQLO’s existing foot-traffic and checkout counter cross-merchandising."
-    },
-
     // PAGE 4: FROM CONCEPT TO CONSUMER
     page4ConceptToConsumer: {
       pageLabel: "PAGE 04",
@@ -358,6 +352,16 @@ export const portfolioData = {
           src: "/portfolio-assets/project-1/page4_feedback.png",
           caption: "Feedback",
           desc: "Gathering direct quantitative & qualitative feedback"
+        },
+        {
+          src: "/portfolio-assets/project-1/page4_testing_setup.jpeg",
+          caption: "Testing Setup",
+          desc: "Test station with prototypes, devices & feedback forms ready for consumer sessions"
+        },
+        {
+          src: "/portfolio-assets/project-1/page4_consumer_feedback.jpeg",
+          caption: "Consumer Feedback",
+          desc: "Completed product feedback form with ratings & written responses"
         }
       ],
       processSteps: [
@@ -408,21 +412,25 @@ export const portfolioData = {
           num: "01",
           name: "RESEARCH",
           detail: "I learned to look at the market, consumer and competition before developing a concept.",
+          image: "/portfolio-assets/project-1/page5_research_papers.png"
         },
         {
           num: "02",
           name: "STRATEGY",
           detail: "I learned to connect a creative idea with STP, 7Ps, BCG and market planning.",
+          image: "/portfolio-assets/project-1/page5_strategy_notebook.png"
         },
         {
           num: "03",
           name: "CREATIVE THINKING",
           detail: "I learned to translate a brand philosophy into a new product and visual identity.",
+          image: "/portfolio-assets/project-1/page5_creative_fuji.png"
         },
         {
           num: "04",
           name: "BRAND THINKING",
           detail: "I learned that a new category must still feel connected to the original brand.",
+          image: "/portfolio-assets/project-1/page5_brand_bag.png"
         }
       ],
       journeyInAction: {
@@ -430,12 +438,15 @@ export const portfolioData = {
         steps: [
           {
             title: "STORE EXPERIENCE",
+            image: "/portfolio-assets/project-1/page5_journey_store.jpg"
           },
           {
             title: "DIGITAL EXPERIENCE",
+            image: "/portfolio-assets/project-1/page5_journey_digital.jpg"
           },
           {
-            title: "MARKET ROLLOUT",
+            title: "BILLBOARDS",
+            image: "/portfolio-assets/project-1/page5_journey_billboards.jpg"
           }
         ]
       },
@@ -1015,20 +1026,15 @@ export const portfolioData = {
       p3Title: "DESIGN DECISIONS & 4 VARIANTS",
       p3Intro: "Five strategic design pillars grounding the fragrance line in UNIQLO's brand DNA.",
 
-      strategyStpLabel: "STP ANALYSIS",
-      strategy7psLabel: "7Ps MARKETING MIX",
-      strategyBcgLabel: "BCG GROWTH MATRIX",
       p4TestHeader: "THE TEST",
       p4ProcessHeader: "THE PROCESS",
       p4InsightsHeader: "KEY INSIGHTS",
 
       p4SynthesisLabel: "STRATEGIC SYNTHESIS",
-      p5PipelineTag: "4-PHASE COMMERCIAL PIPELINE",
       p5SkillsHeader: "SKILLS I DEVELOPED",
 
-      p5Capstone: "Capstone Academic & Strategic Synthesis",
       footerAll: "Back to Home",
-      footerNext: "Next Project: Cover Story (Visual Merchandising)"
+      footerNext: "Next Project: Future Florals × Cover Story"
     },
 
     projectVM: {

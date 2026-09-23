@@ -32,58 +32,43 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
 
   return (
     <div className="bg-[var(--c-bg)] min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24">
-        {/* Top Breadcrumb */}
-        <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/50 pb-4 border-b border-[var(--c-ink)]/10 mb-12">
-          <div className="flex items-center gap-2">
-            <Link to="/" className="hover:text-[var(--c-ink)] flex items-center gap-1">
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>{u.breadcrumbProjects}</span>
-            </Link>
-            <span>/</span>
-            <span className="text-[var(--c-ink)] font-semibold">{u.breadcrumbCurrent}</span>
-          </div>
-          <span>{u.breadcrumbTag}</span>
-        </div>
-      </div>
 
-      {/* SECTION: COVER PAGE */}
-      <section className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 space-y-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
-            <div className="relative">
-              <div className="grid grid-cols-1 gap-8 items-center">
-                <div className="space-y-6">
-                  <h1 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl text-[var(--c-ink)] leading-[1.02] tracking-tight">
-                    {vm.cover.title}
-                  </h1>
-
-                  <p className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)]/80 italic leading-snug">
-                    {vm.cover.subtitle}
-                  </p>
-
-                  <p className="font-mono-code text-xs sm:text-sm text-[var(--c-ink)]/70 max-w-xl leading-relaxed">
-                    {vm.cover.tagline}
-                  </p>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-[var(--c-ink)]/15 font-mono-code text-xs">
-                    <div>
-                      <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">{u.metaBrandLabel}</span>
-                      <span className="font-bold text-[var(--c-ink)]">{vm.cover.brand}</span>
-                    </div>
-                    <div>
-                      <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">{u.metaSeasonLabel}</span>
-                      <span className="font-bold text-[var(--c-ink)]">{vm.cover.season}</span>
-                    </div>
-                    <div>
-                      <span className="text-[var(--c-ink)]/50 block text-[10px] uppercase">{u.metaConceptLabel}</span>
-                      <span className="font-bold text-[var(--c-ink)]">"{vm.cover.conceptName}"</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+      {/* SECTION: COVER (full-bleed image background, overlay text removed) */}
+      {/* Image: /portfolio-assets/project2-hero-bg.png */}
+      <section className="relative border-b border-[var(--c-ink)]/15 scroll-mt-24 overflow-hidden bg-[var(--c-bg)]">
+        <img
+          src="/portfolio-assets/project2-hero-bg.png"
+          onError={(e) => {
+            const t = e.currentTarget as HTMLImageElement;
+            if (!t.dataset.fbk && t.src.indexOf('project2-hero-bg.png') !== -1) {
+              t.dataset.fbk = '1';
+              t.src = '/portfolio-assets/project2.png';
+            } else {
+              (t as HTMLElement).style.display = 'none';
+            }
+          }}
+          alt="Cover Story Future Florals hero"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {/* Breadcrumb overlay on hero image */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-14 lg:pb-20 min-h-[70vh] lg:min-h-[85vh] flex flex-col justify-start gap-4">
+          <div className="flex items-center font-mono-code text-[11px] sm:text-xs uppercase tracking-widest text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+            <div className="flex items-center gap-2">
+              <Link to="/" className="hover:opacity-80 flex items-center gap-1 transition-opacity">
+                <ArrowLeft className="w-3.5 h-3.5" />
+                <span>{u.breadcrumbProjects}</span>
+              </Link>
             </div>
           </div>
+          <div className="max-w-4xl pt-8 sm:pt-12">
+            <h1 className="font-serif-display font-bold text-[var(--c-ink)] leading-[1.02] tracking-tight text-3xl sm:text-5xl lg:text-6xl drop-shadow-[0_1px_0_rgba(255,255,255,0.35)]">
+              {vm.cover.title}
+            </h1>
+            <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] mt-2">
+              {vm.cover.subtitle}
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* SECTION: PAGE 2 — FROM INSIGHT TO CONCEPT */}

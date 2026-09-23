@@ -52,10 +52,6 @@ export const ProjectMarketingPage: React.FC = () => {
 
   // Page 4 test photos: Sanity may hydrate without `src`, so fall back to the local assets.
   const p4PhotoFallbacks = [
-    '/portfolio-assets/project-1/page4_product_display.png',
-    '/portfolio-assets/project-1/page4_consumer_interaction.png',
-    '/portfolio-assets/project-1/page4_fragrance_samples.png',
-    '/portfolio-assets/project-1/page4_feedback.png',
     '/portfolio-assets/project-1/page4_testing_setup.jpeg',
     '/portfolio-assets/project-1/page4_consumer_feedback.jpeg'
   ];
@@ -64,7 +60,7 @@ export const ProjectMarketingPage: React.FC = () => {
   const p5LearningImages = [
     '/portfolio-assets/project-1/page5_research_papers.png',
     '/portfolio-assets/project-1/page5_strategy_notebook.png',
-    '/portfolio-assets/project-1/page5_creative_fuji.png',
+    '/portfolio-assets/project-1/page5_creative_thinking.jpeg',
     '/portfolio-assets/project-1/page5_brand_bag.png'
   ];
 
@@ -112,8 +108,8 @@ export const ProjectMarketingPage: React.FC = () => {
           </div>
         </div>
         {/* Hero heading overlay — moved up (tighter top spacing) */}
-        <div className="max-w-4xl mx-auto text-center pt-0 -mt-2 sm:-mt-4">
-          <h1 className="font-serif-display font-bold text-[var(--c-ink)] leading-[1.02] tracking-tight text-4xl sm:text-6xl drop-shadow-[0_1px_0_rgba(255,255,255,0.35)]">
+        <div className="max-w-4xl mx-auto text-center pt-0 -mt-4 sm:-mt-8">
+          <h1 className="font-serif-display font-bold text-[var(--c-ink)] leading-[1.02] tracking-tight text-3xl sm:text-5xl drop-shadow-[0_1px_0_rgba(255,255,255,0.35)]">
             A New Dimension of Life Wear : UNIQLO Fragrances
           </h1>
         </div>
@@ -561,21 +557,21 @@ export const ProjectMarketingPage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-10">
 
               {/* ------------------------------------------------------------- */}
-              {/* COLUMN 1: THE TEST (2x2 Photo Grid)                           */}
+              {/* COLUMN 1: THE TEST (Stacked: group picture, feedback form)    */}
               {/* ------------------------------------------------------------- */}
               <div className="lg:col-span-5 bg-white border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 paper-shadow">
                 <h3 className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">
                   {u.p4TestHeader}
                 </h3>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-5">
                   {p4.testPhotos.map((photo, pIdx) => (
                     <div key={pIdx} className="space-y-1.5">
                       <PlaceholderImage
                         src={photo.src || p4PhotoFallbacks[pIdx]}
                         label={photo.caption}
                         alt={photo.caption}
-                        aspect="aspect-[4/5]"
+                        aspect={pIdx === 0 ? 'aspect-[1562/1600]' : 'aspect-[822/1166]'}
                       />
                       <span className="font-mono-code text-xs font-bold text-[var(--c-ink)] block leading-tight">
                         {photo.caption}

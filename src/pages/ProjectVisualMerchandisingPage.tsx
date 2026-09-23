@@ -303,7 +303,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 const imageLeft = idx % 2 === 0;
                 return (
                 <div key={idx} className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center`}>
-                  <div className={`rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] shadow-sm w-full max-w-[260px] sm:max-w-[320px] mx-auto ${imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <div className={`rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] shadow-sm w-full max-w-md mx-auto ${imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
                     <img
                       src={(step as { image?: string }).image}
                       alt={`${step.imageIndex}: ${step.title}`}

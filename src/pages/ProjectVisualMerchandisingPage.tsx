@@ -2,9 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
-  ArrowDown
+  ArrowDown,
+  Lightbulb,
+  Eye,
+  Layers,
+  Flower2,
+  Settings,
+  Scale,
+  Maximize2,
+  Target,
+  Waves,
+  Palette,
+  Sun
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+
+const vmIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Lightbulb, Eye, Layers, Flower2, Settings, Scale, Maximize2, Target, Waves, Palette, Sun
+};
 
 export const ProjectVisualMerchandisingPage: React.FC = () => {
   const { projectVM: vm } = portfolioData;
@@ -359,24 +374,36 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center mb-4">
                     {u.p5SkillsHeader}
                   </div>
-                  <ul className="space-y-2">
-                    {vm.page5SkillsAndPrinciples.skillsApplied.map((sk, idx) => (
-                      <li key={idx} className="font-mono-code text-[11px] font-bold uppercase tracking-wider text-[var(--c-ink)]/85 text-center">
-                        {sk.title}
-                      </li>
-                    ))}
+                  <ul className="space-y-3">
+                    {vm.page5SkillsAndPrinciples.skillsApplied.map((sk, idx) => {
+                      const Icon = vmIconMap[sk.icon] ?? Lightbulb;
+                      return (
+                        <li key={idx} className="flex items-center justify-center gap-2.5">
+                          <Icon className="w-4 h-4 text-[var(--c-ink)]/70 shrink-0" />
+                          <span className="font-mono-code text-[11px] font-bold uppercase tracking-wider text-[var(--c-ink)]/85">
+                            {sk.title}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
                 <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-6 flex-1">
                   <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center mb-4">
                     {u.p5PrinciplesHeader}
                   </div>
-                  <ul className="space-y-2">
-                    {vm.page5SkillsAndPrinciples.vmPrinciplesApplied.map((p, idx) => (
-                      <li key={idx} className="font-mono-code text-[11px] font-bold uppercase tracking-wider text-[var(--c-ink)]/85 text-center">
-                        {p.number}. {p.name}
-                      </li>
-                    ))}
+                  <ul className="space-y-3">
+                    {vm.page5SkillsAndPrinciples.vmPrinciplesApplied.map((p, idx) => {
+                      const Icon = vmIconMap[p.icon] ?? Scale;
+                      return (
+                        <li key={idx} className="flex items-center justify-center gap-2.5">
+                          <Icon className="w-4 h-4 text-[var(--c-ink)]/70 shrink-0" />
+                          <span className="font-mono-code text-[11px] font-bold uppercase tracking-wider text-[var(--c-ink)]/85">
+                            {p.number}. {p.name}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>

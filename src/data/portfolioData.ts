@@ -199,12 +199,13 @@ export const portfolioData = {
     page2BriefToConcept: {
       pageLabel: "PAGE 02",
       title: "FROM BRIEF TO CONCEPT",
-      subtitle: "How I turned a category-expansion brief into a fragrance concept.",
+      subtitle: "How we turned category-expansion brief into a fragrance concept.",
       quadrant01: {
         number: "01",
         title: "PROJECT BRIEF",
-        text: "I was challenged to expand an existing fashion brand into a new product category. I chose UNIQLO and explored how its Life Wear philosophy could be extended beyond clothing.",
-        scriptCallout: "From Life Wear to Feel Wear"
+        text: "We were challenged to expand an existing fashion brand into a new product category. We chose UNIQLO and explored how its Life Wear philosophy could be extended beyond clothing.",
+        scriptCallout: "From Life Wear to Feel Wear",
+        image: { src: "", label: "PROJECT BRIEF VISUAL", alt: "Project brief brand visual" }
       },
       quadrant02: {
         number: "02",
@@ -224,8 +225,9 @@ export const portfolioData = {
             points: ["Zara, H&M, etc.", "Existing fragrance lines", "Positioning & gaps"]
           }
         ],
-        frameworkSentence: "I used SWOT, Porter's Five Forces, STP, 7Ps, Ansoff and BCG to structure my analysis.",
+        frameworkSentence: "The research was structured using strategic framework to evaluate the market, consumer & competitive landscape.",
         frameworkBadges: ["SWOT", "PORTER'S FIVE FORCES", "STP", "7Ps", "ANSOFF", "BCG"],
+        image: { src: "", label: "RESEARCH SNAPSHOT", alt: "Market, consumer and competition research visual" }
       },
       quadrant03: {
         number: "03",
@@ -238,6 +240,11 @@ export const portfolioData = {
           { name: "MIZU", label: "WATER", color: "#E0F2FE", dotColor: "#BAE6FD" },
           { name: "KAZE", label: "WIND", color: "#DCFCE7", dotColor: "#BBF7D0" },
           { name: "SORA", label: "SKY", color: "#E0E7FF", dotColor: "#C7D2FE" }
+        ],
+        images: [
+          { src: "", label: "CONCEPT VISUAL 01", alt: "Concept development visual one" },
+          { src: "", label: "CONCEPT VISUAL 02", alt: "Concept development visual two" },
+          { src: "", label: "CONCEPT VISUAL 03", alt: "Concept development visual three" }
         ]
       },
       quadrant04: {

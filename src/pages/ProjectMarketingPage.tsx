@@ -18,6 +18,7 @@ import {
   ArrowRight, 
   ArrowDown 
 } from 'lucide-react';
+import { PlaceholderImage } from '../components/PlaceholderImage';
 import { portfolioData } from '../data/portfolioData';
 
 export const ProjectMarketingPage: React.FC = () => {
@@ -29,34 +30,43 @@ export const ProjectMarketingPage: React.FC = () => {
 
   return (
     <div className="bg-[var(--c-bg)] min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24">
-        
-        {/* Top Breadcrumb */}
-        <div className="flex items-center justify-between font-mono-code text-xs text-[var(--c-ink)]/50 pb-4 border-b border-[var(--c-ink)]/10 mb-12">
-          <div className="flex items-center gap-2">
-            <Link to="/" className="hover:text-[var(--c-ink)] flex items-center gap-1 transition-colors">
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>{u.breadcrumbProjects}</span>
-            </Link>
-            <span>/</span>
-            <span className="text-[var(--c-ink)] font-semibold">{u.breadcrumbCurrent}</span>
-          </div>
-          <span className="hidden sm:inline">{u.breadcrumbTag}</span>
-        </div>
-      </div>
 
       {/* ========================================================================= */}
       {/* PAGE 1: HERO (full-bleed image background, overlay text removed)       */}
       {/* Image: /portfolio-assets/project1-hero-bg.png (drop your PNG there)   */}
       {/* ========================================================================= */}
       <section id="page-1" className="relative border-b border-[var(--c-ink)]/15 scroll-mt-24 overflow-hidden bg-[var(--c-soft)]">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/portfolio-assets/project1-hero-bg.png')" }}
-          aria-hidden="true"
+        {/* Hero image: uses project1-hero-bg.png when you drop it in public/portfolio-assets/,
+            falls back to project1.png so the section is never blank. */}
+        <img
+          src="/portfolio-assets/project1-hero-bg.png"
+          onError={(e) => {
+            const t = e.currentTarget as HTMLImageElement;
+            if (!t.dataset.fbk && t.src.indexOf('project1-hero-bg.png') !== -1) {
+              t.dataset.fbk = '1';
+              t.src = '/portfolio-assets/project1.png';
+            } else {
+              (t as HTMLElement).style.display = 'none';
+            }
+          }}
+          alt="UNIQLO fragrance project hero"
+          className="absolute inset-0 h-full w-full object-cover"
         />
-        {/* Content slot — headings + two texts will go here (cleared for now) */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 min-h-[70vh] lg:min-h-[85vh] flex items-end">
+        {/* Breadcrumb overlay on hero image */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 min-h-[70vh] lg:min-h-[85vh] flex flex-col justify-between">
+          {/* Top breadcrumb row — sits on the image */}
+          <div className="flex items-center justify-between font-mono-code text-[11px] sm:text-xs uppercase tracking-widest text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+            <div className="flex items-center gap-2">
+              <Link to="/" className="hover:opacity-80 flex items-center gap-1 transition-opacity">
+                <ArrowLeft className="w-3.5 h-3.5" />
+                <span>{u.breadcrumbProjects}</span>
+              </Link>
+              <span>/</span>
+              <span className="font-semibold">{u.breadcrumbCurrent}</span>
+            </div>
+            <span className="hidden sm:inline">{u.breadcrumbTag}</span>
+          </div>
+          {/* Bottom slot — headings + two texts will go here */}
           <div className="space-y-6">
             {/* TODO(project1): add few headings + two texts here */}
           </div>
@@ -98,9 +108,17 @@ export const ProjectMarketingPage: React.FC = () => {
                     </h3>
                   </div>
 
-                  <p className="font-body text-sm sm:text-base text-[var(--c-ink)]/85 leading-relaxed mb-6">
+                  <p className="font-body text-sm sm:text-base text-[var(--c-ink)]/85 leading-relaxed mb-4">
                     {p2.quadrant01.text}
                   </p>
+
+                  <div className="mb-4">
+                    <PlaceholderImage
+                      src={p2.quadrant01.image.src}
+                      label={p2.quadrant01.image.label}
+                      alt={p2.quadrant01.image.alt}
+                    />
+                  </div>
                 </div>
 
                 <div className="pt-2">
@@ -174,6 +192,14 @@ export const ProjectMarketingPage: React.FC = () => {
                         {badge}
                       </span>
                     ))}
+                  </div>
+
+                  <div className="mt-4">
+                    <PlaceholderImage
+                      src={p2.quadrant02.image.src}
+                      label={p2.quadrant02.image.label}
+                      alt={p2.quadrant02.image.alt}
+                    />
                   </div>
                 </div>
               </div>
@@ -271,6 +297,19 @@ export const ProjectMarketingPage: React.FC = () => {
                         ))}
                       </div>
                     </div>
+                  </div>
+
+                  {/* 3 Concept Placeholder Visuals */}
+                  <div className="grid grid-cols-3 gap-2 mb-4">
+                    {p2.quadrant03.images.map((img, imgIdx) => (
+                      <PlaceholderImage
+                        key={imgIdx}
+                        src={img.src}
+                        label={img.label}
+                        alt={img.alt}
+                        aspect="aspect-[4/3]"
+                      />
+                    ))}
                   </div>
                 </div>
 

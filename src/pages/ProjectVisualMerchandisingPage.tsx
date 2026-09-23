@@ -231,11 +231,13 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             {/* MOOD BOARD — keep heading, image + content + tiny keywords */}
             <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-10">
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                {/* Mood Board Image - LEFT */}
-                <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
+                {/* Mood Board Image - LEFT (native 1280x720, 16:9) */}
+                <div className="relative aspect-video rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
                   <img
                     src={vm.page3Boards.moodBoard.image}
                     alt="Mood Board - Future Florals"
+                    width={1280}
+                    height={720}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -257,11 +259,13 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             {/* COLOUR BOARD */}
             <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-8">
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                {/* Colour Board Image - LEFT */}
-                <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
+                {/* Colour Board Image - LEFT (native 1280x720, 16:9) */}
+                <div className="relative aspect-video rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
                   <img
                     src={vm.page3Boards.colourBoard.image}
                     alt="Colour Board - Future Florals"
+                    width={1280}
+                    height={720}
                     className="w-full h-full object-cover"
                   />
                 </div>

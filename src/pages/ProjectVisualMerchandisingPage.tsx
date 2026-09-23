@@ -150,11 +150,11 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   {vm.page2Brief.howIReachedTheConcept.map((node, nIdx) => (
                     <React.Fragment key={nIdx}>
                       <div className="flex items-center gap-3.5">
-                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-[var(--c-ink)]/25 shadow-xs shrink-0 bg-white/70 flex items-center justify-center p-1.5">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border border-[var(--c-ink)]/25 shadow-xs shrink-0 bg-white/70">
                           <img
                             src={node.image}
                             alt={node.label.replace('\n', ' ')}
-                            className="w-full h-full object-contain rounded-full"
+                            className="w-full h-full object-cover scale-[1.7]"
                           />
                         </div>
                         <div className="min-w-0">

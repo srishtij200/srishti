@@ -460,17 +460,17 @@ export const portfolioData = {
       whatIInvestigated: [
         {
           name: "BRAND IDENTITY",
-          image: "/portfolio-assets/project-2/brand-identity-pink-floral.png",
+          image: "/portfolio-assets/project-2/brand-identity.jpg",
           points: ["Feminine", "Contemporary", "Effortlessly Elegant"],
         },
         {
           name: "SEASONAL DIRECTION",
-          image: "/portfolio-assets/project-2/seasonal-direction-floral-iridescent.png",
+          image: "/portfolio-assets/project-2/seasonal-direction.jpg",
           points: ["Spring/Summer", "Lightness", "Freshness"],
         },
         {
           name: "VISUAL INSPIRATION",
-          image: "/portfolio-assets/project-2/visual-inspiration-iridescent-texture.png",
+          image: "/portfolio-assets/project-2/visual-inspiration.jpg",
           points: ["Florals", "Pastels", "Iridescence"],
         }
       ],

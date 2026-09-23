@@ -48,7 +48,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
       </div>
 
       {/* SECTION: COVER PAGE */}
-      <section className="bg-[var(--c-soft)] border-b border-[var(--c-ink)]/15 scroll-mt-24 space-y-12">
+      <section className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 space-y-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             <div className="relative">
               <div className="grid grid-cols-1 gap-8 items-center">
@@ -177,7 +177,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
         </div>
 
       {/* SECTION: PAGE 3 — THE VISUAL LANGUAGE (MOOD & COLOUR BOARDS) */}
-      <div className="bg-[var(--c-highlight)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
+      <div className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Slide Header */}
             <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
@@ -240,7 +240,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   <h2 className="font-serif-display text-3xl text-[var(--c-ink)] mb-3">
                     {vm.page3Boards.colourBoard.title}
                   </h2>
-                  <span className="inline-block px-2.5 py-1 bg-[var(--c-highlight)] border border-[var(--c-ink)] rounded-full font-mono-code text-[10px] font-bold uppercase text-[var(--c-ink)] mb-3">
+                  <span className="inline-block px-2.5 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full font-mono-code text-[10px] font-bold uppercase text-[var(--c-ink)] mb-3">
                     {vm.page3Boards.colourBoard.moodTag}
                   </span>
                   <p className="font-body text-sm sm:text-base text-[var(--c-ink)]/85 leading-relaxed">
@@ -285,7 +285,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
         </div>
 
       {/* SECTION: PAGE 5 — FROM CONCEPT TO CAPABILITY (SKILLS & PRINCIPLES) */}
-      <div className="bg-[var(--c-soft)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
+      <div className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Slide Header */}
             <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">

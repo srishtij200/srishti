@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   const { ui, student } = portfolioData;
 
   return (
-    <footer className="bg-[var(--c-highlight)] border-t border-[var(--c-ink)]/15 py-16 lg:py-20 text-[var(--c-ink)]">
+    <footer className="bg-[var(--c-warm)] border-t border-[var(--c-ink)]/15 py-16 lg:py-20 text-[var(--c-ink)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8 text-center">
         <Link to="/" className="flex items-center gap-2.5">
           <FlowerMark size={24} />

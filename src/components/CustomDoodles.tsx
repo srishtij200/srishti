@@ -18,12 +18,12 @@ export const FlowerMark: React.FC<{ className?: string; size?: number }> = ({
   >
     {/* Abstract hand-drawn 8-petal daisy mark */}
     <circle cx="16" cy="7" r="4.5" fill="#C9A0A4" stroke="#2A2E28" strokeWidth="1.5" />
-    <circle cx="22.3" cy="9.7" r="4.5" fill="#B7CDE2" stroke="#2A2E28" strokeWidth="1.5" />
-    <circle cx="25" cy="16" r="4.5" fill="#A9B5A0" stroke="#2A2E28" strokeWidth="1.5" />
+    <circle cx="22.3" cy="9.7" r="4.5" fill="#F6E7D3" stroke="#2A2E28" strokeWidth="1.5" />
+    <circle cx="25" cy="16" r="4.5" fill="#C9A0A4" stroke="#2A2E28" strokeWidth="1.5" />
     <circle cx="22.3" cy="22.3" r="4.5" fill="#F6E7D3" stroke="#2A2E28" strokeWidth="1.5" />
     <circle cx="16" cy="25" r="4.5" fill="#C9A0A4" stroke="#2A2E28" strokeWidth="1.5" />
-    <circle cx="9.7" cy="22.3" r="4.5" fill="#B7CDE2" stroke="#2A2E28" strokeWidth="1.5" />
-    <circle cx="7" cy="16" r="4.5" fill="#A9B5A0" stroke="#2A2E28" strokeWidth="1.5" />
+    <circle cx="9.7" cy="22.3" r="4.5" fill="#F6E7D3" stroke="#2A2E28" strokeWidth="1.5" />
+    <circle cx="7" cy="16" r="4.5" fill="#C9A0A4" stroke="#2A2E28" strokeWidth="1.5" />
     <circle cx="9.7" cy="9.7" r="4.5" fill="#F6E7D3" stroke="#2A2E28" strokeWidth="1.5" />
     {/* Center dot */}
     <circle cx="16" cy="16" r="4.8" fill="#2A2E28" />

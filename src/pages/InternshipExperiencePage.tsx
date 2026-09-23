@@ -14,7 +14,7 @@ export const InternshipExperiencePage: React.FC = () => {
   return (
     <div className="bg-[var(--c-bg)] min-h-screen">
       {/* Company Header — dusty blue band */}
-      <div className="bg-[var(--c-soft)] border-b border-[var(--c-ink)]/15">
+      <div className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full text-xs font-mono-code uppercase tracking-widest text-[var(--c-ink)] mb-4">
@@ -104,7 +104,7 @@ export const InternshipExperiencePage: React.FC = () => {
       </section>
 
       {/* SECTION 2: PAGE 2 — E-COMMERCE — sage band */}
-      <section id="ecommerce" className="bg-[var(--c-highlight)] border-b border-[var(--c-ink)]/15 scroll-mt-24">
+      <section id="ecommerce" className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
           <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-[var(--c-ink)]/15">
             <ShoppingBag className="w-5 h-5 text-[var(--c-ink)]" />
@@ -204,7 +204,7 @@ export const InternshipExperiencePage: React.FC = () => {
       </section>
 
       {/* SECTION 4: LEARNING OUTCOMES (Consolidated) — dusty blue band + bottom navigation */}
-      <section id="learning-outcomes" className="bg-[var(--c-soft)] border-b border-[var(--c-ink)]/15 scroll-mt-24">
+      <section id="learning-outcomes" className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
           <div className="relative">
             <div className="max-w-2xl mb-8">

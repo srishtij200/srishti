@@ -91,6 +91,35 @@ function denormalize(value: unknown): any {
   return value;
 }
 
+
+/* Image fields that live in the repo bundle (public/portfolio-assets).
+   If Sanity returns nothing for these, keep the local value. */
+const IMAGE_KEYS = new Set(['src', 'image', 'coverImage', 'heroImage', 'photo', 'photos', 'images']);
+
+function preserveLocalImages(target: unknown, src: unknown): void {
+  if (Array.isArray(target) && Array.isArray(src)) {
+    const n = Math.min(target.length, src.length);
+    for (let i = 0; i < n; i++) preserveLocalImages(target[i], src[i]);
+    return;
+  }
+  if (!isPlainObject(target) || !isPlainObject(src)) return;
+  for (const k of Object.keys(src)) {
+    const sv = (src as AnyDoc)[k];
+    const tv = (target as AnyDoc)[k];
+    if (IMAGE_KEYS.has(k)) {
+      if ((sv === '' || sv === null || sv === undefined) && typeof tv === 'string' && tv) {
+        delete (src as AnyDoc)[k];
+        continue;
+      }
+      if (isPlainObject(sv) && isPlainObject(tv)) {
+        preserveLocalImages(tv, sv);
+        continue;
+      }
+    }
+    preserveLocalImages(tv, sv);
+  }
+}
+
 /* ------------------------- deep merge ---------------------------- */
 
 function isPlainObject(v: unknown): v is AnyDoc {
@@ -213,6 +242,10 @@ export async function hydrateFromSanity(): Promise<boolean> {
       continue;
     }
     if (isPlainObject(cleaned) && isPlainObject(target)) {
+      // Preserve local-only image paths: Sanity docs may lack image fields
+      // (or hold stale docs); never let a missing/empty CMS value wipe a
+      // local /portfolio-assets/* path already set in the bundle.
+      preserveLocalImages(target, cleaned);
       deepMerge(target, cleaned);
     }
   }

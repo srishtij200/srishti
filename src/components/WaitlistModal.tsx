@@ -119,7 +119,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                       placeholder={w.emailPlaceholder}
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-xl px-4 py-3 font-mono-code text-sm text-[var(--c-ink)] placeholder-[var(--c-ink)]/40 focus:outline-hidden focus:ring-2 focus:ring-[var(--c-highlight)]"
+                      className="w-full bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-xl px-4 py-3 font-mono-code text-sm text-[var(--c-ink)] placeholder-[var(--c-ink)]/40 focus:outline-hidden focus:ring-2 focus:ring-[var(--c-warm)]"
                     />
                   </div>
 
@@ -135,7 +135,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                           onClick={() => setRole(r)}
                           className={`py-2 px-2 text-xs font-mono-code rounded-lg border-[1.5px] transition-all text-center leading-tight ${
                             role === r
-                              ? 'bg-[var(--c-highlight)] border-[var(--c-ink)] font-bold paper-shadow-sm'
+                              ? 'bg-[var(--c-warm)] border-[var(--c-ink)] font-bold paper-shadow-sm'
                               : 'bg-transparent border-[var(--c-ink)]/40 hover:border-[var(--c-ink)] text-[var(--c-ink)]/80'
                           }`}
                         >
@@ -171,7 +171,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
               <div className="text-center py-2">
                 {/* Physical ticket look */}
                 <div className="relative bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-xl p-6 mb-6 paper-shadow text-left overflow-hidden">
-                  <div className="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-[var(--c-highlight)]/30 border border-[var(--c-ink)]/10" />
+                  <div className="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-[var(--c-warm)]/30 border border-[var(--c-ink)]/10" />
                   
                   <div className="flex items-start justify-between border-b border-[var(--c-ink)]/20 pb-4 mb-4">
                     <div>
@@ -219,7 +219,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                 </div>
 
                 <div className="flex items-center justify-center gap-2 mb-4">
-                  <Sparkles className="w-4 h-4 text-[var(--c-highlight)]" />
+                  <Sparkles className="w-4 h-4 text-[var(--c-warm)]" />
                   <span className="font-serif-display text-xl text-[var(--c-ink)]">{w.loggedTitle}</span>
                 </div>
                 <p className="font-body text-xs text-[var(--c-ink)]/80 max-w-sm mx-auto mb-6">
@@ -229,7 +229,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, i
                 <div className="flex items-center justify-center gap-3">
                   <button
                     onClick={copyTicket}
-                    className="flex items-center gap-1.5 px-4 py-2 bg-[var(--c-soft)] border border-[var(--c-ink)] rounded-lg text-xs font-mono-code text-[var(--c-ink)] paper-shadow-sm hover:translate-y-[-1px] transition-all cursor-pointer"
+                    className="flex items-center gap-1.5 px-4 py-2 bg-[var(--c-warm)] border border-[var(--c-ink)] rounded-lg text-xs font-mono-code text-[var(--c-ink)] paper-shadow-sm hover:translate-y-[-1px] transition-all cursor-pointer"
                   >
                     {isCopied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{isCopied ? w.copiedLabel : w.copyLabel}</span>

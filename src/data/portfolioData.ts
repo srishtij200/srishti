@@ -886,6 +886,20 @@ export const portfolioData = {
         { heading: "Fabric too thick", action: "Lighter, breathable fabric" },
         { heading: "Limited styles", action: "Add halter / sleeveless options" },
         { heading: "Summer comfort concern", action: "Climate-appropriate materials" }
+      ],
+      whatThisTaughtMe: [
+        {
+          headline: "Research before assumptions",
+          detail: "Consumer feedback can challenge initial decisions and ground creative intuition in reality."
+        },
+        {
+          headline: "Build → Test → Refine",
+          detail: "A first product doesn’t have to be perfect; the power lies in iterative cycles."
+        },
+        {
+          headline: "Think beyond the product",
+          detail: "Good product decisions connect consumer needs, material functionality and business thinking."
+        }
       ]
     }
   },
@@ -1175,7 +1189,9 @@ export const portfolioData = {
       page2Headline2: "TO AN OPPORTUNITY",
       page2BriefLabel: "Brief",
       opportunityGap: "OPPORTUNITY GAP",
-      p3PageLabel: "PAGE 3",
+      p3PageLabel: "",
+      p3SectionTitle: "FROM IDEA TO MVP",
+      p3SectionSub: "Turning insight into something real",
       p3DesignParagraph:
         "Structured crop top tailored with compressive chest support paired with airy, comfortable relaxed joggers for effortless movement.",
 
@@ -1187,8 +1203,8 @@ export const portfolioData = {
       p4Title: "Test. Learn. Refine.",
       p4Subtitle: "From feedback to better decisions.",
       p4Brand: "ATHIRA",
-      p4HeardTitle: "WHAT I HEARD",
-      p4TaughtTitle: "WHAT THIS TAUGHT ME",
+      p4HeardTitle: "CONSUMER INSIGHTS",
+      p4TaughtTitle: "KEY LEARNINGS",
       p4LoopHeader: "FEEDBACK → ITERATION → IMPACT",
 
       p4FeedbackLabel: "FEEDBACK",

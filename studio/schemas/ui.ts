@@ -369,6 +369,8 @@ export const ui = defineType({
         { name: 'page2Headline2', title: 'Page 2 — Headline Line 2', type: 'string' },
         { name: 'opportunityGap', title: 'Opportunity Gap Badge', type: 'string' },
         { name: 'p3PageLabel', title: 'Page 3 Label', type: 'string' },
+        { name: 'p3SectionTitle', title: 'Page 3 — Section Title', type: 'string' },
+        { name: 'p3SectionSub', title: 'Page 3 — Section Subtitle', type: 'string' },
         { name: 'p3DesignParagraph', title: 'Page 3 Design Paragraph', type: 'text', rows: 3 },
 
         { name: 'prototypeParagraph', title: 'Prototype Paragraph', type: 'text', rows: 3 },

@@ -302,9 +302,14 @@ export const ProjectThreePage: React.FC = () => {
       {/* SECTION: DESIGN, MATERIAL & PROTOTYPE */}
       <div className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
-            <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-8">
-              {u.p3PageLabel}
-            </span>
+            <div className="mb-8">
+              <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] tracking-tight">
+                {u.p3SectionTitle}
+              </h2>
+              <p className="font-body text-sm sm:text-base text-[var(--c-ink)]/70 mt-2">
+                {u.p3SectionSub}
+              </p>
+            </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8">
             {/* 01 DESIGN WITH TECHNICAL FLAT DRAWING */}
@@ -538,6 +543,27 @@ export const ProjectThreePage: React.FC = () => {
                 ))}
               </div>
             </div>
+
+            {/* KEY LEARNINGS */}
+            {p3.page4FeedbackAndIteration.whatThisTaughtMe?.length > 0 && (
+              <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-8">
+                <div className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-6">
+                  {u.p4TaughtTitle}
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {p3.page4FeedbackAndIteration.whatThisTaughtMe.map((item, iIdx) => (
+                    <div key={iIdx} className="p-5 bg-[var(--c-bg)] border border-[var(--c-ink)]/15 rounded-xl">
+                      <div className="font-mono-code text-xs font-bold text-[var(--c-ink)] uppercase tracking-wide mb-2">
+                        {item.headline}
+                      </div>
+                      <div className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed">
+                        {item.detail}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="flex justify-end pt-6 border-t border-[var(--c-ink)]/15 font-mono-code text-xs">
               <Link

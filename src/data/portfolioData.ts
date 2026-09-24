@@ -505,7 +505,7 @@ export const portfolioData = {
       subtitle: "How we translated the brand into a visual direction.",
       briefTitle: "THE BRIEF",
       briefText: "To develop a Spring/Summer visual merchandising concept for Cover Story, creating a fresh, feminine and contemporary in-store experience.",
-      investigationTitle: "WHAT I INVESTIGATED",
+      investigationTitle: "KEY AREAS OF INVESTIGATION",
       whatIInvestigated: [
         {
           name: "BRAND IDENTITY",
@@ -523,7 +523,7 @@ export const portfolioData = {
           points: ["Florals", "Pastels", "Iridescence"],
         }
       ],
-      conceptFlowTitle: "HOW WE REACHED THE CONCEPT",
+      conceptFlowTitle: "CONCEPTUAL JOURNEY",
       howIReachedTheConcept: [
         {
           order: 1,
@@ -556,7 +556,7 @@ export const portfolioData = {
           isHighlight: true
         }
       ],
-      conceptSummary: "I reimagined a blooming garden through a futuristic lens, combining delicate florals with holographic and iridescent elements.",
+      conceptSummary: "Reimagined a blooming garden through a futuristic lens, combining delicate florals with holographic and iridescent elements.",
       heroTitle: "FUTURE\nFLORALS",
       heroImage: "/portfolio-assets/project-2/future-florals-hero.png",
       supportingCollage: [
@@ -573,7 +573,7 @@ export const portfolioData = {
           alt: "Futuristic rounded-arch interior with soft ambient light"
         }
       ],
-      designInsightTitle: "MY DESIGN INSIGHT",
+      designInsightTitle: "DESIGN INSIGHT",
       designInsight: "If florals represent nature, femininity and renewal, I wanted to explore what they could look like in a future-facing environment.",
       designInsightBg: "/portfolio-assets/project-2/design-insight-card.png"
     },
@@ -1143,9 +1143,9 @@ export const portfolioData = {
       metaSeasonLabel: "SEASON:",
       metaConceptLabel: "CONCEPT:",
 
-      briefSectionHeader: "WHAT I INVESTIGATED",
+      briefSectionHeader: "KEY AREAS OF INVESTIGATION",
       visualDirectionHeader: "VISUAL DIRECTION",
-      designInsightLabel: "MY DESIGN INSIGHT",
+      designInsightLabel: "DESIGN INSIGHT",
 
       moodThemesHeader: "MOOD IN THEMES",
 

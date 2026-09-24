@@ -29,6 +29,7 @@ export const projectVM = defineType({
         { name: 'subtitle', title: 'Subtitle', type: 'string' },
         { name: 'briefTitle', title: 'Brief Title', type: 'string' },
         { name: 'briefText', title: 'Brief Text', type: 'text', rows: 3 },
+        { name: 'investigationTitle', title: 'Investigation Title', type: 'string' },
         {
           name: 'whatIInvestigated',
           title: 'What I Investigated',
@@ -61,6 +62,7 @@ export const projectVM = defineType({
         },
         { name: 'conceptFlowTitle', title: 'Concept Flow Title', type: 'string' },
         { name: 'conceptSummary', title: 'Concept Summary', type: 'text', rows: 3 },
+        { name: 'designInsightTitle', title: 'Design Insight Title', type: 'string' },
         { name: 'designInsight', title: 'Design Insight', type: 'text', rows: 3 },
         { name: 'heroImage', title: 'Hero Image', type: 'image', options: { hotspot: true } },
         {

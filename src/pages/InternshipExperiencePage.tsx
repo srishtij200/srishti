@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Heart, Search, Menu } from 'lucide-react';
+import { Heart, Search } from 'lucide-react';
 import { FlowerMark } from '../components/CustomDoodles';
 import { PlaceholderImage } from '../components/PlaceholderImage';
 import { portfolioData } from '../data/portfolioData';
@@ -51,7 +51,7 @@ export const InternshipExperiencePage: React.FC = () => {
         {sm.headerImage && (
           <img
             src={sm.headerImage}
-            alt="Luxury gold jewellery still life for Adya Jewels"
+            alt="Luxury gold jewellery still life for Aadiya Jewels"
             className="absolute inset-0 w-full h-full object-cover"
           />
         )}
@@ -70,9 +70,6 @@ export const InternshipExperiencePage: React.FC = () => {
 
             <div className="font-mono-code text-xs sm:text-sm uppercase tracking-[0.25em] text-[var(--c-ink)] font-bold">
               {ui.heroSubtitle}
-            </div>
-            <div className="font-mono-code text-xs uppercase tracking-[0.25em] text-[var(--c-ink)]/55 mt-2">
-              {ui.heroDate}
             </div>
 
             <p className="font-serif-display italic text-lg sm:text-xl text-[var(--c-ink)]/85 leading-relaxed mt-6 max-w-xl">
@@ -119,16 +116,11 @@ export const InternshipExperiencePage: React.FC = () => {
                 ) : (
                   <PlaceholderImage
                     src={sm.reelImage}
-                    alt="Instagram reel shot for Adya Jewels"
+                    alt="Instagram reel shot for Aadiya Jewels"
                     label="Reel"
                     aspect="aspect-[9/19]"
                   />
                 )}
-                <div className="absolute inset-x-0 bottom-0 px-3 pb-3 pt-8 bg-gradient-to-t from-[var(--c-bg)]/95 via-[var(--c-bg)]/50 to-transparent">
-                  <p className="font-serif-display italic text-sm text-[var(--c-ink)]">
-                    {sm.reelOverlay}
-                  </p>
-                </div>
               </div>
             </PhoneFrame>
 
@@ -142,11 +134,6 @@ export const InternshipExperiencePage: React.FC = () => {
                     label="Post"
                     aspect="aspect-square"
                   />
-                  {tile.brand && (
-                    <span className="absolute top-2 left-2 px-1.5 py-0.5 bg-[var(--c-bg)]/85 rounded font-mono-code text-[9px] tracking-[0.25em] text-[var(--c-ink)]">
-                      {tile.brand}
-                    </span>
-                  )}
                 </div>
               ))}
             </div>
@@ -239,7 +226,7 @@ export const InternshipExperiencePage: React.FC = () => {
                     {es.heroImage ? (
                       <img
                         src={es.heroImage}
-                        alt="Adya Jewels website hero"
+                        alt="Aadiya Jewels website hero"
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                     ) : (
@@ -276,18 +263,12 @@ export const InternshipExperiencePage: React.FC = () => {
               className="w-full h-auto rounded-md border border-[#DDD5C8] shadow-[0_2px_8px_rgba(80,70,55,0.08)]"
             />
 
-            {/* Catalogue grid */}
-            <div className="bg-[#FBF8F1] border border-[#DDD5C8] rounded-md shadow-[0_2px_8px_rgba(80,70,55,0.08)] p-3">
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]">{es.catalogueTitle}</span>
-                <Menu className="w-3.5 h-3.5 text-[var(--c-ink)]/70" />
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                {Array.from({ length: 9 }).map((_, cIdx) => (
-                  <div key={cIdx} className="aspect-square rounded-sm bg-[#EAE0D4] border border-[var(--c-ink)]/10" />
-                ))}
-              </div>
-            </div>
+            {/* Catalogue */}
+            <img
+              src={es.catalogueImage}
+              alt={es.catalogueTitle}
+              className="w-full h-auto rounded-md border border-[#DDD5C8] shadow-[0_2px_8px_rgba(80,70,55,0.08)]"
+            />
 
           </div>
         </div>

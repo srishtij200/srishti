@@ -81,13 +81,12 @@ export const portfolioData = {
         headerImage: "/portfolio-assets/internship/adya-jewels-hero.png",
         reelImage: "",
         reelVideo: "/portfolio-assets/internship/social-reel.mp4",
-        reelOverlay: "Everyday elegance",
         profileImage: "/portfolio-assets/internship/profile-phone.jpeg",
         tiles: [
-          { image: "/portfolio-assets/internship/social-grid-1.jpeg", overlay: "Nature's Finest", brand: "ADYA" },
+          { image: "/portfolio-assets/internship/social-grid-1.jpeg", overlay: "Nature's Finest" },
           { image: "/portfolio-assets/internship/social-grid-2.jpeg", overlay: "A little more sparkle" },
-          { image: "/portfolio-assets/internship/social-grid-3.jpeg", overlay: "Custom Orders", brand: "ADYA" },
-          { image: "/portfolio-assets/internship/social-grid-4.jpeg", overlay: "Made for you.", brand: "ADYA" }
+          { image: "/portfolio-assets/internship/social-grid-3.jpeg", overlay: "Custom Orders" },
+          { image: "/portfolio-assets/internship/social-grid-4.jpeg", overlay: "Made for you." }
         ]
       }
     },
@@ -112,7 +111,7 @@ export const portfolioData = {
       ],
       showcase: {
         heroImage: "/portfolio-assets/internship/adya-website-hero.png",
-        siteLogo: "ADYA",
+        siteLogo: "AADIYA",
         siteNav: ["SHOP", "ABOUT", "JOURNAL", "CONTACT"],
         heroHeadline: "Fine Jewellery\nfor Everyday",
         heroCta: "SHOP NOW",
@@ -134,7 +133,8 @@ export const portfolioData = {
           tagsLabel: "Tags:",
           tags: ["earrings", "emerald", "gold", "new jewellery"]
         },
-        catalogueTitle: "Catalogue"
+        catalogueTitle: "Catalogue",
+        catalogueImage: "/portfolio-assets/internship/catalogue.png"
       }
     },
 
@@ -1045,9 +1045,8 @@ export const portfolioData = {
     internshipExperience: {
       badge: "FINE JEWELLERY BRAND INTERNSHIP",
       heroEyebrow: "INTERNSHIP",
-      heroTitle: "Adya Jewels",
+      heroTitle: "Aadiya Jewels",
       heroSubtitle: "MARKETING & E-COMMERCE INTERN",
-      heroDate: "JUNE – AUGUST 2026",
       heroDescription: "Creating digital experiences for a contemporary jewellery brand through content, social media and e-commerce.",
       contentCreationLabel: "Content Creation",
       formatsLabel: "REELS / POSTS / CAROUSELS / STORIES",

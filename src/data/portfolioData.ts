@@ -275,8 +275,8 @@ export const portfolioData = {
       },
       quadrant04: {
         number: "04",
-        title: "SKILLS I APPLIED",
-        lead: "I combined my marketing knowledge with creative thinking to bring the concept to life.",
+        title: "SKILLS APPLIED",
+        lead: "Combined my marketing knowledge with creative thinking to bring the concept to life.",
         skills: [
           { title: "RESEARCH", subtitle: "Market & competitor investigation" },
           { title: "STRATEGIC THINKING", subtitle: "STP • 7Ps • BCG • Ansoff" },
@@ -810,27 +810,27 @@ export const portfolioData = {
           skills: [
             {
               title: "Trend Research",
-              subtitle: "understanding changing preferences",
+              subtitle: "Understanding changing preferences",
               icon: "TrendingUp"
             },
             {
               title: "Consumer Insight",
-              subtitle: "identifying real user problems",
+              subtitle: "Identifying real user problems",
               icon: "Users"
             },
             {
               title: "Market Analysis",
-              subtitle: "finding the opportunity gap",
+              subtitle: "Finding the opportunity gap",
               icon: "BarChart2"
             },
             {
               title: "Product Thinking",
-              subtitle: "turning insights into a product",
+              subtitle: "Turning insights into a product",
               icon: "Lightbulb"
             },
             {
               title: "Business Thinking",
-              subtitle: "planning for growth & impact",
+              subtitle: "Planning for growth & impact",
               icon: "Target"
             }
           ],

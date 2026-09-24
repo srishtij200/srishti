@@ -156,14 +156,14 @@ export const ProjectThreePage: React.FC = () => {
                           {q.text}
                         </p>
                       )}
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-12 sm:pl-20">
+                      <div className="grid grid-cols-2 gap-5 sm:gap-8">
                         {q.images!.map((img, i) => (
                           <div key={i} data-obs-card className="space-y-2">
                             <PlaceholderImage
                               src={img.image}
                               label={img.label}
                               alt={img.label}
-                              aspect="aspect-[2/1]"
+                              aspect="aspect-[4/3]"
                               className="object-top"
                             />
                             <span className="font-mono-code text-[10px] font-bold text-[var(--c-ink)]/70 block tracking-wider border-t border-[var(--c-ink)]/20 pt-2">

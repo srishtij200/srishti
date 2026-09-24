@@ -308,7 +308,7 @@ export const ProjectMarketingPage: React.FC = () => {
               </div>
 
               {/* ------------------------------------------------------------- */}
-              {/* QUADRANT 04: SKILLS I APPLIED                                 */}
+              {/* QUADRANT 04: SKILLS APPLIED                                   */}
               {/* ------------------------------------------------------------- */}
               <div className="border-t-2 border-[var(--c-ink)]/20 pt-6 flex flex-col h-full">
                 <div className="flex flex-col flex-1">

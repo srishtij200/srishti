@@ -117,7 +117,7 @@ export const projectMarketing = defineType({
         },
         {
           name: 'quadrant04',
-          title: 'Quadrant 04 — Skills I Applied',
+          title: 'Quadrant 04 — Skills Applied',
           type: 'object',
           fields: [
             { name: 'number', title: 'Number', type: 'string' },

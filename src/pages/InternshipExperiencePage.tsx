@@ -43,7 +43,6 @@ export const InternshipExperiencePage: React.FC = () => {
   const sm = internship.page1SocialMedia.showcase;
   const es = internship.page2Ecommerce.showcase;
 
-  const internshipLearnings = ui.learnings;
 
   return (
     <div className="bg-[var(--c-bg)] min-h-screen">
@@ -278,41 +277,6 @@ export const InternshipExperiencePage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* SECTION 3: LEARNINGS OF INTERNSHIP — dusty rose band */}
-      <section id="internship-learnings" className="bg-[var(--c-warm)] border-b border-[var(--c-ink)]/15 scroll-mt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
-          <div className="relative">
-            <div className="max-w-2xl mb-8">
-              <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2">
-                {ui.learningsLabel}
-              </span>
-              <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
-                {ui.learningsTitle}
-              </h2>
-            </div>
-
-            <div className="space-y-4">
-              {internshipLearnings.map((l, idx) => (
-                <div key={idx} className="flex items-start gap-4 border-t border-[var(--c-ink)]/20 pt-4">
-                  <span className="font-mono-code text-sm font-bold text-[var(--c-ink)] bg-[var(--c-bg)] border border-[var(--c-ink)] rounded-full w-8 h-8 flex items-center justify-center shrink-0">
-                    {idx + 1}
-                  </span>
-                  <div>
-                    <div className="font-mono-code text-xs sm:text-sm font-bold text-[var(--c-ink)] uppercase mb-1">
-                      {l.title}
-                    </div>
-                    <p className="font-body text-sm text-[var(--c-ink)]/85 leading-relaxed">
-                      {l.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SECTION 4: LEARNING OUTCOMES (Consolidated) — dusty blue band + bottom navigation */}
       <section id="learning-outcomes" className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">

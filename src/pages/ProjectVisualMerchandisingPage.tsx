@@ -357,8 +357,8 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             </div>
 
             {/* PAGE 5 TOP: SINGLE HERO IMAGE (LEFT) + SKILLS/PRINCIPLES BOXES (RIGHT) */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch mb-10">
-              <div className="rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-10">
+              <div className="rounded-xl overflow-hidden shadow-sm self-start">
                 <img
                   src={(vm.page5SkillsAndPrinciples.quoteBanner as { image?: string }).image ?? "/portfolio-assets/project-2/page5-final-installation.jpg"}
                   alt={`${vm.page5SkillsAndPrinciples.quoteBanner.accent} — ${vm.page5SkillsAndPrinciples.quoteBanner.caption}`}

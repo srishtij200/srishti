@@ -637,7 +637,7 @@ export const portfolioData = {
       pageLabel: "05 / 05",
       headerTag: "VISUAL MERCHANDISING PROJECT // FUTURE FLORALS",
       title: "FROM CONCEPT TO CAPABILITY",
-      subheadline: "What I applied. What I learned.",
+      subheadline: "Application & Key Learnings",
       quoteBanner: {
         quote: "Creativity brings the idea to life, but it's the details that make it real.",
         caption: "Inside the Future Florals installation",
@@ -1154,15 +1154,15 @@ export const portfolioData = {
       behindIntro: "Turning the concept into a tangible experience",
 
       p5ProcessTag: "IDEATION → INSTALLATION",
-      p5SkillsHeader: "SKILLS I APPLIED",
+      p5SkillsHeader: "SKILLS APPLIED",
       p5PrinciplesHeader: "VM PRINCIPLES APPLIED",
-      p5LearnedTitle: "WHAT I LEARNED",
+      p5LearnedTitle: "KEY LEARNINGS",
       footerNext: "Next Project: Start Up →"
     },
 
     projectThree: {
       breadcrumbProjects: "HOME",
-      breadcrumbCurrent: "PROJECT 3 — START UP",
+      breadcrumbCurrent: "",
       breadcrumbTag: "",
       metaTypeLabel: "",
       metaConceptLabel: "",

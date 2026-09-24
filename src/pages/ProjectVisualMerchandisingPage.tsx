@@ -366,7 +366,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 />
               </div>
               <div className="flex flex-col gap-6">
-                <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-6 flex-1 flex flex-col">
+                <div className="border border-[var(--c-ink)]/25 bg-[#F6E7D3] rounded-none px-6 py-6 flex-1 flex flex-col">
                   <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center pb-4 border-b border-[var(--c-ink)]/15">
                     {u.p5SkillsHeader}
                   </div>
@@ -378,7 +378,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                     ))}
                   </ul>
                 </div>
-                <div className="border border-[var(--c-ink)]/25 bg-[var(--c-bg)] rounded-none px-6 py-6 flex-1 flex flex-col">
+                <div className="border border-[var(--c-ink)]/25 bg-[#F3E7E8] rounded-none px-6 py-6 flex-1 flex flex-col">
                   <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center pb-4 border-b border-[var(--c-ink)]/15">
                     {u.p5PrinciplesHeader}
                   </div>

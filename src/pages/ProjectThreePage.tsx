@@ -50,8 +50,12 @@ export const ProjectThreePage: React.FC = () => {
                   <ArrowLeft className="w-3.5 h-3.5" />
                   <span>{u.breadcrumbProjects}</span>
                 </Link>
-                <span>/</span>
-                <span className="font-semibold">{u.breadcrumbCurrent}</span>
+                {u.breadcrumbCurrent && (
+                  <>
+                    <span>/</span>
+                    <span className="font-semibold">{u.breadcrumbCurrent}</span>
+                  </>
+                )}
               </div>
               <span>{u.breadcrumbTag}</span>
             </div>

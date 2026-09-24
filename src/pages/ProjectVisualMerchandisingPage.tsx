@@ -362,7 +362,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 <img
                   src={(vm.page5SkillsAndPrinciples.quoteBanner as { image?: string }).image ?? "/portfolio-assets/project-2/page5-final-installation.jpg"}
                   alt={`${vm.page5SkillsAndPrinciples.quoteBanner.accent} — ${vm.page5SkillsAndPrinciples.quoteBanner.caption}`}
-                  className="w-full h-full min-h-[320px] lg:min-h-[520px] object-cover"
+                  className="w-full h-auto"
                 />
               </div>
               <div className="flex flex-col gap-6">

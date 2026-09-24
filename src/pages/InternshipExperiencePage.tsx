@@ -103,15 +103,27 @@ export const InternshipExperiencePage: React.FC = () => {
 
           {/* Three-part composition: reel phone — 2x2 grid — profile phone */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-12">
-            {/* Left: reel mockup */}
+            {/* Left: reel mockup — real video when available, still otherwise */}
             <PhoneFrame>
-              <div className="relative">
-                <PlaceholderImage
-                  src={sm.reelImage}
-                  alt="Instagram reel shot for Adya Jewels"
-                  label="Reel"
-                  aspect="aspect-[9/19]"
-                />
+              <div className="relative h-full">
+                {sm.reelVideo ? (
+                  <video
+                    src={sm.reelVideo}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <PlaceholderImage
+                    src={sm.reelImage}
+                    alt="Instagram reel shot for Adya Jewels"
+                    label="Reel"
+                    aspect="aspect-[9/19]"
+                  />
+                )}
                 <div className="absolute inset-x-0 bottom-0 px-3 pb-3 pt-8 bg-gradient-to-t from-[var(--c-bg)]/95 via-[var(--c-bg)]/50 to-transparent">
                   <p className="font-serif-display italic text-sm text-[var(--c-ink)]">
                     {sm.reelOverlay}
@@ -144,8 +156,15 @@ export const InternshipExperiencePage: React.FC = () => {
               ))}
             </div>
 
-            {/* Right: profile grid mockup */}
+            {/* Right: profile grid mockup — real screenshot when available */}
             <PhoneFrame>
+              {sm.profileImage ? (
+                <img
+                  src={sm.profileImage}
+                  alt="Aadiya Jewels social media profile on mobile"
+                  className="w-full h-full object-cover object-top"
+                />
+              ) : (
               <div className="h-full px-3 py-3 flex flex-col">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-8 h-8 rounded-full bg-[var(--c-warm-light)] border border-[var(--c-ink)]/30 flex items-center justify-center">
@@ -166,6 +185,7 @@ export const InternshipExperiencePage: React.FC = () => {
                   ))}
                 </div>
               </div>
+              )}
             </PhoneFrame>
           </div>
 

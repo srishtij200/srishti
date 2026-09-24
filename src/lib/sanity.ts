@@ -106,6 +106,8 @@ const IMAGE_KEYS = new Set([
   'designInsightBg',
   'brandLogo',
   'reelImage',
+  'reelVideo',
+  'profileImage',
 ]);
 
 function preserveLocalImages(target: unknown, src: unknown): void {

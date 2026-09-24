@@ -80,12 +80,14 @@ export const portfolioData = {
       showcase: {
         headerImage: "/portfolio-assets/internship/adya-jewels-hero.png",
         reelImage: "",
+        reelVideo: "/portfolio-assets/internship/social-reel.mp4",
         reelOverlay: "Everyday elegance",
+        profileImage: "/portfolio-assets/internship/profile-phone.jpeg",
         tiles: [
-          { image: "", overlay: "Nature's Finest", brand: "ADYA" },
-          { image: "", overlay: "A little more sparkle" },
-          { image: "", overlay: "Custom Orders", brand: "ADYA" },
-          { image: "", overlay: "Made for you.", brand: "ADYA" }
+          { image: "/portfolio-assets/internship/social-grid-1.jpeg", overlay: "Nature's Finest", brand: "ADYA" },
+          { image: "/portfolio-assets/internship/social-grid-2.jpeg", overlay: "A little more sparkle" },
+          { image: "/portfolio-assets/internship/social-grid-3.jpeg", overlay: "Custom Orders", brand: "ADYA" },
+          { image: "/portfolio-assets/internship/social-grid-4.jpeg", overlay: "Made for you.", brand: "ADYA" }
         ]
       }
     },

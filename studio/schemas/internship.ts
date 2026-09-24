@@ -46,7 +46,9 @@ export const internship = defineType({
           fields: [
             { name: 'headerImage', title: 'Header Image', type: 'image', options: { hotspot: true } },
             { name: 'reelImage', title: 'Reel Still', type: 'image', options: { hotspot: true } },
+            { name: 'reelVideo', title: 'Reel Video (site path, e.g. /portfolio-assets/…mp4)', type: 'string' },
             { name: 'reelOverlay', title: 'Reel Overlay Text', type: 'string' },
+            { name: 'profileImage', title: 'Profile Phone Screenshot', type: 'image', options: { hotspot: true } },
             {
               name: 'tiles',
               title: 'Feed Tiles',

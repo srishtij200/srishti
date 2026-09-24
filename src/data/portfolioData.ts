@@ -375,10 +375,10 @@ export const portfolioData = {
         pagePagination: "Page 3 / 5"
       }
     },
-    // PAGE 4: FROM CONCEPT TO CONSUMER
+    // PAGE 4: FRAGRANCE TESTING & FEEDBACK
     page4ConceptToConsumer: {
       pageLabel: "PAGE 04",
-      title: "FROM CONCEPT TO CONSUMER",
+      title: "FRAGRANCE TESTING & FEEDBACK",
       subtitle: "WE DIDN'T JUST CREATE IT, WE TESTED IT.",
       testPhotos: [
         {
@@ -434,30 +434,30 @@ export const portfolioData = {
     page5IdeaToImpact: {
       pageLabel: "PAGE 05",
       title: "FROM IDEA TO IMPACT",
-      subheadline: "What I learned through the project",
+      subheadline: "Key Learnings from the Project",
       learnings: [
         {
           num: "01",
           name: "RESEARCH",
-          detail: "I learned to look at the market, consumer and competition before developing a concept.",
+          detail: "Learned to look at the market, consumer and competition before developing a concept.",
           image: "/portfolio-assets/project-1/page5_research_papers.png"
         },
         {
           num: "02",
           name: "STRATEGY",
-          detail: "I learned to connect a creative idea with STP, 7Ps, BCG and market planning.",
+          detail: "Learned to connect a creative idea with STP, 7Ps, BCG and market planning.",
           image: "/portfolio-assets/project-1/page5_strategy_notebook.png"
         },
         {
           num: "03",
           name: "CREATIVE THINKING",
-          detail: "I learned to translate a brand philosophy into a new product and visual identity.",
+          detail: "Learned to translate a brand philosophy into a new product and visual identity.",
           image: "/portfolio-assets/project-1/page5_creative_thinking.jpeg"
         },
         {
           num: "04",
           name: "BRAND THINKING",
-          detail: "I learned that a new category must still feel connected to the original brand.",
+          detail: "Learned that a new category must still feel connected to the original brand.",
           image: "/portfolio-assets/project-1/page5_brand_bag.png"
         }
       ],
@@ -1129,7 +1129,7 @@ export const portfolioData = {
       p4InsightsHeader: "KEY INSIGHTS",
 
       p4SynthesisLabel: "STRATEGIC SYNTHESIS",
-      p5SkillsHeader: "SKILLS I DEVELOPED",
+      p5SkillsHeader: "SKILL DEVELOPED",
 
       footerAll: "Back to Home",
       footerNext: "Next Project: Future Florals × Cover Story"

@@ -552,7 +552,7 @@ export const ProjectMarketingPage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* PAGE 4: FROM CONCEPT TO CONSUMER (Exact 3-Column Architecture & Banner)   */}
+      {/* PAGE 4: FRAGRANCE TESTING & FEEDBACK (Exact 3-Column Architecture & Banner) */}
       {/* ========================================================================= */}
       <section id="page-4" className="bg-[var(--c-warm)] border-b border-[var(--c-ink)]/15 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
@@ -757,7 +757,7 @@ export const ProjectMarketingPage: React.FC = () => {
               })}
             </div>
 
-            {/* Bottom Two Columns: Journey in Action & Skills I Developed */}
+            {/* Bottom Two Columns: Journey in Action & Skill Developed */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
 
               {/* THE JOURNEY IN ACTION (8 cols) */}
@@ -794,7 +794,7 @@ export const ProjectMarketingPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* SKILLS I DEVELOPED (4 cols) */}
+              {/* SKILL DEVELOPED (4 cols) */}
               <div className="lg:col-span-4 flex flex-col justify-between">
                 <div>
                   <h3 className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] mb-4 pb-2 border-b border-[var(--c-ink)]/15">

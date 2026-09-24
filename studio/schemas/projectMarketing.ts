@@ -88,7 +88,7 @@ export const projectMarketing = defineType({
         },
         {
           name: 'quadrant03',
-          title: 'Quadrant 03 — How I Came Up With the Concept',
+          title: 'Quadrant 03 — Conceptualising the Idea',
           type: 'object',
           fields: [
             { name: 'number', title: 'Number', type: 'string' },

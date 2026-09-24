@@ -268,8 +268,8 @@ export const portfolioData = {
       },
       quadrant03: {
         number: "03",
-        title: "HOW WE CAME UP WITH THE CONCEPT",
-        takeaway: "I saw an opportunity to extend UNIQLO's idea of everyday living from something we wear to something we experience."
+        title: "CONCEPTUALISING THE IDEA",
+        takeaway: "There was an opportunity to extend UNIQLO's idea of everyday living from something we wear to something we experience."
       },
       quadrant04: {
         number: "04",

@@ -459,28 +459,49 @@ export const ProjectMarketingPage: React.FC = () => {
                 })}
               </div>
 
-              {/* Physical Packaging — compact, centered */}
-              <div className="max-w-lg mx-auto">
-                <span className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] block mb-5 text-center">
+              {/* Physical Packaging — each photo sits beside its rationale.
+                  Hana reads with its text on the left, Kaze with its text on the right. */}
+              <div className="max-w-4xl mx-auto">
+                <span className="font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-ink)] block mb-6 text-center">
                   {p3.processSection.physicalPackaging.title}
                 </span>
-                <div className="grid grid-cols-2 gap-6">
-                  {p3.processSection.physicalPackaging.photos.map((photo, pIdx) => (
-                    <div key={pIdx} className="text-center">
-                      <PlaceholderImage
-                        src={photo.src}
-                        label={photo.caption}
-                        alt={`${photo.caption} ${photo.desc}`}
-                        aspect="aspect-[6/5]"
-                      />
-                      <span className="font-mono-code text-xs font-bold text-[var(--c-ink)] block mt-2.5 leading-tight">
-                        {photo.caption}
-                      </span>
-                      <span className="font-body text-[10px] text-[var(--c-ink)]/60 block leading-tight">
-                        {photo.desc}
-                      </span>
-                    </div>
-                  ))}
+                <div className="space-y-8 sm:space-y-10">
+                  {p3.processSection.physicalPackaging.photos.map((photo, pIdx) => {
+                    const textOnLeft = pIdx % 2 === 0;
+                    return (
+                      <div
+                        key={pIdx}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center"
+                      >
+                        {/* Text block — left of the photo for Hana, right of it for Kaze */}
+                        <div className={textOnLeft ? 'order-2 md:order-1' : 'order-2 md:order-2'}>
+                          <div className="border-t border-[var(--c-ink)]/20 pt-3">
+                            <span className="font-mono-code text-xs font-bold text-[var(--c-ink)] uppercase tracking-wider block leading-tight">
+                              {photo.caption}
+                            </span>
+                            <span className="font-body text-[10px] text-[var(--c-ink)]/60 block leading-tight">
+                              {photo.desc}
+                            </span>
+                            {photo.description && (
+                              <p className="font-body text-sm text-[var(--c-ink)]/80 leading-relaxed mt-3">
+                                {photo.description}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Photo */}
+                        <div className={textOnLeft ? 'order-1 md:order-2' : 'order-1 md:order-1'}>
+                          <PlaceholderImage
+                            src={photo.src}
+                            label={photo.caption}
+                            alt={`${photo.caption} ${photo.desc}`}
+                            aspect="aspect-[4/5]"
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

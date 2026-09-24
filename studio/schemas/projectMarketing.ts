@@ -213,6 +213,7 @@ export const projectMarketing = defineType({
                         { name: 'src', title: 'Photo', type: 'image', options: { hotspot: true } },
                         { name: 'caption', title: 'Caption', type: 'string' },
                         { name: 'desc', title: 'Description', type: 'text', rows: 2 },
+                        { name: 'description', title: 'Rationale (sits beside the photo)', type: 'text', rows: 4 },
                       ],
                     },
                   ],

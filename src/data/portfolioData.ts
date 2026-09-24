@@ -340,10 +340,20 @@ export const portfolioData = {
           { label: "PHYSICAL PROTOTYPE", icon: "Box" }
         ],
         physicalPackaging: {
-          title: "PHYSICAL PACKAGING (HANA & MIZU)",
+          title: "PHYSICAL PACKAGING (HANA & KAZE)",
           photos: [
-            { src: "/portfolio-assets/p1-packaging-1.png", caption: "HANA", desc: "Physical packaging." },
-            { src: "/portfolio-assets/p1-packaging-2.png", caption: "MIZU", desc: "Physical packaging." }
+            {
+              src: "/portfolio-assets/p1-packaging-1.png",
+              caption: "HANA",
+              desc: "Physical packaging.",
+              description: "Hana was chosen to bring the beauty of Japan's cherry blossoms into the fragrance collection. Its soft floral character reflects Japanese appreciation for nature and simplicity, creating a gentle, everyday fragrance aligned with UNIQLO's LifeWear philosophy."
+            },
+            {
+              src: "/portfolio-assets/p1-packaging-2.png",
+              caption: "KAZE",
+              desc: "Physical packaging.",
+              description: "Kaze was chosen to represent the feeling of fresh air, movement and everyday freedom. Its light, citrusy character complements UNIQLO's focus on effortless, energetic everyday living while bringing a fresh and contemporary dimension to the collection."
+            }
           ]
         }
       },

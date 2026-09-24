@@ -16,6 +16,7 @@ export const projectThree = defineType({
         { name: 'tagline', title: 'Tagline', type: 'string' },
         { name: 'conceptSubtitle', title: 'Concept Subtitle', type: 'string' },
         { name: 'bottomStatement', title: 'Bottom Statement', type: 'string' },
+        { name: 'heroImage', title: 'Hero Background Image', type: 'image', options: { hotspot: true } },
 
         {
           name: 'gallery',
@@ -26,7 +27,8 @@ export const projectThree = defineType({
               type: 'object',
               fields: [
                 { name: 'label', title: 'Label', type: 'string' },
-
+                { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+                { name: 'alt', title: 'Alt Text', type: 'string' },
               ],
             },
           ],
@@ -60,6 +62,7 @@ export const projectThree = defineType({
           type: 'object',
           fields: [
             { name: 'title', title: 'Title', type: 'string' },
+            { name: 'image', title: 'Flat Drawing', type: 'image', options: { hotspot: true } },
             { name: 'points', title: 'Points', type: 'array', of: [{ type: 'string' }] },
           ],
         },
@@ -69,6 +72,7 @@ export const projectThree = defineType({
           type: 'object',
           fields: [
             { name: 'title', title: 'Title', type: 'string' },
+            { name: 'image', title: 'Material Specification', type: 'image', options: { hotspot: true } },
             {
               name: 'lycra',
               title: 'Lycra (Top)',
@@ -96,6 +100,7 @@ export const projectThree = defineType({
           type: 'object',
           fields: [
             { name: 'badge', title: 'Badge', type: 'string' },
+            { name: 'image', title: 'Physical MVP', type: 'image', options: { hotspot: true } },
             { name: 'tagline', title: 'Tagline', type: 'string' },
             { name: 'coreProposition', title: 'Core Proposition', type: 'string' },
           ],

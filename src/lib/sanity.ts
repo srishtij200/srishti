@@ -94,7 +94,19 @@ function denormalize(value: unknown): any {
 
 /* Image fields that live in the repo bundle (public/portfolio-assets).
    If Sanity returns nothing for these, keep the local value. */
-const IMAGE_KEYS = new Set(['src', 'image', 'coverImage', 'heroImage', 'photo', 'photos', 'images']);
+const IMAGE_KEYS = new Set([
+  'src',
+  'image',
+  'images',
+  'photo',
+  'photos',
+  'coverImage',
+  'heroImage',
+  'uploadsImage',
+  'designInsightBg',
+  'brandLogo',
+  'reelImage',
+]);
 
 function preserveLocalImages(target: unknown, src: unknown): void {
   if (Array.isArray(target) && Array.isArray(src)) {

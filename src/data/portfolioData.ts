@@ -225,7 +225,8 @@ export const portfolioData = {
       subtitle: "UNIQLO Fragrance Category Extension",
       brand: "UNIQLO",
       discipline: "Marketing Strategy & Brand Extension",
-      timeline: "Strategic Research & Capstone"
+      timeline: "Strategic Research & Capstone",
+      heroImage: "/portfolio-assets/project1-hero-bg.png"
     },
     page1And2: {
       context: "Strategic evaluation of UNIQLO’s brand equity, LifeWear philosophy, and retail footprint to identify a high-margin, scalable category extension: everyday lifestyle fragrances.",
@@ -485,7 +486,8 @@ export const portfolioData = {
       tagline: "A flowering garden translated through a futuristic, iridescent lens.",
       brand: "Cover Story",
       season: "Spring / Summer",
-      conceptName: "Future Florals"
+      conceptName: "Future Florals",
+      heroImage: "/portfolio-assets/project2-hero-bg.png"
     },
     page2Brief: {
       pageLabel: "02 / 05",
@@ -689,8 +691,25 @@ export const portfolioData = {
       tagline: "",
       conceptSubtitle: "",
       bottomStatement: "",
+      heroImage: "/portfolio-assets/project3-page1.png",
 
-      gallery: []
+      gallery: [
+        {
+          label: "GYM",
+          image: "/portfolio-assets/project3-image3.jpeg",
+          alt: "Woman in dark fitted athleisure seated in a gym"
+        },
+        {
+          label: "CAFÉ",
+          image: "/portfolio-assets/project3-image2.jpeg",
+          alt: "Woman in light neutral outfit at cafe with cup"
+        },
+        {
+          label: "AIRPORT",
+          image: "/portfolio-assets/project3-image1.jpeg",
+          alt: "Woman in athleisure walking through airport with suitcase"
+        }
+      ]
     },
     page2SurveyInsights: {
       subtitle: "To develop a fashion business from identifying a real consumer problem to creating, testing and refining a market – ready product concept.",

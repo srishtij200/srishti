@@ -15,6 +15,7 @@ export const projectMarketing = defineType({
         { name: 'brand', title: 'Brand', type: 'string' },
         { name: 'discipline', title: 'Discipline', type: 'string' },
         { name: 'timeline', title: 'Timeline', type: 'string' },
+        { name: 'heroImage', title: 'Hero Background Image', type: 'image', options: { hotspot: true } },
       ],
     }),
     defineField({
@@ -44,7 +45,12 @@ export const projectMarketing = defineType({
             { name: 'number', title: 'Number', type: 'string' },
             { name: 'title', title: 'Title', type: 'string' },
             { name: 'text', title: 'Text', type: 'text', rows: 3 },
-
+            {
+              name: 'image',
+              title: 'Quadrant Image',
+              type: 'object',
+              fields: [{ name: 'src', title: 'Image', type: 'image', options: { hotspot: true } }],
+            },
             { name: 'scriptCallout', title: 'Script Callout', type: 'string' },
           ],
         },
@@ -72,7 +78,12 @@ export const projectMarketing = defineType({
             },
             { name: 'frameworkSentence', title: 'Framework Sentence', type: 'text', rows: 3 },
             { name: 'frameworkBadges', title: 'Framework Badges', type: 'array', of: [{ type: 'string' }] },
-
+            {
+              name: 'image',
+              title: 'Quadrant Image',
+              type: 'object',
+              fields: [{ name: 'src', title: 'Image', type: 'image', options: { hotspot: true } }],
+            },
           ],
         },
         {
@@ -145,6 +156,69 @@ export const projectMarketing = defineType({
             { name: 'number', title: 'Number', type: 'string' },
             { name: 'title', title: 'Title', type: 'string' },
             { name: 'desc', title: 'Description', type: 'text', rows: 3 },
+          ],
+        },
+      ],
+    }),
+
+    defineField({
+      name: 'page3',
+      title: 'Page 3 — Concept Expressions & Packaging',
+      type: 'object',
+      fields: [
+        {
+          name: 'conceptSection',
+          title: 'Concept Section',
+          type: 'object',
+          fields: [
+            {
+              name: 'expressions',
+              title: 'Fragrance Expressions',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    { name: 'name', title: 'Name', type: 'string' },
+                    { name: 'label', title: 'Label', type: 'string' },
+                    { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+                    { name: 'notes', title: 'Notes', type: 'text', rows: 2 },
+                    { name: 'mood', title: 'Mood', type: 'string' },
+                    { name: 'color', title: 'Colour', type: 'string' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'processSection',
+          title: 'Process Section',
+          type: 'object',
+          fields: [
+            {
+              name: 'physicalPackaging',
+              title: 'Physical Packaging',
+              type: 'object',
+              fields: [
+                { name: 'title', title: 'Title', type: 'string' },
+                {
+                  name: 'photos',
+                  title: 'Photos',
+                  type: 'array',
+                  of: [
+                    {
+                      type: 'object',
+                      fields: [
+                        { name: 'src', title: 'Photo', type: 'image', options: { hotspot: true } },
+                        { name: 'caption', title: 'Caption', type: 'string' },
+                        { name: 'desc', title: 'Description', type: 'text', rows: 2 },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
           ],
         },
       ],
@@ -238,7 +312,7 @@ export const projectMarketing = defineType({
                 { name: 'num', title: 'Number', type: 'string' },
                 { name: 'name', title: 'Name', type: 'string' },
                 { name: 'detail', title: 'Detail', type: 'text', rows: 3 },
-
+                { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
               ],
             },
           ],
@@ -258,7 +332,7 @@ export const projectMarketing = defineType({
                   type: 'object',
                   fields: [
                     { name: 'title', title: 'Title', type: 'string' },
-
+                    { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
                   ],
                 },
               ],

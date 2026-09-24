@@ -16,6 +16,7 @@ export const projectVM = defineType({
         { name: 'brand', title: 'Brand', type: 'string' },
         { name: 'season', title: 'Season', type: 'string' },
         { name: 'conceptName', title: 'Concept Name', type: 'string' },
+        { name: 'heroImage', title: 'Hero Background Image', type: 'image', options: { hotspot: true } },
       ],
     }),
 
@@ -38,7 +39,7 @@ export const projectVM = defineType({
               fields: [
                 { name: 'pillar', title: 'Pillar', type: 'string' },
                 { name: 'points', title: 'Points', type: 'array', of: [{ type: 'string' }] },
-
+                { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
               ],
             },
           ],
@@ -52,7 +53,7 @@ export const projectVM = defineType({
               type: 'object',
               fields: [
                 { name: 'step', title: 'Step', type: 'string' },
-
+                { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
                 { name: 'isHighlight', title: 'Highlight', type: 'boolean' },
               ],
             },
@@ -61,7 +62,22 @@ export const projectVM = defineType({
         { name: 'conceptFlowTitle', title: 'Concept Flow Title', type: 'string' },
         { name: 'conceptSummary', title: 'Concept Summary', type: 'text', rows: 3 },
         { name: 'designInsight', title: 'Design Insight', type: 'text', rows: 3 },
-
+        { name: 'heroImage', title: 'Hero Image', type: 'image', options: { hotspot: true } },
+        {
+          name: 'supportingCollage',
+          title: 'Supporting Collage',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+                { name: 'alt', title: 'Alt Text', type: 'string' },
+              ],
+            },
+          ],
+        },
+        { name: 'designInsightBg', title: 'Design Insight Background', type: 'image', options: { hotspot: true } },
       ],
     }),
 
@@ -78,6 +94,7 @@ export const projectVM = defineType({
           type: 'object',
           fields: [
             { name: 'title', title: 'Title', type: 'string' },
+            { name: 'image', title: 'Mood Board Image', type: 'image', options: { hotspot: true } },
             { name: 'tagline', title: 'Tagline', type: 'string' },
             { name: 'content', title: 'Content', type: 'text', rows: 2 },
             { name: 'keywords', title: 'Keywords', type: 'array', of: [{ type: 'string' }] },
@@ -103,6 +120,7 @@ export const projectVM = defineType({
           type: 'object',
           fields: [
             { name: 'title', title: 'Title', type: 'string' },
+            { name: 'image', title: 'Colour Board Image', type: 'image', options: { hotspot: true } },
             { name: 'content', title: 'Content', type: 'text', rows: 2 },
             { name: 'moodTag', title: 'Mood Tag', type: 'string' },
           ],
@@ -119,6 +137,7 @@ export const projectVM = defineType({
           type: 'object',
           fields: [
             { name: 'imageIndex', title: 'Image Index', type: 'string' },
+            { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
             { name: 'title', title: 'Title', type: 'string' },
             { name: 'desc', title: 'Description', type: 'text', rows: 2 },
           ],
@@ -141,7 +160,7 @@ export const projectVM = defineType({
           type: 'object',
           fields: [
             { name: 'quote', title: 'Quote', type: 'text', rows: 3 },
-
+            { name: 'image', title: 'Banner Image', type: 'image', options: { hotspot: true } },
             { name: 'caption', title: 'Caption', type: 'string' },
             { name: 'accent', title: 'Accent', type: 'string' },
           ],

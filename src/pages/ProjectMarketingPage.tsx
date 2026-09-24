@@ -83,7 +83,7 @@ export const ProjectMarketingPage: React.FC = () => {
         {/* Hero image: uses project1-hero-bg.png when you drop it in public/portfolio-assets/,
             falls back to project1.png so the section is never blank. */}
         <img
-          src="/portfolio-assets/project1-hero-bg.png"
+          src={pm.cover.heroImage}
           onError={(e) => {
             const t = e.currentTarget as HTMLImageElement;
             if (!t.dataset.fbk && t.src.indexOf('project1-hero-bg.png') !== -1) {

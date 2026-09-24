@@ -34,7 +34,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
       {/* Image: /portfolio-assets/project2-hero-bg.png */}
       <section className="relative border-b border-[var(--c-ink)]/15 scroll-mt-24 overflow-hidden bg-[var(--c-bg)]">
         <img
-          src="/portfolio-assets/project2-hero-bg.png"
+          src={vm.cover.heroImage}
           onError={(e) => {
             const t = e.currentTarget as HTMLImageElement;
             if (!t.dataset.fbk && t.src.indexOf('project2-hero-bg.png') !== -1) {

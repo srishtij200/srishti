@@ -13,6 +13,15 @@ export const ProjectThreePage: React.FC = () => {
     TrendingUp, Users, BarChart2, Lightbulb, Target
   };
 
+  // Cover gallery strip: rendered from Sanity-backed data, with the local
+  // assets kept as a fallback so the strip is never empty without a CMS.
+  const coverGalleryFallback = [
+    { label: 'GYM', image: '/portfolio-assets/project3-image3.jpeg', alt: 'Woman in dark fitted athleisure seated in a gym' },
+    { label: 'CAFÉ', image: '/portfolio-assets/project3-image2.jpeg', alt: 'Woman in light neutral outfit at cafe with cup' },
+    { label: 'AIRPORT', image: '/portfolio-assets/project3-image1.jpeg', alt: 'Woman in athleisure walking through airport with suitcase' }
+  ];
+  const coverGallery = p3.cover.gallery?.length ? p3.cover.gallery : coverGalleryFallback;
+
   return (
     <div className="min-h-screen bg-[var(--c-bg)]">
 
@@ -21,7 +30,7 @@ export const ProjectThreePage: React.FC = () => {
         {/* Full background hero image - ENTIRE background */}
         <div className="absolute inset-0" aria-hidden="true">
           <img
-            src="/portfolio-assets/project3-page1.png"
+            src={p3.cover.heroImage}
             alt="Woman in muted sage green athleisure outfit with black shoulder bag walking outdoors beside architectural glass environment"
             className="w-full h-full object-cover"
           />
@@ -77,14 +86,10 @@ export const ProjectThreePage: React.FC = () => {
 
             {/* Gallery Strip - 3 images horizontal */}
             <div className="hidden lg:flex gap-3 pt-8 pb-4">
-              {[
-                { label: 'GYM', src: '/portfolio-assets/project3-image3.jpeg', alt: 'Woman in dark fitted athleisure seated in a gym' },
-                { label: 'CAFÉ', src: '/portfolio-assets/project3-image2.jpeg', alt: 'Woman in light neutral outfit at cafe with cup' },
-                { label: 'AIRPORT', src: '/portfolio-assets/project3-image1.jpeg', alt: 'Woman in athleisure walking through airport with suitcase' }
-              ].map((item, idx) => (
+              {coverGallery.map((item, idx) => (
                 <div key={idx} className="flex flex-col items-center flex-1 min-w-0">
                   <PlaceholderImage
-                    src={item.src}
+                    src={item.image}
                     label={item.label}
                     alt={item.alt}
                     aspect="aspect-[216/251]"

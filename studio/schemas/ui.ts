@@ -292,6 +292,7 @@ export const ui = defineType({
           fields: [
             { name: 'brandChip', title: 'Brand Chip', type: 'string' },
             { name: 'brandName', title: 'Brand Name', type: 'string' },
+            { name: 'brandLogo', title: 'Brand Logo', type: 'image', options: { hotspot: true } },
             { name: 'brandDesc', title: 'Brand Description', type: 'string' },
             { name: 'question', title: 'Question', type: 'string' },
             { name: 'fragranceName', title: 'Fragrance Name', type: 'string' },

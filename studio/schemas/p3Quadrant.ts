@@ -18,7 +18,7 @@ export const p3Quadrant = defineType({
           type: 'object',
           fields: [
             { name: 'label', title: 'Label', type: 'string' },
-
+            { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
           ],
         },
       ],

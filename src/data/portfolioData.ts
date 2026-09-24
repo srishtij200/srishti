@@ -248,7 +248,7 @@ export const portfolioData = {
       quadrant02: {
         number: "02",
         title: "RESEARCH & INVESTIGATION",
-        lead: "I explored the market, understood the consumer and analysed competitors to identify the opportunity.",
+        lead: "The research explored the market, analysed consumer behaviour and evaluated competitors to identify the opportunity.",
         pillars: [
           {
             name: "MARKET",

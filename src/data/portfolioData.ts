@@ -731,11 +731,11 @@ export const portfolioData = {
             images: [
               {
                 label: "FITTED SILHOUETTES",
-                image: "/portfolio-assets/project-3/athira-observation-fitted-silhouette.png"
+                image: "/portfolio-assets/project-3/athira-observation-fitted-silhouette.jpeg"
               },
               {
                 label: "LIMITED VERSATILITY",
-                image: "/portfolio-assets/project-3/athira-observation-limited-versatility.png"
+                image: "/portfolio-assets/project-3/athira-observation-limited-versatility.jpeg"
               }
             ],
             scriptCallout: ""
@@ -743,7 +743,7 @@ export const portfolioData = {
         {
           number: "02",
           title: "THE JOURNEY",
-          lead: "OBSERVATION → INVESTIGATION → INSIGHTS → OPPORTUNITY",
+          lead: "",
           pillars: [
             {
               name: "OBSERVATION",
@@ -776,7 +776,7 @@ export const portfolioData = {
         },
 {
             number: "03",
-            title: "WHAT I INVESTIGATED",
+            title: "AREAS OF INVESTIGATION",
             flow: [
               {
                 step: "Market trends & industry growth",
@@ -796,14 +796,14 @@ export const portfolioData = {
               {
                 step: "Fabric & functionality",
                 desc: "",
-                isHighlight: true
+                isHighlight: false
               }
             ],
             takeaway: "One outfit.\nMultiple moments."
           },
         {
           number: "04",
-          title: "MY APPROACH",
+          title: "PROJECT APPROACH",
           lead: "",
           skills: [
             {

@@ -163,7 +163,7 @@ export const ProjectThreePage: React.FC = () => {
                               src={img.image}
                               label={img.label}
                               alt={img.label}
-                              aspect="aspect-[3/4]"
+                              aspect="aspect-[2/1]"
                               className="object-top"
                             />
                             <span className="font-mono-code text-[10px] font-bold text-[var(--c-ink)]/70 block tracking-wider border-t border-[var(--c-ink)]/20 pt-2">
@@ -278,7 +278,7 @@ export const ProjectThreePage: React.FC = () => {
                               <div className="font-serif-display text-base sm:text-lg text-[var(--c-ink)] leading-tight">
                                 {s.title}
                               </div>
-                              <div className="font-hand text-lg text-[var(--c-ink)]/70 leading-snug">
+                              <div className="font-body text-sm text-[var(--c-ink)]/70 leading-snug">
                                 {s.subtitle}
                               </div>
                             </div>

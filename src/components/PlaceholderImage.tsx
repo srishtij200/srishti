@@ -6,13 +6,15 @@ interface PlaceholderImageProps {
   label?: string;
   alt?: string;
   aspect?: string;
+  className?: string;
 }
 
 export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
   src,
   label = 'IMAGE PLACEHOLDER',
   alt = '',
-  aspect = 'aspect-[16/9]'
+  aspect = 'aspect-[16/9]',
+  className = ''
 }) => {
   const [failed, setFailed] = useState(false);
 
@@ -23,7 +25,7 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
           src={src}
           alt={alt}
           onError={() => setFailed(true)}
-          className={`w-full ${aspect} object-cover`}
+          className={`w-full ${aspect} object-cover ${className}`}
         />
       </div>
     );

@@ -76,7 +76,18 @@ export const portfolioData = {
         "Visual Storytelling",
         "Content Planning",
         "Social Media Management"
-      ]
+      ],
+      showcase: {
+        headerImage: "/portfolio-assets/internship/adya-jewels-hero.png",
+        reelImage: "",
+        reelOverlay: "Everyday elegance",
+        tiles: [
+          { image: "", overlay: "Nature's Finest", brand: "ADYA" },
+          { image: "", overlay: "A little more sparkle" },
+          { image: "", overlay: "Custom Orders", brand: "ADYA" },
+          { image: "", overlay: "Made for you.", brand: "ADYA" }
+        ]
+      }
     },
 
     page2Ecommerce: {
@@ -96,7 +107,33 @@ export const portfolioData = {
         "Graphic Design",
         "Product Presentation",
         "Attention to Detail"
-      ]
+      ],
+      showcase: {
+        heroImage: "/portfolio-assets/internship/adya-website-hero.png",
+        siteLogo: "ADYA",
+        siteNav: ["SHOP", "ABOUT", "JOURNAL", "CONTACT"],
+        heroHeadline: "Fine Jewellery\nfor Everyday",
+        heroCta: "SHOP NOW",
+        description: "Managed product uploads, updated descriptions, and maintained the website and catalogue to ensure a seamless shopping experience. Tracked inventory and collaborated with the team to keep product information accurate and up to date.",
+        uploadsTitle: "Product Uploads",
+        uploadsImage: "/portfolio-assets/internship/product-uploads.png",
+        uploads: [
+          { name: "Emerald Drop Earrings", status: "Published" },
+          { name: "Pearl Ring", status: "Published" },
+          { name: "Gold Hoop Earrings", status: "Published" },
+          { name: "Diamond Necklace", status: "Published" }
+        ],
+        detail: {
+          image: "/portfolio-assets/internship/product-specifications.png",
+          name: "Emerald Drop Earrings",
+          price: "₹ 24,999",
+          desc: "Elegant emerald drop earrings with a gold finish. A timeless choice for everyday luxury.",
+          cta: "Add to Cart",
+          tagsLabel: "Tags:",
+          tags: ["earrings", "emerald", "gold", "new jewellery"]
+        },
+        catalogueTitle: "Catalogue"
+      }
     },
 
     learningOutcomes: [
@@ -646,44 +683,34 @@ export const portfolioData = {
   // 5. PROJECT 3: START UP (ATHLEISURE HYBRID)
   projectThree: {
     cover: {
-      pageLabel: "PROJECT 3 (START UP) // PAGE 1",
+      pageLabel: "",
       title: "ATHERA",
-      subtitle: "ATHLEISURE WEAR BRAND",
-      tagline: "MODEST • VERSATILE • EVERYDAY",
-      conceptSubtitle: "Athleisure Hybrid: Structured × Relaxed",
-      bottomStatement: "Designed to move beyond the gym.",
+      subtitle: "",
+      tagline: "",
+      conceptSubtitle: "",
+      bottomStatement: "",
 
-      gallery: [
-        { label: "GYM" },
-        { label: "CAFÉ" },
-        { label: "AIRPORT" },
-        { label: "EVERYDAY" }
-      ]
+      gallery: []
     },
     page2SurveyInsights: {
-      subtitle:
-        "I saw an opportunity to create athleisure that could move beyond the gym, combining comfort, style and versatility for everyday life.",
+      subtitle: "To develop a fashion business from identifying a real consumer problem to creating, testing and refining a market – ready product concept.",
       quadrants: [
-        {
-          number: "01",
-          title: "THE OBSERVATION",
-          text: "I saw an opportunity to create athleisure that could move beyond the gym, combining comfort, style and versatility for everyday life.",
-          images: [
-            {
-              label: "FITTED SILHOUETTES"
-            },
-            {
-              label: "LIMITED VERSATILITY",
-            },
-            {
-              label: "COMFORT VS STYLE",
-            },
-            {
-              label: "NEED FOR COVERAGE",
-            }
-          ],
-          scriptCallout: "One outfit.\nMultiple moments."
-        },
+{
+            number: "01",
+            title: "THE OBSERVATION",
+            text: "",
+            images: [
+              {
+                label: "FITTED SILHOUETTES",
+                image: "/portfolio-assets/project-3/athira-observation-fitted-silhouette.png"
+              },
+              {
+                label: "LIMITED VERSATILITY",
+                image: "/portfolio-assets/project-3/athira-observation-limited-versatility.png"
+              }
+            ],
+            scriptCallout: ""
+          },
         {
           number: "02",
           title: "THE JOURNEY",
@@ -692,17 +719,17 @@ export const portfolioData = {
             {
               name: "OBSERVATION",
               points: [
-                "Too restrictive fitted silhouettes",
-                "Limited versatility mostly gym-focused",
-                "Comfort vs. style — hard to find both"
+                "Too restrictive\nfitted silhouettes",
+                "Limited versatility\nmostly gym-focused",
+                "Comfort vs. style\nhard to find both"
               ]
             },
             {
               name: "INVESTIGATION",
               points: [
                 "Market trends & industry growth",
-                "Consumer preferences, pain points & buying behaviour",
-                "Competitor offerings & brand positioning"
+                "Consumer preferences,\npain points & buying behaviour",
+                "Competitor offerings\n& brand positioning"
               ]
             },
             {
@@ -710,44 +737,45 @@ export const portfolioData = {
               points: ["Fabric & functionality"]
             }
           ],
+          frameworkSentence: "One outfit.\nMultiple moments.",
           frameworkBadges: [
             "OBSERVATION",
             "INVESTIGATION",
             "INSIGHTS",
-            "OPPORTUNITY",
-            "ATHIRA"
+            "OPPORTUNITY"
           ]
         },
-        {
-          number: "03",
-          title: "WHAT I INVESTIGATED",
-          flow: [
-            {
-              step: "OBSERVATION",
-              desc: "Existing athleisure can be too restrictive, too gym-focused, and difficult to balance between comfort and style.",
-              isHighlight: false
-            },
-            {
-              step: "INVESTIGATION",
-              desc: "Market trends & industry growth; consumer preferences, pain points & buying behaviour; competitor offerings & brand positioning; fabric & functionality.",
-              isHighlight: false
-            },
-            {
-              step: "INSIGHTS",
-              desc: "Understanding changing preferences and identifying real user problems.",
-              isHighlight: false
-            },
-            {
-              step: "OPPORTUNITY",
-              desc: "Finding the opportunity gap and turning insights into a product with potential for growth and impact.",
-              isHighlight: true
-            }
-          ],
-        },
+{
+            number: "03",
+            title: "WHAT I INVESTIGATED",
+            flow: [
+              {
+                step: "Market trends & industry growth",
+                desc: "",
+                isHighlight: false
+              },
+              {
+                step: "Consumer preferences, pain points & buying behaviour",
+                desc: "",
+                isHighlight: false
+              },
+              {
+                step: "Competitor offerings & brand positioning",
+                desc: "",
+                isHighlight: false
+              },
+              {
+                step: "Fabric & functionality",
+                desc: "",
+                isHighlight: true
+              }
+            ],
+            takeaway: "One outfit.\nMultiple moments."
+          },
         {
           number: "04",
           title: "MY APPROACH",
-          lead: "Turning observations and research into a clear product opportunity.",
+          lead: "",
           skills: [
             {
               title: "Trend Research",
@@ -780,11 +808,12 @@ export const portfolioData = {
     },
     page3DesignAndMaterial: {
       design: {
-        title: "01 Design",
-        points: ["Structured crop top", "Relaxed Joggers", "Minimal & Functional"]
+        title: "Design",
+        points: ["Structured crop top", "Relaxed Joggers", "Minimal & Functional"],
+        image: "/portfolio-assets/project-3/athira-design-flat-drawing.jpeg"
       },
       material: {
-        title: "02 Material",
+        title: "Material",
         lycra: {
           name: "LYCRA — TOP",
           attributes: "Stretch • Fit • Flexibility"
@@ -793,39 +822,42 @@ export const portfolioData = {
           name: "TERRY COTTON — TROUSERS",
           attributes: "Softness • Comfort • Breathability"
         },
-        colorNote: "Custom-dyed colour palette for effortless daily styling."
+        colorNote: "Custom-dyed colour",
+        image: "/portfolio-assets/project-3/athira-material-spec.jpeg"
       },
       prototype: {
-        badge: "PHYSICAL MVP",
-        tagline: "STRUCTURED × RELAXED",
-        coreProposition: "MADE FOR MULTIPLE MOMENTS"
+        title: "Physical MVP",
+        image: "/portfolio-assets/project-3/athira-physical-mvp.jpeg"
       }
     },
     page4FeedbackAndIteration: {
       whatIHeard: [
         "“I like the idea of something I can wear both in the gym and outside.”",
         "“The fabric feels a bit thick, it might not be comfortable in summer.”",
-        "“More style options would be nice, like halter neck tops.”"
+        "“More style options would be nice, like halter neck tops.”",
+        "“The set feels versatile, but more colour options would make it more appealing.”"
       ],
-      whatThisTaughtMe: [
-        {
-          headline: "Research before assumptions",
-          detail: "Consumer feedback can challenge initial decisions and ground creative intuition in reality."
+      dataInsights: {
+        title: "DATA INSIGHTS",
+        question: "How appealing do you find this concept: A coordinated set with relaxed jogger-style pants and a structured full-sleeve crop top that can be worn comfortably for the gym and also styled for cafés, travel, and airport wear?",
+        responses: 28,
+        primaryMetric: {
+          value: "92.9%",
+          label: "Very appealing",
+          supportingText: "26 of 28 respondents"
         },
-        {
-          headline: "Build → Test → Refine",
-          detail: "A first product doesn’t have to be perfect; the power lies in iterative cycles."
-        },
-        {
-          headline: "Think beyond the product",
-          detail: "Good product decisions connect consumer needs, material functionality and business thinking."
-        }
-      ],
-      feedbackLoop: {
-        feedback: "Fabric felt too thick",
-        iteration: "Explore lighter, breathable fabrics",
-        impact: "Better suited to everyday & summer wear"
-      }
+        chart: [
+          { label: "Very appealing", percentage: 92.9, responses: 26 },
+          { label: "Not appealing", percentage: 7.1, responses: 2 }
+        ],
+        keySignalTitle: "KEY SIGNAL",
+        keySignal: "The coordinated set concept received strong initial appeal, with 26 of 28 respondents rating it very appealing."
+      },
+      feedbackIterationImpact: [
+        { heading: "Fabric too thick", action: "Lighter, breathable fabric" },
+        { heading: "Limited styles", action: "Add halter / sleeveless options" },
+        { heading: "Summer comfort concern", action: "Climate-appropriate materials" }
+      ]
     }
   },
 
@@ -967,6 +999,18 @@ export const portfolioData = {
 
     internshipExperience: {
       badge: "FINE JEWELLERY BRAND INTERNSHIP",
+      heroEyebrow: "INTERNSHIP",
+      heroTitle: "Adya Jewels",
+      heroSubtitle: "MARKETING & E-COMMERCE INTERN",
+      heroDate: "JUNE – AUGUST 2026",
+      heroDescription: "Creating digital experiences for a contemporary jewellery brand through content, social media and e-commerce.",
+      contentCreationLabel: "Content Creation",
+      formatsLabel: "REELS / POSTS / CAROUSELS / STORIES",
+      profileHandle: "adya.jewels",
+      profileTagline: "Fine Jewellery",
+      socialCaption: "Designed and shot reels, posts and carousels that brought the brand's story to life.",
+      ecomTitle: "E-COMMERCE",
+      ecomSubtitle: "Website & Catalogue Management",
       sectionSocialTitle: "Social Media",
       socialIntroTitle: "Concept to Live Content Production",
       introPrefix: "Short introduction:",
@@ -1090,16 +1134,17 @@ export const portfolioData = {
     projectThree: {
       breadcrumbProjects: "HOME",
       breadcrumbCurrent: "PROJECT 3 — START UP",
-      breadcrumbTag: "ATHLEISURE HYBRID // STRUCTURED × RELAXED",
-      metaTypeLabel: "PROJECT TYPE:",
-      metaConceptLabel: "CONCEPT:",
-      metaScopeLabel: "SCOPE:",
-      metaTypeValue: "Fashion Start-Up & Athleisure",
-      metaScopeValue: "Research to Fabrication",
+      breadcrumbTag: "",
+      metaTypeLabel: "",
+      metaConceptLabel: "",
+      metaScopeLabel: "",
+      metaTypeValue: "",
+      metaScopeValue: "",
 
-      galleryTitle: "MADE FOR MULTIPLE MOMENTS",
+      galleryTitle: "",
       page2Headline1: "FROM AN OBSERVATION",
       page2Headline2: "TO AN OPPORTUNITY",
+      page2BriefLabel: "Brief",
       opportunityGap: "OPPORTUNITY GAP",
       p3PageLabel: "PAGE 3",
       p3DesignParagraph:
@@ -1109,6 +1154,10 @@ export const portfolioData = {
         "The physical MVP garment produced and evaluated through user wear-testing sessions to gauge breathability and silhouette comfort.",
 
       p4PageLabel: "PAGE 4",
+      p4PageNumber: "04 / 04",
+      p4Title: "Test. Learn. Refine.",
+      p4Subtitle: "From feedback to better decisions.",
+      p4Brand: "ATHIRA",
       p4HeardTitle: "WHAT I HEARD",
       p4TaughtTitle: "WHAT THIS TAUGHT ME",
       p4LoopHeader: "FEEDBACK → ITERATION → IMPACT",

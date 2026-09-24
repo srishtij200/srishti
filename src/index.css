@@ -19,6 +19,11 @@
     --c-highlight: #A9B5A0;
     --c-soft: #B7CDE2;
     --c-warm: #C9A0A4;
+
+    /* Light tints of the palette — soft fills for boxes/cards. */
+    --c-soft-light: #DCE6F2;
+    --c-highlight-light: #D7DED1;
+    --c-warm-light: #EBD7DA;
   }
 
   html {

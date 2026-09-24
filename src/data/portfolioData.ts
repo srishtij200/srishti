@@ -593,7 +593,7 @@ export const portfolioData = {
         quote: "Creativity brings the idea to life, but it's the details that make it real.",
         caption: "Inside the Future Florals installation",
         accent: "FUTURE FLORALS",
-        image: "/portfolio-assets/project-2/page5-final-installation.jpg"
+        image: "/portfolio-assets/project-2/page5-image.jpeg"
       },
       processInAction: {
         title: "THE PROCESS BEHIND THE BEAUTY",
@@ -1078,7 +1078,7 @@ export const portfolioData = {
 
       behindTitle: "FROM IDEA TO MAKING",
 
-      behindIntro: "5-step progression from raw holographic sheets to spatial environmental installation.",
+      behindIntro: "Turning the concept into a tangible experience",
 
       p5ProcessTag: "IDEATION → INSTALLATION",
       p5SkillsHeader: "SKILLS I APPLIED",

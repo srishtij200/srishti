@@ -2,9 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
-  ArrowDown
+  ArrowDown,
+  Scale,
+  Maximize2,
+  Target,
+  Waves,
+  Palette,
+  Sun,
+  Flower2,
+  type LucideIcon
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+
+const vmPrincipleIcons: Record<string, LucideIcon> = {
+  Scale,
+  Maximize2,
+  Target,
+  Waves,
+  Palette,
+  Sun
+};
 
 export const ProjectVisualMerchandisingPage: React.FC = () => {
   const { projectVM: vm } = portfolioData;
@@ -243,7 +260,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
                     {vm.page3Boards.moodBoard.title}
                   </h2>
-                  <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug">
+                  <p className="font-hand text-2xl sm:text-3xl text-[var(--c-ink)]/85 leading-snug">
                     {(vm.page3Boards.moodBoard as { tagline?: string }).tagline}
                   </p>
                   <p className="font-body text-base sm:text-lg text-[var(--c-ink)]/85 leading-relaxed">
@@ -274,7 +291,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
                     {vm.page3Boards.colourBoard.title}
                   </h2>
-                  <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug">
+                  <p className="font-hand text-2xl sm:text-3xl text-[var(--c-ink)]/85 leading-snug">
                     {(vm.page3Boards.colourBoard as { subtitle?: string }).subtitle}
                   </p>
                   <p className="font-body text-base sm:text-lg text-[var(--c-ink)]/85 leading-relaxed">
@@ -293,7 +310,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] mb-2">
                 {u.behindTitle}
               </h2>
-              <p className="font-mono-code text-xs text-[var(--c-ink)]/70">
+              <p className="font-hand text-2xl sm:text-3xl text-[var(--c-ink)]/85 leading-snug">
                 {u.behindIntro}
               </p>
             </div>
@@ -306,15 +323,12 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   <div className={`rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] shadow-sm w-full max-w-md mx-auto ${imageLeft ? 'lg:order-1 lg:ml-auto lg:mr-0' : 'lg:order-2 lg:mr-auto lg:ml-0'}`}>
                     <img
                       src={(step as { image?: string }).image}
-                      alt={`${step.imageIndex}: ${step.title}`}
+                      alt={step.title}
                       className="w-full aspect-[4/3] object-cover"
                       loading="lazy"
                     />
                   </div>
                   <div className={`space-y-2 text-left ${imageLeft ? 'lg:order-2' : 'lg:order-1 lg:text-right'}`}>
-                    <span className="text-[10px] font-mono-code bg-[var(--c-ink)] text-[var(--c-bg)] px-2.5 py-0.5 rounded-full font-bold uppercase inline-block">
-                      {step.imageIndex}
-                    </span>
                     <h3 className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)]">
                       {step.title}
                     </h3>
@@ -334,13 +348,10 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Slide Header */}
             <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
-              <div className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-2">
-                {vm.page5SkillsAndPrinciples.pageLabel} <span className="px-1">•</span> {vm.page5SkillsAndPrinciples.headerTag}
-              </div>
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] tracking-tight">
                 {vm.page5SkillsAndPrinciples.title}
               </h2>
-              <p className="font-serif-display text-lg sm:text-xl text-[var(--c-ink)]/80 italic mt-2">
+              <p className="font-hand text-2xl sm:text-3xl text-[var(--c-ink)]/85 mt-2 leading-snug">
                 {vm.page5SkillsAndPrinciples.subheadline}
               </p>
             </div>
@@ -372,16 +383,19 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                     {u.p5PrinciplesHeader}
                   </div>
                   <ul className="flex-1 flex flex-col justify-evenly divide-y divide-[var(--c-ink)]/10">
-                    {vm.page5SkillsAndPrinciples.vmPrinciplesApplied.map((p, idx) => (
-                      <li key={idx} className="py-3 flex items-baseline justify-between gap-4">
-                        <span className="font-serif-display italic text-base text-[var(--c-ink)]/60">
-                          {String(p.number).padStart(2, '0')}
-                        </span>
-                        <span className="font-mono-code text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--c-ink)]/85">
-                          {p.name}
-                        </span>
-                      </li>
-                    ))}
+                    {vm.page5SkillsAndPrinciples.vmPrinciplesApplied.map((p, idx) => {
+                      const Icon = vmPrincipleIcons[p.icon] ?? Flower2;
+                      return (
+                        <li key={idx} className="py-3 flex items-center gap-5 pl-6">
+                          <span className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-[var(--c-ink)]/20 bg-[var(--c-bg)] shadow-xs shrink-0">
+                            <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[var(--c-ink)]" strokeWidth={1.5} />
+                          </span>
+                          <span className="font-mono-code text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[var(--c-ink)]/85">
+                            {p.name}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>

@@ -114,7 +114,7 @@ export const InternshipExperiencePage: React.FC = () => {
                     loop
                     playsInline
                     preload="metadata"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover scale-110"
                   />
                 ) : (
                   <PlaceholderImage
@@ -147,11 +147,6 @@ export const InternshipExperiencePage: React.FC = () => {
                       {tile.brand}
                     </span>
                   )}
-                  <div className="absolute inset-x-0 bottom-0 px-2 pb-2 pt-6 bg-gradient-to-t from-[var(--c-bg)]/95 via-[var(--c-bg)]/50 to-transparent">
-                    <p className="font-serif-display italic text-sm text-[var(--c-ink)] leading-snug">
-                      {tile.overlay}
-                    </p>
-                  </div>
                 </div>
               ))}
             </div>
@@ -162,7 +157,7 @@ export const InternshipExperiencePage: React.FC = () => {
                 <img
                   src={sm.profileImage}
                   alt="Aadiya Jewels social media profile on mobile"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-center scale-110"
                 />
               ) : (
               <div className="h-full px-3 py-3 flex flex-col">

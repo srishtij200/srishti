@@ -94,6 +94,9 @@ export const ProjectMarketingPage: React.FC = () => {
             }
           }}
           alt="UNIQLO fragrance project hero"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* Breadcrumb overlay on hero image */}
@@ -264,6 +267,8 @@ export const ProjectMarketingPage: React.FC = () => {
                         <img
                           src={u.p2Flow.brandLogo}
                           alt="LifeWear logo"
+                          loading="lazy"
+                          decoding="async"
                           className="h-5 w-auto object-contain rounded"
                         />
                         <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]">
@@ -749,6 +754,8 @@ export const ProjectMarketingPage: React.FC = () => {
                       <img
                         src={learn.image || p5LearningImages[lIdx]}
                         alt={learn.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -784,6 +791,8 @@ export const ProjectMarketingPage: React.FC = () => {
                             <img
                               src={stepImage}
                               alt={step.title}
+                              loading="lazy"
+                              decoding="async"
                               className="w-full h-full object-cover"
                             />
                           </div>

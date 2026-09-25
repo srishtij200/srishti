@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { X, Check, Copy, Sparkles, ArrowRight } from 'lucide-react';
-import { FlowerMark, HandDrawnStar, WashiTape } from './CustomDoodles';
-import { WaitlistSubmission } from '../types';
+import React, { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { X, ArrowRight, Mail } from 'lucide-react';
+import { FlowerMark, WashiTape } from './CustomDoodles';
 import { portfolioData } from '../data/portfolioData';
 
 interface WaitlistModalProps {
@@ -11,236 +10,237 @@ interface WaitlistModalProps {
   initialRole?: string;
 }
 
-export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, initialRole = portfolioData.ui.waitlist.roles[0] }) => {
+const focusableSelector = [
+  'a[href]',
+  'button:not([disabled])',
+  'input:not([disabled])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])',
+].join(',');
+
+export const WaitlistModal: React.FC<WaitlistModalProps> = ({
+  isOpen,
+  onClose,
+  initialRole = portfolioData.ui.waitlist.roles[0],
+}) => {
   const w = portfolioData.ui.waitlist;
+  const reduceMotion = useReducedMotion();
+  const titleId = 'waitlist-modal-title';
+  const descriptionId = 'waitlist-modal-description';
+  const emailId = 'waitlist-email';
+  const emailHintId = 'waitlist-email-hint';
+  const errorId = 'waitlist-email-error';
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const firstFieldRef = useRef<HTMLInputElement>(null);
+  const successHeadingRef = useRef<HTMLHeadingElement>(null);
+  const previousActiveElementRef = useRef<HTMLElement | null>(null);
+  const onCloseRef = useRef(onClose);
   const [email, setEmail] = useState('');
   const [role, setRole] = useState(initialRole);
-  const [submitted, setSubmitted] = useState<WaitlistSubmission | null>(() => {
-    try {
-      const saved = localStorage.getItem('aria_portfolio_inquiry_ticket');
-      return saved ? JSON.parse(saved) : null;
-    } catch {
-      return null;
+  const [error, setError] = useState('');
+  const [draftUrl, setDraftUrl] = useState('');
+
+  onCloseRef.current = onClose;
+
+  useEffect(() => {
+    if (!isOpen) {
+      setEmail('');
+      setRole(initialRole);
+      setError('');
+      setDraftUrl('');
+      return;
     }
-  });
-  const [isCopied, setIsCopied] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email.trim() || !email.includes('@')) return;
+    previousActiveElementRef.current = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const focusFrame = window.requestAnimationFrame(() => firstFieldRef.current?.focus());
 
-    setIsSubmitting(true);
-    setTimeout(() => {
-      const newSubmission: WaitlistSubmission = {
-        email: email.trim(),
-        role,
-        submittedAt: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-        ticketNumber: Math.floor(1000 + Math.random() * 9000),
-      };
-      setSubmitted(newSubmission);
-      try {
-        localStorage.setItem('aria_portfolio_inquiry_ticket', JSON.stringify(newSubmission));
-      } catch {
-        // ignore
-      }
-      setIsSubmitting(false);
-    }, 600);
+    return () => {
+      window.cancelAnimationFrame(focusFrame);
+      document.body.style.overflow = previousOverflow;
+      previousActiveElementRef.current?.focus();
+    };
+  }, [initialRole, isOpen]);
+
+  useEffect(() => {
+    if (draftUrl) successHeadingRef.current?.focus();
+  }, [draftUrl]);
+
+  const handleDialogKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      onCloseRef.current();
+      return;
+    }
+    if (event.key !== 'Tab' || !dialogRef.current) return;
+
+    const focusable = Array.from(
+      dialogRef.current.querySelectorAll<HTMLElement>(focusableSelector),
+    ).filter((element) => element.getClientRects().length > 0);
+    if (focusable.length === 0) {
+      event.preventDefault();
+      dialogRef.current.focus();
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   };
 
-  const copyTicket = () => {
-    if (!submitted) return;
-    navigator.clipboard.writeText(`STUDIO-INQUIRY-PASS-#${submitted.ticketNumber} (${submitted.email})`);
-    setIsCopied(true);
-    setTimeout(() => setIsCopied(false), 2000);
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const normalizedEmail = email.trim();
+    if (!normalizedEmail) {
+      setError('Enter your email address so it can be included in the draft.');
+      firstFieldRef.current?.focus();
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+      setError('Enter a valid email address, such as name@example.com.');
+      firstFieldRef.current?.focus();
+      return;
+    }
+
+    setError('');
+    const subject = `${w.title} — ${role}`;
+    const body = ['Hello,', '', `Please reply to: ${normalizedEmail}`, '', `Inquiry type: ${role}`, '', 'Message:', '', ''].join('\n');
+    const nextDraftUrl = `mailto:${portfolioData.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setDraftUrl(nextDraftUrl);
+    window.location.assign(nextDraftUrl);
   };
 
   return (
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
-          {/* Backdrop with faint paper blur */}
           <motion.div
-            initial={{ opacity: 0 }}
+            aria-hidden="true"
+            initial={reduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={reduceMotion ? undefined : { opacity: 0 }}
             onClick={onClose}
             className="fixed inset-0 bg-[var(--c-ink)]/40 backdrop-blur-xs"
           />
-
-          {/* Modal Container */}
           <motion.div
-            initial={{ scale: 0.94, opacity: 0, y: 15 }}
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={titleId}
+            aria-describedby={descriptionId}
+            tabIndex={-1}
+            onKeyDown={handleDialogKeyDown}
+            initial={reduceMotion ? false : { scale: 0.94, opacity: 0, y: 15 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.94, opacity: 0, y: 15 }}
-            transition={{ type: 'spring', damping: 24, stiffness: 300 }}
-            className="relative w-full max-w-lg bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-2xl p-6 sm:p-8 paper-shadow-lg z-10 overflow-hidden"
+            exit={reduceMotion ? undefined : { scale: 0.94, opacity: 0, y: 15 }}
+            transition={reduceMotion ? { duration: 0 } : { type: 'spring', damping: 24, stiffness: 300 }}
+            className="relative z-10 max-h-[calc(100dvh-2rem)] w-full max-w-lg overflow-y-auto overscroll-contain rounded-2xl border-[1.5px] border-[var(--c-ink)] bg-[var(--c-bg)] p-6 paper-shadow-lg sm:p-8"
           >
-            {/* Washi tape decoration */}
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+            <div aria-hidden="true" className="absolute -top-3 left-1/2 -translate-x-1/2">
               <WashiTape color="#C9A0A4" width="w-28" />
             </div>
-
-            {/* Close button */}
             <button
-              id="close-waitlist-modal"
+              type="button"
               onClick={onClose}
-              className="absolute top-4 right-4 p-2 rounded-full border border-[var(--c-ink)]/30 hover:border-[var(--c-ink)] hover:bg-[var(--c-ink)]/5 transition-colors"
-              aria-label="Close modal"
+              className="absolute right-4 top-4 flex min-h-11 min-w-11 items-center justify-center rounded-full border border-[var(--c-ink)]/50 transition-colors hover:border-[var(--c-ink)] hover:bg-[var(--c-ink)]/5"
+              aria-label="Close email draft dialog"
             >
-              <X className="w-4 h-4 text-[var(--c-ink)]" />
+              <X aria-hidden="true" className="h-4 w-4 text-[var(--c-ink)]" />
             </button>
-
-            {!submitted ? (
-              <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <FlowerMark size={22} />
-                  <span className="font-mono-code text-xs uppercase tracking-widest text-[var(--c-ink)]/70">
-                    {w.eyebrow}
-                  </span>
+            <p id={descriptionId} className="sr-only">
+              {draftUrl
+                ? `A prefilled email draft was prepared for ${portfolioData.contact.email}. Review and send it from your email app. Nothing was submitted or saved.`
+                : `Create a prefilled email draft to ${portfolioData.contact.email}.`}
+            </p>
+            <p role="status" aria-live="polite" className="sr-only">
+              {draftUrl ? `Email draft prepared for ${portfolioData.contact.email}. Nothing was submitted or saved.` : ''}
+            </p>
+            {draftUrl ? (
+              <div className="pt-10 text-center">
+                <div className="mb-4 flex items-center justify-center gap-2">
+                  <Mail aria-hidden="true" className="h-5 w-5 text-[var(--c-ink)]" />
+                  <span className="font-mono-code text-xs uppercase tracking-widest text-[var(--c-ink)]">Email draft prepared</span>
                 </div>
-
-                <h3 className="font-serif-display text-3xl sm:text-4xl leading-tight text-[var(--c-ink)] mb-3">
-                  {w.title}
-                </h3>
-
-                <p className="font-body text-sm text-[var(--c-ink)]/80 leading-relaxed mb-6">
-                  {w.intro}
+                <h2 ref={successHeadingRef} tabIndex={-1} className="font-serif-display text-3xl leading-tight text-[var(--c-ink)] sm:text-4xl">
+                  Review and send it from your email app
+                </h2>
+                <p className="mx-auto mt-4 max-w-sm font-body text-sm leading-relaxed text-[var(--c-ink)]">
+                  A prefilled draft was prepared for{' '}
+                  <a className="font-bold underline underline-offset-4" href={`mailto:${portfolioData.contact.email}`}>{portfolioData.contact.email}</a>.
+                  Your email app may ask you to confirm the recipient before sending. Nothing is submitted or saved by this site.
                 </p>
-
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                  <a href={draftUrl} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--c-ink)] bg-[var(--c-ink)] px-4 py-2 font-mono-code text-xs text-[var(--c-bg)] paper-shadow-sm">
+                    Open email draft
+                    <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" />
+                  </a>
+                  <button type="button" onClick={onClose} className="min-h-11 rounded-lg border border-[var(--c-ink)]/60 px-4 py-2 font-mono-code text-xs text-[var(--c-ink)] transition-colors hover:bg-[var(--c-ink)]/5">Close</button>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <div className="mb-3 flex items-center gap-2">
+                  <FlowerMark size={22} />
+                  <span className="font-mono-code text-xs uppercase tracking-widest text-[var(--c-ink)]">{w.eyebrow}</span>
+                </div>
+                <h2 id={titleId} className="mb-3 font-serif-display text-3xl leading-tight text-[var(--c-ink)] sm:text-4xl">{w.title}</h2>
+                <p className="mb-6 font-body text-sm leading-relaxed text-[var(--c-ink)]">
+                  Create a prefilled email draft to {portfolioData.contact.email}. Your email app will open for you to review and send.
+                </p>
+                <form onSubmit={handleSubmit} noValidate className="space-y-4">
                   <div>
-                    <label className="block font-mono-code text-xs uppercase tracking-wider text-[var(--c-ink)] mb-1.5">
-                      {w.emailLabel}
-                    </label>
+                    <label htmlFor={emailId} className="mb-1.5 block font-mono-code text-xs uppercase tracking-wider text-[var(--c-ink)]">{w.emailLabel}</label>
                     <input
+                      ref={firstFieldRef}
+                      id={emailId}
+                      name="email"
                       type="email"
+                      inputMode="email"
+                      autoComplete="email"
                       required
                       placeholder={w.emailPlaceholder}
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-xl px-4 py-3 font-mono-code text-sm text-[var(--c-ink)] placeholder-[var(--c-ink)]/40 focus:outline-hidden focus:ring-2 focus:ring-[var(--c-warm)]"
+                      onChange={(event) => {
+                        setEmail(event.target.value);
+                        if (error) setError('');
+                      }}
+                      aria-invalid={Boolean(error)}
+                      aria-describedby={error ? `${emailHintId} ${errorId}` : emailHintId}
+                      className="w-full rounded-xl border-[1.5px] border-[var(--c-ink)] bg-[var(--c-bg)] px-4 py-3 font-mono-code text-sm text-[var(--c-ink)] placeholder:text-[var(--c-ink)]/60"
                     />
+                    <p id={emailHintId} className="mt-1.5 font-mono-code text-xs text-[var(--c-ink)]">This address is included in the draft so the studio can reply.</p>
+                    <p id={errorId} role="alert" className="mt-1.5 font-mono-code text-xs font-bold text-[#8B1E2D]">{error}</p>
                   </div>
 
-                  <div>
-                    <label className="block font-mono-code text-xs uppercase tracking-wider text-[var(--c-ink)] mb-1.5">
-                      {w.roleLabel}
-                    </label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {w.roles.map((r) => (
-                        <button
-                          key={r}
-                          type="button"
-                          onClick={() => setRole(r)}
-                          className={`py-2 px-2 text-xs font-mono-code rounded-lg border-[1.5px] transition-all text-center leading-tight ${
-                            role === r
-                              ? 'bg-[var(--c-warm)] border-[var(--c-ink)] font-bold paper-shadow-sm'
-                              : 'bg-transparent border-[var(--c-ink)]/40 hover:border-[var(--c-ink)] text-[var(--c-ink)]/80'
-                          }`}
-                        >
-                          {r}
-                        </button>
+                  <fieldset>
+                    <legend className="mb-1.5 font-mono-code text-xs uppercase tracking-wider text-[var(--c-ink)]">{w.roleLabel}</legend>
+                    <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
+                      {w.roles.map((option) => (
+                        <label key={option} className="cursor-pointer">
+                          <input type="radio" name="inquiry-role" value={option} checked={role === option} onChange={() => setRole(option)} className="peer sr-only" />
+                          <span className="flex min-h-11 items-center justify-center rounded-lg border-[1.5px] border-[var(--c-ink)]/50 px-3 py-2 text-center font-mono-code text-xs leading-tight text-[var(--c-ink)] transition-colors hover:border-[var(--c-ink)] peer-checked:border-[var(--c-ink)] peer-checked:bg-[var(--c-warm)] peer-checked:font-bold peer-checked:paper-shadow-sm peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[var(--c-ink)]">
+                            {option}
+                          </span>
+                        </label>
                       ))}
                     </div>
-                  </div>
-
+                  </fieldset>
                   <div className="pt-2">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full flex items-center justify-center gap-2 bg-[var(--c-ink)] text-[var(--c-bg)] hover:bg-[var(--c-ink-hover)] border-[1.5px] border-[var(--c-ink)] py-3.5 px-6 rounded-xl font-mono-code text-sm tracking-wider uppercase paper-shadow-hover transition-all cursor-pointer"
-                    >
-                      {isSubmitting ? (
-                        <span>{w.submitBusy}</span>
-                      ) : (
-                        <>
-                          <span>{w.submitIdle}</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </>
-                      )}
+                    <button type="submit" className="flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl border-[1.5px] border-[var(--c-ink)] bg-[var(--c-ink)] px-6 py-3.5 font-mono-code text-sm uppercase tracking-wider text-[var(--c-bg)] paper-shadow-hover transition-colors hover:bg-[var(--c-ink-hover)]">
+                      <span>Create email draft</span>
+                      <ArrowRight aria-hidden="true" className="h-4 w-4" />
                     </button>
+                    <p aria-live="polite" className="sr-only">No email has been submitted or saved.</p>
                   </div>
-
-                  <p className="font-mono-code text-[11px] text-center text-[var(--c-ink)]/60 mt-3">
-                    {w.footnote}
-                  </p>
                 </form>
-              </div>
-            ) : (
-              <div className="text-center py-2">
-                {/* Physical ticket look */}
-                <div className="relative bg-[var(--c-bg)] border-[1.5px] border-[var(--c-ink)] rounded-xl p-6 mb-6 paper-shadow text-left overflow-hidden">
-                  <div className="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-[var(--c-warm)]/30 border border-[var(--c-ink)]/10" />
-                  
-                  <div className="flex items-start justify-between border-b border-[var(--c-ink)]/20 pb-4 mb-4">
-                    <div>
-                      <div className="flex items-center gap-1.5 text-xs font-mono-code uppercase text-[var(--c-ink)]/70">
-                        <FlowerMark size={16} />
-                        {portfolioData.student.name} {w.ticketBrand}
-                      </div>
-                      <div className="font-serif-display text-2xl text-[var(--c-ink)] mt-1">
-                        {w.ticketReceived}
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <span className="inline-block bg-[var(--c-warm)] text-[var(--c-ink)] border border-[var(--c-ink)] px-2 py-0.5 rounded text-[11px] font-mono-code font-bold">
-                        #{submitted.ticketNumber}
-                      </span>
-                      <div className="font-mono-code text-[10px] text-[var(--c-ink)]/60 mt-1">
-                        {submitted.submittedAt}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 text-xs font-mono-code">
-                    <div className="flex justify-between">
-                      <span className="text-[var(--c-ink)]/60">{w.labelContact}</span>
-                      <span className="font-bold text-[var(--c-ink)] truncate max-w-[200px]">{submitted.email}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-[var(--c-ink)]/60">{w.labelInquiryType}</span>
-                      <span className="text-[var(--c-ink)]">{submitted.role}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-[var(--c-ink)]/60">{w.labelStatus}</span>
-                      <span className="text-[var(--c-ink)] flex items-center gap-1">
-                        <Check className="w-3.5 h-3.5 text-[#4F5B4A]" />
-                        {w.statusQueued}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Perforation line */}
-                  <div className="border-t-2 border-dashed border-[var(--c-ink)]/30 mt-4 pt-3 flex justify-between items-center text-[10px] font-mono-code text-[var(--c-ink)]/50">
-                    <span>{w.dossierPass}</span>
-                    <span>{w.cityTag}</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <Sparkles className="w-4 h-4 text-[var(--c-warm)]" />
-                  <span className="font-serif-display text-xl text-[var(--c-ink)]">{w.loggedTitle}</span>
-                </div>
-                <p className="font-body text-xs text-[var(--c-ink)]/80 max-w-sm mx-auto mb-6">
-                  {w.thanks}
-                </p>
-
-                <div className="flex items-center justify-center gap-3">
-                  <button
-                    onClick={copyTicket}
-                    className="flex items-center gap-1.5 px-4 py-2 bg-[var(--c-warm)] border border-[var(--c-ink)] rounded-lg text-xs font-mono-code text-[var(--c-ink)] paper-shadow-sm hover:translate-y-[-1px] transition-all cursor-pointer"
-                  >
-                    {isCopied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                    <span>{isCopied ? w.copiedLabel : w.copyLabel}</span>
-                  </button>
-                  <button
-                    onClick={onClose}
-                    className="px-4 py-2 bg-transparent hover:bg-[var(--c-ink)]/5 border border-[var(--c-ink)]/40 rounded-lg text-xs font-mono-code text-[var(--c-ink)] transition-all cursor-pointer"
-                  >
-                    {w.closeLabel}
-                  </button>
-                </div>
               </div>
             )}
           </motion.div>

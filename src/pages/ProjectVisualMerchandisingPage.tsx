@@ -45,6 +45,9 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             }
           }}
           alt="Cover Story Future Florals hero"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* Breadcrumb overlay on hero image */}
@@ -80,18 +83,24 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
           src="/portfolio-assets/project-2/line-art-flower-top-right.png"
           alt=""
           aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className="absolute -top-2 -right-2 w-32 sm:w-48 lg:w-60 pointer-events-none opacity-45 mix-blend-multiply select-none z-0"
         />
         <img
           src="/portfolio-assets/project-2/line-art-flower-bottom-left.png"
           alt=""
           aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className="absolute -bottom-2 -left-2 w-28 sm:w-40 lg:w-52 pointer-events-none opacity-40 mix-blend-multiply select-none z-0"
         />
         <img
           src="/portfolio-assets/project-2/iridescent-ribbon-bottom.png"
           alt=""
           aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className="absolute bottom-0 left-0 w-full max-w-xl pointer-events-none opacity-40 mix-blend-multiply select-none z-0"
         />
 
@@ -133,7 +142,9 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                       <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-[var(--c-ink)]/20 shadow-xs mb-3 bg-white/60">
                         <img
                           src={item.image}
-                          alt={item.name}
+                           alt={item.name}
+                           loading="lazy"
+                           decoding="async"
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -170,7 +181,9 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                         <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border border-[var(--c-ink)]/25 shadow-xs shrink-0 bg-white/70">
                           <img
                             src={node.image}
-                            alt={node.label.replace('\n', ' ')}
+                             alt={node.label.replace('\n', ' ')}
+                             loading="lazy"
+                             decoding="async"
                             className="w-full h-full object-cover scale-[1.7]"
                           />
                         </div>
@@ -205,7 +218,9 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
               <div className="relative rounded-2xl overflow-hidden border border-[var(--c-ink)]/20 shadow-md bg-[#FAF4F2]">
                 <img
                   src={vm.page2Brief.heroImage}
-                  alt="Future Florals blooming concept hero"
+                   alt="Future Florals blooming concept hero"
+                   loading="lazy"
+                   decoding="async"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -249,7 +264,9 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 <div className="relative aspect-video rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
                   <img
                     src={vm.page3Boards.moodBoard.image}
-                    alt="Mood Board - Future Florals"
+                     alt="Mood Board - Future Florals"
+                     loading="lazy"
+                     decoding="async"
                     width={1280}
                     height={720}
                     className="w-full h-full object-cover"
@@ -280,7 +297,9 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 <div className="relative aspect-video rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
                   <img
                     src={vm.page3Boards.colourBoard.image}
-                    alt="Colour Board - Future Florals"
+                     alt="Colour Board - Future Florals"
+                     loading="lazy"
+                     decoding="async"
                     width={1280}
                     height={720}
                     className="w-full h-full object-cover"
@@ -326,6 +345,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                       alt={step.title}
                       className="w-full aspect-[4/3] object-cover"
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className={`space-y-2 text-left ${imageLeft ? 'lg:order-2' : 'lg:order-1 lg:text-right'}`}>
@@ -363,6 +383,8 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   src={(vm.page5SkillsAndPrinciples.quoteBanner as { image?: string }).image ?? "/portfolio-assets/project-2/page5-final-installation.jpg"}
                   alt={`${vm.page5SkillsAndPrinciples.quoteBanner.accent} — ${vm.page5SkillsAndPrinciples.quoteBanner.caption}`}
                   className="w-full h-auto"
+                   loading="lazy"
+                   decoding="async"
                 />
               </div>
               <div className="flex flex-col gap-6">

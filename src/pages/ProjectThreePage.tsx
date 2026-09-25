@@ -32,6 +32,9 @@ export const ProjectThreePage: React.FC = () => {
           <img
             src={p3.cover.heroImage}
             alt="Woman in muted sage green athleisure outfit with black shoulder bag walking outdoors beside architectural glass environment"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
             className="w-full h-full object-cover"
           />
         </div>

@@ -68,7 +68,9 @@ function imageRefToUrl(ref?: string): string | null {
   const ext = parts[parts.length - 1];
   const size = parts[parts.length - 2]; // e.g. 1200x800
   const assetId = parts.slice(1, parts.length - 2).join('-');
-  return `https://cdn.sanity.io/images/${projectId}/${dataset}/${assetId}-${size}.${ext}`;
+  const refWidth = Number.parseInt(size.split('x')[0], 10);
+  const width = Number.isFinite(refWidth) && refWidth > 0 ? Math.min(refWidth, 1600) : 1600;
+  return `https://cdn.sanity.io/images/${projectId}/${dataset}/${assetId}-${size}.${ext}?auto=format&fit=max&w=${width}&q=82`;
 }
 
 /** Walk any value; turn Sanity image objects into plain URL strings. */
@@ -230,38 +232,57 @@ export function getHomeSectionOrder(): Record<string, number> {
 
 /* ------------------------- hydration ----------------------------- */
 
-async function fetchDocs(): Promise<AnyDoc[]> {
+const HYDRATION_TIMEOUT_MS = 8_000;
+let hydrationPromise: Promise<boolean> | null = null;
+
+async function fetchDocs(): Promise<AnyDoc[] | null> {
   try {
-    const result = await sanityClient.fetch<AnyDoc[]>(QUERY, { types: Object.keys(DOC_TO_KEY).concat('siteSettings') });
-    return Array.isArray(result) ? result : [];
-  } catch {
-    return [];
+    const result = await sanityClient.fetch<AnyDoc[]>(
+      QUERY,
+      { types: Object.keys(DOC_TO_KEY).concat('siteSettings') },
+      { timeout: HYDRATION_TIMEOUT_MS },
+    );
+    return Array.isArray(result) ? result : null;
+  } catch (error) {
+    console.warn('[sanity] hydration unavailable; keeping static fallback', error);
+    return null;
   }
 }
 
-export async function hydrateFromSanity(): Promise<boolean> {
-  if (!hasSanity) return false;
-  const docs = await fetchDocs();
-  for (const doc of docs) {
-    const cleaned = denormalize(doc);
-    if (doc._type === 'siteSettings') {
-      applySiteSettings(cleaned as SiteSettings);
-      continue;
+export function hydrateFromSanity(): Promise<boolean> {
+  if (!hasSanity) return Promise.resolve(false);
+  if (hydrationPromise) return hydrationPromise;
+
+  const request = (async () => {
+    const docs = await fetchDocs();
+    if (!docs) return false;
+
+    for (const doc of docs) {
+      const cleaned = denormalize(doc);
+      if (doc._type === 'siteSettings') {
+        applySiteSettings(cleaned as SiteSettings);
+        continue;
+      }
+      const key = DOC_TO_KEY[doc._type];
+      if (!key) continue;
+      const target = (portfolioData as AnyDoc)[key];
+      if (doc._type === 'projectsSummary' && Array.isArray(cleaned.items)) {
+        (portfolioData as AnyDoc).selectedProjects = genericCopy(cleaned.items);
+        continue;
+      }
+      if (isPlainObject(cleaned) && isPlainObject(target)) {
+        // Preserve local-only image paths: Sanity docs may lack image fields
+        // (or hold stale docs); never let a missing/empty CMS value wipe a
+        // local /portfolio-assets/* path already set in the bundle.
+        preserveLocalImages(target, cleaned);
+        deepMerge(target, cleaned);
+      }
     }
-    const key = DOC_TO_KEY[doc._type];
-    if (!key) continue;
-    const target = (portfolioData as AnyDoc)[key];
-    if (doc._type === 'projectsSummary' && Array.isArray(cleaned.items)) {
-      (portfolioData as AnyDoc).selectedProjects = genericCopy(cleaned.items);
-      continue;
-    }
-    if (isPlainObject(cleaned) && isPlainObject(target)) {
-      // Preserve local-only image paths: Sanity docs may lack image fields
-      // (or hold stale docs); never let a missing/empty CMS value wipe a
-      // local /portfolio-assets/* path already set in the bundle.
-      preserveLocalImages(target, cleaned);
-      deepMerge(target, cleaned);
-    }
-  }
-  return true;
+    return true;
+  })();
+
+  hydrationPromise = request.finally(() => {
+    hydrationPromise = null;
+  });
+  return hydrationPromise;
 }

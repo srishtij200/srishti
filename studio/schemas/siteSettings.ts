@@ -1,5 +1,10 @@
 import { defineType, defineField } from 'sanity';
 
+const SEO_TITLE_MIN = 30;
+const SEO_TITLE_MAX = 60;
+const SEO_DESCRIPTION_MIN = 70;
+const SEO_DESCRIPTION_MAX = 160;
+
 const scene = () => ({
   name: 'visible',
   title: 'Visible',
@@ -17,8 +22,35 @@ export const siteSettings = defineType({
       title: 'SEO & Browser Tab',
       type: 'object',
       fields: [
-        { name: 'title', title: 'Page Title', type: 'string' },
-        { name: 'description', title: 'Meta Description', type: 'text', rows: 2 },
+        {
+          name: 'title',
+          title: 'Page Title',
+          type: 'string',
+          description: 'Default title for the homepage. Internal routes use their own SEO titles.',
+          validation: (rule) =>
+            rule
+              .required()
+              .min(SEO_TITLE_MIN)
+              .max(SEO_TITLE_MAX)
+              .warning(
+                `Use ${SEO_TITLE_MIN}–${SEO_TITLE_MAX} characters so search results do not truncate the title.`
+              ),
+        },
+        {
+          name: 'description',
+          title: 'Meta Description',
+          type: 'text',
+          rows: 3,
+          description: 'Default homepage description for search and social previews.',
+          validation: (rule) =>
+            rule
+              .required()
+              .min(SEO_DESCRIPTION_MIN)
+              .max(SEO_DESCRIPTION_MAX)
+              .warning(
+                `Use ${SEO_DESCRIPTION_MIN}–${SEO_DESCRIPTION_MAX} characters to balance relevance and SERP display.`
+              ),
+        },
       ],
     }),
     defineField({

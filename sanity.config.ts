@@ -1,7 +1,23 @@
 import { defineConfig } from 'sanity';
-import { structureTool } from 'sanity/structure';
+import { structureTool, type StructureResolver } from 'sanity/structure';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './studio/schemas';
+
+const SITE_SETTINGS_ID = 'siteSettings';
+
+const structure: StructureResolver = (S) =>
+  S.list()
+    .title('Portfolio Studio')
+    .items([
+      S.listItem()
+        .title('Site Settings')
+        .id(SITE_SETTINGS_ID)
+        .child(S.document().schemaType('siteSettings').documentId(SITE_SETTINGS_ID)),
+      S.divider(),
+      ...S.documentTypeListItems().filter(
+        (item) => item.getId() !== 'siteSettings'
+      ),
+    ]);
 
 const projectId =
   process.env.SANITY_STUDIO_PROJECT_ID || process.env.VITE_SANITY_PROJECT_ID || 'gkxty4f9';
@@ -13,7 +29,7 @@ export default defineConfig({
   projectId,
   dataset,
   basePath: '/',
-  plugins: [structureTool(), visionTool()],
+  plugins: [structureTool({ structure }), visionTool()],
   schema: {
     types: schemaTypes,
   },

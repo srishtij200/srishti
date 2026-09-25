@@ -21,7 +21,13 @@ export const SkillsSection: React.FC = () => {
               {section.titleFirst}
               {section.titleSecond ? (
                 <span className="relative inline-block whitespace-nowrap">
-                  <span className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-bg)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20" />
+                  <motion.span
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="absolute inset-0 -inset-x-2 bottom-1 bg-[var(--c-bg)] -rotate-1 rounded-sm -z-10 opacity-90 border-b-2 border-[var(--c-ink)]/20"
+                  />
                   <span className="relative z-10 italic font-serif-display font-normal">
                     {section.titleSecond}
                   </span>
@@ -45,7 +51,7 @@ export const SkillsSection: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                 <div className="lg:col-span-4">
                   <div className="mb-4 pb-2 border-b border-[var(--c-ink)]/10">
-                    <span className="bg-[var(--c-bg)] px-2 py-0.5 rounded border border-[var(--c-ink)]/20 font-mono-code text-xs font-bold text-[var(--c-ink)]">{cat.tag}</span>
+                    <span className="bg-[var(--c-bg)] px-2 py-0.5 rounded border border-[var(--c-ink)]/20 font-mono-code text-xs font-bold text-[var(--c-ink)] transition-all duration-200 hover:-translate-y-0.5 hover:paper-shadow-sm cursor-default">{cat.tag}</span>
                   </div>
 
                   <h3 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)] mb-4 leading-tight">
@@ -61,7 +67,7 @@ export const SkillsSection: React.FC = () => {
                   {cat.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className="px-4 py-2.5 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15 font-body text-xs sm:text-sm font-semibold uppercase tracking-wide text-[var(--c-ink)]"
+                      className="px-4 py-2.5 bg-[var(--c-bg)] rounded-xl border border-[var(--c-ink)]/15 font-body text-xs sm:text-sm font-semibold uppercase tracking-wide text-[var(--c-ink)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--c-ink)]/50 hover:paper-shadow-sm cursor-default"
                     >
                       {skill}
                     </span>

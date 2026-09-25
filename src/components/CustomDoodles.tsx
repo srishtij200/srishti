@@ -8,7 +8,9 @@ export const FlowerMark: React.FC<{ className?: string; size?: number }> = ({
   className = "w-6 h-6", 
   size = 24 
 }) => (
-  <svg 
+  <svg
+    aria-hidden="true"
+    focusable="false"
     width={size} 
     height={size} 
     viewBox="0 0 32 32" 
@@ -38,7 +40,7 @@ export const HandDrawnArrow: React.FC<{
 }> = ({ className = "w-12 h-8", direction = 'curved-right', color = "#2A2E28" }) => {
   if (direction === 'curved-right') {
     return (
-      <svg className={className} viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg aria-hidden="true" focusable="false" className={className} viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M10 45 C 30 15, 65 10, 85 30"
           stroke={color}
@@ -59,7 +61,7 @@ export const HandDrawnArrow: React.FC<{
 
   if (direction === 'curved-left') {
     return (
-      <svg className={className} viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg aria-hidden="true" focusable="false" className={className} viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M90 45 C 70 15, 35 10, 15 30"
           stroke={color}
@@ -78,7 +80,7 @@ export const HandDrawnArrow: React.FC<{
   }
 
   return (
-    <svg className={className} viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg aria-hidden="true" focusable="false" className={className} viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M5 20 H52" stroke={color} strokeWidth="2" strokeLinecap="round" />
       <path d="M40 10 L52 20 L40 30" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -89,7 +91,7 @@ export const HandDrawnStar: React.FC<{ className?: string; color?: string }> = (
   className = "w-5 h-5", 
   color = "#2A2E28" 
 }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-hidden="true" focusable="false" className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path 
       d="M12 2L14.4 8.6L21.5 9.2L16.1 13.9L17.8 20.8L12 17.1L6.2 20.8L7.9 13.9L2.5 9.2L9.6 8.6L12 2Z" 
       stroke={color} 
@@ -105,7 +107,8 @@ export const WashiTape: React.FC<{
   className?: string;
   width?: string;
 }> = ({ color = "#C9A0A4", className = "", width = "w-24" }) => (
-  <div 
+  <div
+    aria-hidden="true"
     className={`h-6 ${width} border border-[var(--c-ink)]/20 opacity-85 shadow-xs ${className}`}
     style={{ 
       backgroundColor: color,
@@ -119,7 +122,7 @@ export const PaperClip: React.FC<{ className?: string; color?: string }> = ({
   className = "w-6 h-10", 
   color = "#2A2E28" 
 }) => (
-  <svg className={className} viewBox="0 0 24 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-hidden="true" focusable="false" className={className} viewBox="0 0 24 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path 
       d="M7 14V29C7 32.866 10.134 36 14 36C17.866 36 21 32.866 21 29V9C21 5.134 17.866 2 14 2C10.134 2 7 5.134 7 9V26C7 28.2091 8.79086 30 11 30C13.2091 30 15 28.2091 15 26V13" 
       stroke={color} 
@@ -131,7 +134,7 @@ export const PaperClip: React.FC<{ className?: string; color?: string }> = ({
 );
 
 export const PencilScribble: React.FC<{ className?: string }> = ({ className = "w-28 h-6" }) => (
-  <svg className={className} viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg aria-hidden="true" focusable="false" className={className} viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path 
       d="M2 12C20 4 35 18 50 10C65 2 80 18 95 9C105 3 112 14 118 8" 
       stroke="#2A2E28" 

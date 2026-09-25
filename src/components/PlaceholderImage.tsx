@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image as ImageIcon } from 'lucide-react';
 
 interface PlaceholderImageProps {
@@ -18,6 +18,10 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
 }) => {
   const [failed, setFailed] = useState(false);
 
+  useEffect(() => {
+    setFailed(false);
+  }, [src]);
+
   if (src && !failed) {
     return (
       <div className="overflow-hidden rounded-xl border border-[var(--c-ink)]/20 bg-[var(--c-bg)]">
@@ -36,12 +40,12 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
       className={`${aspect} rounded-xl border-2 border-dashed border-[var(--c-ink)]/30 bg-[var(--c-bg)] flex flex-col items-center justify-center gap-1 px-2 text-center`}
     >
       <div className="flex items-center gap-1.5">
-        <ImageIcon className="w-3.5 h-3.5 text-[var(--c-ink)]/35" />
-        <span className="font-mono-code text-[9px] uppercase tracking-widest text-[var(--c-ink)]/50 font-bold">
+        <ImageIcon aria-hidden="true" className="w-3.5 h-3.5 text-[var(--c-ink)]" />
+        <span className="font-mono-code text-[10px] uppercase tracking-widest text-[var(--c-ink)] font-bold">
           {label}
         </span>
       </div>
-      <span className="font-mono-code text-[8px] text-[var(--c-ink)]/35">IMAGE PLACEHOLDER</span>
+      <span className="font-mono-code text-[10px] text-[var(--c-ink)]">{failed ? 'IMAGE UNAVAILABLE' : 'IMAGE PLACEHOLDER'}</span>
     </div>
   );
 };

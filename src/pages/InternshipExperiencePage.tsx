@@ -13,6 +13,8 @@ const PhoneFrame: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <img
       src="/portfolio-assets/internship/iphone-15-pro.png"
       alt=""
+      loading="lazy"
+      decoding="async"
       className="absolute inset-0 w-full h-full pointer-events-none"
     />
   </div>
@@ -26,6 +28,8 @@ const LaptopFrame: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <img
       src="/portfolio-assets/internship/macbook-pro-16.png"
       alt=""
+      loading="lazy"
+      decoding="async"
       className="absolute inset-0 w-full h-full pointer-events-none"
     />
   </div>
@@ -52,6 +56,9 @@ export const InternshipExperiencePage: React.FC = () => {
           <img
             src={sm.headerImage}
             alt="Luxury gold jewellery still life for Aadiya Jewels"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
             className="absolute inset-0 w-full h-full object-cover"
           />
         )}
@@ -144,6 +151,8 @@ export const InternshipExperiencePage: React.FC = () => {
                 <img
                   src={sm.profileImage}
                   alt="Aadiya Jewels social media profile on mobile"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-center scale-110"
                 />
               ) : (
@@ -227,6 +236,8 @@ export const InternshipExperiencePage: React.FC = () => {
                       <img
                         src={es.heroImage}
                         alt="Aadiya Jewels website hero"
+                        loading="lazy"
+                        decoding="async"
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                     ) : (
@@ -254,12 +265,16 @@ export const InternshipExperiencePage: React.FC = () => {
             <img
               src={es.uploadsImage}
               alt="Shopify product uploads management table"
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto rounded-md border border-[#DDD5C8] shadow-[0_2px_8px_rgba(80,70,55,0.08)]"
             />
             {/* Product detail */}
             <img
               src={es.detail.image}
               alt={es.detail.name}
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto rounded-md border border-[#DDD5C8] shadow-[0_2px_8px_rgba(80,70,55,0.08)]"
             />
 
@@ -267,6 +282,8 @@ export const InternshipExperiencePage: React.FC = () => {
             <img
               src={es.catalogueImage}
               alt={es.catalogueTitle}
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto rounded-md border border-[#DDD5C8] shadow-[0_2px_8px_rgba(80,70,55,0.08)]"
             />
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion, MotionConfig } from 'motion/react';
 import { Heart, Search } from 'lucide-react';
 import { FlowerMark } from '../components/CustomDoodles';
 import { PlaceholderImage } from '../components/PlaceholderImage';
@@ -49,6 +49,7 @@ export const InternshipExperiencePage: React.FC = () => {
 
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className="bg-[var(--c-bg)] min-h-screen">
       {/* PAGE 1 — HEADER — full-bleed editorial hero */}
       <div className="relative bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 overflow-hidden">
@@ -63,12 +64,22 @@ export const InternshipExperiencePage: React.FC = () => {
           />
         )}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="max-w-2xl"
+          >
             <div className="flex items-center gap-5 mb-6">
               <span className="font-mono-code text-xs uppercase tracking-[0.35em] text-[var(--c-ink)]/70">
                 {ui.heroEyebrow}
               </span>
-              <span className="h-px w-24 bg-[var(--c-ink)]/30" />
+              <motion.span
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.6, delay: 0.35 }}
+                className="h-px w-24 bg-[var(--c-ink)]/30 origin-left"
+              />
             </div>
 
             <h1 className="font-serif-display uppercase text-5xl sm:text-6xl lg:text-7xl text-[var(--c-ink)] leading-[1.02] tracking-wide mb-5">
@@ -82,7 +93,7 @@ export const InternshipExperiencePage: React.FC = () => {
             <p className="font-serif-display italic text-lg sm:text-xl text-[var(--c-ink)]/85 leading-relaxed mt-6 max-w-xl">
               {ui.heroDescription}
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -90,12 +101,24 @@ export const InternshipExperiencePage: React.FC = () => {
       <section id="social-media" className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
           {/* Section title row */}
-          <div className="flex items-center gap-6 mb-3">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-6 mb-3"
+          >
             <h2 className="font-serif-display uppercase text-3xl sm:text-5xl text-[var(--c-ink)] tracking-wide whitespace-nowrap">
               {ui.sectionSocialTitle}
             </h2>
-            <span className="h-px flex-1 bg-[var(--c-ink)]/25" />
-          </div>
+            <motion.span
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="h-px flex-1 bg-[var(--c-ink)]/25 origin-left"
+            />
+          </motion.div>
           <div className="flex flex-wrap items-baseline justify-between gap-3 mb-12">
             <h3 className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]">
               {ui.contentCreationLabel}
@@ -106,7 +129,13 @@ export const InternshipExperiencePage: React.FC = () => {
           </div>
 
           {/* Three-part composition: reel phone — 2x2 grid — profile phone */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-12"
+          >
             {/* Left: reel mockup — real video when available, still otherwise */}
             <PhoneFrame>
               <div className="relative h-full">
@@ -134,14 +163,22 @@ export const InternshipExperiencePage: React.FC = () => {
             {/* Center: 2x2 content grid */}
             <div className="grid grid-cols-2 gap-2.5 w-full max-w-sm">
               {sm.tiles.map((tile, tIdx) => (
-                <div key={tIdx} className="relative rounded-lg overflow-hidden">
+                <motion.div
+                  key={tIdx}
+                  initial={{ opacity: 0, scale: 0.92 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{ duration: 0.45, delay: 0.2 + tIdx * 0.08 }}
+                  className="group relative rounded-lg overflow-hidden transition-shadow duration-300 hover:paper-shadow"
+                >
                   <PlaceholderImage
                     src={tile.image}
                     alt={tile.overlay}
                     label="Post"
                     aspect="aspect-square"
+                    className="transition-transform duration-500 group-hover:scale-105"
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
 
@@ -172,26 +209,39 @@ export const InternshipExperiencePage: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-3 grid-rows-3 gap-1 flex-1">
                   {Array.from({ length: 9 }).map((_, pIdx) => (
-                    <div key={pIdx} className={`rounded-sm ${profileTints[pIdx % profileTints.length]}`} />
+                    <motion.div
+                      key={pIdx}
+                      initial={{ opacity: 0, scale: 0.85 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ duration: 0.35, delay: 0.3 + pIdx * 0.04 }}
+                      className={`rounded-sm ${profileTints[pIdx % profileTints.length]}`}
+                    />
                   ))}
                 </div>
               </div>
               )}
             </PhoneFrame>
-          </div>
+          </motion.div>
 
           {/* Bottom caption */}
-          <div className="relative mt-16 text-center">
-            <div className="inline-flex items-center gap-3 bg-[var(--c-warm-light)] border border-[var(--c-warm)] rounded-full px-8 py-4">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative mt-16 text-center"
+          >
+            <div className="group inline-flex items-center gap-3 bg-[var(--c-warm-light)] border border-[var(--c-warm)] rounded-full px-8 py-4 transition-all duration-300 hover:-translate-y-1 hover:paper-shadow cursor-default">
               <p className="font-serif-display italic text-base sm:text-lg text-[var(--c-ink)]">
                 {ui.socialCaption}
               </p>
-              <Heart className="w-4 h-4 text-[var(--c-ink)]/60" strokeWidth={1.5} />
+              <Heart className="w-4 h-4 text-[var(--c-ink)]/60 transition-transform duration-300 group-hover:scale-125" strokeWidth={1.5} />
             </div>
             <div className="absolute right-0 -bottom-4 hidden sm:block opacity-70">
               <FlowerMark size={26} />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -199,7 +249,13 @@ export const InternshipExperiencePage: React.FC = () => {
       <section id="ecommerce" className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
           {/* Header + botanical */}
-          <div className="relative mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative mb-12"
+          >
             <h2 className="font-serif-display uppercase text-4xl sm:text-6xl text-[var(--c-ink)] leading-none tracking-tight">
               {ui.ecomTitle}
             </h2>
@@ -209,11 +265,17 @@ export const InternshipExperiencePage: React.FC = () => {
             <div className="absolute right-0 top-0 hidden md:block opacity-70">
               <FlowerMark size={30} />
             </div>
-          </div>
+          </motion.div>
 
           {/* Main showcase: laptop + description */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-9 items-start mb-12">
-            <div className="lg:col-span-7">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.12 }}
+              transition={{ duration: 0.55 }}
+              className="lg:col-span-7"
+            >
               <LaptopFrame>
                 <div className="h-full flex flex-col bg-[#FBF8F0]">
                   {/* Site header */}
@@ -251,40 +313,58 @@ export const InternshipExperiencePage: React.FC = () => {
                   </div>
                 </div>
               </LaptopFrame>
-            </div>
-            <div className="lg:col-span-5">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 18 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.55, delay: 0.12 }}
+              className="lg:col-span-5"
+            >
               <p className="font-serif-display italic text-xl sm:text-2xl text-[var(--c-ink)]/80 leading-[1.35] lg:pt-6">
                 {es.description}
               </p>
-            </div>
+            </motion.div>
           </div>
 
           {/* Bottom interface cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {/* Product uploads table */}
-            <img
+            <motion.img
               src={es.uploadsImage}
               alt="Shopify product uploads management table"
               loading="lazy"
               decoding="async"
-              className="w-full h-auto rounded-md border border-[#DDD5C8] shadow-[0_2px_8px_rgba(80,70,55,0.08)]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="w-full h-auto rounded-md border border-[#DDD5C8] shadow-[0_2px_8px_rgba(80,70,55,0.08)] transition-all duration-300 hover:-translate-y-1 hover:paper-shadow cursor-default"
             />
             {/* Product detail */}
-            <img
+            <motion.img
               src={es.detail.image}
               alt={es.detail.name}
               loading="lazy"
               decoding="async"
-              className="w-full h-auto rounded-md border border-[#DDD5C8] shadow-[0_2px_8px_rgba(80,70,55,0.08)]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="w-full h-auto rounded-md border border-[#DDD5C8] shadow-[0_2px_8px_rgba(80,70,55,0.08)] transition-all duration-300 hover:-translate-y-1 hover:paper-shadow cursor-default"
             />
 
             {/* Catalogue */}
-            <img
+            <motion.img
               src={es.catalogueImage}
               alt={es.catalogueTitle}
               loading="lazy"
               decoding="async"
-              className="w-full h-auto rounded-md border border-[#DDD5C8] shadow-[0_2px_8px_rgba(80,70,55,0.08)]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="w-full h-auto rounded-md border border-[#DDD5C8] shadow-[0_2px_8px_rgba(80,70,55,0.08)] transition-all duration-300 hover:-translate-y-1 hover:paper-shadow cursor-default"
             />
 
           </div>
@@ -295,24 +375,43 @@ export const InternshipExperiencePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
           <div className="relative">
             <div className="max-w-2xl mb-8">
-              <span className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2">
+              <motion.span
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45 }}
+                className="font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest block mb-2"
+              >
                 {ui.synthesisLabel}
-              </span>
-              <h2 className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]">
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="font-serif-display text-3xl sm:text-4xl text-[var(--c-ink)]"
+              >
                 {ui.synthesisTitle}
-              </h2>
+              </motion.h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {internship.learningOutcomes.map((lo) => (
-                <div key={lo.number} className="border-t border-[var(--c-ink)]/20 pt-4">
-                  <div className="font-mono-code text-xs font-bold text-[var(--c-ink)] uppercase mb-1">
+              {internship.learningOutcomes.map((lo, loIdx) => (
+                <motion.div
+                  key={lo.number}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: loIdx * 0.08 }}
+                  className="group border-t border-[var(--c-ink)]/20 pt-4 transition-all duration-300 hover:-translate-y-0.5 cursor-default"
+                >
+                  <div className="font-mono-code text-xs font-bold text-[var(--c-ink)] uppercase mb-1 transition-colors duration-300 group-hover:text-[var(--c-ink)]">
                     {lo.number} — {lo.title}
                   </div>
                   <p className="font-body text-sm text-[var(--c-ink)]/85 leading-relaxed pt-2">
                     {lo.desc}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -320,5 +419,6 @@ export const InternshipExperiencePage: React.FC = () => {
         </div>
       </section>
     </div>
+    </MotionConfig>
   );
 };

@@ -42,15 +42,15 @@ const SparkleStar = ({
  * viewport width, exactly like the source design.
  *
  * Layout map (x% of 1424, y% of 860):
- *  - top-center star ............ x 50%,   y 25.3%
- *  - name "Srishti Jain" ........ y 27.3% (bounds x 465-952, y 235-367)
- *  - flanking lines ............. y 29%,   left x 20-30%, right x 70-80%
- *  - title "portfolio" .......... y 43.3% (bounds x 104-1318, y 372-711)
- *  - left-center star pair ...... x 3.5-6%, y 50%
- *  - center-left small star ..... x 30%,   y 62%
- *  - upper-right large star ..... x 81%,   y 47%
- *  - lower-left large star ...... x 12%,   y 71%
- *  - lower-right star ........... x 79%,   y 76%
+ *  - top-center star ............ x 50%,   y 30.6%
+ *  - name "Srishti Jain" ........ y 32.5% (bounds x 465-952, y 235-367)
+ *  - flanking lines ............. y 35%,   left x 20-30%, right x 70-80%
+ *  - title "portfolio" .......... y 51.5% (kept ~45px clear of the name above)
+ *  - left-center star pair ...... x 3.5-6%, y 57-58%
+ *  - center-left small star ..... x 30%,   y 70.8%
+ *  - upper-right large star ..... x 81%,   y 55.8%
+ *  - lower-left large star ...... x 12%,   y 79.8%
+ *  - lower-right star ........... x 79%,   y 83.5%
  *  - subtitle ................... y 87%   (bounds x 400-1007, y 748-800)
  *  - bottom sparkle + lines ..... y 94.5%
  */
@@ -120,26 +120,26 @@ export const TitleCoverSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.55 }}
           className='absolute left-1/2 -translate-x-1/2 font-body font-extrabold text-[var(--c-bg)] lowercase whitespace-nowrap'
-          style={{ top: '42.2%', fontSize: 'clamp(3.5rem, 23.8cqw, 16rem)', lineHeight: 1, letterSpacing: '-0.02em' }}
+          style={{ top: '51.5%', fontSize: 'clamp(3.5rem, 23.8cqw, 16rem)', lineHeight: 1, letterSpacing: '-0.02em' }}
         >
           portfolio
         </motion.p>
 
         {/* Left-center: large white sparkle with a smaller sparkle beside it */}
-        <SparkleStar size='2.3cqw' color='var(--c-bg)' delay={0.6} style={{ left: '3.5%', top: '48.5%' }} />
-        <SparkleStar size='0.85cqw' color='var(--c-bg)' delay={0.65} style={{ left: '6.6%', top: '47.5%' }} />
+        <SparkleStar size='2.3cqw' color='var(--c-bg)' delay={0.6} style={{ left: '3.5%', top: '57.8%' }} />
+        <SparkleStar size='0.85cqw' color='var(--c-bg)' delay={0.65} style={{ left: '6.6%', top: '56.8%' }} />
 
         {/* Center-left over portfolio lettering: small white sparkle */}
-        <SparkleStar size='0.95cqw' color='var(--c-bg)' delay={0.7} style={{ left: '30%', top: '61.5%' }} />
+        <SparkleStar size='0.95cqw' color='var(--c-bg)' delay={0.7} style={{ left: '30%', top: '70.8%' }} />
 
         {/* Upper-right near portfolio lettering: large white sparkle */}
-        <SparkleStar size='2.1cqw' color='var(--c-bg)' delay={0.75} style={{ left: '81%', top: '46.5%' }} />
+        <SparkleStar size='2.1cqw' color='var(--c-bg)' delay={0.75} style={{ left: '81%', top: '55.8%' }} />
 
         {/* Lower-left over portfolio lettering: large white sparkle */}
-        <SparkleStar size='2.5cqw' color='var(--c-bg)' delay={0.8} style={{ left: '12%', top: '70.5%' }} />
+        <SparkleStar size='2.5cqw' color='var(--c-bg)' delay={0.8} style={{ left: '12%', top: '79.8%' }} />
 
         {/* Lower-right over portfolio lettering: white sparkle */}
-        <SparkleStar size='1.2cqw' color='var(--c-bg)' delay={0.85} style={{ left: '79%', top: '75.5%' }} />
+        <SparkleStar size='1.2cqw' color='var(--c-bg)' delay={0.85} style={{ left: '79%', top: '83.5%' }} />
 
         {/* ===== Subtitle — bottom-center beneath title ===== */}
         <motion.div

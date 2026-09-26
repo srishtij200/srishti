@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
+import { motion, MotionConfig } from 'motion/react';
 import { ArrowLeft, Sparkles, TrendingUp, Scissors, Users, BarChart2, Lightbulb, Target, type LucideIcon } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { PlaceholderImage } from '../components/PlaceholderImage';
@@ -23,6 +23,7 @@ export const ProjectThreePage: React.FC = () => {
   const coverGallery = p3.cover.gallery?.length ? p3.cover.gallery : coverGalleryFallback;
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className="min-h-screen bg-[var(--c-bg)]">
 
       {/* SECTION: COVER PAGE - ATHERA Layout */}
@@ -48,7 +49,12 @@ export const ProjectThreePage: React.FC = () => {
         <div className="absolute top-0 left-0 right-0 z-10 px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-between font-mono-code text-[11px] sm:text-xs uppercase tracking-widest text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
-              <div className="flex items-center gap-2">
+              <motion.div
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center gap-2"
+              >
                 <Link to="/" className="hover:opacity-80 flex items-center gap-1 transition-opacity">
                   <ArrowLeft className="w-3.5 h-3.5" />
                   <span>{u.breadcrumbProjects}</span>
@@ -59,7 +65,7 @@ export const ProjectThreePage: React.FC = () => {
                     <span className="font-semibold">{u.breadcrumbCurrent}</span>
                   </>
                 )}
-              </div>
+              </motion.div>
               <span>{u.breadcrumbTag}</span>
             </div>
           </div>
@@ -71,7 +77,12 @@ export const ProjectThreePage: React.FC = () => {
           <div className="absolute inset-y-0 left-0 w-[63%] lg:w-[63%] px-8 sm:px-12 lg:px-16 pt-24 lg:pt-32 pb-12 flex flex-col justify-between z-10">
             
             {/* Brand Header */}
-            <div className="space-y-4">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="space-y-4"
+            >
               {/* ATHERA Title */}
               <h1 className="font-serif-display text-5xl sm:text-7xl lg:text-8xl leading-[0.95] tracking-tight" style={{ color: '#12352A' }}>
                 ATHERA
@@ -83,29 +94,41 @@ export const ProjectThreePage: React.FC = () => {
               </h2>
               
               {/* Divider */}
-              <div className="w-[68px] h-[4px] mt-4" style={{ backgroundColor: '#9C9C91' }} />
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="w-[68px] h-[4px] mt-4 origin-left"
+                style={{ backgroundColor: '#9C9C91' }}
+              />
               
               {/* Positioning Statement: MODEST • VERSATILE • EVERYDAY */}
               <p className="font-mono-code text-sm sm:text-base lg:text-lg uppercase tracking-widest font-medium mt-6" style={{ color: '#26342F' }}>
                 MODEST • VERSATILE • EVERYDAY
               </p>
-            </div>
+            </motion.div>
 
             {/* Gallery Strip - 3 images horizontal */}
             <div className="hidden lg:flex gap-3 pt-8 pb-4">
               {coverGallery.map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center flex-1 min-w-0">
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
+                  className="group flex flex-col items-center flex-1 min-w-0 transition-transform duration-300 hover:-translate-y-1"
+                >
                   <PlaceholderImage
                     src={item.image}
                     label={item.label}
                     alt={item.alt}
                     aspect="aspect-[216/251]"
-                    className="object-top"
+                    className="object-top transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span className="font-mono-code text-[10px] font-bold tracking-wider mt-2 text-center" style={{ color: '#26342F' }}>
+                  <span className="font-mono-code text-[10px] font-bold tracking-wider mt-2 text-center transition-colors duration-300 group-hover:text-[var(--c-ink)]" style={{ color: '#26342F' }}>
                     {item.label}
                   </span>
-                </div>
+                </motion.div>
               ))}
             </div>
 
@@ -121,7 +144,13 @@ export const ProjectThreePage: React.FC = () => {
       <div className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Section Header */}
-            <div className="max-w-4xl mb-10">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="max-w-4xl mb-10"
+            >
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] leading-tight mb-4 whitespace-pre-line">
                 {u.page2Headline1}
                 <br />
@@ -135,12 +164,19 @@ export const ProjectThreePage: React.FC = () => {
                   {p3.page2SurveyInsights.subtitle}
                 </p>
               )}
-            </div>
+            </motion.div>
 
             {/* 2x2 Quadrant Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {p3.page2SurveyInsights.quadrants.map((q, qIdx) => (
-                <div key={qIdx} className="border-t-2 border-[var(--c-ink)]/20 pt-8 h-full flex flex-col">
+                <motion.div
+                  key={qIdx}
+                  initial={{ opacity: 0, y: 22 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.55, delay: qIdx * 0.08 }}
+                  className="border-t-2 border-[var(--c-ink)]/20 pt-8 h-full flex flex-col"
+                >
                   {/* Quadrant header */}
                   <div className="flex items-baseline gap-3 mb-5 pb-3 border-b border-[var(--c-ink)]/15">
                     <span className="font-mono-code text-sm font-bold text-[var(--c-ink)]/50">
@@ -161,15 +197,15 @@ export const ProjectThreePage: React.FC = () => {
                       )}
                       <div className="grid grid-cols-2 gap-5 sm:gap-8">
                         {q.images!.map((img, i) => (
-                          <div key={i} data-obs-card className="space-y-2">
+                          <div key={i} data-obs-card className="group space-y-2 transition-transform duration-300 hover:-translate-y-1">
                             <PlaceholderImage
                               src={img.image}
                               label={img.label}
                               alt={img.label}
                               aspect="aspect-[4/3]"
-                              className="object-top"
+                              className="object-top transition-transform duration-500 group-hover:scale-105"
                             />
-                            <span className="font-mono-code text-[10px] font-bold text-[var(--c-ink)]/70 block tracking-wider border-t border-[var(--c-ink)]/20 pt-2">
+                            <span className="font-mono-code text-[10px] font-bold text-[var(--c-ink)]/70 block tracking-wider border-t border-[var(--c-ink)]/20 pt-2 transition-colors duration-300 group-hover:text-[var(--c-ink)]">
                               {img.label}
                             </span>
                           </div>
@@ -273,8 +309,15 @@ export const ProjectThreePage: React.FC = () => {
                       )}
                       <div className="border-b border-[var(--c-ink)]/15">
                         {q.skills!.map((s, i) => (
-                          <div key={i} className="flex items-center gap-4 sm:gap-6 border-t border-[var(--c-ink)]/15 py-3.5">
-                            <span className="font-serif-display italic text-2xl sm:text-3xl text-[var(--c-ink)]/25 w-10 shrink-0 select-none leading-none">
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, x: -12 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.45, delay: i * 0.06 }}
+                            className="group flex items-center gap-4 sm:gap-6 border-t border-[var(--c-ink)]/15 py-3.5 transition-all duration-300 hover:translate-x-1 hover:bg-[var(--c-bg)]/50 cursor-default"
+                          >
+                            <span className="font-serif-display italic text-2xl sm:text-3xl text-[var(--c-ink)]/25 w-10 shrink-0 select-none leading-none transition-colors duration-300 group-hover:text-[var(--c-ink)]/50">
                               {String(i + 1).padStart(2, "0")}
                             </span>
                             <div className="flex-1 min-w-0">
@@ -285,18 +328,18 @@ export const ProjectThreePage: React.FC = () => {
                                 {s.subtitle}
                               </div>
                             </div>
-                            <span className="w-10 h-10 shrink-0 rounded-full border border-[var(--c-ink)]/30 flex items-center justify-center">
+                            <span className="w-10 h-10 shrink-0 rounded-full border border-[var(--c-ink)]/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-[var(--c-warm-light)] group-hover:border-[var(--c-ink)]/60">
                               {(() => {
                                 const SkillIcon = skillIcons[s.icon] ?? Sparkles;
                                 return <SkillIcon className="w-4 h-4 text-[var(--c-ink)]" />;
                               })()}
                             </span>
-                          </div>
+                          </motion.div>
                         ))}
                       </div>
                     </div>
                   )}
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -305,18 +348,30 @@ export const ProjectThreePage: React.FC = () => {
       {/* SECTION: DESIGN, MATERIAL & PROTOTYPE */}
       <div className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
-            <div className="mb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-8"
+            >
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] tracking-tight">
                 {u.p3SectionTitle}
               </h2>
               <p className="font-body text-sm sm:text-base text-[var(--c-ink)]/70 mt-2">
                 {u.p3SectionSub}
               </p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8">
             {/* 01 DESIGN WITH TECHNICAL FLAT DRAWING */}
-            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.55 }}
+              className="group border-t-2 border-[var(--c-ink)]/20 pt-8 transition-transform duration-300 hover:-translate-y-1"
+            >
               <div className="flex flex-col gap-8">
                 <div className="space-y-4">
                   <h2 className="font-serif-display text-3xl text-[var(--c-ink)]">
@@ -330,9 +385,16 @@ export const ProjectThreePage: React.FC = () => {
                         "bg-[var(--c-warm-light)] border-[var(--c-warm)]"
                       ];
                       return (
-                        <span key={i} className={`px-4 py-2 border rounded-xl font-bold ${tints[i % tints.length]}`}>
+                        <motion.span
+                          key={i}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true, amount: 0.3 }}
+                          transition={{ duration: 0.4, delay: i * 0.06 }}
+                          className={`px-4 py-2 border rounded-xl font-bold transition-all duration-300 hover:-translate-y-0.5 hover:paper-shadow-sm cursor-default ${tints[i % tints.length]}`}
+                        >
                           ✦ {pt}
-                        </span>
+                        </motion.span>
                       );
                     })}
                   </div>
@@ -341,19 +403,26 @@ export const ProjectThreePage: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="max-w-xl mx-auto w-full">
+                <div className="max-w-xl mx-auto w-full group/img">
                   <PlaceholderImage
                     src={p3.page3DesignAndMaterial.design.image}
                     label="DESIGN FLAT DRAWING"
                     alt="Technical flat drawing of the design"
                     aspect="aspect-[741/1199]"
+                    className="transition-transform duration-500 group-hover/img:scale-105"
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* 02 MATERIAL WITH MATERIAL SPEC SHEET */}
-            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.55, delay: 0.08 }}
+              className="group border-t-2 border-[var(--c-ink)]/20 pt-8 transition-transform duration-300 hover:-translate-y-1"
+            >
               <div className="flex flex-col gap-8">
                 <div className="space-y-4">
                   <h2 className="font-serif-display text-3xl text-[var(--c-ink)]">
@@ -385,19 +454,26 @@ export const ProjectThreePage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="max-w-xl mx-auto w-full">
+                <div className="max-w-xl mx-auto w-full group/img">
                   <PlaceholderImage
                     src={p3.page3DesignAndMaterial.material.image}
                     label="MATERIAL SPEC SHEET"
                     alt="Material specification sheet"
                     aspect="aspect-[1312/1075]"
+                    className="transition-transform duration-500 group-hover/img:scale-105"
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* 03 FINAL PROTOTYPE (MVP PHOTO) */}
-            <div className="border-t-2 border-[var(--c-ink)]/20 pt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.55, delay: 0.16 }}
+              className="group border-t-2 border-[var(--c-ink)]/20 pt-8 transition-transform duration-300 hover:-translate-y-1"
+            >
               <div className="flex flex-col gap-8">
                 <div className="space-y-4">
                   <h2 className="font-serif-display text-3xl text-[var(--c-ink)]">
@@ -405,16 +481,17 @@ export const ProjectThreePage: React.FC = () => {
                   </h2>
                 </div>
 
-                <div className="max-w-xl mx-auto w-full">
+                <div className="max-w-xl mx-auto w-full group/img">
                   <PlaceholderImage
                     src={p3.page3DesignAndMaterial.prototype.image}
                     label="FINAL PROTOTYPE — MVP PHOTO"
                     alt="Final MVP prototype garment photo"
                     aspect="aspect-[971/1447]"
+                    className="transition-transform duration-500 group-hover/img:scale-105"
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
             </div>
           </div>
         </div>
@@ -426,12 +503,19 @@ export const ProjectThreePage: React.FC = () => {
             <div className="flex items-baseline justify-end font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-4">
               <span>{u.p4Brand}</span>
             </div>
-            <h2 className="font-serif-display text-4xl sm:text-5xl text-[var(--c-ink)]">
-              {u.p4Title}
-            </h2>
-            <p className="font-body text-sm text-[var(--c-ink)]/70 mt-2 mb-12">
-              {u.p4Subtitle}
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="font-serif-display text-4xl sm:text-5xl text-[var(--c-ink)]">
+                {u.p4Title}
+              </h2>
+              <p className="font-body text-sm text-[var(--c-ink)]/70 mt-2 mb-12">
+                {u.p4Subtitle}
+              </p>
+            </motion.div>
 
             {/* Two-column research dashboard */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-14">
@@ -448,9 +532,16 @@ export const ProjectThreePage: React.FC = () => {
                       "bg-[var(--c-warm-light)] border-[var(--c-warm)]"
                     ];
                     return (
-                      <div key={qIdx} className={`p-5 border rounded-xl font-serif-display italic text-base text-[var(--c-ink)] leading-relaxed ${tints[qIdx % tints.length]}`}>
+                      <motion.div
+                        key={qIdx}
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.5, delay: qIdx * 0.08 }}
+                        className={`p-5 border rounded-xl font-serif-display italic text-base text-[var(--c-ink)] leading-relaxed transition-all duration-300 hover:-translate-y-1 hover:paper-shadow-sm cursor-default ${tints[qIdx % tints.length]}`}
+                      >
                         {quote}
-                      </div>
+                      </motion.div>
                     );
                   })}
                 </div>
@@ -473,10 +564,14 @@ export const ProjectThreePage: React.FC = () => {
                   <div className="relative w-44 h-44 shrink-0">
                     <svg viewBox="0 0 180 180" className="w-full h-full">
                       <circle cx="90" cy="90" r="70" fill="none" stroke="var(--c-warm-light)" strokeWidth="24" />
-                      <circle
+                      <motion.circle
                         cx="90" cy="90" r="70" fill="none"
                         stroke="var(--c-highlight)" strokeWidth="24"
-                        strokeDasharray={`${(p3.page4FeedbackAndIteration.dataInsights.chart[0].percentage / 100) * 2 * Math.PI * 70} ${2 * Math.PI * 70}`}
+                        pathLength={p3.page4FeedbackAndIteration.dataInsights.chart[0].percentage / 100}
+                        initial={{ pathLength: 0 }}
+                        whileInView={{ pathLength: p3.page4FeedbackAndIteration.dataInsights.chart[0].percentage / 100 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' }}
                         transform="rotate(-90 90 90)"
                       />
                     </svg>
@@ -505,24 +600,37 @@ export const ProjectThreePage: React.FC = () => {
                     </div>
                     <div className="space-y-2">
                       {p3.page4FeedbackAndIteration.dataInsights.chart.map((row, cIdx) => (
-                        <div key={cIdx} className="flex items-center gap-2.5 font-mono-code text-xs text-[var(--c-ink)]">
-                          <span className={`w-3 h-3 rounded-sm border border-[var(--c-ink)]/20 ${cIdx === 0 ? "bg-[var(--c-highlight)]" : "bg-[var(--c-warm-light)]"}`} />
+                        <motion.div
+                          key={cIdx}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true, amount: 0.3 }}
+                          transition={{ duration: 0.45, delay: 0.3 + cIdx * 0.08 }}
+                          className="group flex items-center gap-2.5 font-mono-code text-xs text-[var(--c-ink)] transition-all duration-300 hover:translate-x-1 cursor-default"
+                        >
+                          <span className={`w-3 h-3 rounded-sm border border-[var(--c-ink)]/20 transition-transform duration-300 group-hover:scale-125 ${cIdx === 0 ? "bg-[var(--c-highlight)]" : "bg-[var(--c-warm-light)]"}`} />
                           <span>{row.label} — {row.responses} responses ({row.percentage}%)</span>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
                   </div>
                 </div>
 
                 {/* Key signal */}
-                <div className="p-5 bg-[var(--c-highlight)] border border-[var(--c-ink)]/20 rounded-xl">
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: 0.15 }}
+                  className="p-5 bg-[var(--c-highlight)] border border-[var(--c-ink)]/20 rounded-xl"
+                >
                   <div className="font-mono-code text-[10px] font-bold uppercase tracking-widest text-[var(--c-ink)]/70 mb-1.5">
                     {p3.page4FeedbackAndIteration.dataInsights.keySignalTitle}
                   </div>
                   <p className="font-body text-sm text-[var(--c-ink)] leading-relaxed">
                     {p3.page4FeedbackAndIteration.dataInsights.keySignal}
                   </p>
-                </div>
+                </motion.div>
               </div>
             </div>
 
@@ -534,15 +642,22 @@ export const ProjectThreePage: React.FC = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {p3.page4FeedbackAndIteration.feedbackIterationImpact.map((card, cIdx) => (
-                  <div key={cIdx} className="p-5 bg-[var(--c-bg)] border border-[var(--c-ink)]/15 rounded-xl">
+                  <motion.div
+                    key={cIdx}
+                    initial={{ opacity: 0, y: 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: cIdx * 0.08 }}
+                    className="group p-5 bg-[var(--c-bg)] border border-[var(--c-ink)]/15 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:paper-shadow-sm cursor-default"
+                  >
                     <div className="font-mono-code text-xs font-bold text-[var(--c-ink)] uppercase tracking-wide mb-2">
                       {card.heading}
                     </div>
-                    <div className="text-lg text-[var(--c-ink)]/50 mb-2">→</div>
+                    <div className="text-lg text-[var(--c-ink)]/50 mb-2 transition-transform duration-300 group-hover:translate-x-1.5">→</div>
                     <div className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed">
                       {card.action}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -555,14 +670,21 @@ export const ProjectThreePage: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {p3.page4FeedbackAndIteration.whatThisTaughtMe.map((item, iIdx) => (
-                    <div key={iIdx} className="p-5 bg-[var(--c-bg)] border border-[var(--c-ink)]/15 rounded-xl">
+                    <motion.div
+                      key={iIdx}
+                      initial={{ opacity: 0, y: 18 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{ duration: 0.5, delay: iIdx * 0.08 }}
+                      className="group p-5 bg-[var(--c-bg)] border border-[var(--c-ink)]/15 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:paper-shadow-sm cursor-default"
+                    >
                       <div className="font-mono-code text-xs font-bold text-[var(--c-ink)] uppercase tracking-wide mb-2">
                         {item.headline}
                       </div>
                       <div className="font-body text-xs text-[var(--c-ink)]/80 leading-relaxed">
                         {item.detail}
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -571,13 +693,15 @@ export const ProjectThreePage: React.FC = () => {
             <div className="flex justify-end pt-6 border-t border-[var(--c-ink)]/15 font-mono-code text-xs">
               <Link
                 to="/"
-                className="bg-[var(--c-ink)] text-[var(--c-bg)] px-5 py-2.5 rounded-xl font-bold hover:bg-[var(--c-ink-hover)] cursor-pointer flex items-center gap-1.5"
+                className="group bg-[var(--c-ink)] text-[var(--c-bg)] px-5 py-2.5 rounded-xl font-bold hover:bg-[var(--c-ink-hover)] cursor-pointer flex items-center gap-1.5 transition-all duration-300 hover:-translate-y-0.5 hover:paper-shadow-sm"
               >
                 <span>{u.footerNext}</span>
+                <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-200 group-hover:-translate-x-1" />
               </Link>
             </div>
           </div>
       </div>
     </div>
+    </MotionConfig>
   );
 };

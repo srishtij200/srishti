@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion, MotionConfig } from 'motion/react';
 import {
   ArrowLeft,
+  ArrowRight,
   ArrowDown,
   Scale,
   Maximize2,
@@ -28,6 +30,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
   const u = portfolioData.ui.projectVM;
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className="bg-[var(--c-bg)] min-h-screen">
 
       {/* SECTION: COVER (full-bleed image background, overlay text removed) */}
@@ -53,14 +56,24 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
         {/* Breadcrumb overlay on hero image */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-14 lg:pb-20 min-h-[70vh] lg:min-h-[85vh] flex flex-col justify-center gap-4">
           <div className="flex items-center font-mono-code text-[11px] sm:text-xs uppercase tracking-widest text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
-            <div className="flex items-center gap-2">
+            <motion.div
+              initial={{ opacity: 0, x: -12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex items-center gap-2"
+            >
               <Link to="/" className="hover:opacity-80 flex items-center gap-1 transition-opacity">
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>{u.breadcrumbProjects}</span>
               </Link>
-            </div>
+            </motion.div>
           </div>
-          <div className="max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="max-w-4xl"
+          >
             <h1 className="font-serif-display font-bold text-[var(--c-ink)] leading-[1.02] tracking-tight text-3xl sm:text-5xl lg:text-6xl drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] uppercase">
               {vm.cover.title.split(', ')[0]},<br />
               {vm.cover.title.split(', ')[1]}
@@ -68,7 +81,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             <p className="font-serif-display text-xl sm:text-2xl text-[var(--c-ink)]/85 italic leading-snug drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] mt-2">
               {vm.cover.subtitle}
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -106,15 +119,27 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
 
         <div className="relative z-10 max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-16">
           {/* Top Title Header */}
-          <div className="mb-8 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-8 max-w-3xl"
+          >
             <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl text-[var(--c-ink)] uppercase leading-[1.04] tracking-tight font-normal">
               FROM INSIGHT<br />TO CONCEPT
             </h2>
             <p className="font-hand text-2xl sm:text-3xl lg:text-4xl text-[var(--c-ink)]/85 mt-2 mb-4 leading-snug">
               {vm.page2Brief.subtitle}
             </p>
-            <div className="w-20 sm:w-28 h-[1px] bg-[var(--c-ink)]/30" />
-          </div>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="w-20 sm:w-28 h-[1px] bg-[var(--c-ink)]/30 origin-left"
+            />
+          </motion.div>
 
           {/* 3-Column Editorial Portfolio Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
@@ -138,8 +163,15 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 </h3>
                 <div className="grid grid-cols-3 divide-x divide-[var(--c-ink)]/20">
                   {vm.page2Brief.whatIInvestigated.map((item, idx) => (
-                    <div key={idx} className="px-2 sm:px-3 text-center flex flex-col items-center">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-[var(--c-ink)]/20 shadow-xs mb-3 bg-white/60">
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{ duration: 0.45, delay: idx * 0.08 }}
+                      className="group px-2 sm:px-3 text-center flex flex-col items-center transition-transform duration-300 hover:-translate-y-1"
+                    >
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-[var(--c-ink)]/20 shadow-xs mb-3 bg-white/60 transition-transform duration-300 group-hover:scale-105 group-hover:border-[var(--c-ink)]/45">
                         <img
                           src={item.image}
                            alt={item.name}
@@ -161,7 +193,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                           </li>
                         ))}
                       </ul>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -177,8 +209,14 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                 <div className="space-y-1">
                   {vm.page2Brief.howIReachedTheConcept.map((node, nIdx) => (
                     <React.Fragment key={nIdx}>
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border border-[var(--c-ink)]/25 shadow-xs shrink-0 bg-white/70">
+                      <motion.div
+                        initial={{ opacity: 0, x: -14 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.25 }}
+                        transition={{ duration: 0.45, delay: nIdx * 0.07 }}
+                        className="group flex items-center gap-3.5 transition-transform duration-300 hover:translate-x-1"
+                      >
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border border-[var(--c-ink)]/25 shadow-xs shrink-0 bg-white/70 transition-transform duration-300 group-hover:scale-105 group-hover:border-[var(--c-ink)]/50">
                           <img
                             src={node.image}
                              alt={node.label.replace('\n', ' ')}
@@ -192,7 +230,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                             {node.label}
                           </span>
                         </div>
-                      </div>
+                      </motion.div>
 
                       {nIdx < vm.page2Brief.howIReachedTheConcept.length - 1 && (
                         <div className="w-13 sm:w-14 flex justify-center py-0.5">
@@ -215,15 +253,21 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             {/* COLUMN 3 (RIGHT): HERO BLOOM COMPOSITION + COLLAGE + DESIGN INSIGHT */}
             <div className="lg:col-span-5 flex flex-col space-y-6">
               {/* Hero Blooming Visual Banner */}
-              <div className="relative rounded-2xl overflow-hidden border border-[var(--c-ink)]/20 shadow-md bg-[#FAF4F2]">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.55 }}
+                className="group relative rounded-2xl overflow-hidden border border-[var(--c-ink)]/20 shadow-md bg-[#FAF4F2] transition-shadow duration-300 hover:paper-shadow-lg"
+              >
                 <img
                   src={vm.page2Brief.heroImage}
                    alt="Future Florals blooming concept hero"
                    loading="lazy"
                    decoding="async"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-              </div>
+              </motion.div>
 
               {/* Lower Section: Design Insight Card */}
               <div className="grid grid-cols-1 gap-4 items-stretch">
@@ -251,17 +295,29 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
       <div className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Slide Header */}
-            <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="pb-6 border-b border-[var(--c-ink)]/15 mb-10"
+            >
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] tracking-tight">
                 {vm.page3Boards.title}
               </h2>
-            </div>
+            </motion.div>
 
             {/* MOOD BOARD — keep heading, image + content + tiny keywords */}
             <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-10">
-              <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.55 }}
+                className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+              >
                 {/* Mood Board Image - LEFT (native 1280x720, 16:9) */}
-                <div className="relative aspect-video rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
+                <div className="group relative aspect-video rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] transition-shadow duration-300 hover:paper-shadow-lg">
                   <img
                     src={vm.page3Boards.moodBoard.image}
                      alt="Mood Board - Future Florals"
@@ -269,7 +325,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                      decoding="async"
                     width={1280}
                     height={720}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 {/* Mood Board Content - RIGHT */}
@@ -287,14 +343,20 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                     {vm.page3Boards.moodBoard.keywords.join(' · ')}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* COLOUR BOARD */}
             <div className="border-t-2 border-[var(--c-ink)]/20 pt-8 mb-8">
-              <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.55 }}
+                className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+              >
                 {/* Colour Board Image - LEFT (native 1280x720, 16:9) */}
-                <div className="relative aspect-video rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)]">
+                <div className="group relative aspect-video rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] transition-shadow duration-300 hover:paper-shadow-lg">
                   <img
                     src={vm.page3Boards.colourBoard.image}
                      alt="Colour Board - Future Florals"
@@ -302,7 +364,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                      decoding="async"
                     width={1280}
                     height={720}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 {/* Colour Board Content - RIGHT */}
@@ -317,7 +379,7 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                     {vm.page3Boards.colourBoard.content}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -325,38 +387,51 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
       {/* SECTION: BEHIND THE DISPLAY (5 STEPS WITH REAL PHOTOS) */}
       <div className="bg-[var(--c-warm)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
-            <div className="max-w-4xl mb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="max-w-4xl mb-8"
+            >
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] mb-2">
                 {u.behindTitle}
               </h2>
               <p className="font-hand text-2xl sm:text-3xl text-[var(--c-ink)]/85 leading-snug">
                 {u.behindIntro}
               </p>
-            </div>
+            </motion.div>
 
             <div className="space-y-10 sm:space-y-12 lg:space-y-16 mb-10">
               {vm.page4BehindTheDisplay.map((step, idx) => {
                 const imageLeft = idx % 2 === 0;
                 return (
-                <div key={idx} className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center`}>
-                  <div className={`rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] shadow-sm w-full max-w-md mx-auto ${imageLeft ? 'lg:order-1 lg:ml-auto lg:mr-0' : 'lg:order-2 lg:mr-auto lg:ml-0'}`}>
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 26 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.12 }}
+                  transition={{ duration: 0.55 }}
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center`}
+                >
+                  <div className={`group rounded-xl overflow-hidden border border-[var(--c-ink)]/15 bg-[var(--c-bg)] shadow-sm w-full max-w-md mx-auto transition-shadow duration-300 hover:paper-shadow-lg ${imageLeft ? 'lg:order-1 lg:ml-auto lg:mr-0' : 'lg:order-2 lg:mr-auto lg:ml-0'}`}>
                     <img
                       src={(step as { image?: string }).image}
                       alt={step.title}
-                      className="w-full aspect-[4/3] object-cover"
+                      className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                       decoding="async"
                     />
                   </div>
                   <div className={`space-y-2 text-left ${imageLeft ? 'lg:order-2' : 'lg:order-1 lg:text-right'}`}>
-                    <h3 className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)]">
+                    <h3 className="font-serif-display text-2xl sm:text-3xl text-[var(--c-ink)] transition-colors duration-300 group-hover:text-[var(--c-ink)]">
                       {step.title}
                     </h3>
                     <p className="font-body text-sm sm:text-base text-[var(--c-ink)]/85 leading-relaxed pt-1">
                       {step.desc}
                     </p>
                   </div>
-                </div>
+                </motion.div>
                 );
               })}
             </div>
@@ -367,26 +442,38 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
       <div className="bg-[var(--c-bg)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Slide Header */}
-            <div className="pb-6 border-b border-[var(--c-ink)]/15 mb-10">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="pb-6 border-b border-[var(--c-ink)]/15 mb-10"
+            >
               <h2 className="font-serif-display text-3xl sm:text-5xl text-[var(--c-ink)] tracking-tight">
                 {vm.page5SkillsAndPrinciples.title}
               </h2>
               <p className="font-hand text-2xl sm:text-3xl text-[var(--c-ink)]/85 mt-2 leading-snug">
                 {vm.page5SkillsAndPrinciples.subheadline}
               </p>
-            </div>
+            </motion.div>
 
             {/* PAGE 5 TOP: SINGLE HERO IMAGE (LEFT) + SKILLS/PRINCIPLES BOXES (RIGHT) */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-10">
-              <div className="rounded-xl overflow-hidden shadow-sm self-start">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{ duration: 0.55 }}
+                className="group rounded-xl overflow-hidden shadow-sm self-start transition-shadow duration-300 hover:paper-shadow-lg"
+              >
                 <img
                   src={(vm.page5SkillsAndPrinciples.quoteBanner as { image?: string }).image ?? "/portfolio-assets/project-2/page5-final-installation.jpg"}
                   alt={`${vm.page5SkillsAndPrinciples.quoteBanner.accent} — ${vm.page5SkillsAndPrinciples.quoteBanner.caption}`}
-                  className="w-full h-auto"
+                  className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                    loading="lazy"
                    decoding="async"
                 />
-              </div>
+              </motion.div>
               <div className="flex flex-col gap-6">
                 <div className="border border-[var(--c-ink)]/25 bg-[#F6E7D3] rounded-none px-6 py-6 flex-1 flex flex-col">
                   <div className="font-mono-code text-sm font-bold uppercase tracking-wider text-[var(--c-ink)] text-center pb-4 border-b border-[var(--c-ink)]/15">
@@ -394,9 +481,16 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                   </div>
                   <ul className="flex-1 flex flex-col justify-evenly divide-y divide-[var(--c-ink)]/10">
                     {vm.page5SkillsAndPrinciples.skillsApplied.map((sk, idx) => (
-                      <li key={idx} className="py-3 text-center font-mono-code text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--c-ink)]/85">
+                      <motion.li
+                        key={idx}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.4, delay: idx * 0.05 }}
+                        className="py-3 text-center font-mono-code text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--c-ink)]/85 transition-all duration-300 hover:-translate-y-0.5 hover:text-[var(--c-ink)] hover:bg-[var(--c-bg)]/60 cursor-default"
+                      >
                         {sk.title}
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                 </div>
@@ -408,14 +502,21 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
                     {vm.page5SkillsAndPrinciples.vmPrinciplesApplied.map((p, idx) => {
                       const Icon = vmPrincipleIcons[p.icon] ?? Flower2;
                       return (
-                        <li key={idx} className="py-3 flex items-center gap-5 pl-6">
-                          <span className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-[var(--c-ink)]/20 bg-[var(--c-bg)] shadow-xs shrink-0">
+                        <motion.li
+                          key={idx}
+                          initial={{ opacity: 0, x: -14 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true, amount: 0.25 }}
+                          transition={{ duration: 0.45, delay: idx * 0.06 }}
+                          className="group py-3 flex items-center gap-5 pl-6 transition-all duration-300 hover:translate-x-1 cursor-default"
+                        >
+                          <span className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-[var(--c-ink)]/20 bg-[var(--c-bg)] shadow-xs shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[var(--c-warm)] group-hover:border-[var(--c-ink)]/45">
                             <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-[var(--c-ink)]" strokeWidth={1.5} />
                           </span>
-                          <span className="font-mono-code text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[var(--c-ink)]/85">
+                          <span className="font-mono-code text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[var(--c-ink)]/85 transition-colors duration-300 group-hover:text-[var(--c-ink)]">
                             {p.name}
                           </span>
-                        </li>
+                        </motion.li>
                       );
                     })}
                   </ul>
@@ -452,13 +553,15 @@ export const ProjectVisualMerchandisingPage: React.FC = () => {
             <div className="flex justify-end pt-6 border-t border-[var(--c-ink)]/15 font-mono-code text-xs">
               <Link
                 to="/projects/project-3"
-                className="bg-[var(--c-ink)] text-[var(--c-bg)] px-5 py-2.5 rounded-xl font-bold hover:bg-[var(--c-ink-hover)] cursor-pointer flex items-center gap-1.5"
+                className="group bg-[var(--c-ink)] text-[var(--c-bg)] px-5 py-2.5 rounded-xl font-bold hover:bg-[var(--c-ink-hover)] cursor-pointer flex items-center gap-1.5 transition-all duration-300 hover:-translate-y-0.5 hover:paper-shadow-sm"
               >
                 <span>{u.footerNext}</span>
+                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
       </div>
     </div>
+    </MotionConfig>
   );
 };

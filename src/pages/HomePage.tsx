@@ -10,11 +10,7 @@ import { TitleCoverSection } from '../components/home-sections/TitleCoverSection
 import { portfolioData } from '../data/portfolioData';
 import { isSectionVisible, isProjectVisible, getHomeSectionOrder } from '../lib/sanity';
 
-interface HomePageProps {
-  onOpenInquiry: () => void;
-}
-
-export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
+export const HomePage: React.FC = () => {
   const { selectedProjects, internship, student } = portfolioData;
   const ui = portfolioData.ui;
   const hero = ui.home.hero;
@@ -90,15 +86,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenInquiry }) => {
                 <p className="font-serif-display text-2xl sm:text-2xl text-[var(--c-ink)] italic leading-snug pt-1">
                   {hero.signature}
                 </p>
-
-                <button
-                  type="button"
-                  onClick={onOpenInquiry}
-                  className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--c-ink)] px-5 py-3 font-mono-code text-xs font-bold uppercase tracking-wider text-[var(--c-bg)] transition-all duration-200 hover:-translate-y-0.5 hover:paper-shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--c-ink)]"
-                >
-                  {ui.waitlist.submitIdle}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </button>
               </motion.div>
             </div>
 

@@ -500,9 +500,6 @@ export const ProjectThreePage: React.FC = () => {
       <div className="bg-[var(--c-highlight-light)] border-b border-[var(--c-ink)]/15 scroll-mt-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
             {/* Header */}
-            <div className="flex items-baseline justify-end font-mono-code text-xs font-bold text-[var(--c-ink)]/60 uppercase tracking-widest mb-4">
-              <span>{u.p4Brand}</span>
-            </div>
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}

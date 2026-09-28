@@ -37,7 +37,7 @@ export default function App() {
         {/* Multi-Page Route Outlet */}
         <main className="flex-1">
           <Routes>
-            <Route path="/" element={<HomePage onOpenInquiry={() => setWaitlistOpen(true)} />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/internship/experience" element={<InternshipExperiencePage />} />
             <Route path="/internship/learnings" element={<InternshipLearningsPage />} />
             <Route path="/projects/marketing" element={isSectionVisible('project.marketing') ? <ProjectMarketingPage /> : <HiddenSection />} />

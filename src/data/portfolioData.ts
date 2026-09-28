@@ -1203,7 +1203,6 @@ export const portfolioData = {
       p4PageNumber: "04 / 04",
       p4Title: "Test. Learn. Refine.",
       p4Subtitle: "From feedback to better decisions.",
-      p4Brand: "ATHIRA",
       p4HeardTitle: "CONSUMER INSIGHTS",
       p4TaughtTitle: "KEY LEARNINGS",
       p4LoopHeader: "FEEDBACK → ITERATION → IMPACT",

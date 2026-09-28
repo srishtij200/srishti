@@ -72,9 +72,16 @@ export const ProjectThreePage: React.FC = () => {
         </div>
 
         {/* Left content column */}
-        <div className="relative max-w-7xl mx-auto h-full min-h-[90vh] lg:min-h-[95vh]">
-          {/* LEFT COLUMN - Content Area (63%) */}
-          <div className="absolute inset-y-0 left-0 w-[63%] lg:w-[63%] px-8 sm:px-12 lg:px-16 pt-24 lg:pt-32 pb-12 flex flex-col justify-between z-10">
+        <div className="relative max-w-7xl mx-auto">
+          {/* LEFT COLUMN - Content Area.
+              The column sizes itself (min-h + grow) rather than being pinned with
+              `absolute inset-y-0`: pinning fixed its height to the cover, so on short
+              viewports (1024x600 .. 1366x768, landscape phones) the content overflowed
+              the box and, since the cover has no overflow-hidden and this is z-10,
+              the spilled text painted over the next section's heading. Sizing to
+              content lets the section grow instead. justify-between still spreads
+              content to the full height whenever there is spare room. */}
+          <div className="w-full lg:w-[63%] min-h-[90vh] lg:min-h-[95vh] px-6 sm:px-8 lg:px-16 pt-20 sm:pt-24 lg:pt-32 pb-10 sm:pb-12 flex flex-col justify-between z-10">
             
             {/* Brand Header */}
             <motion.div

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { Mail, MapPin, Phone, Linkedin } from 'lucide-react';
+import { FileText, Mail, MapPin, Phone, Linkedin } from 'lucide-react';
 import { portfolioData } from '../../data/portfolioData';
 
 export const ContactSection: React.FC = () => {
@@ -76,6 +76,22 @@ export const ContactSection: React.FC = () => {
               <Phone aria-hidden="true" className="w-6 h-6 text-[var(--c-ink)] shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:rotate-6" />
               <span>{contact.phone}</span>
             </motion.a>
+
+            {contact.resumeUrl && (
+              <motion.a
+                initial={revealInitial}
+                whileInView={revealWhileInView}
+                viewport={{ once: true }}
+                transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.1 }}
+                href={contact.resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex min-h-11 items-center gap-3 font-mono-code text-lg text-[var(--c-ink)]/80 hover:text-[var(--c-ink)] hover:underline underline-offset-4 decoration-[var(--c-warm)] transition-colors"
+              >
+                <FileText aria-hidden="true" className="w-6 h-6 text-[var(--c-ink)]/60 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:text-[var(--c-ink)]" />
+                <span>{contact.resumeLabel || 'Resume'} <span className="sr-only">(opens in a new tab)</span></span>
+              </motion.a>
+            )}
 
             {contact.socials.map((soc, i) => (
               <motion.a

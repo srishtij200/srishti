@@ -8,6 +8,8 @@ export const contact = defineType({
     defineField({ name: 'email', title: 'Email', type: 'string' }),
     defineField({ name: 'phone', title: 'Phone', type: 'string' }),
     defineField({ name: 'location', title: 'Location', type: 'string' }),
+    defineField({ name: 'resumeLabel', title: 'Resume — Label', type: 'string' }),
+    defineField({ name: 'resumeUrl', title: 'Resume — URL', type: 'url' }),
     defineField({
       name: 'socials',
       title: 'Socials',

@@ -947,6 +947,8 @@ export const portfolioData = {
     email: "srishtijain2012@gmail.com",
     phone: "9350894666",
     location: "New Delhi, India",
+    resumeLabel: "Resume",
+    resumeUrl: "https://drive.google.com/file/d/1R3AhTFbD5X8dSAZ7WfQMV88JXYgZ4sxG/view?usp=drivesdk",
     socials: [
       { name: "LinkedIn", handle: "Srishti Jain", url: "https://www.linkedin.com/in/srishti-jain-263074228" }
     ]
